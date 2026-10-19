@@ -1,0 +1,21 @@
+/* [next]/internal/font/google/dm_serif_display_f99462e.module.css [app-client] (css) */
+@font-face {
+  font-family: DM Serif Display Fallback;
+  src: local(Times New Roman);
+  ascent-override: 94.37%;
+  descent-override: 30.51%;
+  line-gap-override: 0.0%;
+  size-adjust: 109.78%;
+}
+
+.dm_serif_display_f99462e-module__OiS9wq__className {
+  font-family: DM Serif Display, DM Serif Display Fallback;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.dm_serif_display_f99462e-module__OiS9wq__variable {
+  --font-display: "DM Serif Display", "DM Serif Display Fallback";
+}
+
+/*# sourceMappingURL=%5Bnext%5D_internal_font_google_dm_serif_display_f99462e_module_css_1igg3k2._.single.css.map*/

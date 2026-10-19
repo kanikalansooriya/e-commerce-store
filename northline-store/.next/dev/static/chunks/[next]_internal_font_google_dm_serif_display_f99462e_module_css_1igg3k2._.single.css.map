@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[next]/internal/font/google/dm_serif_display_f99462e.module.css"],"sourcesContent":["@font-face {\n    font-family: 'DM Serif Display Fallback';\n    src: local(\"Times New Roman\");\n    ascent-override: 94.37%;\ndescent-override: 30.51%;\nline-gap-override: 0.00%;\nsize-adjust: 109.78%;\n\n}\n.className {\n    font-family: 'DM Serif Display', 'DM Serif Display Fallback';\n    font-weight: 400;\nfont-style: normal;\n\n}\n.variable {\n    --font-display: 'DM Serif Display', 'DM Serif Display Fallback';\n}\n"],"names":[],"mappings":"AAAA;;;;;;;;;AASA;;;;;;AAMA","ignoreList":[0]}}]
+}
