@@ -118,7 +118,22 @@ async function CategoryPageInner({ params }: { params: Promise<{ slug: string }>
   const data = categoryMap[slug];
   if (!data) notFound();
 
-  const categoryProducts = products.filter((product) => product.category === data.label);
+  const categoryProducts = (() => {
+    if (slug === "sale") return products.filter((p) => p.isSale);
+    if (slug === "new-arrivals") return products.filter((p) => p.isNew);
+    const direct = products.filter(
+      (product) =>
+        product.category === data.label ||
+        product.category.toLowerCase().includes(data.label.toLowerCase()) ||
+        data.subcategories.some(
+          (sub) =>
+            product.subcategory.toLowerCase().includes(sub.toLowerCase()) ||
+            product.category.toLowerCase().includes(sub.toLowerCase())
+        )
+    );
+    if (direct.length > 0) return direct;
+    return products.slice(0, 8);
+  })();
   const featured = categoryProducts.slice(0, 4);
 
   return (

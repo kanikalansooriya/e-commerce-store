@@ -12,10 +12,11 @@ import { SiteSearch } from "@/components/site-search";
 const topLinks = [
   { href: "/category/women", label: "Women" },
   { href: "/category/men", label: "Men" },
+  { href: "/category/shoes", label: "Shoes" },
+  { href: "/category/jewelry-watches", label: "Watches" },
+  { href: "/category/electronics-tech", label: "Tech" },
   { href: "/category/home-living", label: "Home" },
   { href: "/category/beauty-self-care", label: "Beauty" },
-  { href: "/category/electronics-tech", label: "Tech" },
-  { href: "/category/gifts", label: "Gifts" },
   { href: "/category/sale", label: "Sale" },
 ];
 
@@ -59,7 +60,9 @@ export function SiteHeader() {
 
   return (
     <>
-      <div className="announcement">A little more thoughtful. A lot more useful. <span>Free shipping over $100</span></div>
+      <div className="announcement">
+        ⚡ <span>FLASH SALE:</span> Use code <strong>LUXE20</strong> for 20% off • 🚚 Free Shipping on orders over $75 • ⭐ 4.9/5 Rated
+      </div>
       <header className={`site-header${scrolled ? " is-scrolled" : ""}`}>
         <div className="header-main page-shell">
           <button
@@ -70,8 +73,8 @@ export function SiteHeader() {
           >
             {menuOpen ? <X size={21} /> : <Menu size={21} />}
           </button>
-          <Link className="wordmark" href="/" aria-label="Goodform home">
-            <span className="wordmark-mark" aria-hidden="true">g</span>goodform<span className="wordmark-period">.</span>
+          <Link className="wordmark" href="/" aria-label="Aura Store Home">
+            <span className="wordmark-mark" aria-hidden="true">A</span>AURA<span className="wordmark-period">.</span>
           </Link>
           <SiteSearch />
           <div className="header-actions">

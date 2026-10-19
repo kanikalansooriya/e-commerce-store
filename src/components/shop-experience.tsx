@@ -54,7 +54,13 @@ export function ShopExperience({ initialQuery, initialCategory, initialSort }: {
         ...product.tags,
       ].join(" ").toLowerCase().includes(normalizedQuery);
 
-      const matchesCategory = category === "All" || product.category === category;
+      const matchesCategory =
+        category === "All" ||
+        product.category.toLowerCase() === category.toLowerCase() ||
+        product.category.toLowerCase().includes(category.toLowerCase()) ||
+        (category === "Audio" && (product.category === "Audio" || product.category === "Electronics & Tech")) ||
+        (category === "Clothing" && (product.category === "Women" || product.category === "Men" || product.category === "Clothing")) ||
+        (category === "Shoes" && (product.category === "Shoes" || product.subcategory.toLowerCase().includes("shoe") || product.subcategory.toLowerCase().includes("sneaker") || product.subcategory.toLowerCase().includes("boot")));
       const matchesSubcategory = subcategory === "All" || product.subcategory === subcategory;
       const matchesBrand = brand === "All" || product.brand === brand;
       const matchesPrice = product.price <= maxPrice;

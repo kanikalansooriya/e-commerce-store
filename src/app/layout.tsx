@@ -28,8 +28,8 @@ const displayFont = DM_Serif_Display({
 const appearanceBootstrap = `(()=>{try{const saved=JSON.parse(localStorage.getItem("goodform-appearance")||"null")||{};const root=document.documentElement;const options={colorMode:["light","dark","system"],accent:["blue","green","purple","orange","rose"],fontSize:["small","medium","large"],corners:["sharp","rounded"],motion:["on","reduced"],density:["comfortable","compact"]};const defaults={colorMode:"light",accent:"rose",fontSize:"medium",corners:"rounded",motion:"on",density:"comfortable"};for(const key in defaults){root.dataset[key=== "colorMode"?"colorMode":key]=options[key].includes(saved[key])?saved[key]:defaults[key]}}catch{}})();`;
 
 export const metadata: Metadata = {
-  title: "goodform. | Useful things, made to stay",
-  description: "A considered edit of useful, well-made things for everyday living.",
+  title: "AURA | Premium Fashion, Smart Tech & Modern Living",
+  description: "Discover curated apparel, precision audio, luxury timepieces, and modern home essentials with fast express delivery.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
