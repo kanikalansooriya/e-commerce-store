@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, Headphones, ShieldCheck, Truck } from "lucide-react";
+import { ScrollReveal } from "@/components/motion";
 
 const faqs = [
   {
@@ -42,7 +43,7 @@ export default function FaqPage() {
         <p>Answers for shipping, returns, orders, and the little details that make choosing well easier.</p>
       </div>
 
-      <div className="faq-layout">
+      <ScrollReveal as="section" className="faq-layout">
         <div className="faq-stack">
           {faqs.map((item, index) => (
             <details key={item.question} className="faq-item" open={index === 0}>
@@ -78,9 +79,9 @@ export default function FaqPage() {
             Contact the team <ArrowRight size={15} />
           </Link>
         </aside>
-      </div>
+      </ScrollReveal>
 
-      <section className="support-cta">
+      <ScrollReveal as="section" className="support-cta">
         <div>
           <span className="eyebrow">A thoughtful promise</span>
           <h2>We choose useful things with care.</h2>
@@ -90,7 +91,7 @@ export default function FaqPage() {
           <li><CheckCircle2 size={16} /> Thoughtful returns & exchanges</li>
           <li><CheckCircle2 size={16} /> Real people behind every reply</li>
         </ul>
-      </section>
+      </ScrollReveal>
     </div>
   );
 }
