@@ -4,8 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, LockKeyhole, Tag, Trash2 } from "lucide-react";
 import { QuantityStepper } from "@/components/quantity-stepper";
+import { ScrollReveal } from "@/components/motion";
 import { useCart } from "@/context/cart-context";
 import { formatPrice, products } from "@/lib/products";
+import { animateButtonPress } from "@/lib/gsap";
 
 const shippingFor = (subtotal: number) => subtotal === 0 || subtotal >= 100 ? 0 : 8;
 
@@ -21,9 +23,14 @@ export default function CartPage() {
         <h1>Your bag<span className="cart-title-count">{items.length ? ` (${items.length})` : ""}</span></h1>
       </div>
       {!items.length ? (
-        <div className="empty-state cart-empty"><div className="empty-bag-mark">g.</div><h2>A little room for good things.</h2><p>Your bag is empty for now. Take a look around and see what feels right.</p><Link className="button-primary" href="/shop">Find something good <ArrowRight size={16} /></Link></div>
+        <ScrollReveal className="empty-state cart-empty">
+          <div className="empty-bag-mark">g.</div>
+          <h2>A little room for good things.</h2>
+          <p>Your bag is empty for now. Take a look around and see what feels right.</p>
+          <Link className="button-primary" href="/shop">Find something good <ArrowRight size={16} /></Link>
+        </ScrollReveal>
       ) : (
-        <div className="cart-layout">
+        <ScrollReveal className="cart-layout">
           <section className="cart-items" aria-label="Items in your bag">
             {items.map((item) => (
               <article className="cart-item" key={item.id}>
@@ -34,7 +41,16 @@ export default function CartPage() {
                   <span className="cart-item-price">{formatPrice(item.price)}</span>
                   <div className="cart-item-controls">
                     <QuantityStepper value={item.quantity} label={`Quantity for ${item.name}`} onChange={(quantity) => updateQuantity(item.id, quantity)} />
-                    <button className="remove-item" onClick={() => removeItem(item.id)} aria-label={`Remove ${item.name} from bag`}><Trash2 size={15} /><span>Remove</span></button>
+                    <button
+                      className="remove-item"
+                      onClick={(e) => {
+                        animateButtonPress(e.currentTarget);
+                        removeItem(item.id);
+                      }}
+                      aria-label={`Remove ${item.name} from bag`}
+                    >
+                      <Trash2 size={15} /><span>Remove</span>
+                    </button>
                   </div>
                 </div>
                 <strong className="cart-line-total">{formatPrice(item.price * item.quantity)}</strong>
@@ -45,7 +61,13 @@ export default function CartPage() {
                 <Tag size={14} />
                 <input type="text" placeholder="Promo code" aria-label="Promo code" />
               </label>
-              <button type="button" className="button-secondary promo-button">Apply</button>
+              <button
+                type="button"
+                className="button-secondary promo-button"
+                onClick={(e) => animateButtonPress(e.currentTarget)}
+              >
+                Apply
+              </button>
             </div>
             <Link className="text-link continue-shopping" href="/shop"><ArrowLeft size={15} /> Keep looking</Link>
           </section>
@@ -59,10 +81,10 @@ export default function CartPage() {
             <Link className="button-primary checkout-button" href="/checkout">Proceed to checkout <ArrowRight size={16} /></Link>
             <div className="secure-note"><LockKeyhole size={14} /> Secure, simple checkout</div>
           </aside>
-        </div>
+        </ScrollReveal>
       )}
       {!items.length && (
-        <div className="recommended-wrap">
+        <ScrollReveal className="recommended-wrap">
           <div className="section-heading compact-heading">
             <div>
               <span className="eyebrow">A few good things</span>
@@ -80,7 +102,7 @@ export default function CartPage() {
               </Link>
             ))}
           </div>
-        </div>
+        </ScrollReveal>
       )}
     </div>
   );

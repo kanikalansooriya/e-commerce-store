@@ -264,45 +264,55 @@ button, input, select, textarea {
 }
 
 .scroll-reveal {
-  transition: opacity .65s, transform .65s cubic-bezier(.2, .7, .2, 1);
-  transition-delay: var(--reveal-delay, 0s);
+  will-change: transform, opacity;
 }
 
-html[data-motion="on"] .scroll-reveal:not(.is-visible) {
-  opacity: 0;
-  transform: translateY(18px);
+.button-primary, .button-secondary, .hero-btn-primary, .hero-btn-secondary, .quick-add-btn, .add-icon, .icon-button, .tab-btn {
+  transition: transform .18s cubic-bezier(.2, .8, .2, 1), background-color .18s, color .18s, box-shadow .18s;
 }
 
-.reveal-stagger.is-visible > * {
-  animation: .46s cubic-bezier(.2, .7, .2, 1) both card-enter;
+.button-primary:active, .button-secondary:active, .hero-btn-primary:active, .hero-btn-secondary:active, .quick-add-btn:active, .add-icon:active, .icon-button:active, .tab-btn:active {
+  transform: scale(.96) !important;
 }
 
-.reveal-stagger.is-visible > :nth-child(2) {
-  animation-delay: 60ms;
+.cat-card {
+  transition: transform .32s cubic-bezier(.2, .7, .2, 1), box-shadow .32s;
 }
 
-.reveal-stagger.is-visible > :nth-child(3) {
-  animation-delay: .12s;
+.cat-card:hover {
+  transform: translateY(-3px);
 }
 
-.reveal-stagger.is-visible > :nth-child(4) {
-  animation-delay: .18s;
+.cat-card-img {
+  transition: transform .5s cubic-bezier(.2, .7, .2, 1);
 }
 
-.reveal-stagger.is-visible > :nth-child(n+5) {
-  animation-delay: .22s;
+.cat-card:hover .cat-card-img {
+  transform: scale(1.05);
 }
 
-@keyframes card-enter {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
+.promo-card {
+  transition: transform .32s cubic-bezier(.2, .7, .2, 1), box-shadow .32s;
+}
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.promo-card:hover {
+  transform: translateY(-2px);
+}
+
+.promo-card-visual img {
+  transition: transform .55s cubic-bezier(.2, .7, .2, 1);
+}
+
+.promo-card:hover .promo-card-visual img {
+  transform: scale(1.04);
+}
+
+.wishlist-toggle, .wishlist-detail-toggle {
+  transition: transform .2s cubic-bezier(.2, .8, .2, 1), background-color .18s, color .18s, border-color .18s;
+}
+
+.wishlist-toggle:active, .wishlist-detail-toggle:active {
+  transform: scale(.92);
 }
 
 .back-to-top {
@@ -966,7 +976,7 @@ html[data-color-mode="dark"] .summary-panel, html[data-color-mode="dark"] .accou
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .scroll-reveal, .route-transition, .hero-visual img, .product-card, .category-tile {
+  .scroll-reveal, .route-transition, .hero-visual img, .product-card, .category-tile, .cat-card, .promo-card, .cat-card-img, .promo-card-visual img, .button-primary, .button-secondary, .wishlist-toggle, .wishlist-detail-toggle {
     opacity: 1 !important;
     transition: none !important;
     animation: none !important;
@@ -974,7 +984,7 @@ html[data-color-mode="dark"] .summary-panel, html[data-color-mode="dark"] .accou
   }
 }
 
-html[data-motion="reduced"] .scroll-reveal, html[data-motion="reduced"] .route-transition, html[data-motion="reduced"] .hero-visual img, html[data-motion="reduced"] .product-card, html[data-motion="reduced"] .category-tile {
+html[data-motion="reduced"] .scroll-reveal, html[data-motion="reduced"] .route-transition, html[data-motion="reduced"] .hero-visual img, html[data-motion="reduced"] .product-card, html[data-motion="reduced"] .category-tile, html[data-motion="reduced"] .cat-card, html[data-motion="reduced"] .promo-card, html[data-motion="reduced"] .cat-card-img, html[data-motion="reduced"] .promo-card-visual img, html[data-motion="reduced"] .button-primary, html[data-motion="reduced"] .button-secondary, html[data-motion="reduced"] .wishlist-toggle, html[data-motion="reduced"] .wishlist-detail-toggle {
   opacity: 1 !important;
   transition: none !important;
   animation: none !important;

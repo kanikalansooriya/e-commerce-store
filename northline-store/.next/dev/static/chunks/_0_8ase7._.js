@@ -419,9 +419,12 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$trending$2d$up$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TrendingUp$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/trending-up.mjs [app-client] (ecmascript) <export default as TrendingUp>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$award$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Award$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/award.mjs [app-client] (ecmascript) <export default as Award>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$product$2d$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/product-card.tsx [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$gsap$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/src/lib/gsap.ts [app-client] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__ = __turbopack_context__.i("[project]/node_modules/gsap/index.js [app-client] (ecmascript) <locals> <export default as gsap>");
 ;
 var _s = __turbopack_context__.k.signature(), _s1 = __turbopack_context__.k.signature();
 "use client";
+;
 ;
 ;
 ;
@@ -433,6 +436,7 @@ function FlashDealsSection({ dealProducts }) {
         minutes: 42,
         seconds: 18
     });
+    const sectionRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "FlashDealsSection.useEffect": ()=>{
             const timer = setInterval({
@@ -472,6 +476,7 @@ function FlashDealsSection({ dealProducts }) {
         }
     }["FlashDealsSection.useEffect"], []);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+        ref: sectionRef,
         className: "flash-deals-section page-shell",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -488,40 +493,40 @@ function FlashDealsSection({ dealProducts }) {
                                         className: "text-amber-500 animate-pulse"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/home-showcase.tsx",
-                                        lineNumber: 33,
+                                        lineNumber: 35,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         children: "LIMITED TIME DROP"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/home-showcase.tsx",
-                                        lineNumber: 34,
+                                        lineNumber: 36,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/home-showcase.tsx",
-                                lineNumber: 32,
+                                lineNumber: 34,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                 children: "Flash Deals & Specials"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/home-showcase.tsx",
-                                lineNumber: 36,
+                                lineNumber: 38,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 children: "Hand-picked seasonal discounts. Grab yours before stock or the timer runs out!"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/home-showcase.tsx",
-                                lineNumber: 37,
+                                lineNumber: 39,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/home-showcase.tsx",
-                        lineNumber: 31,
+                        lineNumber: 33,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -534,14 +539,14 @@ function FlashDealsSection({ dealProducts }) {
                                         size: 14
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/home-showcase.tsx",
-                                        lineNumber: 42,
+                                        lineNumber: 44,
                                         columnNumber: 13
                                     }, this),
                                     " Ends In:"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/home-showcase.tsx",
-                                lineNumber: 41,
+                                lineNumber: 43,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -554,20 +559,20 @@ function FlashDealsSection({ dealProducts }) {
                                                 children: String(timeLeft.hours).padStart(2, "0")
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/home-showcase.tsx",
-                                                lineNumber: 46,
+                                                lineNumber: 48,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                 children: "HRS"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/home-showcase.tsx",
-                                                lineNumber: 47,
+                                                lineNumber: 49,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/home-showcase.tsx",
-                                        lineNumber: 45,
+                                        lineNumber: 47,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -575,7 +580,7 @@ function FlashDealsSection({ dealProducts }) {
                                         children: ":"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/home-showcase.tsx",
-                                        lineNumber: 49,
+                                        lineNumber: 51,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -585,20 +590,20 @@ function FlashDealsSection({ dealProducts }) {
                                                 children: String(timeLeft.minutes).padStart(2, "0")
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/home-showcase.tsx",
-                                                lineNumber: 51,
+                                                lineNumber: 53,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                 children: "MIN"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/home-showcase.tsx",
-                                                lineNumber: 52,
+                                                lineNumber: 54,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/home-showcase.tsx",
-                                        lineNumber: 50,
+                                        lineNumber: 52,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -606,7 +611,7 @@ function FlashDealsSection({ dealProducts }) {
                                         children: ":"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/home-showcase.tsx",
-                                        lineNumber: 54,
+                                        lineNumber: 56,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -616,38 +621,38 @@ function FlashDealsSection({ dealProducts }) {
                                                 children: String(timeLeft.seconds).padStart(2, "0")
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/home-showcase.tsx",
-                                                lineNumber: 56,
+                                                lineNumber: 58,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                 children: "SEC"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/home-showcase.tsx",
-                                                lineNumber: 57,
+                                                lineNumber: 59,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/home-showcase.tsx",
-                                        lineNumber: 55,
+                                        lineNumber: 57,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/home-showcase.tsx",
-                                lineNumber: 44,
+                                lineNumber: 46,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/home-showcase.tsx",
-                        lineNumber: 40,
+                        lineNumber: 42,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/home-showcase.tsx",
-                lineNumber: 30,
+                lineNumber: 32,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -656,26 +661,27 @@ function FlashDealsSection({ dealProducts }) {
                         product: product
                     }, product.id, false, {
                         fileName: "[project]/src/components/home-showcase.tsx",
-                        lineNumber: 65,
+                        lineNumber: 67,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/src/components/home-showcase.tsx",
-                lineNumber: 63,
+                lineNumber: 65,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/home-showcase.tsx",
-        lineNumber: 29,
+        lineNumber: 31,
         columnNumber: 5
     }, this);
 }
-_s(FlashDealsSection, "19kFIG3fQaJZBNPJO0Oys8/4aaQ=");
+_s(FlashDealsSection, "aaRnFGfN8XlXAGeeNmMPffDloCg=");
 _c = FlashDealsSection;
 function CuratedTabsSection({ allProducts }) {
     _s1();
     const [activeTab, setActiveTab] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("trending");
+    const gridRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
     const tabProducts = allProducts.filter((p)=>{
         if (activeTab === "trending") return p.rating >= 4.8;
         if (activeTab === "bestseller") return p.reviewCount > 100;
@@ -683,6 +689,32 @@ function CuratedTabsSection({ allProducts }) {
         if (activeTab === "deals") return p.isSale;
         return true;
     });
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "CuratedTabsSection.useEffect": ()=>{
+            const el = gridRef.current;
+            if (!el || (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$gsap$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isReducedMotion"])()) return;
+            const cards = el.querySelectorAll(".product-card");
+            const ctx = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].context({
+                "CuratedTabsSection.useEffect.ctx": ()=>{
+                    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].fromTo(cards, {
+                        opacity: 0,
+                        y: 14
+                    }, {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.38,
+                        stagger: 0.05,
+                        ease: "power2.out"
+                    });
+                }
+            }["CuratedTabsSection.useEffect.ctx"], el);
+            return ({
+                "CuratedTabsSection.useEffect": ()=>ctx.revert()
+            })["CuratedTabsSection.useEffect"];
+        }
+    }["CuratedTabsSection.useEffect"], [
+        activeTab
+    ]);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         className: "section-block page-shell",
         children: [
@@ -696,20 +728,20 @@ function CuratedTabsSection({ allProducts }) {
                                 children: "CURATED EDIT"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/home-showcase.tsx",
-                                lineNumber: 87,
+                                lineNumber: 106,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                 children: "Explore Trending Collections"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/home-showcase.tsx",
-                                lineNumber: 88,
+                                lineNumber: 107,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/home-showcase.tsx",
-                        lineNumber: 86,
+                        lineNumber: 105,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -718,103 +750,116 @@ function CuratedTabsSection({ allProducts }) {
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 type: "button",
                                 className: `tab-btn ${activeTab === "trending" ? "is-active" : ""}`,
-                                onClick: ()=>setActiveTab("trending"),
+                                onClick: (e)=>{
+                                    (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$gsap$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["animateButtonPress"])(e.currentTarget);
+                                    setActiveTab("trending");
+                                },
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$trending$2d$up$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TrendingUp$3e$__["TrendingUp"], {
                                         size: 15
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/home-showcase.tsx",
-                                        lineNumber: 97,
+                                        lineNumber: 119,
                                         columnNumber: 13
                                     }, this),
                                     " Trending Now"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/home-showcase.tsx",
-                                lineNumber: 92,
+                                lineNumber: 111,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 type: "button",
                                 className: `tab-btn ${activeTab === "bestseller" ? "is-active" : ""}`,
-                                onClick: ()=>setActiveTab("bestseller"),
+                                onClick: (e)=>{
+                                    (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$gsap$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["animateButtonPress"])(e.currentTarget);
+                                    setActiveTab("bestseller");
+                                },
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$award$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Award$3e$__["Award"], {
                                         size: 15
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/home-showcase.tsx",
-                                        lineNumber: 104,
+                                        lineNumber: 129,
                                         columnNumber: 13
                                     }, this),
                                     " Best Sellers"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/home-showcase.tsx",
-                                lineNumber: 99,
+                                lineNumber: 121,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 type: "button",
                                 className: `tab-btn ${activeTab === "new" ? "is-active" : ""}`,
-                                onClick: ()=>setActiveTab("new"),
+                                onClick: (e)=>{
+                                    (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$gsap$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["animateButtonPress"])(e.currentTarget);
+                                    setActiveTab("new");
+                                },
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$sparkles$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Sparkles$3e$__["Sparkles"], {
                                         size: 15
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/home-showcase.tsx",
-                                        lineNumber: 111,
+                                        lineNumber: 139,
                                         columnNumber: 13
                                     }, this),
                                     " New Arrivals"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/home-showcase.tsx",
-                                lineNumber: 106,
+                                lineNumber: 131,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 type: "button",
                                 className: `tab-btn ${activeTab === "deals" ? "is-active" : ""}`,
-                                onClick: ()=>setActiveTab("deals"),
+                                onClick: (e)=>{
+                                    (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$gsap$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["animateButtonPress"])(e.currentTarget);
+                                    setActiveTab("deals");
+                                },
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$flame$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Flame$3e$__["Flame"], {
                                         size: 15
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/home-showcase.tsx",
-                                        lineNumber: 118,
+                                        lineNumber: 149,
                                         columnNumber: 13
                                     }, this),
                                     " Top Deals"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/home-showcase.tsx",
-                                lineNumber: 113,
+                                lineNumber: 141,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/home-showcase.tsx",
-                        lineNumber: 91,
+                        lineNumber: 110,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/home-showcase.tsx",
-                lineNumber: 85,
+                lineNumber: 104,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                ref: gridRef,
                 className: "product-grid",
                 children: tabProducts.slice(0, 8).map((product)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$product$2d$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ProductCard"], {
                         product: product
                     }, product.id, false, {
                         fileName: "[project]/src/components/home-showcase.tsx",
-                        lineNumber: 125,
+                        lineNumber: 156,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/src/components/home-showcase.tsx",
-                lineNumber: 123,
+                lineNumber: 154,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -830,28 +875,28 @@ function CuratedTabsSection({ allProducts }) {
                             size: 16
                         }, void 0, false, {
                             fileName: "[project]/src/components/home-showcase.tsx",
-                            lineNumber: 131,
+                            lineNumber: 162,
                             columnNumber: 51
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/home-showcase.tsx",
-                    lineNumber: 130,
+                    lineNumber: 161,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/home-showcase.tsx",
-                lineNumber: 129,
+                lineNumber: 160,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/home-showcase.tsx",
-        lineNumber: 84,
+        lineNumber: 103,
         columnNumber: 5
     }, this);
 }
-_s1(CuratedTabsSection, "Ykb4JGQNufRzG2EQFI4RIJa+/HI=");
+_s1(CuratedTabsSection, "ZaolaDliBghBtBsxqBtXC/aWBNA=");
 _c1 = CuratedTabsSection;
 var _c, _c1;
 __turbopack_context__.k.register(_c, "FlashDealsSection");
@@ -964,9 +1009,11 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$cart$2d$context$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/context/cart-context.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$wishlist$2d$context$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/context/wishlist-context.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$products$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/products.ts [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$gsap$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/src/lib/gsap.ts [app-client] (ecmascript) <locals>");
 ;
 var _s = __turbopack_context__.k.signature();
 "use client";
+;
 ;
 ;
 ;
@@ -985,6 +1032,7 @@ function ProductCard({ product, priority = false }) {
         e.preventDefault();
         addItem(product);
         setAdded(true);
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$gsap$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["animateButtonPress"])(e.currentTarget);
         setTimeout(()=>setAdded(false), 1400);
     };
     const secondaryImage = product.gallery && product.gallery.length > 1 ? product.gallery[1] : null;
@@ -1007,7 +1055,7 @@ function ProductCard({ product, priority = false }) {
                             className: `product-primary-img ${secondaryImage ? "group-hover:opacity-0 transition-opacity duration-300" : ""}`
                         }, void 0, false, {
                             fileName: "[project]/src/components/product-card.tsx",
-                            lineNumber: 35,
+                            lineNumber: 37,
                             columnNumber: 11
                         }, this),
                         secondaryImage && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1018,7 +1066,7 @@ function ProductCard({ product, priority = false }) {
                             className: "product-secondary-img opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                         }, void 0, false, {
                             fileName: "[project]/src/components/product-card.tsx",
-                            lineNumber: 46,
+                            lineNumber: 48,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1029,7 +1077,7 @@ function ProductCard({ product, priority = false }) {
                                     children: "NEW"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/product-card.tsx",
-                                    lineNumber: 57,
+                                    lineNumber: 59,
                                     columnNumber: 31
                                 }, this),
                                 discountPercent > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1041,7 +1089,7 @@ function ProductCard({ product, priority = false }) {
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/product-card.tsx",
-                                    lineNumber: 58,
+                                    lineNumber: 60,
                                     columnNumber: 37
                                 }, this),
                                 product.stock <= 8 && product.stock > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1053,13 +1101,13 @@ function ProductCard({ product, priority = false }) {
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/product-card.tsx",
-                                    lineNumber: 60,
+                                    lineNumber: 62,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/product-card.tsx",
-                            lineNumber: 56,
+                            lineNumber: 58,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1068,6 +1116,7 @@ function ProductCard({ product, priority = false }) {
                             "aria-label": saved ? `Remove ${product.name} from wishlist` : `Save ${product.name} to wishlist`,
                             onClick: (event)=>{
                                 event.preventDefault();
+                                (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$gsap$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["animateHeartPop"])(event.currentTarget, !saved);
                                 toggleItem(product);
                             },
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$heart$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Heart$3e$__["Heart"], {
@@ -1075,12 +1124,12 @@ function ProductCard({ product, priority = false }) {
                                 fill: saved ? "currentColor" : "none"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/product-card.tsx",
-                                lineNumber: 74,
+                                lineNumber: 77,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/components/product-card.tsx",
-                            lineNumber: 65,
+                            lineNumber: 67,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1095,14 +1144,14 @@ function ProductCard({ product, priority = false }) {
                                         className: "text-emerald-500"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/product-card.tsx",
-                                        lineNumber: 86,
+                                        lineNumber: 89,
                                         columnNumber: 17
                                     }, this),
                                     " Added to Bag"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/product-card.tsx",
-                                lineNumber: 85,
+                                lineNumber: 88,
                                 columnNumber: 15
                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                                 children: [
@@ -1110,30 +1159,30 @@ function ProductCard({ product, priority = false }) {
                                         size: 14
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/product-card.tsx",
-                                        lineNumber: 90,
+                                        lineNumber: 93,
                                         columnNumber: 17
                                     }, this),
                                     " Quick Add"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/product-card.tsx",
-                                lineNumber: 89,
+                                lineNumber: 92,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/components/product-card.tsx",
-                            lineNumber: 78,
+                            lineNumber: 81,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/product-card.tsx",
-                    lineNumber: 33,
+                    lineNumber: 35,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/product-card.tsx",
-                lineNumber: 32,
+                lineNumber: 34,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1147,7 +1196,7 @@ function ProductCard({ product, priority = false }) {
                                 children: product.brand
                             }, void 0, false, {
                                 fileName: "[project]/src/components/product-card.tsx",
-                                lineNumber: 99,
+                                lineNumber: 102,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1159,7 +1208,7 @@ function ProductCard({ product, priority = false }) {
                                         stroke: "#eab308"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/product-card.tsx",
-                                        lineNumber: 101,
+                                        lineNumber: 104,
                                         columnNumber: 13
                                     }, this),
                                     " ",
@@ -1174,19 +1223,19 @@ function ProductCard({ product, priority = false }) {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/product-card.tsx",
-                                        lineNumber: 102,
+                                        lineNumber: 105,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/product-card.tsx",
-                                lineNumber: 100,
+                                lineNumber: 103,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/product-card.tsx",
-                        lineNumber: 98,
+                        lineNumber: 101,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1196,7 +1245,7 @@ function ProductCard({ product, priority = false }) {
                         children: product.name
                     }, void 0, false, {
                         fileName: "[project]/src/components/product-card.tsx",
-                        lineNumber: 106,
+                        lineNumber: 109,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1210,7 +1259,7 @@ function ProductCard({ product, priority = false }) {
                                         children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$products$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["formatPrice"])(product.price)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/product-card.tsx",
-                                        lineNumber: 112,
+                                        lineNumber: 115,
                                         columnNumber: 13
                                     }, this),
                                     product.compareAt && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("del", {
@@ -1218,13 +1267,13 @@ function ProductCard({ product, priority = false }) {
                                         children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$products$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["formatPrice"])(product.compareAt)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/product-card.tsx",
-                                        lineNumber: 114,
+                                        lineNumber: 117,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/product-card.tsx",
-                                lineNumber: 111,
+                                lineNumber: 114,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1235,36 +1284,36 @@ function ProductCard({ product, priority = false }) {
                                     size: 16
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/product-card.tsx",
-                                    lineNumber: 123,
+                                    lineNumber: 126,
                                     columnNumber: 22
                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$plus$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Plus$3e$__["Plus"], {
                                     size: 16
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/product-card.tsx",
-                                    lineNumber: 123,
+                                    lineNumber: 126,
                                     columnNumber: 44
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/product-card.tsx",
-                                lineNumber: 118,
+                                lineNumber: 121,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/product-card.tsx",
-                        lineNumber: 110,
+                        lineNumber: 113,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/product-card.tsx",
-                lineNumber: 97,
+                lineNumber: 100,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/product-card.tsx",
-        lineNumber: 31,
+        lineNumber: 33,
         columnNumber: 5
     }, this);
 }

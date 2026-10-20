@@ -5,8 +5,10 @@ import Link from "next/link";
 import { FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
 import { ArrowLeft, ArrowRight, CreditCard, LockKeyhole } from "lucide-react";
+import { ScrollReveal } from "@/components/motion";
 import { useCart } from "@/context/cart-context";
 import { formatPrice } from "@/lib/products";
+import { animateButtonPress } from "@/lib/gsap";
 
 export default function CheckoutPage() {
   const { items, subtotal, clearCart, isReady } = useCart();

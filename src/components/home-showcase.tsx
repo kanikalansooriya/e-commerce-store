@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ArrowRight, Clock, Flame, Sparkles, TrendingUp, Award } from "lucide-react";
 import { ProductCard } from "@/components/product-card";
+import { ScrollReveal } from "@/components/motion";
 import { type Product } from "@/lib/products";
 import { gsap, animateButtonPress, isReducedMotion } from "@/lib/gsap";
 
@@ -28,7 +29,7 @@ export function FlashDealsSection({ dealProducts }: { dealProducts: Product[] })
   }, []);
 
   return (
-    <section ref={sectionRef} className="flash-deals-section page-shell">
+    <ScrollReveal as="section" className="flash-deals-section page-shell">
       <div className="flash-deals-header">
         <div className="flash-deals-title-wrap">
           <div className="deals-badge">
@@ -62,12 +63,12 @@ export function FlashDealsSection({ dealProducts }: { dealProducts: Product[] })
         </div>
       </div>
 
-      <div className="product-grid">
+      <div className="product-grid reveal-stagger">
         {dealProducts.slice(0, 4).map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
-    </section>
+    </ScrollReveal>
   );
 }
 
@@ -100,7 +101,7 @@ export function CuratedTabsSection({ allProducts }: { allProducts: Product[] }) 
   }, [activeTab]);
 
   return (
-    <section className="section-block page-shell">
+    <ScrollReveal as="section" className="section-block page-shell">
       <div className="collection-tabs-header">
         <div>
           <span className="eyebrow">CURATED EDIT</span>
@@ -162,6 +163,6 @@ export function CuratedTabsSection({ allProducts }: { allProducts: Product[] }) 
           View All {allProducts.length}+ Products <ArrowRight size={16} />
         </Link>
       </div>
-    </section>
+    </ScrollReveal>
   );
 }

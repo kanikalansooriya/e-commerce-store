@@ -295,6 +295,10 @@
 @layer components;
 
 @layer utilities {
+  .\!visible {
+    visibility: visible !important;
+  }
+
   .visible {
     visibility: visible;
   }

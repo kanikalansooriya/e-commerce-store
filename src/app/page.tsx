@@ -219,7 +219,7 @@ export default function Home() {
             <span>Dedicated concierge assistance</span>
           </div>
         </div>
-      </section>
+      </ScrollReveal>
 
       {/* POPULAR CATEGORIES GRID */}
       <ScrollReveal as="section" className="section-block page-shell">
