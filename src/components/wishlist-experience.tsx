@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Heart } from "lucide-react";
 import { ProductCard } from "@/components/product-card";
+import { ScrollReveal } from "@/components/motion";
 import { useWishlist } from "@/context/wishlist-context";
 
 export function WishlistExperience() {
@@ -41,7 +42,7 @@ export function WishlistExperience() {
       </div>
 
       {items.length ? (
-        <div className="product-grid wishlist-grid">
+        <ScrollReveal className="product-grid wishlist-grid reveal-stagger">
           {items.map((product) => (
             <div key={product.id} className="wishlist-item-card">
               <ProductCard product={product} />
@@ -50,7 +51,7 @@ export function WishlistExperience() {
               </button>
             </div>
           ))}
-        </div>
+        </ScrollReveal>
       ) : (
         <div className="empty-state wishlist-empty">
           <div className="empty-bag-mark"><Heart size={28} fill="currentColor" /></div>

@@ -214,10 +214,10 @@ html[data-color-mode="system"] .add-icon, html[data-color-mode="system"] .produc
   .wordmark-mark { width: 23px; height: 23px; margin-right: 5px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .scroll-reveal, .route-transition, .hero-visual img, .product-card, .category-tile { animation: none !important; opacity: 1 !important; transform: none !important; transition: none !important; }
+  .scroll-reveal, .route-transition, .hero-visual img, .product-card, .category-tile, .cat-card, .promo-card, .cat-card-img, .promo-card-visual img, .button-primary, .button-secondary, .wishlist-toggle, .wishlist-detail-toggle { animation: none !important; opacity: 1 !important; transform: none !important; transition: none !important; }
 }
 html[data-motion="reduced"] .scroll-reveal, html[data-motion="reduced"] .route-transition, html[data-motion="reduced"] .hero-visual img,
-html[data-motion="reduced"] .product-card, html[data-motion="reduced"] .category-tile { animation: none !important; opacity: 1 !important; transform: none !important; transition: none !important; }
+html[data-motion="reduced"] .product-card, html[data-motion="reduced"] .category-tile, html[data-motion="reduced"] .cat-card, html[data-motion="reduced"] .promo-card, html[data-motion="reduced"] .cat-card-img, html[data-motion="reduced"] .promo-card-visual img, html[data-motion="reduced"] .button-primary, html[data-motion="reduced"] .button-secondary, html[data-motion="reduced"] .wishlist-toggle, html[data-motion="reduced"] .wishlist-detail-toggle { animation: none !important; opacity: 1 !important; transform: none !important; transition: none !important; }
 .product-price-wrap { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
 .product-compare-price { color: var(--muted); font-size: 9px; }
 .product-badge.is-sale { top: 40px; }
