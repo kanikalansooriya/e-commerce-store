@@ -2736,769 +2736,52 @@ __turbopack_context__.s([
     ()=>subcategoriesByCategory
 ]);
 const categoryDefinitions = {
-    "Dresses": [
-        "Casual Dresses",
-        "Midi Dresses",
-        "Maxi Dresses",
-        "Evening Dresses",
-        "Summer Dresses"
+    "Clothing": [
+        "Dresses",
+        "Tops & T-Shirts",
+        "Shirts & Blouses",
+        "Jeans & Pants",
+        "Skirts & Shorts",
+        "Sleepwear & Loungewear",
+        "Baby & Kids Clothing"
     ],
-    "Tops & Blouses": [
-        "Blouses",
-        "Shirts",
-        "T-Shirts",
-        "Knit Tops",
-        "Camisoles"
-    ],
-    "Knitwear": [
-        "Cardigans",
-        "Sweaters",
-        "Cashmere Knits",
-        "Vests"
-    ],
-    "Jackets & Coats": [
-        "Blazers",
-        "Trench Coats",
-        "Wool Coats",
-        "Jackets"
-    ],
-    "Pants & Skirts": [
-        "Trousers",
-        "Skirts",
-        "Linen Pants",
-        "Wide-Leg Pants"
-    ],
-    "Shoes & Heels": [
-        "Heels",
-        "Flats",
+    "Shoes": [
+        "Sneakers",
         "Sandals",
-        "Boots",
-        "Sneakers"
+        "Flats",
+        "Heels",
+        "Baby & Kids Shoes"
     ],
-    "Bags & Totes": [
+    "Bags": [
         "Handbags",
         "Shoulder Bags",
+        "Crossbody Bags",
         "Tote Bags",
-        "Crossbody"
+        "Backpacks",
+        "Mini Bags",
+        "Baby & Kids Bags"
     ],
-    "Jewelry & Accessories": [
-        "Earrings",
-        "Necklaces",
-        "Rings",
-        "Bracelets",
-        "Sunglasses"
-    ],
-    "Beauty & Fragrance": [
-        "Perfume",
-        "Skincare",
-        "Bath & Body",
-        "Candles"
-    ],
-    "Sale": [
-        "Flash Deals",
-        "Best Value",
-        "Under $75"
+    "Accessories": [
+        "Jewelry",
+        "Watches",
+        "Sunglasses",
+        "Hair Accessories",
+        "Belts & Wallets",
+        "Hats & Scarves",
+        "Earrings & Necklaces",
+        "Perfumes & Beauty",
+        "Baby & Kids Accessories"
     ]
 };
 const rawProducts = [
-    // --- ELECTRONICS & AUDIO ---
-    {
-        slug: "sony-wh1000xm5-wireless-headphones",
-        name: "Sony WH-1000XM5 Noise-Canceling Headphones",
-        category: "Electronics & Tech",
-        subcategory: "Headphones",
-        brand: "Sony Audio",
-        price: 349,
-        compareAt: 399,
-        description: "Industry-leading active noise canceling with two processors and eight microphones. Exceptional hi-res sound quality with 30-hour battery life and ultra-comfortable lightweight design.",
-        image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1000&q=85",
-        gallery: [
-            "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1200&q=85",
-            "https://images.unsplash.com/photo-1484704849700-f032a568e944?auto=format&fit=crop&w=1200&q=85",
-            "https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=1200&q=85"
-        ],
-        rating: 4.9,
-        reviewCount: 342,
-        stock: 24,
-        availability: "In stock",
-        sku: "SONY-WH-001",
-        tags: [
-            "wireless",
-            "noise-canceling",
-            "audiophile",
-            "travel",
-            "bestseller"
-        ],
-        attributes: {
-            Connectivity: "Bluetooth 5.3",
-            Battery: "30 Hours",
-            Weight: "250g",
-            Color: "Silver / Black"
-        },
-        variants: [
-            {
-                color: "Matte Black",
-                sku: "SONY-WH-001-BLK",
-                stock: 14
-            },
-            {
-                color: "Platinum Silver",
-                sku: "SONY-WH-001-SLV",
-                stock: 10
-            }
-        ],
-        isNew: false,
-        isFeatured: true,
-        isSale: true,
-        createdAt: "2026-09-15"
-    },
-    {
-        slug: "bose-soundlink-revolve-speaker",
-        name: "Bose SoundLink 360° Bluetooth Speaker",
-        category: "Electronics & Tech",
-        subcategory: "Speakers",
-        brand: "Bose",
-        price: 199,
-        compareAt: 249,
-        description: "True 360-degree deep, jaw-dropping sound with uniform coverage. Water and dust-resistant seamless aluminum body with 17-hour battery life.",
-        image: "https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=1000&q=85",
-        gallery: [
-            "https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=1200&q=85",
-            "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=1200&q=85"
-        ],
-        rating: 4.8,
-        reviewCount: 189,
-        stock: 19,
-        availability: "In stock",
-        sku: "BOSE-SPK-002",
-        tags: [
-            "audio",
-            "bluetooth",
-            "portable",
-            "waterproof"
-        ],
-        attributes: {
-            Battery: "17h",
-            Rating: "IP55 Water Resistant",
-            Finish: "Triple Black"
-        },
-        isNew: true,
-        isFeatured: true,
-        isSale: true,
-        createdAt: "2026-09-20"
-    },
-    {
-        slug: "custom-mechanical-wireless-keyboard",
-        name: "Keychron Pro Wireless Mechanical Keyboard",
-        category: "Electronics & Tech",
-        subcategory: "Keyboards",
-        brand: "Keychron",
-        price: 145,
-        compareAt: 175,
-        description: "Hot-swappable mechanical switches, CNC machined aluminum frame, PBT double-shot keycaps, and customizable RGB backlighting for Mac and Windows.",
-        image: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=1000&q=85",
-        gallery: [
-            "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=1200&q=85",
-            "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?auto=format&fit=crop&w=1200&q=85"
-        ],
-        rating: 4.9,
-        reviewCount: 156,
-        stock: 8,
-        availability: "Low stock",
-        sku: "KEY-PRO-003",
-        tags: [
-            "desk-setup",
-            "mechanical",
-            "wireless",
-            "gaming",
-            "minimal"
-        ],
-        attributes: {
-            Switches: "Gateron Brown",
-            Layout: "75% Compact",
-            Connectivity: "BT 5.1 & Type-C"
-        },
-        isNew: true,
-        isFeatured: true,
-        isSale: true,
-        createdAt: "2026-09-28"
-    },
-    {
-        slug: "airpods-pro-spatial-audio-earbuds",
-        name: "Aura Pro Wireless ANC Earbuds",
-        category: "Electronics & Tech",
-        subcategory: "Earbuds",
-        brand: "Aura Sound",
-        price: 179,
-        compareAt: 219,
-        description: "Adaptive Audio seamlessly blends active noise cancellation with transparency mode. Personalized spatial audio places sound all around you with dynamic head tracking.",
-        image: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=1000&q=85",
-        gallery: [
-            "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=1200&q=85",
-            "https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?auto=format&fit=crop&w=1200&q=85"
-        ],
-        rating: 4.8,
-        reviewCount: 220,
-        stock: 35,
-        availability: "In stock",
-        sku: "AURA-EAR-004",
-        tags: [
-            "earbuds",
-            "anc",
-            "spatial-audio",
-            "commute",
-            "fitness"
-        ],
-        attributes: {
-            Charging: "MagSafe & USB-C",
-            Battery: "30h Total",
-            WaterResistance: "IPX4"
-        },
-        isNew: false,
-        isFeatured: true,
-        isSale: true,
-        createdAt: "2026-08-10"
-    },
-    {
-        slug: "magfast-3in1-wireless-charging-station",
-        name: "MagFast 3-in-1 Foldable Charging Stand",
-        category: "Electronics & Tech",
-        subcategory: "Chargers",
-        brand: "Lumina Tech",
-        price: 79,
-        compareAt: 99,
-        description: "Charge your smartphone, smartwatch, and wireless earbuds simultaneously with fast 15W MagSafe magnetic alignment in an ultra-sleek anodized aluminum frame.",
-        image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?auto=format&fit=crop&w=1000&q=85",
-        gallery: [
-            "https://images.unsplash.com/photo-1586953208448-b95a79798f07?auto=format&fit=crop&w=1200&q=85",
-            "https://images.unsplash.com/photo-1622445262464-84b14e3295b6?auto=format&fit=crop&w=1200&q=85"
-        ],
-        rating: 4.7,
-        reviewCount: 94,
-        stock: 45,
-        availability: "In stock",
-        sku: "MAG-CHG-005",
-        tags: [
-            "chargers",
-            "desk-setup",
-            "magsafe",
-            "giftable"
-        ],
-        attributes: {
-            Power: "15W Fast Charge",
-            Material: "Aluminum & Silicone",
-            Color: "Space Gray"
-        },
-        isNew: true,
-        isFeatured: false,
-        isSale: false,
-        createdAt: "2026-09-18"
-    },
-    // --- FOOTWEAR & SNEAKERS ---
-    {
-        slug: "nike-air-retro-racing-sneakers",
-        name: "Nike Air Zoom Heritage Running Sneakers",
-        category: "Shoes",
-        subcategory: "Sneakers",
-        brand: "Nike",
-        price: 155,
-        compareAt: 185,
-        description: "Responsive Zoom Air cushioning paired with lightweight engineered mesh upper for peak comfort on street or track. Bold signature silhouette.",
-        image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1000&q=85",
-        gallery: [
-            "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=85",
-            "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=1200&q=85"
-        ],
-        rating: 4.9,
-        reviewCount: 412,
-        stock: 18,
-        availability: "In stock",
-        sku: "NIKE-ZOOM-006",
-        tags: [
-            "sneakers",
-            "running",
-            "streetwear",
-            "bestseller",
-            "iconic"
-        ],
-        attributes: {
-            Material: "Engineered Mesh & Rubber",
-            Cushioning: "Air Zoom",
-            Sole: "High-traction Waffle"
-        },
-        variants: [
-            {
-                size: "US 8",
-                sku: "NIKE-006-8",
-                stock: 5
-            },
-            {
-                size: "US 9",
-                sku: "NIKE-006-9",
-                stock: 6
-            },
-            {
-                size: "US 10",
-                sku: "NIKE-006-10",
-                stock: 7
-            }
-        ],
-        isNew: false,
-        isFeatured: true,
-        isSale: true,
-        createdAt: "2026-07-22"
-    },
-    {
-        slug: "court-minimalist-leather-sneakers",
-        name: "Common Projects Style Clean Leather Court Shoes",
-        category: "Shoes",
-        subcategory: "Sneakers",
-        brand: "Atelier Footwear",
-        price: 168,
-        compareAt: 210,
-        description: "Handcrafted in Italy using supple nappa calf leather. Clean, unbranded aesthetic that elevates tailored trousers, denim, and weekend wear.",
-        image: "https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=1000&q=85",
-        gallery: [
-            "https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=1200&q=85",
-            "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=1200&q=85"
-        ],
-        rating: 4.8,
-        reviewCount: 135,
-        stock: 12,
-        availability: "In stock",
-        sku: "CRT-SNEAK-007",
-        tags: [
-            "shoes",
-            "minimal",
-            "luxury",
-            "italian-leather",
-            "clean"
-        ],
-        attributes: {
-            Leather: "Full-Grain Italian Calf",
-            Lining: "Soft Calfskin",
-            Outsole: "Margom Rubber"
-        },
-        isNew: true,
-        isFeatured: true,
-        isSale: false,
-        createdAt: "2026-09-02"
-    },
-    {
-        slug: "artisan-suede-chelsea-boots",
-        name: "Artisan Waxed Suede Chelsea Boots",
-        category: "Shoes",
-        subcategory: "Boots",
-        brand: "Field & Ridge",
-        price: 220,
-        compareAt: 275,
-        description: "Constructed with water-resistant waxed snuff suede, elastic side gussets, Goodyear welt, and durable studded rubber soles made to withstand the seasons.",
-        image: "https://images.unsplash.com/photo-1638247025967-b4e38f787b76?auto=format&fit=crop&w=1000&q=85",
-        gallery: [
-            "https://images.unsplash.com/photo-1638247025967-b4e38f787b76?auto=format&fit=crop&w=1200&q=85",
-            "https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=1200&q=85"
-        ],
-        rating: 4.9,
-        reviewCount: 88,
-        stock: 7,
-        availability: "Low stock",
-        sku: "CHE-BOOT-008",
-        tags: [
-            "boots",
-            "chelsea",
-            "suede",
-            "winter",
-            "durable"
-        ],
-        attributes: {
-            Welt: "Goodyear Welted",
-            Leather: "Waxed Suede",
-            Sole: "Dainite Rubber"
-        },
-        isNew: false,
-        isFeatured: true,
-        isSale: true,
-        createdAt: "2026-08-14"
-    },
-    {
-        slug: "classic-penny-loafers-cordovan",
-        name: "Heritage Italian Leather Penny Loafers",
-        category: "Shoes",
-        subcategory: "Loafers",
-        brand: "Mason & Co.",
-        price: 185,
-        description: "Timeless slip-on dress shoes crafted in polished burgundy box calfskin. Hand-stitched apron toe and stacked leather heel with rubber tap.",
-        image: "https://images.unsplash.com/photo-1533867617858-e7b97e060509?auto=format&fit=crop&w=1000&q=85",
-        gallery: [
-            "https://images.unsplash.com/photo-1533867617858-e7b97e060509?auto=format&fit=crop&w=1200&q=85",
-            "https://images.unsplash.com/photo-1515347619252-60a4bf4fff4f?auto=format&fit=crop&w=1200&q=85"
-        ],
-        rating: 4.7,
-        reviewCount: 62,
-        stock: 14,
-        availability: "In stock",
-        sku: "PNY-LOAF-009",
-        tags: [
-            "loafers",
-            "formal",
-            "classic",
-            "leather"
-        ],
-        attributes: {
-            Upper: "Box Calf Leather",
-            Lining: "Breathable Leather",
-            Fit: "True to size"
-        },
-        isNew: false,
-        isFeatured: false,
-        isSale: false,
-        createdAt: "2026-06-11"
-    },
-    // --- LUXURY WATCHES & JEWELRY ---
-    {
-        slug: "chronos-minimalist-sapphire-watch",
-        name: "Chronos Bauhaus Minimalist Sapphire Watch",
-        category: "Jewelry & Watches",
-        subcategory: "Chronograph",
-        brand: "Chronos Horology",
-        price: 265,
-        compareAt: 320,
-        description: "Surgical grade 316L stainless steel case, scratch-resistant sapphire crystal glass, Japanese precision quartz movement, and vegetable-tanned Italian leather band.",
-        image: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=1000&q=85",
-        gallery: [
-            "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=1200&q=85",
-            "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1200&q=85"
-        ],
-        rating: 4.9,
-        reviewCount: 178,
-        stock: 9,
-        availability: "Low stock",
-        sku: "CHR-WATCH-010",
-        tags: [
-            "watch",
-            "minimalist",
-            "sapphire",
-            "luxury",
-            "gift"
-        ],
-        attributes: {
-            Movement: "Japanese Miyota Quartz",
-            Case: "39mm 316L Steel",
-            WaterResistance: "5 ATM"
-        },
-        isNew: true,
-        isFeatured: true,
-        isSale: true,
-        createdAt: "2026-09-29"
-    },
-    {
-        slug: "automatic-diver-steel-watch",
-        name: "Seafarer 200M Automatic Diver Watch",
-        category: "Jewelry & Watches",
-        subcategory: "Watches",
-        brand: "Northline Marine",
-        price: 390,
-        compareAt: 480,
-        description: "High-beat automatic self-winding movement with 41-hour power reserve. Ceramic unidirectional rotating bezel, Super-LumiNova indices, and 200m water resistance.",
-        image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1000&q=85",
-        gallery: [
-            "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1200&q=85",
-            "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=1200&q=85"
-        ],
-        rating: 5.0,
-        reviewCount: 97,
-        stock: 5,
-        availability: "Low stock",
-        sku: "DIV-WATCH-011",
-        tags: [
-            "watch",
-            "diver",
-            "automatic",
-            "luxury",
-            "steel"
-        ],
-        attributes: {
-            Movement: "NH35A Automatic",
-            Glass: "Double-domed Sapphire",
-            Depth: "200m / 20 ATM"
-        },
-        isNew: true,
-        isFeatured: true,
-        isSale: true,
-        createdAt: "2026-09-12"
-    },
-    {
-        slug: "18k-gold-herringbone-chain-necklace",
-        name: "18K Gold Vermeil Herringbone Snake Chain",
-        category: "Jewelry & Watches",
-        subcategory: "Necklaces",
-        brand: "Aura Fine Jewelry",
-        price: 110,
-        compareAt: 140,
-        description: "Liquid gold shine with flat interlocking links that sit flush against the collarbone. Heavy 18k gold layered over 925 solid sterling silver for durable shine.",
-        image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1000&q=85",
-        gallery: [
-            "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1200&q=85",
-            "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1200&q=85"
-        ],
-        rating: 4.8,
-        reviewCount: 142,
-        stock: 22,
-        availability: "In stock",
-        sku: "JWL-GOLD-012",
-        tags: [
-            "jewelry",
-            "necklace",
-            "gold",
-            "layering",
-            "gift"
-        ],
-        attributes: {
-            Length: "16-18 inch adjustable",
-            Thickness: "3mm",
-            BaseMetal: "925 Sterling Silver"
-        },
-        isNew: true,
-        isFeatured: false,
-        isSale: true,
-        createdAt: "2026-08-30"
-    },
-    {
-        slug: "solitaire-diamond-band-ring",
-        name: "Pavé Band Solitaire Moissanite Ring",
-        category: "Jewelry & Watches",
-        subcategory: "Rings",
-        brand: "Aura Fine Jewelry",
-        price: 215,
-        description: "Brilliant 1.5-carat round cut ethical moissanite center stone flanked by delicate micro-pavé accents on a comfort-fit 14k white gold plated band.",
-        image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1000&q=85",
-        gallery: [
-            "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1200&q=85",
-            "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=1200&q=85"
-        ],
-        rating: 4.9,
-        reviewCount: 81,
-        stock: 11,
-        availability: "In stock",
-        sku: "JWL-RING-013",
-        tags: [
-            "ring",
-            "solitaire",
-            "luxury",
-            "gift"
-        ],
-        attributes: {
-            Stone: "VVS1 D-Color Moissanite",
-            Band: "14K White Gold Plated Silver",
-            Sizes: "5, 6, 7, 8"
-        },
-        isNew: false,
-        isFeatured: false,
-        isSale: false,
-        createdAt: "2026-05-19"
-    },
-    // --- BAGS & CARRY ---
-    {
-        slug: "heritage-full-grain-leather-duffel",
-        name: "Heritage Full-Grain Leather Weekender Duffel",
-        category: "Bags & Accessories",
-        subcategory: "Duffels",
-        brand: "Field House Goods",
-        price: 245,
-        compareAt: 295,
-        description: "Built from rich pull-up oiled cowhide leather that develops a magnificent patina over time. Includes separate ventilated shoe compartment and padded shoulder strap.",
-        image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=1000&q=85",
-        gallery: [
-            "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=1200&q=85",
-            "https://images.unsplash.com/photo-1622560480654-d96214fdc887?auto=format&fit=crop&w=1200&q=85"
-        ],
-        rating: 4.9,
-        reviewCount: 164,
-        stock: 14,
-        availability: "In stock",
-        sku: "BAG-DUF-014",
-        tags: [
-            "bags",
-            "travel",
-            "leather",
-            "duffel",
-            "weekend"
-        ],
-        attributes: {
-            Capacity: "45 Liters",
-            Hardware: "Solid Antique Brass",
-            Lining: "Waterproof Cotton Twill"
-        },
-        isNew: false,
-        isFeatured: true,
-        isSale: true,
-        createdAt: "2026-07-04"
-    },
-    {
-        slug: "commuter-urban-tech-backpack",
-        name: "Aura Transit Waterproof Commuter Backpack",
-        category: "Bags & Accessories",
-        subcategory: "Backpacks",
-        brand: "Aura Studio",
-        price: 135,
-        compareAt: 165,
-        description: "Weatherproof matte polyurethane-coated shell with dedicated 16-inch fleece-lined laptop sleeve, quick-access passport pocket, and ergonomic airflow back panel.",
-        image: "https://images.unsplash.com/photo-1546938576-6e6a64f317cc?auto=format&fit=crop&w=1000&q=85",
-        gallery: [
-            "https://images.unsplash.com/photo-1546938576-6e6a64f317cc?auto=format&fit=crop&w=1200&q=85",
-            "https://images.unsplash.com/photo-1581605405669-fcdf81165afa?auto=format&fit=crop&w=1200&q=85"
-        ],
-        rating: 4.8,
-        reviewCount: 210,
-        stock: 28,
-        availability: "In stock",
-        sku: "BAG-BPK-015",
-        tags: [
-            "backpack",
-            "commute",
-            "tech",
-            "laptop",
-            "waterproof"
-        ],
-        attributes: {
-            Volume: "22L",
-            LaptopFit: "Up to 16-inch MacBook Pro",
-            Zippers: "YKK Aquaguard"
-        },
-        isNew: true,
-        isFeatured: true,
-        isSale: true,
-        createdAt: "2026-09-14"
-    },
-    {
-        slug: "heavyweight-canvas-utility-tote",
-        name: "Everyday Heavyweight 16oz Canvas Tote",
-        category: "Bags & Accessories",
-        subcategory: "Tote Bags",
-        brand: "Harbor & Coast",
-        price: 48,
-        compareAt: 60,
-        description: "Sturdy unbleached 16oz cotton canvas with reinforced top handles, internal zip security pouch, and brass key clip. Perfect for market runs or daily carry.",
-        image: "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1000&q=85",
-        gallery: [
-            "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1200&q=85",
-            "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=1200&q=85"
-        ],
-        rating: 4.7,
-        reviewCount: 95,
-        stock: 50,
-        availability: "In stock",
-        sku: "BAG-TOT-016",
-        tags: [
-            "tote",
-            "canvas",
-            "everyday",
-            "market",
-            "organic"
-        ],
-        attributes: {
-            Material: "100% Organic Cotton Canvas",
-            Dimensions: "15 x 16 x 5 inches"
-        },
-        isNew: false,
-        isFeatured: false,
-        isSale: true,
-        createdAt: "2026-08-01"
-    },
-    {
-        slug: "italian-leather-saddle-crossbody-bag",
-        name: "Florence Italian Leather Crossbody Saddle Bag",
-        category: "Bags & Accessories",
-        subcategory: "Crossbody",
-        brand: "Atelier Maison",
-        price: 185,
-        compareAt: 225,
-        description: "Curved saddle silhouette with magnetic flap closure, interior card slots, and an adjustable wide leather shoulder strap. Lined in luxe micro-suede.",
-        image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1000&q=85",
-        gallery: [
-            "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1200&q=85",
-            "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?auto=format&fit=crop&w=1200&q=85"
-        ],
-        rating: 4.9,
-        reviewCount: 112,
-        stock: 12,
-        availability: "In stock",
-        sku: "BAG-CRB-017",
-        tags: [
-            "crossbody",
-            "saddle-bag",
-            "leather",
-            "luxury",
-            "women"
-        ],
-        attributes: {
-            Leather: "Smooth Vegetable-Tanned Cowhide",
-            StrapDrop: "18-22 inches"
-        },
-        isNew: true,
-        isFeatured: true,
-        isSale: false,
-        createdAt: "2026-09-22"
-    },
-    // --- WOMEN'S FASHION ---
-    {
-        slug: "pure-cashmere-ribbed-cardigan",
-        name: "Pure Mongolian Cashmere Relaxed Cardigan",
-        category: "Knitwear",
-        subcategory: "Cardigans",
-        brand: "Atelier Maison",
-        price: 180,
-        compareAt: 220,
-        description: "Spun from ultra-soft 100% Grade-A Mongolian cashmere. Dropped shoulders, ribbed cuffs, and horn buttons create an effortlessly chic, cozy drape.",
-        image: "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=1000&q=85",
-        gallery: [
-            "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=1200&q=85",
-            "https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=1200&q=85"
-        ],
-        rating: 4.9,
-        reviewCount: 88,
-        stock: 15,
-        availability: "In stock",
-        sku: "WMN-CSH-018",
-        tags: [
-            "cashmere",
-            "cardigan",
-            "knitwear",
-            "luxury",
-            "bestseller"
-        ],
-        attributes: {
-            Yarn: "100% Cashmere 2-ply",
-            Fit: "Relaxed / Oversized",
-            Care: "Hand wash or dry clean"
-        },
-        variants: [
-            {
-                size: "S",
-                sku: "WMN-CSH-018-S",
-                stock: 5
-            },
-            {
-                size: "M",
-                sku: "WMN-CSH-018-M",
-                stock: 6
-            },
-            {
-                size: "L",
-                sku: "WMN-CSH-018-L",
-                stock: 4
-            }
-        ],
-        isNew: true,
-        isFeatured: true,
-        isSale: true,
-        createdAt: "2026-09-17"
-    },
+    // =========================================================================
+    // 1. CLOTHING (Dresses, Tops, Blouses, Pants, Skirts, Loungewear, Kids)
+    // =========================================================================
     {
         slug: "silk-charmeuse-midi-slip-dress",
         name: "Silk Charmeuse Bias Cut Midi Dress",
-        category: "Dresses",
-        subcategory: "Midi Dresses",
+        category: "Clothing",
+        subcategory: "Dresses",
         brand: "Aura Studio",
         price: 145,
         compareAt: 175,
@@ -3508,429 +2791,564 @@ const rawProducts = [
             "https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=1200&q=85",
             "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=1200&q=85"
         ],
-        rating: 4.8,
-        reviewCount: 65,
-        stock: 10,
+        rating: 4.9,
+        reviewCount: 94,
+        stock: 14,
         availability: "In stock",
-        sku: "WMN-SLK-019",
+        sku: "CLO-DRS-001",
         tags: [
             "dress",
             "silk",
             "evening",
             "minimalist",
-            "summer"
+            "summer",
+            "bestseller"
         ],
         attributes: {
             Fabric: "100% Mulberry Silk",
             Cut: "Bias Cut",
-            Length: "Midi (below knee)"
+            Length: "Midi"
         },
         isNew: false,
         isFeatured: true,
         isSale: true,
-        createdAt: "2026-07-19"
+        createdAt: "2026-08-15"
     },
     {
-        slug: "oversized-wool-blend-trench-blazer",
-        name: "Oversized Double-Breasted Wool Blazer",
-        category: "Jackets & Coats",
-        subcategory: "Blazers",
+        slug: "floral-linen-summer-sundress",
+        name: "Tiered Linen Floral Summer Sundress",
+        category: "Clothing",
+        subcategory: "Dresses",
+        brand: "Field House",
+        price: 120,
+        compareAt: 145,
+        description: "Lightweight European flax linen featuring a delicate vintage floral print, tiered ruffle hem, and adjustable tie shoulder ribbons.",
+        image: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1200&q=85",
+            "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.8,
+        reviewCount: 68,
+        stock: 18,
+        availability: "In stock",
+        sku: "CLO-DRS-002",
+        tags: [
+            "dress",
+            "linen",
+            "floral",
+            "summer",
+            "vacation"
+        ],
+        attributes: {
+            Material: "100% European Flax Linen",
+            Lining: "Organic Cotton Voile"
+        },
+        isNew: true,
+        isFeatured: true,
+        isSale: true,
+        createdAt: "2026-09-12"
+    },
+    {
+        slug: "ribbed-knit-column-midi-dress",
+        name: "Sculptural Ribbed Knit Column Dress",
+        category: "Clothing",
+        subcategory: "Dresses",
         brand: "Atelier Maison",
-        price: 195,
-        compareAt: 240,
-        description: "Structured shoulders with a modern boxy silhouette. Made from recycled Italian wool blend with peak lapels, flap pockets, and horn button detail.",
-        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=85",
-        gallery: [
-            "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=85",
-            "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=85"
-        ],
-        rating: 4.9,
-        reviewCount: 104,
-        stock: 8,
-        availability: "Low stock",
-        sku: "WMN-BLZ-020",
-        tags: [
-            "blazer",
-            "outerwear",
-            "wool",
-            "tailored",
-            "office"
-        ],
-        attributes: {
-            Material: "70% Wool, 30% Polyamide",
-            Closure: "Double-breasted"
-        },
-        isNew: true,
-        isFeatured: true,
-        isSale: false,
-        createdAt: "2026-09-24"
-    },
-    {
-        slug: "organic-cotton-weekend-blouse",
-        name: "Crisp Organic Cotton Poplin Button-Down",
-        category: "Tops & Blouses",
-        subcategory: "Shirts",
-        brand: "Field House",
-        price: 78,
-        description: "Lightweight organic cotton poplin with a slightly relaxed boyfriend fit. Features a curved hem, mother-of-pearl buttons, and point collar.",
-        image: "https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=1000&q=85",
-        gallery: [
-            "https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=1200&q=85",
-            "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1200&q=85"
-        ],
-        rating: 4.7,
-        reviewCount: 47,
-        stock: 20,
-        availability: "In stock",
-        sku: "WMN-BLS-021",
-        tags: [
-            "cotton",
-            "shirt",
-            "casual",
-            "sustainable"
-        ],
-        attributes: {
-            Fabric: "GOTS Certified 100% Organic Cotton",
-            Pattern: "Solid Crisp White"
-        },
-        isNew: false,
-        isFeatured: false,
-        isSale: false,
-        createdAt: "2026-06-25"
-    },
-    // --- WOMEN'S COATS & ESSENTIALS ---
-    {
-        slug: "wool-cashmere-overcoat",
-        name: "Women's Tailored Wool & Cashmere Overcoat",
-        category: "Jackets & Coats",
-        subcategory: "Wool Coats",
-        brand: "Ridge & Co.",
-        price: 285,
-        compareAt: 350,
-        description: "An effortlessly elegant winter staple crafted with 90% Italian Melton wool and 10% cashmere. Features a tailored feminine drape, peak lapels, and silky satin lining.",
-        image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=1000&q=85",
-        gallery: [
-            "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=1200&q=85",
-            "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=85"
-        ],
-        rating: 4.9,
-        reviewCount: 122,
-        stock: 9,
-        availability: "Low stock",
-        sku: "WMN-COAT-022",
-        tags: [
-            "coat",
-            "winter",
-            "tailored",
-            "wool",
-            "women"
-        ],
-        attributes: {
-            Material: "Melton Wool & Cashmere",
-            Cut: "Feminine Tailored Fit",
-            Length: "Knee-length"
-        },
-        variants: [
-            {
-                size: "XS",
-                sku: "WMN-COAT-022-XS",
-                stock: 3
-            },
-            {
-                size: "S",
-                sku: "WMN-COAT-022-S",
-                stock: 4
-            },
-            {
-                size: "M",
-                sku: "WMN-COAT-022-M",
-                stock: 2
-            }
-        ],
-        isNew: true,
-        isFeatured: true,
-        isSale: true,
-        createdAt: "2026-09-08"
-    },
-    {
-        slug: "classic-oxford-cotton-shirt",
-        name: "Relaxed Cotton Poplin Boyfriend Shirt",
-        category: "Tops & Blouses",
-        subcategory: "Shirts",
-        brand: "Field House",
-        price: 68,
-        compareAt: 85,
-        description: "An effortless essential crafted from crisp organic cotton poplin. Designed with dropped shoulders, shell buttons, and a flattering relaxed drape.",
-        image: "https://images.unsplash.com/photo-1598554747436-c9293d6a588f?auto=format&fit=crop&w=1000&q=85",
-        gallery: [
-            "https://images.unsplash.com/photo-1598554747436-c9293d6a588f?auto=format&fit=crop&w=1200&q=85",
-            "https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=1200&q=85"
-        ],
-        rating: 4.8,
-        reviewCount: 230,
-        stock: 40,
-        availability: "In stock",
-        sku: "WMN-SHT-023",
-        tags: [
-            "shirt",
-            "cotton",
-            "casual",
-            "relaxed",
-            "women"
-        ],
-        attributes: {
-            Fabric: "100% Organic Cotton Poplin",
-            Collar: "Classic Point Collar",
-            Fit: "Relaxed Drape"
-        },
-        isNew: false,
-        isFeatured: true,
-        isSale: true,
-        createdAt: "2026-05-18"
-    },
-    {
-        slug: "heavyweight-boxy-cotton-tee",
-        name: "Organic Pima Cotton Relaxed Crew Tee",
-        category: "Tops & Blouses",
-        subcategory: "T-Shirts",
-        brand: "Aura Essentials",
-        price: 36,
-        description: "Buttery soft organic Pima cotton with a relaxed silhouette and clean bound collar. The ultimate everyday wardrobe base layer.",
-        image: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1000&q=85",
-        gallery: [
-            "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1200&q=85",
-            "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=85"
-        ],
-        rating: 4.8,
-        reviewCount: 310,
-        stock: 65,
-        availability: "In stock",
-        sku: "WMN-TEE-024",
-        tags: [
-            "tshirt",
-            "pima-cotton",
-            "minimal",
-            "women",
-            "everyday"
-        ],
-        attributes: {
-            Material: "100% Peruvian Pima Cotton",
-            Collar: "Fine Ribbed Crewneck",
-            Fit: "Relaxed"
-        },
-        isNew: false,
-        isFeatured: false,
-        isSale: false,
-        createdAt: "2026-06-02"
-    },
-    {
-        slug: "relaxed-linen-blazer",
-        name: "Oversized Washed Linen Summer Blazer",
-        category: "Jackets & Coats",
-        subcategory: "Blazers",
-        brand: "Ridge & Co.",
-        price: 175,
-        compareAt: 215,
-        description: "Breathable European flax linen tailored with relaxed shoulders, patch pockets, and a featherweight drape for warm days and layered evenings.",
+        price: 135,
+        description: "Form-fitting compact rib knit with a high boat neckline, clean sleeveless shoulders, and side walking slits for effortless movement.",
         image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=85",
         gallery: [
             "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=85",
             "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=85"
         ],
         rating: 4.7,
-        reviewCount: 78,
-        stock: 12,
+        reviewCount: 52,
+        stock: 22,
         availability: "In stock",
-        sku: "WMN-BLZ-025",
+        sku: "CLO-DRS-003",
         tags: [
-            "linen",
-            "blazer",
-            "summer",
-            "women",
-            "chic"
+            "dress",
+            "knit",
+            "ribbed",
+            "autumn",
+            "elegant"
         ],
         attributes: {
-            Composition: "100% Washed European Linen",
-            Lining: "Unlined Breathable Finish"
+            Composition: "70% Viscose, 30% Stretch Nylon",
+            Fit: "Body-skimming"
         },
         isNew: true,
         isFeatured: false,
-        isSale: true,
-        createdAt: "2026-09-01"
-    },
-    // --- HOME & LIVING ---
-    {
-        slug: "sculptural-matte-ceramic-vase",
-        name: "Nordic Minimalist Matte Ceramic Vase Set",
-        category: "Home & Living",
-        subcategory: "Ceramics",
-        brand: "Hearth & Form",
-        price: 64,
-        compareAt: 80,
-        description: "Pair of hand-thrown stoneware vessels with a soft, tactile chalk matte glaze. Display with dried botanicals or let them stand as sculptural art.",
-        image: "https://images.unsplash.com/photo-1578500494198-246f612d3b3d?auto=format&fit=crop&w=1000&q=85",
-        gallery: [
-            "https://images.unsplash.com/photo-1578500494198-246f612d3b3d?auto=format&fit=crop&w=1200&q=85",
-            "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=1200&q=85"
-        ],
-        rating: 4.9,
-        reviewCount: 145,
-        stock: 25,
-        availability: "In stock",
-        sku: "HOM-VAS-026",
-        tags: [
-            "vase",
-            "ceramic",
-            "decor",
-            "home",
-            "scandinavian"
-        ],
-        attributes: {
-            Material: "Natural Clay Stoneware",
-            Finish: "Matte Sand",
-            Origin: "Portugal"
-        },
-        isNew: false,
-        isFeatured: true,
-        isSale: true,
-        createdAt: "2026-08-11"
-    },
-    {
-        slug: "arc-minimalist-brass-table-lamp",
-        name: "Arc Mid-Century Brass & Opal Glass Table Lamp",
-        category: "Home & Living",
-        subcategory: "Lighting",
-        brand: "Hearth & Form",
-        price: 139,
-        compareAt: 179,
-        description: "Solid spun brass base holding a hand-blown frosted opal glass sphere. Emits a warm, diffused ambient glow with an inline brass rotary dimmer.",
-        image: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=1000&q=85",
-        gallery: [
-            "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=1200&q=85",
-            "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=1200&q=85"
-        ],
-        rating: 4.9,
-        reviewCount: 92,
-        stock: 14,
-        availability: "In stock",
-        sku: "HOM-LMP-027",
-        tags: [
-            "lamp",
-            "lighting",
-            "brass",
-            "mid-century",
-            "cozy"
-        ],
-        attributes: {
-            Bulb: "G9 LED Included",
-            Switch: "Smooth Rotary Dimmer",
-            Cord: "Braided Fabric"
-        },
-        isNew: true,
-        isFeatured: true,
-        isSale: true,
-        createdAt: "2026-09-21"
-    },
-    {
-        slug: "french-washed-linen-duvet-throw",
-        name: "French Washed Organic Linen Bed Blanket",
-        category: "Home & Living",
-        subcategory: "Bedding & Throws",
-        brand: "Hearth & Form",
-        price: 119,
-        compareAt: 145,
-        description: "Pre-washed for signature lived-in texture and breathable thermoregulation. Keeps you cool in summer and cozy in winter.",
-        image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=85",
-        gallery: [
-            "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=85",
-            "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=85"
-        ],
-        rating: 4.8,
-        reviewCount: 68,
-        stock: 18,
-        availability: "In stock",
-        sku: "HOM-LIN-028",
-        tags: [
-            "linen",
-            "bedding",
-            "throw",
-            "cozy",
-            "home"
-        ],
-        attributes: {
-            Fabric: "100% French Flax",
-            Weight: "175 GSM",
-            Dimensions: "90 x 90 inches"
-        },
-        isNew: false,
-        isFeatured: true,
         isSale: false,
+        createdAt: "2026-09-22"
+    },
+    {
+        slug: "pleated-chiffon-evening-maxi-dress",
+        name: "Pleated Chiffon Evening Maxi Dress",
+        category: "Clothing",
+        subcategory: "Dresses",
+        brand: "Aura Studio",
+        price: 195,
+        compareAt: 240,
+        description: "Cascading accordian pleats with a plunging halter neckline and cinched sash waist. Glides effortlessly across black-tie and wedding celebrations.",
+        image: "https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.9,
+        reviewCount: 41,
+        stock: 8,
+        availability: "Low stock",
+        sku: "CLO-DRS-004",
+        tags: [
+            "dress",
+            "maxi",
+            "evening",
+            "pleated",
+            "formal"
+        ],
+        attributes: {
+            Material: "Recycled Poly Chiffon",
+            Lining: "Silk Blend"
+        },
+        isNew: false,
+        isFeatured: true,
+        isSale: true,
         createdAt: "2026-07-28"
     },
     {
-        slug: "handcrafted-ceramic-pour-over-coffee-set",
-        name: "Barista Pour-Over Glass & Ceramic Dripper Set",
-        category: "Home & Living",
-        subcategory: "Coffee & Dining",
-        brand: "Orchard Lane",
-        price: 54,
-        description: "Thermal shock-resistant borosilicate glass carafe with a precision grooved ceramic dripper for the cleanest, most aromatic morning brew.",
-        image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=1000&q=85",
+        slug: "organic-pima-crew-tee",
+        name: "Organic Pima Cotton Relaxed Crewneck Tee",
+        category: "Clothing",
+        subcategory: "Tops & T-Shirts",
+        brand: "Field House",
+        price: 38,
+        description: "Buttery soft Peruvian Pima cotton with a relaxed drop-shoulder cut, bound collar, and pre-washed finish that holds its shape wash after wash.",
+        image: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1000&q=85",
         gallery: [
-            "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=1200&q=85",
-            "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=85"
+            "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1200&q=85",
+            "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1200&q=85"
         ],
         rating: 4.8,
-        reviewCount: 110,
-        stock: 22,
+        reviewCount: 165,
+        stock: 45,
         availability: "In stock",
-        sku: "HOM-COF-029",
+        sku: "CLO-TOP-005",
         tags: [
-            "coffee",
-            "pour-over",
-            "kitchen",
-            "giftable"
+            "tshirt",
+            "cotton",
+            "pima",
+            "basics",
+            "essential"
         ],
         attributes: {
-            Capacity: "600ml (2-4 cups)",
-            Material: "Borosilicate Glass & Stoneware"
+            Material: "100% Long-Staple Pima Cotton",
+            Fit: "Relaxed Boxy"
         },
         isNew: false,
         isFeatured: false,
         isSale: false,
-        createdAt: "2026-05-14"
+        createdAt: "2026-06-10"
     },
-    // --- BEAUTY & SELF-CARE ---
     {
-        slug: "botanical-hyaluronic-face-serum",
-        name: "Botanica Hydra-Plump Multi-Hyaluronic Serum",
-        category: "Beauty & Self-care",
-        subcategory: "Skincare",
-        brand: "Botanica Organics",
-        price: 49,
-        compareAt: 62,
-        description: "Five molecular weights of hyaluronic acid infused with niacinamide, snow mushroom extract, and marine bio-ferments for deeply quenched, dewy skin.",
-        image: "https://images.unsplash.com/photo-1608248597359-54070a25698b?auto=format&fit=crop&w=1000&q=85",
+        slug: "ribbed-scoop-neck-tank",
+        name: "Fine Ribbed Scoop-Neck Cotton Tank",
+        category: "Clothing",
+        subcategory: "Tops & T-Shirts",
+        brand: "Aura Essentials",
+        price: 32,
+        description: "Classic 90s-inspired scoop neckline in a stretchy micro-rib cotton. Seamless armholes and clean hems make it the perfect base layer.",
+        image: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1000&q=85",
         gallery: [
-            "https://images.unsplash.com/photo-1608248597359-54070a25698b?auto=format&fit=crop&w=1200&q=85",
-            "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=1200&q=85"
+            "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.7,
+        reviewCount: 78,
+        stock: 36,
+        availability: "In stock",
+        sku: "CLO-TOP-006",
+        tags: [
+            "tank",
+            "ribbed",
+            "summer",
+            "layering"
+        ],
+        attributes: {
+            Material: "95% Cotton, 5% Spandex",
+            Care: "Machine wash cold"
+        },
+        isNew: true,
+        isFeatured: false,
+        isSale: false,
+        createdAt: "2026-09-05"
+    },
+    {
+        slug: "breton-striped-boatneck-top",
+        name: "Heavyweight Breton Striped Long Sleeve Top",
+        category: "Clothing",
+        subcategory: "Tops & T-Shirts",
+        brand: "Field House",
+        price: 58,
+        compareAt: 72,
+        description: "Inspired by timeless nautical French tailoring. Crafted from a structured 260GSM combed cotton jersey with a flattering wide boat neckline.",
+        image: "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1200&q=85"
         ],
         rating: 4.9,
-        reviewCount: 215,
-        stock: 38,
+        reviewCount: 112,
+        stock: 24,
         availability: "In stock",
-        sku: "BTY-SRM-030",
+        sku: "CLO-TOP-007",
         tags: [
-            "skincare",
-            "serum",
-            "clean-beauty",
-            "anti-aging",
+            "striped",
+            "breton",
+            "cotton",
+            "nautical",
+            "classic"
+        ],
+        attributes: {
+            Weight: "260 GSM Heavyweight Jersey",
+            Pattern: "Navy & Cream Stripe"
+        },
+        isNew: false,
+        isFeatured: true,
+        isSale: true,
+        createdAt: "2026-07-14"
+    },
+    {
+        slug: "relaxed-poplin-boyfriend-shirt",
+        name: "Relaxed Cotton Poplin Boyfriend Shirt",
+        category: "Clothing",
+        subcategory: "Shirts & Blouses",
+        brand: "Field House",
+        price: 78,
+        compareAt: 95,
+        description: "Crisp organic cotton poplin tailored with dropped shoulders, real mother-of-pearl buttons, and a curved high-low shirttail hem.",
+        image: "https://images.unsplash.com/photo-1598554747436-c9293d6a588f?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1598554747436-c9293d6a588f?auto=format&fit=crop&w=1200&q=85",
+            "https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.8,
+        reviewCount: 140,
+        stock: 30,
+        availability: "In stock",
+        sku: "CLO-SHT-008",
+        tags: [
+            "shirt",
+            "poplin",
+            "cotton",
+            "casual",
+            "workwear"
+        ],
+        attributes: {
+            Material: "100% GOTS Certified Cotton",
+            Collar: "Spread Collar"
+        },
+        isNew: false,
+        isFeatured: true,
+        isSale: true,
+        createdAt: "2026-08-01"
+    },
+    {
+        slug: "mulberry-silk-button-blouse",
+        name: "Pure Mulberry Silk Button-Up Blouse",
+        category: "Clothing",
+        subcategory: "Shirts & Blouses",
+        brand: "Atelier Maison",
+        price: 130,
+        compareAt: 160,
+        description: "Liquid-smooth 19mm Mulberry silk with a matte sheen. Classic tailored cuffs, pointed collar, and a luminous, flattering drape.",
+        image: "https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.9,
+        reviewCount: 89,
+        stock: 12,
+        availability: "In stock",
+        sku: "CLO-SHT-009",
+        tags: [
+            "blouse",
+            "silk",
+            "luxury",
+            "workwear",
+            "timeless"
+        ],
+        attributes: {
+            Material: "100% Grade 6A Mulberry Silk",
+            Weight: "19mm Momme"
+        },
+        isNew: true,
+        isFeatured: true,
+        isSale: true,
+        createdAt: "2026-09-18"
+    },
+    {
+        slug: "breezy-linen-tie-front-blouse",
+        name: "Breezy French Linen Tie-Front Blouse",
+        category: "Clothing",
+        subcategory: "Shirts & Blouses",
+        brand: "Field House",
+        price: 68,
+        description: "Breathable pure washed linen with an airy silhouette, deep V-front with self-tie closure, and soft gathered blouson sleeves.",
+        image: "https://images.unsplash.com/photo-1551803091-e20673f15770?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1551803091-e20673f15770?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.7,
+        reviewCount: 46,
+        stock: 19,
+        availability: "In stock",
+        sku: "CLO-SHT-010",
+        tags: [
+            "linen",
+            "blouse",
+            "summer",
+            "breezy",
+            "neutral"
+        ],
+        attributes: {
+            Material: "100% French Washed Linen",
+            Fit: "Relaxed"
+        },
+        isNew: false,
+        isFeatured: false,
+        isSale: false,
+        createdAt: "2026-06-20"
+    },
+    {
+        slug: "high-rise-wide-leg-linen-trousers",
+        name: "High-Rise Wide-Leg Tailored Linen Trousers",
+        category: "Clothing",
+        subcategory: "Jeans & Pants",
+        brand: "Atelier Maison",
+        price: 110,
+        compareAt: 135,
+        description: "Tailored front pleats, concealed zip fly, and an elongating wide-leg silhouette cut from medium-weight non-sheer linen.",
+        image: "https://images.unsplash.com/photo-1509551388413-e18d0ac5d495?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1509551388413-e18d0ac5d495?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.8,
+        reviewCount: 97,
+        stock: 16,
+        availability: "In stock",
+        sku: "CLO-PNT-011",
+        tags: [
+            "trousers",
+            "linen",
+            "wide-leg",
+            "tailored",
+            "summer"
+        ],
+        attributes: {
+            Rise: "High 12.5 inch",
+            Inseam: "31 inch",
+            Material: "100% Linen"
+        },
+        isNew: true,
+        isFeatured: true,
+        isSale: true,
+        createdAt: "2026-09-02"
+    },
+    {
+        slug: "vintage-straight-leg-denim-jeans",
+        name: "Classic Straight-Leg Vintage Wash Denim",
+        category: "Clothing",
+        subcategory: "Jeans & Pants",
+        brand: "Field House",
+        price: 98,
+        description: "Constructed from 13oz rigid organic cotton denim with a gentle stone wash. Sits high at the natural waist with a straight ankle crop.",
+        image: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.9,
+        reviewCount: 184,
+        stock: 28,
+        availability: "In stock",
+        sku: "CLO-PNT-012",
+        tags: [
+            "jeans",
+            "denim",
+            "vintage",
+            "straight-leg",
             "bestseller"
         ],
         attributes: {
-            Volume: "30ml / 1.0 fl oz",
-            SkinType: "All skin types",
-            Clean: "Cruelty-Free, Vegan, Fragrance-Free"
+            Denim: "100% Organic Rigid Cotton 13oz",
+            Rise: "High-Rise"
+        },
+        isNew: false,
+        isFeatured: true,
+        isSale: false,
+        createdAt: "2026-05-30"
+    },
+    {
+        slug: "pleated-wool-flannel-trousers",
+        name: "Pleated Wool Flannel Relaxed Trousers",
+        category: "Clothing",
+        subcategory: "Jeans & Pants",
+        brand: "Atelier Maison",
+        price: 140,
+        compareAt: 175,
+        description: "Italian melange wool flannel woven with soft drape. Features deep reverse double pleats, horn buttons, and slant pockets.",
+        image: "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.8,
+        reviewCount: 63,
+        stock: 11,
+        availability: "In stock",
+        sku: "CLO-PNT-013",
+        tags: [
+            "wool",
+            "trousers",
+            "pleated",
+            "autumn",
+            "workwear"
+        ],
+        attributes: {
+            Material: "98% Virgin Wool, 2% Elastane",
+            Lining: "Knee Viscose Lining"
+        },
+        isNew: true,
+        isFeatured: false,
+        isSale: true,
+        createdAt: "2026-09-14"
+    },
+    {
+        slug: "satin-bias-cut-midi-skirt",
+        name: "Satin Bias-Cut Fluid Midi Skirt",
+        category: "Clothing",
+        subcategory: "Skirts & Shorts",
+        brand: "Aura Studio",
+        price: 85,
+        compareAt: 105,
+        description: "Elasticized high waist that slips on effortlessly. The liquid satin fabric drapes across hips down to a gentle flounce hem.",
+        image: "https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.9,
+        reviewCount: 92,
+        stock: 20,
+        availability: "In stock",
+        sku: "CLO-SKT-014",
+        tags: [
+            "skirt",
+            "satin",
+            "midi",
+            "evening",
+            "versatile"
+        ],
+        attributes: {
+            Waist: "Concealed Elastic Waistband",
+            Length: "32 inch Midi"
+        },
+        isNew: false,
+        isFeatured: true,
+        isSale: true,
+        createdAt: "2026-08-10"
+    },
+    {
+        slug: "pleated-a-line-tennis-skirt",
+        name: "High-Waist Pleated A-Line Mini Skirt",
+        category: "Clothing",
+        subcategory: "Skirts & Shorts",
+        brand: "Aura Essentials",
+        price: 62,
+        description: "Crisp knife pleats in a structured stretch gabardine fabric. Built-in interior stretch shorts for comfort and confident movement.",
+        image: "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.7,
+        reviewCount: 54,
+        stock: 25,
+        availability: "In stock",
+        sku: "CLO-SKT-015",
+        tags: [
+            "skirt",
+            "pleated",
+            "tennis",
+            "athleisure",
+            "preppy"
+        ],
+        attributes: {
+            Material: "88% Polyester, 12% Spandex",
+            BuiltIn: "Integrated Short Liner"
+        },
+        isNew: true,
+        isFeatured: false,
+        isSale: false,
+        createdAt: "2026-09-08"
+    },
+    {
+        slug: "relaxed-high-waist-linen-shorts",
+        name: "Relaxed High-Rise Tailored Linen Shorts",
+        category: "Clothing",
+        subcategory: "Skirts & Shorts",
+        brand: "Field House",
+        price: 54,
+        description: "Summer staple with tailored pleats, wide leg openings, side pockets, and an elasticated back waistband for all-day ease.",
+        image: "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.8,
+        reviewCount: 43,
+        stock: 31,
+        availability: "In stock",
+        sku: "CLO-SKT-016",
+        tags: [
+            "shorts",
+            "linen",
+            "summer",
+            "relaxed",
+            "casual"
+        ],
+        attributes: {
+            Inseam: "4.5 inch",
+            Material: "100% Normandy Linen"
+        },
+        isNew: false,
+        isFeatured: false,
+        isSale: false,
+        createdAt: "2026-06-15"
+    },
+    {
+        slug: "bamboo-waffle-cloud-bath-robe",
+        name: "Bamboo & Organic Cotton Waffle Lounge Robe",
+        category: "Clothing",
+        subcategory: "Sleepwear & Loungewear",
+        brand: "Aura Essentials",
+        price: 88,
+        compareAt: 110,
+        description: "Lightweight honeycombed waffle weave that absorbs water instantly and dries fast. Ultra-soft against sensitive skin, featuring deep pockets and a secure tie.",
+        image: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.9,
+        reviewCount: 128,
+        stock: 19,
+        availability: "In stock",
+        sku: "CLO-LNG-017",
+        tags: [
+            "robe",
+            "loungewear",
+            "spa",
+            "cotton",
+            "bath"
+        ],
+        attributes: {
+            Blend: "60% Organic Cotton, 40% Bamboo Viscose",
+            Fit: "Relaxed Kimono"
         },
         isNew: true,
         isFeatured: true,
@@ -3938,10 +3356,2080 @@ const rawProducts = [
         createdAt: "2026-09-20"
     },
     {
+        slug: "washable-silk-cami-pajama-set",
+        name: "Washable Mulberry Silk Cami Pajama Set",
+        category: "Clothing",
+        subcategory: "Sleepwear & Loungewear",
+        brand: "Aura Studio",
+        price: 115,
+        compareAt: 140,
+        description: "Thermoregulating silk cami and tap shorts set. Finished with raw scallop trim and completely machine washable on delicate cycle.",
+        image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.8,
+        reviewCount: 76,
+        stock: 15,
+        availability: "In stock",
+        sku: "CLO-LNG-018",
+        tags: [
+            "pajamas",
+            "silk",
+            "sleepwear",
+            "luxury",
+            "cami"
+        ],
+        attributes: {
+            Material: "100% Washable Mulberry Silk",
+            Care: "Machine Wash Cold"
+        },
+        isNew: false,
+        isFeatured: false,
+        isSale: true,
+        createdAt: "2026-07-22"
+    },
+    {
+        slug: "pure-cashmere-lounge-joggers",
+        name: "Pure Mongolian Cashmere Lounge Knit Pants",
+        category: "Clothing",
+        subcategory: "Sleepwear & Loungewear",
+        brand: "Atelier Maison",
+        price: 160,
+        compareAt: 195,
+        description: "Knitted from double-twisted Grade-A Mongolian cashmere yarns. Wide ribbed elastic waistband, tailored tapered cuffs, and deep cozy pockets.",
+        image: "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.9,
+        reviewCount: 88,
+        stock: 10,
+        availability: "In stock",
+        sku: "CLO-LNG-019",
+        tags: [
+            "cashmere",
+            "loungewear",
+            "knitwear",
+            "joggers",
+            "cozy"
+        ],
+        attributes: {
+            Yarn: "100% Mongolian Cashmere 2-Ply",
+            Care: "Hand Wash"
+        },
+        isNew: true,
+        isFeatured: true,
+        isSale: true,
+        createdAt: "2026-09-17"
+    },
+    {
+        slug: "organic-cotton-ribbed-baby-romper",
+        name: "Organic Cotton Ribbed Baby Kimono Romper",
+        category: "Clothing",
+        subcategory: "Baby & Kids Clothing",
+        brand: "Little Aura",
+        price: 34,
+        description: "Ultra-gentle GOTS certified organic cotton with snap button crotch closures and wrap-front kimono style for quick, tear-free changes.",
+        image: "https://images.unsplash.com/photo-1522771930-78848d9293e8?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1522771930-78848d9293e8?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.9,
+        reviewCount: 65,
+        stock: 40,
+        availability: "In stock",
+        sku: "CLO-KID-020",
+        tags: [
+            "baby",
+            "romper",
+            "organic-cotton",
+            "kids",
+            "newborn"
+        ],
+        attributes: {
+            Material: "100% GOTS Organic Cotton",
+            Snaps: "Nickel-Free"
+        },
+        isNew: true,
+        isFeatured: false,
+        isSale: false,
+        createdAt: "2026-09-25"
+    },
+    {
+        slug: "pastel-floral-toddler-sundress",
+        name: "Pastel Floral Toddler Tiered Cotton Dress",
+        category: "Clothing",
+        subcategory: "Baby & Kids Clothing",
+        brand: "Little Aura",
+        price: 42,
+        description: "Charming ruffled shoulder flutter sleeves and sweet pastel wild bloom print on lightweight breathable cotton muslin.",
+        image: "https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.8,
+        reviewCount: 39,
+        stock: 22,
+        availability: "In stock",
+        sku: "CLO-KID-021",
+        tags: [
+            "kids",
+            "toddler",
+            "dress",
+            "floral",
+            "cotton"
+        ],
+        attributes: {
+            Material: "100% Cotton Muslin",
+            Ages: "2T - 6Y"
+        },
+        isNew: false,
+        isFeatured: false,
+        isSale: false,
+        createdAt: "2026-08-04"
+    },
+    {
+        slug: "chunky-knit-merino-kids-cardigan",
+        name: "Chunky Knit Merino Wool Kids Cardigan",
+        category: "Clothing",
+        subcategory: "Baby & Kids Clothing",
+        brand: "Little Aura",
+        price: 56,
+        compareAt: 70,
+        description: "Hand-finished moss stitch cardigan with wooden button front and non-scratchy Australian merino wool yarn that keeps little ones warmly wrapped.",
+        image: "https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.9,
+        reviewCount: 48,
+        stock: 14,
+        availability: "In stock",
+        sku: "CLO-KID-022",
+        tags: [
+            "kids",
+            "cardigan",
+            "merino-wool",
+            "knit",
+            "gift"
+        ],
+        attributes: {
+            Yarn: "100% Pure Merino Wool",
+            Buttons: "Natural Olive Wood"
+        },
+        isNew: true,
+        isFeatured: true,
+        isSale: true,
+        createdAt: "2026-09-19"
+    },
+    // =========================================================================
+    // 2. SHOES (Sneakers, Sandals, Flats, Heels, Baby & Kids Shoes)
+    // =========================================================================
+    {
+        slug: "clean-leather-court-sneakers",
+        name: "Clean Italian Leather Low-Top Court Sneakers",
+        category: "Shoes",
+        subcategory: "Sneakers",
+        brand: "Aura Footwear",
+        price: 135,
+        compareAt: 165,
+        description: "Handcrafted in Portugal with supple full-grain Italian calfskin, waxed cotton laces, cushioned ortholite footbed, and durable stitched margom rubber soles.",
+        image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.9,
+        reviewCount: 215,
+        stock: 35,
+        availability: "In stock",
+        sku: "SHO-SNK-023",
+        tags: [
+            "sneakers",
+            "leather",
+            "white-sneakers",
+            "minimalist",
+            "everyday"
+        ],
+        attributes: {
+            Upper: "Italian Full-Grain Calfskin",
+            Sole: "100% Natural Stitched Rubber"
+        },
+        isNew: false,
+        isFeatured: true,
+        isSale: true,
+        createdAt: "2026-06-01"
+    },
+    {
+        slug: "retro-suede-runner-sneakers",
+        name: "Retro Suede Two-Tone Runner Sneakers",
+        category: "Shoes",
+        subcategory: "Sneakers",
+        brand: "Field House",
+        price: 120,
+        description: "Vintage 1970s running silhouette with suede leather overlays, nylon ripstop underlays, and shock-absorbing EVA foam wedge soles.",
+        image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.8,
+        reviewCount: 94,
+        stock: 26,
+        availability: "In stock",
+        sku: "SHO-SNK-024",
+        tags: [
+            "sneakers",
+            "suede",
+            "runner",
+            "retro",
+            "casual"
+        ],
+        attributes: {
+            Upper: "Suede & Recycled Nylon",
+            Midsole: "Cushioned EVA Foam"
+        },
+        isNew: true,
+        isFeatured: false,
+        isSale: false,
+        createdAt: "2026-09-10"
+    },
+    {
+        slug: "breathable-slip-on-knit-trainers",
+        name: "Breathable Cloud-Knit Slip-On Trainers",
+        category: "Shoes",
+        subcategory: "Sneakers",
+        brand: "Aura Footwear",
+        price: 85,
+        compareAt: 110,
+        description: "Seamless engineered stretch-knit upper that slips on like a sock. Ultra-featherweight construction with springy responsive air-sole cushioning.",
+        image: "https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.7,
+        reviewCount: 78,
+        stock: 29,
+        availability: "In stock",
+        sku: "SHO-SNK-025",
+        tags: [
+            "trainers",
+            "knit",
+            "slip-on",
+            "walking",
+            "lightweight"
+        ],
+        attributes: {
+            Weight: "6.8 oz",
+            Sole: "Flexible Phylon Foam"
+        },
+        isNew: false,
+        isFeatured: false,
+        isSale: true,
+        createdAt: "2026-07-05"
+    },
+    {
+        slug: "strappy-leather-ankle-wrap-sandals",
+        name: "Strappy Italian Leather Ankle-Wrap Sandals",
+        category: "Shoes",
+        subcategory: "Sandals",
+        brand: "Atelier Maison",
+        price: 95,
+        compareAt: 120,
+        description: "Whisper-thin tubular leather straps that criss-cross over the instep and tie delicately around the ankle. Lightly cushioned leather footbed.",
+        image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.9,
+        reviewCount: 104,
+        stock: 18,
+        availability: "In stock",
+        sku: "SHO-SND-026",
+        tags: [
+            "sandals",
+            "strappy",
+            "leather",
+            "summer",
+            "vacation"
+        ],
+        attributes: {
+            Insole: "Cushioned Leather",
+            HeelHeight: "0.5 inch Flat"
+        },
+        isNew: true,
+        isFeatured: true,
+        isSale: true,
+        createdAt: "2026-08-25"
+    },
+    {
+        slug: "woven-raffia-platform-slides",
+        name: "Woven Natural Raffia Platform Slide Sandals",
+        category: "Shoes",
+        subcategory: "Sandals",
+        brand: "Field House",
+        price: 78,
+        description: "Artisanal handwoven Madagascar raffia strap set atop a lightweight jute-wrapped flatform sole with a durable treaded rubber bottom.",
+        image: "https://images.unsplash.com/photo-1562273138-f46be4ebdf33?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1562273138-f46be4ebdf33?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.8,
+        reviewCount: 62,
+        stock: 21,
+        availability: "In stock",
+        sku: "SHO-SND-027",
+        tags: [
+            "sandals",
+            "raffia",
+            "platform",
+            "boho",
+            "resort"
+        ],
+        attributes: {
+            PlatformHeight: "1.5 inch",
+            Material: "Natural Woven Raffia"
+        },
+        isNew: false,
+        isFeatured: false,
+        isSale: false,
+        createdAt: "2026-06-18"
+    },
+    {
+        slug: "double-strap-suede-footbed-slides",
+        name: "Double-Strap Ergonomic Suede Footbed Slides",
+        category: "Shoes",
+        subcategory: "Sandals",
+        brand: "Aura Footwear",
+        price: 88,
+        description: "Anatomic cork-latex footbed lined with velvety suede that molds to the natural shape of your arches. Features adjustable brass pin buckles.",
+        image: "https://images.unsplash.com/photo-1603808033192-082d6919d3e1?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1603808033192-082d6919d3e1?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.8,
+        reviewCount: 153,
+        stock: 33,
+        availability: "In stock",
+        sku: "SHO-SND-028",
+        tags: [
+            "slides",
+            "suede",
+            "footbed",
+            "comfortable",
+            "everyday"
+        ],
+        attributes: {
+            Footbed: "Natural Molded Cork & Latex",
+            Upper: "Oiled Suede"
+        },
+        isNew: false,
+        isFeatured: true,
+        isSale: false,
+        createdAt: "2026-05-12"
+    },
+    {
+        slug: "soft-leather-square-toe-ballet-flats",
+        name: "Glove Leather Square-Toe Ballet Flats",
+        category: "Shoes",
+        subcategory: "Flats",
+        brand: "Atelier Maison",
+        price: 110,
+        compareAt: 135,
+        description: "Crafted from butter-soft lambskin leather that needs zero break-in period. Modern square toe, delicate bow detail, and flexible leather sole.",
+        image: "https://images.unsplash.com/photo-1535043934128-cf0b28d52f95?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1535043934128-cf0b28d52f95?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.9,
+        reviewCount: 118,
+        stock: 19,
+        availability: "In stock",
+        sku: "SHO-FLT-029",
+        tags: [
+            "flats",
+            "ballet",
+            "leather",
+            "french-girl",
+            "bestseller"
+        ],
+        attributes: {
+            Upper: "100% Nappa Lambskin",
+            ToeShape: "Modern Soft Square"
+        },
+        isNew: true,
+        isFeatured: true,
+        isSale: true,
+        createdAt: "2026-09-14"
+    },
+    {
+        slug: "pointed-toe-suede-dorsay-flats",
+        name: "Pointed-Toe Velvet Suede D'Orsay Flats",
+        category: "Shoes",
+        subcategory: "Flats",
+        brand: "Atelier Maison",
+        price: 95,
+        description: "Sleek cutaway D'Orsay silhouette that elongates the leg line. Rich espresso velvet suede with memory foam padded insoles for desk-to-dinner polish.",
+        image: "https://images.unsplash.com/photo-1515347619252-60a4bf4fff4f?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1515347619252-60a4bf4fff4f?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.7,
+        reviewCount: 65,
+        stock: 15,
+        availability: "In stock",
+        sku: "SHO-FLT-030",
+        tags: [
+            "flats",
+            "suede",
+            "pointed-toe",
+            "workwear",
+            "chic"
+        ],
+        attributes: {
+            Material: "Calfskin Suede",
+            Silhouette: "D'Orsay Cutout"
+        },
+        isNew: false,
+        isFeatured: false,
+        isSale: false,
+        createdAt: "2026-07-19"
+    },
+    {
+        slug: "handcrafted-penny-leather-loafers",
+        name: "Heritage Italian Leather Penny Loafers",
+        category: "Shoes",
+        subcategory: "Flats",
+        brand: "Aura Footwear",
+        price: 145,
+        compareAt: 180,
+        description: "Traditional moc-toe stitching with classic penny keeper strap. Polished box calf leather that patinas gorgeously over years of wear.",
+        image: "https://images.unsplash.com/photo-1533867617858-e7b97e060509?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1533867617858-e7b97e060509?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.9,
+        reviewCount: 142,
+        stock: 22,
+        availability: "In stock",
+        sku: "SHO-FLT-031",
+        tags: [
+            "loafers",
+            "leather",
+            "classic",
+            "oxford",
+            "tailored"
+        ],
+        attributes: {
+            Construction: "Blake Stitched",
+            Sole: "Stacked Leather & Rubber Heel"
+        },
+        isNew: false,
+        isFeatured: true,
+        isSale: true,
+        createdAt: "2026-08-08"
+    },
+    {
+        slug: "sculptural-block-heel-slingbacks",
+        name: "Sculptural Block Heel Leather Slingbacks",
+        category: "Shoes",
+        subcategory: "Heels",
+        brand: "Atelier Maison",
+        price: 140,
+        compareAt: 170,
+        description: "Architectural 2.5-inch flared block heel providing stable, wobble-free elevation. Elasticized slingback strap and almond toe.",
+        image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.8,
+        reviewCount: 71,
+        stock: 14,
+        availability: "In stock",
+        sku: "SHO-HEL-032",
+        tags: [
+            "heels",
+            "slingbacks",
+            "block-heel",
+            "office",
+            "wedding"
+        ],
+        attributes: {
+            HeelHeight: "2.5 inches (65mm)",
+            Closure: "Elastic Slingback"
+        },
+        isNew: true,
+        isFeatured: true,
+        isSale: true,
+        createdAt: "2026-09-06"
+    },
+    {
+        slug: "kitten-heel-pointed-mules",
+        name: "Delicate Kitten Heel Pointed Satin Mules",
+        category: "Shoes",
+        subcategory: "Heels",
+        brand: "Aura Studio",
+        price: 125,
+        description: "Easy slip-on evening mule with a sculptural 1.75-inch kitten heel, sharp pointed toe, and lustrous champagne duchess satin finish.",
+        image: "https://images.unsplash.com/photo-1515347619252-60a4bf4fff4f?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1515347619252-60a4bf4fff4f?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.7,
+        reviewCount: 53,
+        stock: 17,
+        availability: "In stock",
+        sku: "SHO-HEL-033",
+        tags: [
+            "mules",
+            "kitten-heel",
+            "satin",
+            "evening",
+            "dainty"
+        ],
+        attributes: {
+            HeelHeight: "1.75 inches",
+            Upper: "Silk Duchess Satin"
+        },
+        isNew: false,
+        isFeatured: false,
+        isSale: false,
+        createdAt: "2026-07-12"
+    },
+    {
+        slug: "minimalist-two-strap-stiletto-heels",
+        name: "Minimalist Two-Strap Ankle Stiletto Heels",
+        category: "Shoes",
+        subcategory: "Heels",
+        brand: "Aura Studio",
+        price: 150,
+        compareAt: 185,
+        description: "The quintessential barely-there evening stiletto. 3.25-inch heel, delicate buckle ankle strap, and non-slip rubber tipped heel caps.",
+        image: "https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.9,
+        reviewCount: 88,
+        stock: 10,
+        availability: "Low stock",
+        sku: "SHO-HEL-034",
+        tags: [
+            "stiletto",
+            "heels",
+            "minimalist",
+            "strappy",
+            "evening"
+        ],
+        attributes: {
+            HeelHeight: "3.25 inches (85mm)",
+            Insole: "Gel Padded"
+        },
+        isNew: true,
+        isFeatured: false,
+        isSale: true,
+        createdAt: "2026-09-21"
+    },
+    {
+        slug: "soft-sole-suede-baby-moccasins",
+        name: "Handmade Soft-Sole Suede Baby Moccasins",
+        category: "Shoes",
+        subcategory: "Baby & Kids Shoes",
+        brand: "Little Aura",
+        price: 36,
+        description: "Non-slip split suede sole recommended by pediatricians for natural barefoot-like foot development and first steps. Elastic collar stays on feet.",
+        image: "https://images.unsplash.com/photo-1514989940723-e8e51635b782?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1514989940723-e8e51635b782?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.9,
+        reviewCount: 92,
+        stock: 32,
+        availability: "In stock",
+        sku: "SHO-KID-035",
+        tags: [
+            "baby-shoes",
+            "moccasins",
+            "soft-sole",
+            "toddler",
+            "gift"
+        ],
+        attributes: {
+            Material: "100% Genuine Suede",
+            Sizes: "0-6M, 6-12M, 12-18M"
+        },
+        isNew: false,
+        isFeatured: false,
+        isSale: false,
+        createdAt: "2026-06-25"
+    },
+    {
+        slug: "flexible-leather-first-walker-trainers",
+        name: "Flexible Nappa Leather First-Walker Shoes",
+        category: "Shoes",
+        subcategory: "Baby & Kids Shoes",
+        brand: "Little Aura",
+        price: 44,
+        description: "Featherlight first-walking shoes with breathable leather lining, padded ankle collars, and ultra-flexible rubber pod traction outsoles.",
+        image: "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.8,
+        reviewCount: 61,
+        stock: 24,
+        availability: "In stock",
+        sku: "SHO-KID-036",
+        tags: [
+            "kids-shoes",
+            "first-walker",
+            "leather",
+            "toddler"
+        ],
+        attributes: {
+            Upper: "Soft Nappa Leather",
+            Sole: "Flexible TPR Rubber"
+        },
+        isNew: true,
+        isFeatured: false,
+        isSale: false,
+        createdAt: "2026-09-01"
+    },
+    {
+        slug: "toddler-canvas-hook-and-loop-sneakers",
+        name: "Toddler Washed Canvas Casual Low Sneakers",
+        category: "Shoes",
+        subcategory: "Baby & Kids Shoes",
+        brand: "Little Aura",
+        price: 38,
+        compareAt: 48,
+        description: "Easy-on dual hook-and-loop velcro straps that toddlers can put on independently. Durable rubber toe cap protects against playground scuffs.",
+        image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.8,
+        reviewCount: 47,
+        stock: 30,
+        availability: "In stock",
+        sku: "SHO-KID-037",
+        tags: [
+            "kids-sneakers",
+            "canvas",
+            "velcro",
+            "play",
+            "toddler"
+        ],
+        attributes: {
+            Upper: "100% Breathable Cotton Canvas",
+            Closure: "Double Hook & Loop"
+        },
+        isNew: false,
+        isFeatured: false,
+        isSale: true,
+        createdAt: "2026-08-11"
+    },
+    // =========================================================================
+    // 3. BAGS (Handbags, Shoulder Bags, Crossbody, Totes, Backpacks, Mini, Kids)
+    // =========================================================================
+    {
+        slug: "florence-leather-structured-top-handle",
+        name: "Florence Italian Leather Structured Top-Handle Bag",
+        category: "Bags",
+        subcategory: "Handbags",
+        brand: "Florence Atelier",
+        price: 245,
+        compareAt: 295,
+        description: "Architectural silhouette handcrafted in Tuscany from vegetable-tanned Italian calfskin. Features custom pale gold hardware and detachable shoulder strap.",
+        image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1200&q=85",
+            "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.9,
+        reviewCount: 168,
+        stock: 12,
+        availability: "In stock",
+        sku: "BAG-HND-038",
+        tags: [
+            "handbag",
+            "top-handle",
+            "leather",
+            "luxury",
+            "italian",
+            "bestseller"
+        ],
+        attributes: {
+            Leather: "Full-Grain Tuscan Calfskin",
+            Dimensions: "10.5 x 8 x 4 inches"
+        },
+        isNew: false,
+        isFeatured: true,
+        isSale: true,
+        createdAt: "2026-07-20"
+    },
+    {
+        slug: "sculptural-crescent-leather-bag",
+        name: "Sculptural Crescent Moon Leather Handbag",
+        category: "Bags",
+        subcategory: "Handbags",
+        brand: "Atelier Maison",
+        price: 185,
+        description: "Curved crescent geometry with a smooth magnetic frame closure. Designed to tuck comfortably under the arm or be held by its sculptural top handle.",
+        image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.8,
+        reviewCount: 79,
+        stock: 16,
+        availability: "In stock",
+        sku: "BAG-HND-039",
+        tags: [
+            "handbag",
+            "crescent",
+            "leather",
+            "minimalist",
+            "sculptural"
+        ],
+        attributes: {
+            Material: "Smooth Semi-Gloss Cowhide",
+            Interior: "Micro-Suede Lining"
+        },
+        isNew: true,
+        isFeatured: true,
+        isSale: false,
+        createdAt: "2026-09-15"
+    },
+    {
+        slug: "woven-dumpling-pouch-handbag",
+        name: "Woven Nappa Leather Dumpling Pouch Bag",
+        category: "Bags",
+        subcategory: "Handbags",
+        brand: "Florence Atelier",
+        price: 160,
+        compareAt: 190,
+        description: "Cloud-soft hand-woven buttery nappa lambskin with soft ruching and a concealed magnetic frame. Fits wallet, phone, keys, and cosmetics with ease.",
+        image: "https://images.unsplash.com/photo-1591561954557-26941169b49e?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1591561954557-26941169b49e?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.8,
+        reviewCount: 64,
+        stock: 14,
+        availability: "In stock",
+        sku: "BAG-HND-040",
+        tags: [
+            "dumpling-bag",
+            "woven",
+            "nappa",
+            "pouch",
+            "evening"
+        ],
+        attributes: {
+            Material: "100% Woven Lambskin",
+            Closure: "Concealed Magnetic Frame"
+        },
+        isNew: false,
+        isFeatured: false,
+        isSale: true,
+        createdAt: "2026-08-05"
+    },
+    {
+        slug: "classic-90s-baguette-shoulder-bag",
+        name: "Classic 90s Baguette Leather Shoulder Bag",
+        category: "Bags",
+        subcategory: "Shoulder Bags",
+        brand: "Aura Studio",
+        price: 145,
+        compareAt: 175,
+        description: "Iconic slim horizontal shoulder profile with a comfortable flat strap that nests under the arm. Minimalist top zipper and interior card slot.",
+        image: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.9,
+        reviewCount: 145,
+        stock: 22,
+        availability: "In stock",
+        sku: "BAG-SHD-041",
+        tags: [
+            "shoulder-bag",
+            "baguette",
+            "90s",
+            "leather",
+            "bestseller"
+        ],
+        attributes: {
+            Leather: "Polished Spazzolato Calfskin",
+            StrapDrop: "9.5 inches"
+        },
+        isNew: false,
+        isFeatured: true,
+        isSale: true,
+        createdAt: "2026-06-28"
+    },
+    {
+        slug: "ruched-leather-flap-shoulder-purse",
+        name: "Soft Ruched Leather Flap Shoulder Purse",
+        category: "Bags",
+        subcategory: "Shoulder Bags",
+        brand: "Atelier Maison",
+        price: 170,
+        description: "Plush gathered leather construction featuring an adjustable shoulder strap and signature brushed gold push-lock buckle clasp.",
+        image: "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.8,
+        reviewCount: 72,
+        stock: 18,
+        availability: "In stock",
+        sku: "BAG-SHD-042",
+        tags: [
+            "shoulder-bag",
+            "ruched",
+            "leather",
+            "gold-hardware"
+        ],
+        attributes: {
+            Hardware: "Brushed 14K Gold Finish",
+            Pocket: "Zippered Back Wall Pocket"
+        },
+        isNew: true,
+        isFeatured: false,
+        isSale: false,
+        createdAt: "2026-09-18"
+    },
+    {
+        slug: "pebbled-leather-curved-shoulder-bag",
+        name: "Pebbled Leather Curved Everyday Shoulder Bag",
+        category: "Bags",
+        subcategory: "Shoulder Bags",
+        brand: "Field House",
+        price: 155,
+        description: "Scratch-resistant pebbled Italian cowhide with relaxed rounded curves. Spacious enough for sunglasses, keys, cosmetic pouch, and water bottle.",
+        image: "https://images.unsplash.com/photo-1594223274512-ad4803739b7c?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1594223274512-ad4803739b7c?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.7,
+        reviewCount: 58,
+        stock: 25,
+        availability: "In stock",
+        sku: "BAG-SHD-043",
+        tags: [
+            "shoulder-bag",
+            "pebbled-leather",
+            "everyday",
+            "durable"
+        ],
+        attributes: {
+            Leather: "Pebbled Italian Cowhide",
+            Zipper: "Smooth YKK Metal"
+        },
+        isNew: false,
+        isFeatured: false,
+        isSale: false,
+        createdAt: "2026-07-16"
+    },
+    {
+        slug: "smooth-saddle-leather-crossbody",
+        name: "Smooth Vegetable-Tanned Saddle Crossbody Bag",
+        category: "Bags",
+        subcategory: "Crossbody Bags",
+        brand: "Florence Atelier",
+        price: 165,
+        compareAt: 195,
+        description: "Classic equestrian-inspired curved saddle flap with an adjustable crossbody strap and magnetic snap closure. Gains richer patina with age.",
+        image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.9,
+        reviewCount: 130,
+        stock: 17,
+        availability: "In stock",
+        sku: "BAG-CRB-044",
+        tags: [
+            "crossbody",
+            "saddle-bag",
+            "leather",
+            "timeless",
+            "travel"
+        ],
+        attributes: {
+            Material: "Vegetable-Tanned Cowhide",
+            StrapLength: "Adjustable 18-23 inch drop"
+        },
+        isNew: false,
+        isFeatured: true,
+        isSale: true,
+        createdAt: "2026-08-20"
+    },
+    {
+        slug: "compact-multi-compartment-phone-crossbody",
+        name: "Compact Leather Multi-Pocket Phone Crossbody",
+        category: "Bags",
+        subcategory: "Crossbody Bags",
+        brand: "Aura Essentials",
+        price: 88,
+        description: "Hands-free essential sized to fit all smartphone models, with 6 integrated RFID card slots, zip coin compartment, and slim leather strap.",
+        image: "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.8,
+        reviewCount: 84,
+        stock: 38,
+        availability: "In stock",
+        sku: "BAG-CRB-045",
+        tags: [
+            "phone-bag",
+            "crossbody",
+            "minimalist",
+            "hands-free"
+        ],
+        attributes: {
+            CardSlots: "6 Card Slots",
+            Dimensions: "7.5 x 4.5 x 1.2 inches"
+        },
+        isNew: true,
+        isFeatured: false,
+        isSale: false,
+        createdAt: "2026-09-12"
+    },
+    {
+        slug: "minimalist-half-moon-crossbody",
+        name: "Minimalist Half-Moon Italian Leather Crossbody",
+        category: "Bags",
+        subcategory: "Crossbody Bags",
+        brand: "Atelier Maison",
+        price: 140,
+        description: "Sleek semi-circular geometry with a curved zip-around closure, flat wide shoulder strap, and internal slip pocket.",
+        image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.7,
+        reviewCount: 51,
+        stock: 20,
+        availability: "In stock",
+        sku: "BAG-CRB-046",
+        tags: [
+            "crossbody",
+            "half-moon",
+            "minimalist",
+            "leather"
+        ],
+        attributes: {
+            Leather: "Smooth Semi-Aniline Leather",
+            Lining: "Cotton Twill"
+        },
+        isNew: false,
+        isFeatured: false,
+        isSale: false,
+        createdAt: "2026-07-02"
+    },
+    {
+        slug: "heavyweight-canvas-market-tote",
+        name: "Everyday Heavyweight 16oz Canvas Market Tote",
+        category: "Bags",
+        subcategory: "Tote Bags",
+        brand: "Field House",
+        price: 48,
+        description: "Indestructible 16oz cotton duck canvas with reinforced webbed handles, interior water bottle pocket, key clip, and brass snap closure.",
+        image: "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.9,
+        reviewCount: 220,
+        stock: 60,
+        availability: "In stock",
+        sku: "BAG-TOT-047",
+        tags: [
+            "tote",
+            "canvas",
+            "market-bag",
+            "work-bag",
+            "durable"
+        ],
+        attributes: {
+            Fabric: "16oz 100% Organic Cotton Canvas",
+            Pockets: "3 Interior Organizers"
+        },
+        isNew: false,
+        isFeatured: false,
+        isSale: false,
+        createdAt: "2026-05-10"
+    },
+    {
+        slug: "full-grain-leather-work-tote",
+        name: "Supple Full-Grain Leather Laptop Work Tote",
+        category: "Bags",
+        subcategory: "Tote Bags",
+        brand: "Florence Atelier",
+        price: 210,
+        compareAt: 260,
+        description: "Designed for modern working professionals. Padded center sleeve fits laptops up to 15 inches, with reinforced shoulder drop straps and metal protective feet.",
+        image: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.9,
+        reviewCount: 156,
+        stock: 14,
+        availability: "In stock",
+        sku: "BAG-TOT-048",
+        tags: [
+            "tote",
+            "work-tote",
+            "laptop-bag",
+            "leather",
+            "bestseller"
+        ],
+        attributes: {
+            Fits: "Laptops up to 15.6 inch",
+            Leather: "Full-Grain Italian Cowhide"
+        },
+        isNew: true,
+        isFeatured: true,
+        isSale: true,
+        createdAt: "2026-09-08"
+    },
+    {
+        slug: "french-straw-basket-beach-tote",
+        name: "Handwoven French Straw Basket Summer Tote",
+        category: "Bags",
+        subcategory: "Tote Bags",
+        brand: "Field House",
+        price: 75,
+        description: "Hand-braided natural Moroccan palm leaves with long double leather shoulder straps that sit comfortably on shoulders during beach days and farmer markets.",
+        image: "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.8,
+        reviewCount: 68,
+        stock: 22,
+        availability: "In stock",
+        sku: "BAG-TOT-049",
+        tags: [
+            "straw-bag",
+            "basket-bag",
+            "tote",
+            "summer",
+            "market"
+        ],
+        attributes: {
+            Material: "Natural Woven Palm Leaves",
+            Handles: "Tan Cowhide"
+        },
+        isNew: false,
+        isFeatured: false,
+        isSale: false,
+        createdAt: "2026-06-12"
+    },
+    {
+        slug: "slim-waterproof-commuter-backpack",
+        name: "Slim Water-Resistant Commuter City Backpack",
+        category: "Bags",
+        subcategory: "Backpacks",
+        brand: "Aura Essentials",
+        price: 125,
+        compareAt: 155,
+        description: "Matte waterproof PU coated fabric with taped seams. Features a padded 14-inch rear laptop compartment, hidden passport pocket, and luggage trolley sleeve.",
+        image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.8,
+        reviewCount: 114,
+        stock: 28,
+        availability: "In stock",
+        sku: "BAG-BPK-050",
+        tags: [
+            "backpack",
+            "commuter",
+            "waterproof",
+            "laptop",
+            "travel"
+        ],
+        attributes: {
+            Volume: "14 Liters",
+            WaterResistance: "IPX4 Weatherproof"
+        },
+        isNew: false,
+        isFeatured: false,
+        isSale: true,
+        createdAt: "2026-07-25"
+    },
+    {
+        slug: "vintage-washed-canvas-leather-rucksack",
+        name: "Vintage Washed Canvas & Leather Trim Rucksack",
+        category: "Bags",
+        subcategory: "Backpacks",
+        brand: "Field House",
+        price: 110,
+        description: "Stonewashed cotton canvas with genuine saddle leather trim, brass buckle quick-release snaps, and drawstring cinch closure.",
+        image: "https://images.unsplash.com/photo-1546938576-6e6a64f317cc?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1546938576-6e6a64f317cc?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.7,
+        reviewCount: 56,
+        stock: 19,
+        availability: "In stock",
+        sku: "BAG-BPK-051",
+        tags: [
+            "backpack",
+            "canvas",
+            "vintage",
+            "rucksack"
+        ],
+        attributes: {
+            Capacity: "18L",
+            Material: "Washed Cotton Canvas & Leather"
+        },
+        isNew: false,
+        isFeatured: false,
+        isSale: false,
+        createdAt: "2026-06-04"
+    },
+    {
+        slug: "convertible-mini-leather-backpack",
+        name: "Convertible 2-in-1 Mini Leather Backpack Purse",
+        category: "Bags",
+        subcategory: "Backpacks",
+        brand: "Atelier Maison",
+        price: 135,
+        description: "Clever interchangeable clip strap transforms this chic mini backpack into a crossbody shoulder purse in seconds. Pebbled Italian leather.",
+        image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.9,
+        reviewCount: 82,
+        stock: 15,
+        availability: "In stock",
+        sku: "BAG-BPK-052",
+        tags: [
+            "backpack",
+            "mini-backpack",
+            "convertible",
+            "leather"
+        ],
+        attributes: {
+            Versatility: "Converts Backpack to Crossbody",
+            Material: "Pebbled Calfskin"
+        },
+        isNew: true,
+        isFeatured: true,
+        isSale: false,
+        createdAt: "2026-09-11"
+    },
+    {
+        slug: "micro-chain-strap-quilted-party-bag",
+        name: "Micro Chain-Strap Quilted Evening Party Bag",
+        category: "Bags",
+        subcategory: "Mini Bags",
+        brand: "Aura Studio",
+        price: 95,
+        compareAt: 120,
+        description: "Chevron diamond quilt pattern on soft metallic-finished calfskin. High-polish gold curb chain strap and turn-lock clasp.",
+        image: "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.8,
+        reviewCount: 63,
+        stock: 21,
+        availability: "In stock",
+        sku: "BAG-MIN-053",
+        tags: [
+            "mini-bag",
+            "quilted",
+            "chain-bag",
+            "evening",
+            "party"
+        ],
+        attributes: {
+            ChainDrop: "21 inches",
+            Dimensions: "6.5 x 4 x 2 inches"
+        },
+        isNew: false,
+        isFeatured: false,
+        isSale: true,
+        createdAt: "2026-08-16"
+    },
+    {
+        slug: "structured-geometric-vanity-case",
+        name: "Structured Geometric Box Vanity Mini Bag",
+        category: "Bags",
+        subcategory: "Mini Bags",
+        brand: "Atelier Maison",
+        price: 120,
+        description: "Rigid box trunk construction with top zip-around closure, mirror in top lid, and top handle. Statement accessory for day and night.",
+        image: "https://images.unsplash.com/photo-1591561954557-26941169b49e?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1591561954557-26941169b49e?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.8,
+        reviewCount: 47,
+        stock: 13,
+        availability: "In stock",
+        sku: "BAG-MIN-054",
+        tags: [
+            "mini-bag",
+            "vanity-case",
+            "box-bag",
+            "statement"
+        ],
+        attributes: {
+            Interior: "Built-In Compact Mirror",
+            Frame: "Rigid Box"
+        },
+        isNew: true,
+        isFeatured: false,
+        isSale: false,
+        createdAt: "2026-09-04"
+    },
+    {
+        slug: "metallic-mini-drawstring-bucket-bag",
+        name: "Metallic Foil Mini Drawstring Bucket Pouch",
+        category: "Bags",
+        subcategory: "Mini Bags",
+        brand: "Aura Studio",
+        price: 85,
+        description: "Soft slouchy bucket pouch in iridescent champagne metallic leather with knotted drawstring cords and circular base.",
+        image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.7,
+        reviewCount: 38,
+        stock: 17,
+        availability: "In stock",
+        sku: "BAG-MIN-055",
+        tags: [
+            "bucket-bag",
+            "drawstring",
+            "metallic",
+            "mini-bag"
+        ],
+        attributes: {
+            Material: "Foil-Coated Lambskin",
+            Closure: "Drawstring Cinch"
+        },
+        isNew: false,
+        isFeatured: false,
+        isSale: false,
+        createdAt: "2026-07-30"
+    },
+    {
+        slug: "multi-pocket-water-repellent-diaper-bag",
+        name: "Multi-Pocket Water-Repellent Diaper Backpack",
+        category: "Bags",
+        subcategory: "Baby & Kids Bags",
+        brand: "Little Aura",
+        price: 92,
+        compareAt: 115,
+        description: "Thoughtfully designed for parents with 14 organized pockets, insulated bottle holders, wipe-clean changing mat, and stroller attachment clips.",
+        image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.9,
+        reviewCount: 142,
+        stock: 25,
+        availability: "In stock",
+        sku: "BAG-KID-056",
+        tags: [
+            "diaper-bag",
+            "baby",
+            "backpack",
+            "insulated",
+            "parenting"
+        ],
+        attributes: {
+            Includes: "Cushioned Fold-Out Changing Mat",
+            InsulatedPockets: "3 Bottle Holders"
+        },
+        isNew: true,
+        isFeatured: true,
+        isSale: true,
+        createdAt: "2026-09-19"
+    },
+    {
+        slug: "playful-animal-ear-toddler-backpack",
+        name: "Playful Animal Ear Toddler Mini Daypack",
+        category: "Bags",
+        subcategory: "Baby & Kids Bags",
+        brand: "Little Aura",
+        price: 36,
+        description: "Adorable soft sherpa fleece daypack with padded adjustable shoulder straps, chest safety clip, and easy-pull rubber zippers for little hands.",
+        image: "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.8,
+        reviewCount: 57,
+        stock: 30,
+        availability: "In stock",
+        sku: "BAG-KID-057",
+        tags: [
+            "kids-backpack",
+            "toddler",
+            "animal-ears",
+            "preschool"
+        ],
+        attributes: {
+            Material: "Plush Teddy Sherpa",
+            Safety: "Chest Buckle Clip"
+        },
+        isNew: false,
+        isFeatured: false,
+        isSale: false,
+        createdAt: "2026-08-14"
+    },
+    {
+        slug: "embroidered-cotton-kids-snack-bag",
+        name: "Organic Embroidered Cotton Kids Carry Pouch",
+        category: "Bags",
+        subcategory: "Baby & Kids Bags",
+        brand: "Little Aura",
+        price: 28,
+        description: "Insulated food-grade interior liner for snacks and fruit. Charming hand-embroidered wildflower motif on heavy natural organic cotton canvas.",
+        image: "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.7,
+        reviewCount: 35,
+        stock: 40,
+        availability: "In stock",
+        sku: "BAG-KID-058",
+        tags: [
+            "snack-bag",
+            "kids",
+            "insulated",
+            "lunchbox"
+        ],
+        attributes: {
+            Liner: "BPA-Free Thermal Insulated",
+            Handle: "Cotton Webbing"
+        },
+        isNew: false,
+        isFeatured: false,
+        isSale: false,
+        createdAt: "2026-07-09"
+    },
+    // =========================================================================
+    // 4. ACCESSORIES (Jewelry, Watches, Sunglasses, Hair, Belts, Hats, Beauty, Kids)
+    // =========================================================================
+    {
+        slug: "18k-gold-vermeil-herringbone-chain",
+        name: "18K Gold Vermeil Herringbone Flat Chain",
+        category: "Accessories",
+        subcategory: "Jewelry",
+        brand: "Aura Studio",
+        price: 88,
+        compareAt: 110,
+        description: "Liquid-smooth silky herringbone flat weave plated with a thick 2.5 micron layer of 18K gold over solid 925 sterling silver. Tarnish-free and waterproof.",
+        image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.9,
+        reviewCount: 235,
+        stock: 45,
+        availability: "In stock",
+        sku: "ACC-JWL-059",
+        tags: [
+            "jewelry",
+            "necklace",
+            "gold-vermeil",
+            "herringbone",
+            "bestseller"
+        ],
+        attributes: {
+            Core: "Solid 925 Sterling Silver",
+            Plating: "18K Gold Vermeil 2.5um",
+            Width: "3.5mm"
+        },
+        isNew: false,
+        isFeatured: true,
+        isSale: true,
+        createdAt: "2026-06-14"
+    },
+    {
+        slug: "freshwater-baroque-pearl-choker",
+        name: "Dainty Freshwater Baroque Pearl Choker",
+        category: "Accessories",
+        subcategory: "Jewelry",
+        brand: "Atelier Maison",
+        price: 95,
+        description: "Individually knotted hand-selected organic cultured freshwater baroque pearls, each displaying a luminous natural iridescence with 14K gold filled clasp.",
+        image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.8,
+        reviewCount: 92,
+        stock: 24,
+        availability: "In stock",
+        sku: "ACC-JWL-060",
+        tags: [
+            "pearls",
+            "necklace",
+            "choker",
+            "baroque",
+            "handmade"
+        ],
+        attributes: {
+            Pearls: "Natural Cultured Baroque Pearls 5-6mm",
+            Length: "15 inch + 2 inch extender"
+        },
+        isNew: true,
+        isFeatured: true,
+        isSale: false,
+        createdAt: "2026-09-03"
+    },
+    {
+        slug: "chunky-twisted-gold-link-bracelet",
+        name: "Chunky Twisted 18K Gold Link Chain Bracelet",
+        category: "Accessories",
+        subcategory: "Jewelry",
+        brand: "Aura Studio",
+        price: 78,
+        compareAt: 98,
+        description: "Bold statement chain link bracelet with twisted organic texture and a vintage oversized toggle closure. Waterproof and hypoallergenic.",
+        image: "https://images.unsplash.com/photo-1611591475281-918bfbe2720e?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1611591475281-918bfbe2720e?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.8,
+        reviewCount: 84,
+        stock: 30,
+        availability: "In stock",
+        sku: "ACC-JWL-061",
+        tags: [
+            "bracelet",
+            "gold",
+            "chain-link",
+            "statement"
+        ],
+        attributes: {
+            Material: "18K Gold Plated Stainless Steel",
+            Closure: "Toggle Clasp"
+        },
+        isNew: false,
+        isFeatured: false,
+        isSale: true,
+        createdAt: "2026-08-02"
+    },
+    {
+        slug: "classic-petite-rose-gold-mesh-watch",
+        name: "Classic Petite Rose Gold Milanese Mesh Watch",
+        category: "Accessories",
+        subcategory: "Watches",
+        brand: "Aura Studio",
+        price: 165,
+        compareAt: 195,
+        description: "Ultra-thin 28mm stainless steel casing with an eggshell white dial, Japanese quartz movement, scratch-resistant sapphire glass, and rose gold Milanese mesh strap.",
+        image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.9,
+        reviewCount: 162,
+        stock: 20,
+        availability: "In stock",
+        sku: "ACC-WTC-062",
+        tags: [
+            "watch",
+            "rose-gold",
+            "milanese",
+            "minimalist",
+            "timepiece"
+        ],
+        attributes: {
+            CaseSize: "28mm",
+            Glass: "Sapphire Crystal",
+            Movement: "Miyota Japanese Quartz"
+        },
+        isNew: false,
+        isFeatured: true,
+        isSale: true,
+        createdAt: "2026-07-15"
+    },
+    {
+        slug: "vintage-roman-numeral-leather-watch",
+        name: "Vintage Roman Numeral Croc-Embossed Watch",
+        category: "Accessories",
+        subcategory: "Watches",
+        brand: "Atelier Maison",
+        price: 145,
+        description: "Retro rectangular tank case with blued-steel hands, ivory enamel dial with Roman numerals, and brown Italian croc-embossed calf leather strap.",
+        image: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.8,
+        reviewCount: 96,
+        stock: 16,
+        availability: "In stock",
+        sku: "ACC-WTC-063",
+        tags: [
+            "watch",
+            "vintage",
+            "tank-watch",
+            "leather-strap",
+            "classic"
+        ],
+        attributes: {
+            Case: "Rectangular 24x31mm",
+            Strap: "Genuine Croc-Embossed Calfskin"
+        },
+        isNew: true,
+        isFeatured: false,
+        isSale: false,
+        createdAt: "2026-09-08"
+    },
+    {
+        slug: "minimalist-sunray-dial-two-tone-watch",
+        name: "Minimalist Sunray Dial Two-Tone Steel Watch",
+        category: "Accessories",
+        subcategory: "Watches",
+        brand: "Aura Studio",
+        price: 180,
+        compareAt: 215,
+        description: "Clean two-tone silver and gold link bracelet watch with shimmering sunray champagne dial, diamond-cut hour markers, and 50M water resistance.",
+        image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.8,
+        reviewCount: 74,
+        stock: 12,
+        availability: "In stock",
+        sku: "ACC-WTC-064",
+        tags: [
+            "watch",
+            "two-tone",
+            "steel-bracelet",
+            "luxury"
+        ],
+        attributes: {
+            CaseSize: "32mm",
+            WaterResistance: "5 ATM (50 Meters)"
+        },
+        isNew: false,
+        isFeatured: false,
+        isSale: true,
+        createdAt: "2026-08-18"
+    },
+    {
+        slug: "retro-cat-eye-acetate-sunglasses",
+        name: "Retro Cat-Eye UV400 Polished Acetate Sunglasses",
+        category: "Accessories",
+        subcategory: "Sunglasses",
+        brand: "Aura Studio",
+        price: 72,
+        compareAt: 90,
+        description: "Subtle vintage cat-eye curve crafted from hand-polished Italian bio-acetate with category 3 UV400 polarized black tinted lenses.",
+        image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.9,
+        reviewCount: 154,
+        stock: 35,
+        availability: "In stock",
+        sku: "ACC-SUN-065",
+        tags: [
+            "sunglasses",
+            "cat-eye",
+            "polarized",
+            "acetate",
+            "summer"
+        ],
+        attributes: {
+            Protection: "100% UV400 / Category 3",
+            Frame: "Bio-Acetate"
+        },
+        isNew: false,
+        isFeatured: true,
+        isSale: true,
+        createdAt: "2026-06-22"
+    },
+    {
+        slug: "oversized-tortoiseshell-shades",
+        name: "Classic Oversized Tortoiseshell Square Sunglasses",
+        category: "Accessories",
+        subcategory: "Sunglasses",
+        brand: "Field House",
+        price: 68,
+        description: "Timeless 70s oversized square frames with rich amber tortoiseshell marbling, reinforced 5-barrel hinges, and warm sepia gradient lenses.",
+        image: "https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.8,
+        reviewCount: 88,
+        stock: 27,
+        availability: "In stock",
+        sku: "ACC-SUN-066",
+        tags: [
+            "sunglasses",
+            "tortoiseshell",
+            "oversized",
+            "retro"
+        ],
+        attributes: {
+            Lens: "Scratch-Resistant CR-39",
+            Hinges: "5-Barrel German Metal"
+        },
+        isNew: false,
+        isFeatured: false,
+        isSale: false,
+        createdAt: "2026-07-08"
+    },
+    {
+        slug: "slim-wire-rim-hexagonal-sunglasses",
+        name: "Slim Wire-Rim Hexagonal Gold Metal Sunglasses",
+        category: "Accessories",
+        subcategory: "Sunglasses",
+        brand: "Atelier Maison",
+        price: 65,
+        description: "Featherlight gold stainless steel hexagonal frame with silicone nose pads and olive green crystal glass lenses.",
+        image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.7,
+        reviewCount: 49,
+        stock: 22,
+        availability: "In stock",
+        sku: "ACC-SUN-067",
+        tags: [
+            "sunglasses",
+            "wire-frame",
+            "hexagonal",
+            "gold"
+        ],
+        attributes: {
+            Frame: "Gold Plated Stainless Steel",
+            Weight: "Ultra-light 19g"
+        },
+        isNew: true,
+        isFeatured: false,
+        isSale: false,
+        createdAt: "2026-09-15"
+    },
+    {
+        slug: "french-tortoise-cellulose-hair-claw",
+        name: "French Tortoise Cellulose Acetate Hair Claw Clip",
+        category: "Accessories",
+        subcategory: "Hair Accessories",
+        brand: "Aura Essentials",
+        price: 22,
+        description: "Eco-friendly natural cellulose acetate hair claw with durable steel spring. Holds thick and fine hair securely without pulling or creasing.",
+        image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.9,
+        reviewCount: 180,
+        stock: 55,
+        availability: "In stock",
+        sku: "ACC-HAR-068",
+        tags: [
+            "hair-clip",
+            "claw-clip",
+            "tortoise",
+            "hair-accessories",
+            "bestseller"
+        ],
+        attributes: {
+            Material: "Biodegradable Cellulose Acetate",
+            Size: "4.2 inches Large"
+        },
+        isNew: false,
+        isFeatured: false,
+        isSale: false,
+        createdAt: "2026-05-18"
+    },
+    {
+        slug: "mulberry-silk-ribbon-scrunchie-set",
+        name: "100% Mulberry Silk Ribbon Bow Scrunchie 3-Pack",
+        category: "Accessories",
+        subcategory: "Hair Accessories",
+        brand: "Aura Studio",
+        price: 34,
+        compareAt: 42,
+        description: "Three pure 22 Momme silk scrunchies with detachable ribbon bow tails. Protects hair from friction, split ends, and dents.",
+        image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.9,
+        reviewCount: 110,
+        stock: 40,
+        availability: "In stock",
+        sku: "ACC-HAR-069",
+        tags: [
+            "scrunchies",
+            "silk",
+            "hair-care",
+            "bows",
+            "gift"
+        ],
+        attributes: {
+            Silk: "100% 22 Momme Grade 6A Silk",
+            Quantity: "Pack of 3 (Champagne, Black, Rose)"
+        },
+        isNew: true,
+        isFeatured: true,
+        isSale: true,
+        createdAt: "2026-09-02"
+    },
+    {
+        slug: "padded-velvet-pearl-headband",
+        name: "Padded Velvet Headband with Embellished Pearls",
+        category: "Accessories",
+        subcategory: "Hair Accessories",
+        brand: "Atelier Maison",
+        price: 38,
+        description: "Sculpted padded headband upholstered in plush black cotton velvet and hand-sewn with luminous imitation pearl clusters. Comfortable, pinch-free fit.",
+        image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.8,
+        reviewCount: 52,
+        stock: 22,
+        availability: "In stock",
+        sku: "ACC-HAR-070",
+        tags: [
+            "headband",
+            "velvet",
+            "pearls",
+            "hair-accessories",
+            "statement"
+        ],
+        attributes: {
+            Fabric: "Cotton Velvet",
+            Base: "Flexible Comfort Band"
+        },
+        isNew: false,
+        isFeatured: false,
+        isSale: false,
+        createdAt: "2026-07-28"
+    },
+    {
+        slug: "italian-leather-reversible-waist-belt",
+        name: "Full-Grain Italian Leather Reversible Waist Belt",
+        category: "Accessories",
+        subcategory: "Belts & Wallets",
+        brand: "Florence Atelier",
+        price: 58,
+        compareAt: 70,
+        description: "Twist-buckle mechanism allows easy switching between sleek black and cognac brown leather. Features beveled painted edges and brushed gold buckle.",
+        image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.9,
+        reviewCount: 135,
+        stock: 30,
+        availability: "In stock",
+        sku: "ACC-BLT-071",
+        tags: [
+            "belt",
+            "leather",
+            "reversible",
+            "wardrobe-staple"
+        ],
+        attributes: {
+            Width: "28mm (1.1 inch)",
+            Leather: "100% Italian Cowhide"
+        },
+        isNew: false,
+        isFeatured: true,
+        isSale: true,
+        createdAt: "2026-08-04"
+    },
+    {
+        slug: "slim-rfid-pebbled-leather-card-case",
+        name: "Slim RFID-Blocking Pebbled Leather Card Case",
+        category: "Accessories",
+        subcategory: "Belts & Wallets",
+        brand: "Florence Atelier",
+        price: 45,
+        description: "Compact pocket wallet with 4 exterior card slots, center cash pocket, and built-in RFID blocking shield. Soft pebbled Italian leather.",
+        image: "https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.8,
+        reviewCount: 96,
+        stock: 42,
+        availability: "In stock",
+        sku: "ACC-BLT-072",
+        tags: [
+            "wallet",
+            "card-case",
+            "rfid",
+            "leather"
+        ],
+        attributes: {
+            Slots: "4 Card Slots + 1 Center Cash Pocket",
+            Security: "RFID Protected"
+        },
+        isNew: true,
+        isFeatured: false,
+        isSale: false,
+        createdAt: "2026-09-12"
+    },
+    {
+        slug: "polished-gold-buckle-skinny-belt",
+        name: "Polished Gold Buckle Skinny Waist Dress Belt",
+        category: "Accessories",
+        subcategory: "Belts & Wallets",
+        brand: "Atelier Maison",
+        price: 42,
+        description: "18mm slim dress belt designed to cinch blazers, cardigans, and high-waist trousers. Polished round brass horseshoe buckle.",
+        image: "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.7,
+        reviewCount: 54,
+        stock: 25,
+        availability: "In stock",
+        sku: "ACC-BLT-073",
+        tags: [
+            "belt",
+            "skinny-belt",
+            "waist-belt",
+            "dress-belt"
+        ],
+        attributes: {
+            Width: "18mm (0.7 inch)",
+            Buckle: "Solid Polished Brass"
+        },
+        isNew: false,
+        isFeatured: false,
+        isSale: false,
+        createdAt: "2026-06-30"
+    },
+    {
+        slug: "panama-straw-sun-hat-black-ribbon",
+        name: "Handwoven Panama Straw Sun Hat with Black Ribbon",
+        category: "Accessories",
+        subcategory: "Hats & Scarves",
+        brand: "Field House",
+        price: 68,
+        compareAt: 85,
+        description: "Woven by hand from Ecuadorian toquilla straw fibers. Wide 3.5-inch brim shields eyes and face from UV rays, accented with a grosgrain ribbon bow.",
+        image: "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.9,
+        reviewCount: 88,
+        stock: 20,
+        availability: "In stock",
+        sku: "ACC-HAT-074",
+        tags: [
+            "hat",
+            "panama-hat",
+            "sun-hat",
+            "straw",
+            "summer"
+        ],
+        attributes: {
+            Material: "100% Genuine Toquilla Straw",
+            BrimWidth: "3.5 inches"
+        },
+        isNew: false,
+        isFeatured: true,
+        isSale: true,
+        createdAt: "2026-06-18"
+    },
+    {
+        slug: "pure-silk-printed-square-scarf",
+        name: "Pure Silk Illustrated Floral Square Neck Scarf",
+        category: "Accessories",
+        subcategory: "Hats & Scarves",
+        brand: "Atelier Maison",
+        price: 52,
+        description: "Hand-rolled hems on rich 16mm Mulberry silk twill. Wear tied around the neck, as a hair ribbon, or knotted to a handbag handle.",
+        image: "https://images.unsplash.com/photo-1601924994987-69e26d50dc26?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1601924994987-69e26d50dc26?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.8,
+        reviewCount: 67,
+        stock: 35,
+        availability: "In stock",
+        sku: "ACC-HAT-075",
+        tags: [
+            "scarf",
+            "silk",
+            "hand-rolled",
+            "french-style",
+            "versatile"
+        ],
+        attributes: {
+            Dimensions: "26 x 26 inches (65x65cm)",
+            Fabric: "100% Silk Twill"
+        },
+        isNew: true,
+        isFeatured: false,
+        isSale: false,
+        createdAt: "2026-09-10"
+    },
+    {
+        slug: "ribbed-cashmere-blend-winter-beanie",
+        name: "Ultra-Soft Ribbed Cashmere Blend Winter Beanie",
+        category: "Accessories",
+        subcategory: "Hats & Scarves",
+        brand: "Atelier Maison",
+        price: 48,
+        description: "Plush ribbed knit in a warm Mongolian cashmere and extra-fine merino wool blend. Features a foldover cuff for an adjustable slouchy fit.",
+        image: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.9,
+        reviewCount: 102,
+        stock: 28,
+        availability: "In stock",
+        sku: "ACC-HAT-076",
+        tags: [
+            "beanie",
+            "cashmere",
+            "winter",
+            "cozy",
+            "warm"
+        ],
+        attributes: {
+            Yarn: "70% Extra-fine Merino, 30% Cashmere",
+            Fit: "Unisex Stretch"
+        },
+        isNew: true,
+        isFeatured: false,
+        isSale: false,
+        createdAt: "2026-09-24"
+    },
+    {
+        slug: "chunky-18k-gold-waterdrop-earrings",
+        name: "Chunky 18K Gold Hollow Waterdrop Huggie Earrings",
+        category: "Accessories",
+        subcategory: "Earrings & Necklaces",
+        brand: "Aura Studio",
+        price: 64,
+        compareAt: 80,
+        description: "The viral hollow teardrop hoop. Ultra-lightweight so they never pull on earlobes. Plated with 18K gold over waterproof stainless steel with surgical steel posts.",
+        image: "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.9,
+        reviewCount: 290,
+        stock: 50,
+        availability: "In stock",
+        sku: "ACC-ERN-077",
+        tags: [
+            "earrings",
+            "waterdrop",
+            "gold-hoops",
+            "chunky",
+            "bestseller"
+        ],
+        attributes: {
+            Weight: "Lightweight 4g per ear",
+            Material: "18K Gold PVD Stainless Steel"
+        },
+        isNew: false,
+        isFeatured: true,
+        isSale: true,
+        createdAt: "2026-06-19"
+    },
+    {
+        slug: "pave-diamond-moissanite-studs",
+        name: "Solitaire Moissanite Pavé Stud Earrings",
+        category: "Accessories",
+        subcategory: "Earrings & Necklaces",
+        brand: "Aura Studio",
+        price: 120,
+        compareAt: 150,
+        description: "Brilliant D-color VVS1 round cut moissanite stones set in four prongs with a halo of pavé stones. Sparkling with more fire and brilliance than mined diamonds.",
+        image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.9,
+        reviewCount: 145,
+        stock: 18,
+        availability: "In stock",
+        sku: "ACC-ERN-078",
+        tags: [
+            "earrings",
+            "moissanite",
+            "studs",
+            "fine-jewelry",
+            "gift"
+        ],
+        attributes: {
+            Stone: "1.0ct DEW Each Moissanite",
+            Metal: "14K White Gold Vermeil over 925 Silver"
+        },
+        isNew: false,
+        isFeatured: true,
+        isSale: true,
+        createdAt: "2026-07-29"
+    },
+    {
+        slug: "layered-celestial-coin-pendant-necklace",
+        name: "Layered Celestial Coin & Star Pendant Necklace",
+        category: "Accessories",
+        subcategory: "Earrings & Necklaces",
+        brand: "Atelier Maison",
+        price: 85,
+        description: "Two-in-one pre-layered necklace featuring a paperclip chain and an embossed Roman coin medallion set with a tiny sparkling cubic zirconia star.",
+        image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.8,
+        reviewCount: 98,
+        stock: 24,
+        availability: "In stock",
+        sku: "ACC-ERN-079",
+        tags: [
+            "necklace",
+            "layered",
+            "coin-necklace",
+            "celestial",
+            "gold"
+        ],
+        attributes: {
+            Chains: "16 inch Paperclip + 18 inch Medallion Chain",
+            Plating: "18K Gold Plated"
+        },
+        isNew: true,
+        isFeatured: false,
+        isSale: false,
+        createdAt: "2026-09-17"
+    },
+    {
         slug: "artisan-eau-de-parfum-santal",
         name: "Atelier No. 04 Santal & Black Pepper Perfume",
-        category: "Beauty & Self-care",
-        subcategory: "Fragrance",
+        category: "Accessories",
+        subcategory: "Perfumes & Beauty",
         brand: "Atelier Maison",
         price: 95,
         compareAt: 120,
@@ -3955,13 +5443,13 @@ const rawProducts = [
         reviewCount: 168,
         stock: 14,
         availability: "In stock",
-        sku: "BTY-PRF-031",
+        sku: "ACC-BTY-080",
         tags: [
             "perfume",
             "fragrance",
             "sandalwood",
             "luxury",
-            "unisex"
+            "beauty"
         ],
         attributes: {
             Concentration: "Eau de Parfum 20%",
@@ -3973,23 +5461,56 @@ const rawProducts = [
         createdAt: "2026-08-04"
     },
     {
+        slug: "botanica-hydra-plump-multi-hyaluronic-serum",
+        name: "Botanica Hydra-Plump Multi-Hyaluronic Serum",
+        category: "Accessories",
+        subcategory: "Perfumes & Beauty",
+        brand: "Botanica Labs",
+        price: 52,
+        compareAt: 68,
+        description: "Five molecular weights of hyaluronic acid combined with snow mushroom and niacinamide to flood skin with deep moisture, bounce, and all-day dewy radiance.",
+        image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.9,
+        reviewCount: 204,
+        stock: 35,
+        availability: "In stock",
+        sku: "ACC-BTY-081",
+        tags: [
+            "skincare",
+            "serum",
+            "hyaluronic",
+            "clean-beauty",
+            "glow"
+        ],
+        attributes: {
+            Volume: "30ml / 1.0 fl oz",
+            Type: "Vegan, Cruelty-Free, Fragrance-Free"
+        },
+        isNew: true,
+        isFeatured: true,
+        isSale: true,
+        createdAt: "2026-09-20"
+    },
+    {
         slug: "cedar-fig-soy-wax-candle-set",
-        name: "Wild Fig & Hinoki Wood Soy Candle Set",
-        category: "Beauty & Self-care",
-        subcategory: "Candles",
+        name: "Wild Fig & Hinoki Wood Clean Soy Candle",
+        category: "Accessories",
+        subcategory: "Perfumes & Beauty",
         brand: "Hearth & Form",
         price: 46,
         description: "Poured by hand in reusable amber glass tumblers. Clean-burning 100% natural soy wax scented with wild fig, earthy Hinoki wood, and black amber.",
         image: "https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=1000&q=85",
         gallery: [
-            "https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=1200&q=85",
-            "https://images.unsplash.com/photo-1602874801007-bd458bb1b8b6?auto=format&fit=crop&w=1200&q=85"
+            "https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=1200&q=85"
         ],
         rating: 4.8,
         reviewCount: 94,
         stock: 30,
         availability: "In stock",
-        sku: "BTY-CND-032",
+        sku: "ACC-BTY-082",
         tags: [
             "candle",
             "soy-wax",
@@ -3998,9 +5519,9 @@ const rawProducts = [
             "gift"
         ],
         attributes: {
-            BurnTime: "50 Hours each",
+            BurnTime: "55 Hours",
             Wax: "100% USA Soy Wax",
-            Wick: "Lead-free Cotton"
+            Wick: "Lead-Free Cotton"
         },
         isNew: false,
         isFeatured: false,
@@ -4008,39 +5529,137 @@ const rawProducts = [
         createdAt: "2026-07-15"
     },
     {
-        slug: "bamboo-waffle-cloud-bath-robe",
-        name: "Bamboo & Organic Cotton Waffle Lounge Robe",
-        category: "Beauty & Self-care",
-        subcategory: "Bath & Body",
-        brand: "Aura Essentials",
-        price: 88,
-        compareAt: 110,
-        description: "Lightweight honeycombed waffle weave that absorbs water instantly and dries fast. Ultra-soft against sensitive skin, featuring deep pockets and a secure tie.",
-        image: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=1000&q=85",
+        slug: "luminous-botanical-glow-oil",
+        name: "Luminous Botanical Face & Body Glow Oil",
+        category: "Accessories",
+        subcategory: "Perfumes & Beauty",
+        brand: "Botanica Labs",
+        price: 64,
+        description: "Fast-absorbing dry body oil packed with cold-pressed rosehip, squalane, and golden jojoba. Leaves skin glistening and scented with sweet neroli blossom.",
+        image: "https://images.unsplash.com/photo-1608248597359-0744655b3310?auto=format&fit=crop&w=1000&q=85",
         gallery: [
-            "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=1200&q=85",
-            "https://images.unsplash.com/photo-1583743814966-8936f37f4678?auto=format&fit=crop&w=1200&q=85"
+            "https://images.unsplash.com/photo-1608248597359-0744655b3310?auto=format&fit=crop&w=1200&q=85"
         ],
         rating: 4.8,
-        reviewCount: 79,
-        stock: 16,
+        reviewCount: 78,
+        stock: 22,
         availability: "In stock",
-        sku: "BTY-ROB-033",
+        sku: "ACC-BTY-083",
         tags: [
-            "robe",
-            "loungewear",
-            "spa",
-            "cotton",
-            "bath"
+            "body-oil",
+            "glow",
+            "skincare",
+            "botanical",
+            "clean-beauty"
         ],
         attributes: {
-            Blend: "60% Organic Cotton, 40% Bamboo Viscose",
-            Fit: "Unisex Relaxed"
+            Volume: "100ml / 3.4 fl oz",
+            KeyIngredients: "Cold-Pressed Rosehip, Squalane"
         },
         isNew: true,
+        isFeatured: false,
+        isSale: false,
+        createdAt: "2026-09-08"
+    },
+    {
+        slug: "ribbed-cotton-baby-headband-set",
+        name: "Soft Ribbed Cotton Baby Top-Knot Headband 3-Pack",
+        category: "Accessories",
+        subcategory: "Baby & Kids Accessories",
+        brand: "Little Aura",
+        price: 24,
+        description: "Stretchy organic cotton ribbed knit with hand-tied top knot bows. Super gentle on newborns and toddlers, leaves no red marks on delicate heads.",
+        image: "https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.9,
+        reviewCount: 88,
+        stock: 45,
+        availability: "In stock",
+        sku: "ACC-KID-084",
+        tags: [
+            "baby-headband",
+            "bows",
+            "baby-accessories",
+            "organic",
+            "gift"
+        ],
+        attributes: {
+            Material: "95% Organic Cotton, 5% Spandex",
+            Count: "Pack of 3 Neutral Earthy Tones"
+        },
+        isNew: false,
+        isFeatured: false,
+        isSale: false,
+        createdAt: "2026-08-22"
+    },
+    {
+        slug: "kids-polarized-flexible-sunglasses",
+        name: "Kids Polarized Flexible Frame UV400 Sunglasses",
+        category: "Accessories",
+        subcategory: "Baby & Kids Accessories",
+        brand: "Little Aura",
+        price: 28,
+        description: "Virtually unbreakable flexible silicone rubber frames that bend without snapping. Certified UV400 TAC polarized glare-blocking lenses with safety strap.",
+        image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.8,
+        reviewCount: 65,
+        stock: 35,
+        availability: "In stock",
+        sku: "ACC-KID-085",
+        tags: [
+            "kids-sunglasses",
+            "polarized",
+            "flexible",
+            "summer",
+            "beach"
+        ],
+        attributes: {
+            Material: "Food-Grade Flexible TPE Silicone",
+            AgeRange: "Ages 2 to 8"
+        },
+        isNew: true,
+        isFeatured: false,
+        isSale: false,
+        createdAt: "2026-09-16"
+    },
+    {
+        slug: "toddler-organic-cotton-bucket-hat",
+        name: "Toddler Organic Cotton Sun Protection Bucket Hat",
+        category: "Accessories",
+        subcategory: "Baby & Kids Accessories",
+        brand: "Little Aura",
+        price: 30,
+        compareAt: 38,
+        description: "UPF 50+ sun defense with a wide protective brim, breathable cotton lining, and break-away safety chin strap for windy days outdoors.",
+        image: "https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=1000&q=85",
+        gallery: [
+            "https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=1200&q=85"
+        ],
+        rating: 4.9,
+        reviewCount: 52,
+        stock: 28,
+        availability: "In stock",
+        sku: "ACC-KID-086",
+        tags: [
+            "bucket-hat",
+            "sun-hat",
+            "kids",
+            "upf50",
+            "summer"
+        ],
+        attributes: {
+            Protection: "UPF 50+ Certified",
+            Material: "100% GOTS Organic Cotton"
+        },
+        isNew: false,
         isFeatured: true,
         isSale: true,
-        createdAt: "2026-09-25"
+        createdAt: "2026-07-18"
     }
 ];
 const products = rawProducts.map((p, index)=>({
