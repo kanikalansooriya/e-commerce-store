@@ -161,7 +161,7 @@ export function ShopExperience({ initialQuery, initialCategory, initialSort }: {
         </div>
       ) : filtered.length ? (
         <>
-          <ScrollReveal className="product-grid reveal-stagger">{visibleProducts.map((product, index) => <ProductCard key={product.id} product={product} priority={index === 0} />)}</ScrollReveal>
+          <ScrollReveal key={`${page}-${category}-${sort}`} className="product-grid reveal-stagger">{visibleProducts.map((product, index) => <ProductCard key={product.id} product={product} priority={index === 0} />)}</ScrollReveal>
           <div className="pagination-row" aria-label="Catalog pagination">
             <button type="button" className="button-secondary" disabled={page === 1} onClick={() => setPage((current) => Math.max(1, current - 1))}><ChevronLeft size={15} /> Prev</button>
             <span>Page {page} of {pageCount}</span>

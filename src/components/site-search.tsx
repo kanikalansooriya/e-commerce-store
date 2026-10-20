@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { ArrowUpRight, Clock3, Search, X } from "lucide-react";
 import { categories, formatPrice, products } from "@/lib/products";
+import { gsap, isReducedMotion } from "@/lib/gsap";
 
 const recentStorageKey = "goodform-recent-searches";
 const popularCategories = ["Home", "Carry", "Audio", "Self-care"];
@@ -38,6 +39,16 @@ export function SiteSearch() {
   const [activeIndex, setActiveIndex] = useState(-1);
   const [isOpen, setIsOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const suggestionsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = suggestionsRef.current;
+    if (!el || !isOpen || isReducedMotion()) return;
+    const ctx = gsap.context(() => {
+      gsap.fromTo(el, { opacity: 0, y: -6 }, { opacity: 1, y: 0, duration: 0.2, ease: "power2.out" });
+    }, el);
+    return () => ctx.revert();
+  }, [isOpen]);
 
   useEffect(() => {
     const timer = window.setTimeout(() => setDebouncedQuery(query.trim()), 140);
@@ -156,7 +167,7 @@ export function SiteSearch() {
           <button className="search-submit" type="submit" aria-label="Search">Go</button>
         </form>
         {showDropdown && (
-          <div className="search-suggestions" id="search-suggestions" role="listbox" aria-label="Search suggestions">
+          <div ref={suggestionsRef} className="search-suggestions" id="search-suggestions" role="listbox" aria-label="Search suggestions">
             {debouncedQuery ? matches.length ? <>
               <div className="suggestion-heading">Suggestions <span>{matches.length} results</span></div>
               {matches.map((product, index) => (

@@ -1,9 +1,10 @@
 "use client";
 
-import { createContext, useContext, useEffect, useMemo, useState } from "react";
+import { createContext, useContext, useEffect, useMemo, useRef, useState } from "react";
 import type { ReactNode } from "react";
 import { Heart } from "lucide-react";
 import type { Product } from "@/lib/products";
+import { animateToastEnter } from "@/lib/gsap";
 
 const STORAGE_KEY = "northline-wishlist";
 
@@ -37,6 +38,7 @@ export function WishlistProvider({ children }: { children: ReactNode }) {
   });
   const isReady = typeof window !== "undefined";
   const [toast, setToast] = useState("");
+  const toastRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!isReady) return;
@@ -45,6 +47,7 @@ export function WishlistProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     if (!toast) return;
+    animateToastEnter(toastRef.current);
     const timer = window.setTimeout(() => setToast(""), 2200);
     return () => window.clearTimeout(timer);
   }, [toast]);
@@ -72,7 +75,7 @@ export function WishlistProvider({ children }: { children: ReactNode }) {
     <WishlistContext.Provider value={value}>
       {children}
       {toast && (
-        <div className="toast" role="status" aria-live="polite">
+        <div ref={toastRef} className="toast" role="status" aria-live="polite">
           <span className="toast-check" aria-hidden="true"><Heart size={12} fill="currentColor" /></span>
           {toast}
         </div>

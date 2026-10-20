@@ -51,14 +51,51 @@ button, input, select, textarea { accent-color: var(--accent); }
 @keyframes badge-pop { 45% { transform: scale(1.35); } 100% { transform: scale(1); } }
 .route-transition { animation: route-enter .28s ease both; }
 @keyframes route-enter { from { opacity: .72; } to { opacity: 1; } }
-.scroll-reveal { transition: opacity .65s ease, transform .65s cubic-bezier(.2,.7,.2,1); transition-delay: var(--reveal-delay, 0ms); }
-html[data-motion="on"] .scroll-reveal:not(.is-visible) { opacity: 0; transform: translateY(18px); }
-.reveal-stagger.is-visible > * { animation: card-enter .46s cubic-bezier(.2,.7,.2,1) both; }
-.reveal-stagger.is-visible > *:nth-child(2) { animation-delay: 60ms; }
-.reveal-stagger.is-visible > *:nth-child(3) { animation-delay: 120ms; }
-.reveal-stagger.is-visible > *:nth-child(4) { animation-delay: 180ms; }
-.reveal-stagger.is-visible > *:nth-child(n+5) { animation-delay: 220ms; }
-@keyframes card-enter { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+.scroll-reveal { will-change: transform, opacity; }
+
+/* Interactive Micro-Interactions */
+.button-primary, .button-secondary, .hero-btn-primary, .hero-btn-secondary, .quick-add-btn, .add-icon, .icon-button, .tab-btn {
+  transition: transform .18s cubic-bezier(.2,.8,.2,1), background-color .18s ease, color .18s ease, box-shadow .18s ease;
+}
+.button-primary:active, .button-secondary:active, .hero-btn-primary:active, .hero-btn-secondary:active, .quick-add-btn:active, .add-icon:active, .icon-button:active, .tab-btn:active {
+  transform: scale(0.96) !important;
+}
+
+/* Category Card & Banner hover elevation and subtle image zoom */
+.cat-card {
+  transition: transform .32s cubic-bezier(.2,.7,.2,1), box-shadow .32s ease;
+}
+.cat-card:hover {
+  transform: translateY(-3px);
+}
+.cat-card-img {
+  transition: transform .5s cubic-bezier(.2,.7,.2,1);
+}
+.cat-card:hover .cat-card-img {
+  transform: scale(1.05);
+}
+
+.promo-card {
+  transition: transform .32s cubic-bezier(.2,.7,.2,1), box-shadow .32s ease;
+}
+.promo-card:hover {
+  transform: translateY(-2px);
+}
+.promo-card-visual img {
+  transition: transform .55s cubic-bezier(.2,.7,.2,1);
+}
+.promo-card:hover .promo-card-visual img {
+  transform: scale(1.04);
+}
+
+/* Wishlist toggle smooth transition */
+.wishlist-toggle, .wishlist-detail-toggle {
+  transition: transform .2s cubic-bezier(.2,.8,.2,1), background-color .18s ease, color .18s ease, border-color .18s ease;
+}
+.wishlist-toggle:active, .wishlist-detail-toggle:active {
+  transform: scale(0.92);
+}
+
 .back-to-top { position: fixed; z-index: 35; right: 24px; bottom: 24px; width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: var(--radius-pill); background: var(--surface); color: var(--ink); box-shadow: var(--shadow-soft); animation: rise-in .2s both; }
 .back-to-top:hover { border-color: var(--accent); color: var(--accent-dark); transform: translateY(-2px); }
 

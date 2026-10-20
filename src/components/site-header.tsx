@@ -8,6 +8,7 @@ import { useCart } from "@/context/cart-context";
 import { useWishlist } from "@/context/wishlist-context";
 import { SettingsPanel } from "@/components/settings-panel";
 import { SiteSearch } from "@/components/site-search";
+import { gsap, animateBadgeBounce, isReducedMotion } from "@/lib/gsap";
 
 const topLinks = [
   { href: "/category/women", label: "Women" },
@@ -39,8 +40,14 @@ export function SiteHeader() {
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [shopMenuOpen, setShopMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [bagBounce, setBagBounce] = useState(false);
-  const previousCount = useRef(itemCount);
+
+  const bagBadgeRef = useRef<HTMLSpanElement>(null);
+  const wishlistBadgeRef = useRef<HTMLSpanElement>(null);
+  const megaMenuRef = useRef<HTMLDivElement>(null);
+  const mobileNavRef = useRef<HTMLElement>(null);
+
+  const previousCartCount = useRef(itemCount);
+  const previousWishlistCount = useRef(wishlistCount);
   const closeSettings = useCallback(() => setSettingsOpen(false), []);
 
   useEffect(() => {
@@ -50,13 +57,53 @@ export function SiteHeader() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // GSAP Cart badge bounce
   useEffect(() => {
-    if (previousCount.current === itemCount) return;
-    previousCount.current = itemCount;
-    setBagBounce(true);
-    const timer = window.setTimeout(() => setBagBounce(false), 420);
-    return () => window.clearTimeout(timer);
+    if (previousCartCount.current === itemCount) return;
+    previousCartCount.current = itemCount;
+    animateBadgeBounce(bagBadgeRef.current);
   }, [itemCount]);
+
+  // GSAP Wishlist badge bounce
+  useEffect(() => {
+    if (previousWishlistCount.current === wishlistCount) return;
+    previousWishlistCount.current = wishlistCount;
+    if (wishlistBadgeRef.current) {
+      animateBadgeBounce(wishlistBadgeRef.current);
+    }
+  }, [wishlistCount]);
+
+  // GSAP Mega Menu entrance
+  useEffect(() => {
+    const el = megaMenuRef.current;
+    if (!el || !shopMenuOpen || isReducedMotion()) return;
+
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        el,
+        { opacity: 0, y: -6 },
+        { opacity: 1, y: 0, duration: 0.22, ease: "power2.out" }
+      );
+    }, el);
+
+    return () => ctx.revert();
+  }, [shopMenuOpen]);
+
+  // GSAP Mobile Nav entrance
+  useEffect(() => {
+    const el = mobileNavRef.current;
+    if (!el || !menuOpen || isReducedMotion()) return;
+
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        el,
+        { opacity: 0, y: -8 },
+        { opacity: 1, y: 0, duration: 0.25, ease: "power2.out" }
+      );
+    }, el);
+
+    return () => ctx.revert();
+  }, [menuOpen]);
 
   return (
     <>
@@ -78,7 +125,15 @@ export function SiteHeader() {
           </Link>
           <SiteSearch />
           <div className="header-actions">
-            <button className="icon-button settings-trigger" type="button" data-settings-trigger aria-label="Appearance settings" aria-haspopup="dialog" aria-expanded={settingsOpen} onClick={() => setSettingsOpen(true)}>
+            <button
+              className="icon-button settings-trigger"
+              type="button"
+              data-settings-trigger
+              aria-label="Appearance settings"
+              aria-haspopup="dialog"
+              aria-expanded={settingsOpen}
+              onClick={() => setSettingsOpen(true)}
+            >
               <Settings2 size={19} />
             </button>
             <Link className="icon-button account-link" href="/account" aria-label="Your account">
@@ -86,26 +141,44 @@ export function SiteHeader() {
             </Link>
             <Link className="icon-button wishlist-link" href="/wishlist" aria-label={`Wishlist, ${wishlistCount} items`}>
               <Heart size={19} />
-              {wishlistCount > 0 && <span className="bag-count">{wishlistCount}</span>}
+              {wishlistCount > 0 && (
+                <span ref={wishlistBadgeRef} className="bag-count">
+                  {wishlistCount}
+                </span>
+              )}
             </Link>
             <Link className="icon-button bag-link" href="/cart" aria-label={`Shopping bag, ${itemCount} items`}>
               <ShoppingBag size={20} />
-              <span className={`bag-count${bagBounce ? " is-bouncing" : ""}`}>{itemCount}</span>
+              <span ref={bagBadgeRef} className="bag-count">
+                {itemCount}
+              </span>
             </Link>
           </div>
         </div>
         <nav className="desktop-nav page-shell" aria-label="Main navigation">
-          <div className={`shop-menu-wrap${shopMenuOpen ? " is-open" : ""}`} onMouseEnter={() => setShopMenuOpen(true)} onMouseLeave={() => setShopMenuOpen(false)}>
-            <button type="button" className="nav-shop-trigger" aria-expanded={shopMenuOpen} aria-label="Open shop categories" onClick={() => setShopMenuOpen((open) => !open)}>
+          <div
+            className={`shop-menu-wrap${shopMenuOpen ? " is-open" : ""}`}
+            onMouseEnter={() => setShopMenuOpen(true)}
+            onMouseLeave={() => setShopMenuOpen(false)}
+          >
+            <button
+              type="button"
+              className="nav-shop-trigger"
+              aria-expanded={shopMenuOpen}
+              aria-label="Open shop categories"
+              onClick={() => setShopMenuOpen((open) => !open)}
+            >
               Shop
             </button>
-            <div className="mega-menu" role="menu" aria-label="Shop categories">
+            <div ref={megaMenuRef} className="mega-menu" role="menu" aria-label="Shop categories">
               <div className="mega-menu-columns">
                 {megaGroups.map((group) => (
                   <div key={group.heading} className="mega-menu-column">
                     <span className="mega-menu-heading">{group.heading}</span>
                     {group.items.map((item) => (
-                      <Link key={item} href={`/shop?category=${encodeURIComponent(group.heading)}`} onClick={() => setShopMenuOpen(false)}>{item}</Link>
+                      <Link key={item} href={`/shop?category=${encodeURIComponent(group.heading)}`} onClick={() => setShopMenuOpen(false)}>
+                        {item}
+                      </Link>
                     ))}
                   </div>
                 ))}
@@ -117,7 +190,9 @@ export function SiteHeader() {
               </div>
             </div>
           </div>
-          <Link href="/shop?sort=newest" aria-current={pathname === "/shop?sort=newest" ? "page" : undefined}>New Arrivals</Link>
+          <Link href="/shop?sort=newest" aria-current={pathname === "/shop?sort=newest" ? "page" : undefined}>
+            New Arrivals
+          </Link>
           {topLinks.map((link) => (
             <Link key={link.href} href={link.href} aria-current={pathname === link.href ? "page" : undefined}>
               {link.label}
@@ -126,7 +201,7 @@ export function SiteHeader() {
           <Link className="nav-right" href="/shop">View all categories</Link>
         </nav>
         {menuOpen && (
-          <nav className="mobile-nav" aria-label="Mobile navigation">
+          <nav ref={mobileNavRef} className="mobile-nav" aria-label="Mobile navigation">
             <Link href="/shop" onClick={() => setMenuOpen(false)}>Shop</Link>
             <Link href="/shop?sort=newest" onClick={() => setMenuOpen(false)}>New Arrivals</Link>
             {topLinks.map((link) => (

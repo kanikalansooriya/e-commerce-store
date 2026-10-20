@@ -3,10 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { ArrowUpRight, Check, Heart, Plus, ShoppingBag, Star } from "lucide-react";
+import { Check, Heart, Plus, ShoppingBag, Star } from "lucide-react";
 import { useCart } from "@/context/cart-context";
 import { useWishlist } from "@/context/wishlist-context";
 import { formatPrice, type Product } from "@/lib/products";
+import { animateButtonPress, animateHeartPop } from "@/lib/gsap";
 
 export function ProductCard({ product, priority = false }: { product: Product; priority?: boolean }) {
   const { addItem } = useCart();
@@ -18,10 +19,11 @@ export function ProductCard({ product, priority = false }: { product: Product; p
     ? Math.round(((product.compareAt - product.price) / product.compareAt) * 100)
     : 0;
 
-  const handleAdd = (e: React.MouseEvent) => {
+  const handleAdd = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     addItem(product);
     setAdded(true);
+    animateButtonPress(e.currentTarget);
     setTimeout(() => setAdded(false), 1400);
   };
 
@@ -68,6 +70,7 @@ export function ProductCard({ product, priority = false }: { product: Product; p
             aria-label={saved ? `Remove ${product.name} from wishlist` : `Save ${product.name} to wishlist`}
             onClick={(event) => {
               event.preventDefault();
+              animateHeartPop(event.currentTarget, !saved);
               toggleItem(product);
             }}
           >

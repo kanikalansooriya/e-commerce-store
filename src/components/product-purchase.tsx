@@ -8,6 +8,7 @@ import { formatPrice } from "@/lib/products";
 import { useCart } from "@/context/cart-context";
 import { useWishlist } from "@/context/wishlist-context";
 import { QuantityStepper } from "@/components/quantity-stepper";
+import { animateButtonPress, animateHeartPop } from "@/lib/gsap";
 
 export function ProductPurchase({ product }: { product: Product }) {
   const [quantity, setQuantity] = useState(1);
@@ -29,21 +30,44 @@ export function ProductPurchase({ product }: { product: Product }) {
       <div className="purchase-availability"><span className="availability-dot" /> In stock and ready to go</div>
       <div className="purchase-controls">
         <QuantityStepper value={quantity} onChange={setQuantity} />
-        <button className="button-primary purchase-add" onClick={() => addItem(product, quantity)}>Add to bag <ArrowRight size={16} /></button>
+        <button
+          className="button-primary purchase-add"
+          onClick={(e) => {
+            animateButtonPress(e.currentTarget);
+            addItem(product, quantity);
+          }}
+        >
+          Add to bag <ArrowRight size={16} />
+        </button>
       </div>
       <div className="detail-actions">
-        <button className="button-secondary purchase-buy" onClick={() => { addItem(product, quantity); router.push("/checkout"); }}>Buy now</button>
+        <button
+          className="button-secondary purchase-buy"
+          onClick={(e) => {
+            animateButtonPress(e.currentTarget);
+            addItem(product, quantity);
+            router.push("/checkout");
+          }}
+        >
+          Buy now
+        </button>
         <button
           type="button"
           className={`wishlist-detail-toggle${saved ? " is-saved" : ""}`}
-          onClick={() => toggleItem(product)}
+          onClick={(e) => {
+            animateHeartPop(e.currentTarget, !saved);
+            toggleItem(product);
+          }}
           aria-label={saved ? `Remove ${product.name} from wishlist` : `Save ${product.name} to wishlist`}
         >
           <Heart size={15} fill={saved ? "currentColor" : "none"} />
           {saved ? "Saved" : "Wishlist"}
         </button>
       </div>
-      <div className="product-promises"><div><Truck size={17} /> Free shipping over $100</div><div><ShieldCheck size={17} /> Easy 30-day returns</div></div>
+      <div className="product-promises">
+        <div><Truck size={17} /> Free shipping over $100</div>
+        <div><ShieldCheck size={17} /> Easy 30-day returns</div>
+      </div>
     </div>
   );
 }

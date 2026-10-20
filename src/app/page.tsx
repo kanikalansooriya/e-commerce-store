@@ -122,7 +122,7 @@ export default function Home() {
   return (
     <>
       {/* HERO SECTION */}
-      <section className="ecommerce-hero">
+      <ScrollReveal as="section" className="ecommerce-hero">
         <div className="hero-left-content">
           <div className="hero-badge">
             <Sparkles size={14} className="text-amber-400" />
@@ -184,10 +184,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </ScrollReveal>
 
       {/* VALUE PROPOSITIONS / BENEFITS BAR */}
-      <section className="features-strip page-shell" aria-label="Customer Benefits">
+      <ScrollReveal as="section" className="features-strip page-shell reveal-stagger" aria-label="Customer Benefits">
         <div className="feature-item">
           <div className="feature-icon-wrap"><Truck size={20} /></div>
           <div>
@@ -309,7 +309,7 @@ export default function Home() {
       <CuratedTabsSection allProducts={products} />
 
       {/* BRAND PARTNERS TICKER */}
-      <section className="brand-ticker-section">
+      <ScrollReveal as="section" className="brand-ticker-section">
         <div className="page-shell">
           <p className="ticker-intro">TRUSTED PARTNER BRANDS & PRESS FEATURES</p>
           <div className="brand-logos-row">
@@ -320,7 +320,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </ScrollReveal>
 
       {/* CUSTOMER REVIEWS & TESTIMONIALS */}
       <ScrollReveal as="section" className="section-block page-shell">
@@ -343,7 +343,7 @@ export default function Home() {
               </div>
               <p className="review-quote">&ldquo;{rev.comment}&rdquo;</p>
               <div className="reviewer-info">
-                <div className="reviewer-avatar">
+                 <div className="reviewer-avatar">
                   <Image src={rev.avatar} alt={rev.name} fill sizes="48px" />
                 </div>
                 <div>
@@ -357,7 +357,7 @@ export default function Home() {
       </ScrollReveal>
 
       {/* INSTAGRAM COMMUNITY SHOWCASE */}
-      <section className="instagram-strip">
+      <ScrollReveal as="section" className="instagram-strip">
         <div className="page-shell">
           <div className="insta-header">
             <h3>#AuraLifestyle</h3>
@@ -377,7 +377,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </ScrollReveal>
 
       {/* NEWSLETTER */}
       <ScrollReveal as="section" className="section-block section-tint">

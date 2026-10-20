@@ -1,13 +1,15 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ArrowRight, Clock, Flame, Sparkles, TrendingUp, Award } from "lucide-react";
 import { ProductCard } from "@/components/product-card";
 import { type Product } from "@/lib/products";
+import { gsap, animateButtonPress, isReducedMotion } from "@/lib/gsap";
 
 export function FlashDealsSection({ dealProducts }: { dealProducts: Product[] }) {
   const [timeLeft, setTimeLeft] = useState({ hours: 14, minutes: 42, seconds: 18 });
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -26,7 +28,7 @@ export function FlashDealsSection({ dealProducts }: { dealProducts: Product[] })
   }, []);
 
   return (
-    <section className="flash-deals-section page-shell">
+    <section ref={sectionRef} className="flash-deals-section page-shell">
       <div className="flash-deals-header">
         <div className="flash-deals-title-wrap">
           <div className="deals-badge">
@@ -71,6 +73,7 @@ export function FlashDealsSection({ dealProducts }: { dealProducts: Product[] })
 
 export function CuratedTabsSection({ allProducts }: { allProducts: Product[] }) {
   const [activeTab, setActiveTab] = useState<"trending" | "bestseller" | "new" | "deals">("trending");
+  const gridRef = useRef<HTMLDivElement>(null);
 
   const tabProducts = allProducts.filter((p) => {
     if (activeTab === "trending") return p.rating >= 4.8;
@@ -79,6 +82,22 @@ export function CuratedTabsSection({ allProducts }: { allProducts: Product[] }) 
     if (activeTab === "deals") return p.isSale;
     return true;
   });
+
+  useEffect(() => {
+    const el = gridRef.current;
+    if (!el || isReducedMotion()) return;
+
+    const cards = el.querySelectorAll(".product-card");
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        cards,
+        { opacity: 0, y: 14 },
+        { opacity: 1, y: 0, duration: 0.38, stagger: 0.05, ease: "power2.out" }
+      );
+    }, el);
+
+    return () => ctx.revert();
+  }, [activeTab]);
 
   return (
     <section className="section-block page-shell">
@@ -92,35 +111,47 @@ export function CuratedTabsSection({ allProducts }: { allProducts: Product[] }) 
           <button
             type="button"
             className={`tab-btn ${activeTab === "trending" ? "is-active" : ""}`}
-            onClick={() => setActiveTab("trending")}
+            onClick={(e) => {
+              animateButtonPress(e.currentTarget);
+              setActiveTab("trending");
+            }}
           >
             <TrendingUp size={15} /> Trending Now
           </button>
           <button
             type="button"
             className={`tab-btn ${activeTab === "bestseller" ? "is-active" : ""}`}
-            onClick={() => setActiveTab("bestseller")}
+            onClick={(e) => {
+              animateButtonPress(e.currentTarget);
+              setActiveTab("bestseller");
+            }}
           >
             <Award size={15} /> Best Sellers
           </button>
           <button
             type="button"
             className={`tab-btn ${activeTab === "new" ? "is-active" : ""}`}
-            onClick={() => setActiveTab("new")}
+            onClick={(e) => {
+              animateButtonPress(e.currentTarget);
+              setActiveTab("new");
+            }}
           >
             <Sparkles size={15} /> New Arrivals
           </button>
           <button
             type="button"
             className={`tab-btn ${activeTab === "deals" ? "is-active" : ""}`}
-            onClick={() => setActiveTab("deals")}
+            onClick={(e) => {
+              animateButtonPress(e.currentTarget);
+              setActiveTab("deals");
+            }}
           >
             <Flame size={15} /> Top Deals
           </button>
         </div>
       </div>
 
-      <div className="product-grid">
+      <div ref={gridRef} className="product-grid">
         {tabProducts.slice(0, 8).map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
