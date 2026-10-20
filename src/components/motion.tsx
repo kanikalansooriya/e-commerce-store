@@ -42,9 +42,19 @@ export function ScrollReveal({
         element.querySelector(".review-card");
 
       if (isStaggered) {
-        const items = element.querySelectorAll<HTMLElement>(
-          ".product-card, .cat-card, .review-card, .feature-item, .promo-card, > *"
+        let items = Array.from(
+          element.querySelectorAll<HTMLElement>(
+            ".product-card, .cat-card, .review-card, .feature-item, .promo-card, .reveal-item"
+          )
         );
+
+        if (items.length === 0) {
+          items = Array.from(element.children) as HTMLElement[];
+        }
+
+        if (items.length === 0) {
+          items = [element];
+        }
 
         // Hide initially in GSAP context (preserves SSR visibility if JS fails)
         gsap.set(element, { opacity: 1 });

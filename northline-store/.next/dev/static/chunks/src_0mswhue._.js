@@ -38,7 +38,15 @@ function ScrollReveal({ children, className = "", as = "div", delay = 0, id, "ar
                 "ScrollReveal.useEffect.ctx": ()=>{
                     const isStaggered = element.classList.contains("reveal-stagger") || element.querySelector(".product-card") || element.querySelector(".cat-card") || element.querySelector(".review-card");
                     if (isStaggered) {
-                        const items = element.querySelectorAll(".product-card, .cat-card, .review-card, .feature-item, .promo-card, > *");
+                        let items = Array.from(element.querySelectorAll(".product-card, .cat-card, .review-card, .feature-item, .promo-card, .reveal-item"));
+                        if (items.length === 0) {
+                            items = Array.from(element.children);
+                        }
+                        if (items.length === 0) {
+                            items = [
+                                element
+                            ];
+                        }
                         // Hide initially in GSAP context (preserves SSR visibility if JS fails)
                         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].set(element, {
                             opacity: 1
@@ -109,7 +117,7 @@ function ScrollReveal({ children, className = "", as = "div", delay = 0, id, "ar
             children: children
         }, void 0, false, {
             fileName: "[project]/src/components/motion.tsx",
-            lineNumber: 103,
+            lineNumber: 113,
             columnNumber: 7
         }, this);
     }
@@ -124,7 +132,7 @@ function ScrollReveal({ children, className = "", as = "div", delay = 0, id, "ar
         children: children
     }, void 0, false, {
         fileName: "[project]/src/components/motion.tsx",
-        lineNumber: 118,
+        lineNumber: 128,
         columnNumber: 5
     }, this);
 }
@@ -166,7 +174,7 @@ function RouteTransition({ children }) {
         children: children
     }, pathname, false, {
         fileName: "[project]/src/components/motion.tsx",
-        lineNumber: 159,
+        lineNumber: 169,
         columnNumber: 5
     }, this);
 }
@@ -237,12 +245,12 @@ function BackToTop() {
             size: 17
         }, void 0, false, {
             fileName: "[project]/src/components/motion.tsx",
-            lineNumber: 211,
+            lineNumber: 221,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/motion.tsx",
-        lineNumber: 201,
+        lineNumber: 211,
         columnNumber: 5
     }, this);
 }
