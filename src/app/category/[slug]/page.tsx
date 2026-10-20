@@ -8,100 +8,149 @@ import { products } from "@/lib/products";
 
 const categoryMap: Record<string, { label: string; description: string; image: string; subcategories: string[] }> = {
   women: {
-    label: "Women",
-    description: "Quiet confidence, considered layers, and pieces that feel as good as they look.",
+    label: "Women's Collection",
+    description: "Effortlessly elegant silhouettes, timeless staples, and pieces designed to make you feel your best.",
     image: "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1400&q=85",
-    subcategories: ["Clothing", "Shoes", "Bags", "Accessories", "Jewelry"],
+    subcategories: ["Dresses", "Tops & Blouses", "Knitwear", "Jackets", "Shoes", "Bags", "Jewelry"],
   },
+  dresses: {
+    label: "Dresses",
+    description: "From effortless daytime linen to radiant silk evening silhouettes.",
+    image: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1400&q=85",
+    subcategories: ["Casual Dresses", "Midi Dresses", "Maxi Dresses", "Evening Dresses", "Summer Dresses"],
+  },
+  "tops-blouses": {
+    label: "Tops & Blouses",
+    description: "Crisp cotton button-downs, fluid silk blouses, and everyday tees.",
+    image: "https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=1400&q=85",
+    subcategories: ["Blouses", "Shirts", "T-Shirts", "Knit Tops", "Camisoles"],
+  },
+  knitwear: {
+    label: "Knitwear",
+    description: "Sumptuous cashmere cardigans, relaxed crewnecks, and light transitional layers.",
+    image: "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=1400&q=85",
+    subcategories: ["Cardigans", "Sweaters", "Cashmere Knits", "Vests"],
+  },
+  "jackets-coats": {
+    label: "Jackets & Coats",
+    description: "Modern tailored blazers, classic trench coats, and warm wool outwear.",
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1400&q=85",
+    subcategories: ["Blazers", "Trench Coats", "Wool Coats", "Jackets"],
+  },
+  "pants-skirts": {
+    label: "Pants & Skirts",
+    description: "Flattering tailored trousers, fluid pleated skirts, and breathable linen bottoms.",
+    image: "https://images.unsplash.com/photo-1509551388413-e18d0ac5d495?auto=format&fit=crop&w=1400&q=85",
+    subcategories: ["Trousers", "Skirts", "Linen Pants", "Wide-Leg Pants"],
+  },
+  shoes: {
+    label: "Shoes & Heels",
+    description: "Comfortable flats, timeless leather loafers, and delicate strappy heels.",
+    image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=1400&q=85",
+    subcategories: ["Heels", "Flats", "Sandals", "Boots", "Sneakers"],
+  },
+  bags: {
+    label: "Bags & Totes",
+    description: "Full-grain leather shoulder bags, everyday carryall totes, and sleek crossbodies.",
+    image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1400&q=85",
+    subcategories: ["Handbags", "Shoulder Bags", "Tote Bags", "Crossbody"],
+  },
+  "jewelry-accessories": {
+    label: "Jewelry & Accessories",
+    description: "Subtle 18K gold vermeil chains, pavé earrings, and everyday finishing touches.",
+    image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1400&q=85",
+    subcategories: ["Earrings", "Necklaces", "Rings", "Bracelets", "Sunglasses"],
+  },
+  "beauty-fragrance": {
+    label: "Beauty & Fragrance",
+    description: "Nourishing botanical skincare, artisan eau de parfums, and calming home scents.",
+    image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1400&q=85",
+    subcategories: ["Perfume", "Skincare", "Bath & Body", "Candles"],
+  },
+  sale: {
+    label: "Sale & Offers",
+    description: "A curated edit of quality fashion and everyday pieces at special pricing.",
+    image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1400&q=85",
+    subcategories: ["Under $75", "Seasonal Markdowns", "Last Chance"],
+  },
+  // Aliases for compatibility:
   men: {
-    label: "Men",
-    description: "Modern essentials built for everyday ease, sharp silhouettes, and less fuss.",
-    image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1400&q=85",
-    subcategories: ["Clothing", "Shoes", "Bags", "Accessories", "Watches"],
+    label: "Women's Collection",
+    description: "Effortlessly elegant silhouettes and timeless staples.",
+    image: "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1400&q=85",
+    subcategories: ["Clothing", "Shoes", "Bags", "Jewelry"],
   },
   clothing: {
     label: "Clothing",
-    description: "Soft layers, elevated basics, and silhouettes that move with the rhythm of real life.",
+    description: "Soft layers, elevated basics, and silhouettes that move with real life.",
     image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1400&q=85",
-    subcategories: ["T-Shirts", "Shirts", "Dresses", "Tops", "Bottoms", "Jackets", "Knitwear", "Activewear"],
-  },
-  shoes: {
-    label: "Shoes",
-    description: "Comfortable soles, refined finishes, and everyday pairs that feel easy to live in.",
-    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1400&q=85",
-    subcategories: ["Sneakers", "Casual", "Formal", "Sandals", "Boots"],
+    subcategories: ["Dresses", "Tops", "Jackets", "Knitwear"],
   },
   "bags-accessories": {
-    label: "Bags & Accessories",
-    description: "The small details that finish the look and make daily routines feel more put together.",
+    label: "Bags & Totes",
+    description: "The small details that finish the look.",
     image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1400&q=85",
-    subcategories: ["Tote Bags", "Backpacks", "Crossbody Bags", "Wallets", "Belts", "Sunglasses", "Hats"],
+    subcategories: ["Tote Bags", "Crossbody", "Handbags"],
   },
   "beauty-self-care": {
-    label: "Beauty & Self-care",
-    description: "Slow rituals and well-made essentials that support comfort, rest, and everyday glow.",
+    label: "Beauty & Fragrance",
+    description: "Slow rituals and well-made essentials.",
     image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1400&q=85",
-    subcategories: ["Skincare", "Haircare", "Body Care", "Fragrance", "Wellness", "Bath & Body"],
+    subcategories: ["Skincare", "Fragrance", "Candles"],
   },
   "home-living": {
-    label: "Home & Living",
-    description: "Objects that soften routines, warm spaces, and make the home feel more personal.",
+    label: "Living & Gifts",
+    description: "Objects that soften routines and warm spaces.",
     image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=85",
-    subcategories: ["Decor", "Lighting", "Furniture", "Kitchen & Dining", "Storage", "Bedding", "Candles"],
+    subcategories: ["Candles", "Ceramics", "Throws"],
   },
   "electronics-tech": {
-    label: "Electronics & Tech",
-    description: "Useful tools and beautifully designed accessories that fit more calmly into modern life.",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=85",
-    subcategories: ["Gadgets", "Accessories", "Chargers & Cables", "Smart Devices", "Desk Setup"],
+    label: "Lifestyle Accessories",
+    description: "Thoughtful accessories that fit cleanly into modern life.",
+    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1400&q=85",
+    subcategories: ["Audio", "Chargers"],
   },
   audio: {
-    label: "Audio",
-    description: "Clear, calming sound designed for focus, movement, and unwinding at home.",
+    label: "Audio & Focus",
+    description: "Clear sound designed for focus and unwinding.",
     image: "https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=1400&q=85",
-    subcategories: ["Headphones", "Earbuds", "Speakers", "Audio Accessories"],
+    subcategories: ["Headphones", "Speakers"],
   },
   "jewelry-watches": {
-    label: "Jewelry & Watches",
-    description: "Thoughtful finishing touches that quietly elevate the everyday uniform.",
-    image: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=1400&q=85",
-    subcategories: ["Necklaces", "Rings", "Bracelets", "Earrings", "Watches"],
+    label: "Jewelry",
+    description: "Thoughtful finishing touches that quietly elevate the everyday.",
+    image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1400&q=85",
+    subcategories: ["Necklaces", "Rings", "Earrings"],
   },
   "sports-outdoors": {
-    label: "Sports & Outdoors",
-    description: "Purposeful performance layers and gear made for movement, fresh air, and everyday momentum.",
+    label: "Active & Movement",
+    description: "Pieces made for movement and fresh air.",
     image: "https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=1400&q=85",
-    subcategories: ["Fitness", "Running", "Yoga", "Outdoor", "Accessories"],
+    subcategories: ["Fitness", "Yoga", "Accessories"],
   },
   travel: {
-    label: "Travel",
-    description: "Organized, durable essentials that make going out and being away feel a little lighter.",
+    label: "Travel Essentials",
+    description: "Durable essentials that make journeys effortless.",
     image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=1400&q=85",
-    subcategories: ["Luggage", "Travel Bags", "Travel Accessories", "Organizers"],
+    subcategories: ["Luggage", "Travel Bags"],
   },
   kids: {
-    label: "Kids",
-    description: "Soft, durable pieces for growing routines, playtime, and the everyday rhythm of family life.",
+    label: "Family & Gifts",
+    description: "Soft, durable pieces for family routines.",
     image: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?auto=format&fit=crop&w=1400&q=85",
-    subcategories: ["Clothing", "Toys", "School", "Baby", "Accessories"],
+    subcategories: ["Gifts", "Accessories"],
   },
   gifts: {
-    label: "Gifts",
-    description: "Thoughtful presents for every occasion, from quiet home rituals to practical everyday favorites.",
+    label: "Gifts for Her",
+    description: "Thoughtful presents for every special moment.",
     image: "https://images.unsplash.com/photo-1602872029706-8d2f1f3e3b43?auto=format&fit=crop&w=1400&q=85",
-    subcategories: ["Gifts for Her", "Gifts for Him", "Home Gifts", "Tech Gifts", "Self-care Gifts"],
+    subcategories: ["Gifts for Her", "Self-care Gifts"],
   },
   "new-arrivals": {
     label: "New Arrivals",
-    description: "Freshly landed favorites with a considered edit of the latest pieces worth discovering.",
+    description: "Freshly landed favorites with a considered edit.",
     image: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=1400&q=85",
-    subcategories: ["Newest Finds", "Weekend Edit", "Limited Run", "Softer Layers"],
-  },
-  sale: {
-    label: "Sale",
-    description: "A smarter edit of quality essentials and everyday pieces at a more approachable price point.",
-    image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1400&q=85",
-    subcategories: ["Under $75", "Last Chance", "Home Finds", "Accessories"],
+    subcategories: ["Newest Finds", "Weekend Edit"],
   },
 };
 
@@ -121,14 +170,17 @@ async function CategoryPageInner({ params }: { params: Promise<{ slug: string }>
   const categoryProducts = (() => {
     if (slug === "sale") return products.filter((p) => p.isSale);
     if (slug === "new-arrivals") return products.filter((p) => p.isNew);
+    const labelLower = data.label.toLowerCase();
     const direct = products.filter(
       (product) =>
         product.category === data.label ||
-        product.category.toLowerCase().includes(data.label.toLowerCase()) ||
+        product.category.toLowerCase().includes(labelLower) ||
+        labelLower.includes(product.category.toLowerCase()) ||
         data.subcategories.some(
           (sub) =>
             product.subcategory.toLowerCase().includes(sub.toLowerCase()) ||
-            product.category.toLowerCase().includes(sub.toLowerCase())
+            product.category.toLowerCase().includes(sub.toLowerCase()) ||
+            sub.toLowerCase().includes(product.subcategory.toLowerCase())
         )
     );
     if (direct.length > 0) return direct;

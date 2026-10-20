@@ -378,3 +378,115 @@ html[data-font-size="large"] .filter-control, html[data-font-size="large"] .form
   .category-hero-image { min-height: 300px; }
   .support-cta { padding: 20px 18px; }
 }
+
+/* =========================================================
+   PROMINENT CATALOG PAGINATION
+   ========================================================= */
+.pagination-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 48px;
+  margin-bottom: 28px;
+  padding: 16px 20px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-control);
+}
+
+.pagination-pages {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pagination-num-btn {
+  min-width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-control);
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 650;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.pagination-num-btn:hover {
+  border-color: var(--ink);
+  background: color-mix(in srgb, var(--sage) 40%, var(--surface));
+}
+
+.pagination-num-btn.is-active {
+  background: var(--ink);
+  color: white;
+  border-color: var(--ink);
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+
+.pagination-btn-prev,
+.pagination-btn-next {
+  min-height: 44px;
+  padding: 0 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: var(--radius-control);
+  font-size: 13px;
+  font-weight: 650;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.pagination-btn-prev {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  color: var(--ink);
+}
+
+.pagination-btn-prev:hover:not(:disabled) {
+  border-color: var(--ink);
+  background: var(--surface);
+}
+
+.pagination-btn-next {
+  background: var(--ink);
+  border: 1px solid var(--ink);
+  color: white;
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--ink) 18%, transparent);
+}
+
+.pagination-btn-next:hover:not(:disabled) {
+  opacity: 0.92;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px color-mix(in srgb, var(--ink) 25%, transparent);
+}
+
+.pagination-btn-prev:disabled,
+.pagination-btn-next:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+@media (max-width: 520px) {
+  .pagination-row {
+    justify-content: space-between;
+    padding: 12px;
+    gap: 8px;
+  }
+  .pagination-btn-prev,
+  .pagination-btn-next {
+    padding: 0 14px;
+    font-size: 12px;
+  }
+}
+

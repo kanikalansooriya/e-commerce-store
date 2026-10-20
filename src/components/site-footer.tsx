@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight, Lock, ShieldCheck, Truck } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 export function SiteFooter() {
   return (
@@ -10,24 +10,22 @@ export function SiteFooter() {
             <span className="wordmark-mark" aria-hidden="true">A</span>AURA<span className="wordmark-period">.</span>
           </Link>
           <p>
-            Considered lifestyle essentials, precision sound, tailored apparel, and modern living objects crafted to endure.
+            Curated women's fashion, timeless staples, and everyday essentials crafted with care and elegance.
           </p>
-          <div className="footer-trust-notes">
-            <span><Lock size={13} /> 256-Bit SSL Encrypted Checkout</span>
-            <span><ShieldCheck size={13} /> Authenticity Guaranteed</span>
-          </div>
         </div>
 
         <div className="footer-links">
           <div>
-            <h2>Shop Departments</h2>
-            <Link href="/category/women">Women's Fashion</Link>
-            <Link href="/category/men">Men's Apparel</Link>
-            <Link href="/category/shoes">Footwear & Sneakers</Link>
-            <Link href="/category/electronics-tech">Audio & Tech</Link>
-            <Link href="/category/jewelry-watches">Watches & Fine Jewelry</Link>
-            <Link href="/category/home-living">Home & Decor</Link>
-            <Link href="/category/sale">Flash Sale & Deals</Link>
+            <h2>Shop Collections</h2>
+            <Link href="/category/dresses">Women's Dresses</Link>
+            <Link href="/category/tops-blouses">Tops & Blouses</Link>
+            <Link href="/category/knitwear">Knitwear & Sweaters</Link>
+            <Link href="/category/jackets-coats">Jackets & Coats</Link>
+            <Link href="/category/pants-skirts">Skirts & Pants</Link>
+            <Link href="/category/shoes">Shoes & Heels</Link>
+            <Link href="/category/bags">Bags & Totes</Link>
+            <Link href="/category/jewelry-accessories">Jewelry & Accessories</Link>
+            <Link href="/category/sale">Sale & Offers</Link>
           </div>
 
           <div>

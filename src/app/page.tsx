@@ -14,67 +14,66 @@ import {
   Truck,
   Zap,
 } from "lucide-react";
-import { NewsletterSignup } from "@/components/newsletter-signup";
 import { ScrollReveal } from "@/components/motion";
 import { FlashDealsSection, CuratedTabsSection } from "@/components/home-showcase";
 import { products } from "@/lib/products";
 
 const categoryTiles = [
   {
-    name: "Women's Collection",
-    subtitle: "Dresses, Cashmere & Tailoring",
-    href: "/category/women",
-    image: "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=800&q=85",
-    badge: "New Season",
-  },
-  {
-    name: "Men's Apparel",
-    subtitle: "Overcoats, Oxford Shirts & Blazers",
-    href: "/category/men",
-    image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=85",
+    name: "Dresses",
+    subtitle: "Slip, Midi & Summer Silhouettes",
+    href: "/category/dresses",
+    image: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=800&q=85",
     badge: "Trending",
   },
   {
-    name: "Footwear & Sneakers",
-    subtitle: "Running, Leather Loafers & Boots",
+    name: "Tops & Blouses",
+    subtitle: "Linen Shirts & Silk Tops",
+    href: "/category/tops-blouses",
+    image: "https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=800&q=85",
+    badge: "Essentials",
+  },
+  {
+    name: "Knitwear & Sweaters",
+    subtitle: "Cashmere Cardigans & Knits",
+    href: "/category/knitwear",
+    image: "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=800&q=85",
+    badge: "New Season",
+  },
+  {
+    name: "Jackets & Blazers",
+    subtitle: "Tailored Wool & Linen Coats",
+    href: "/category/jackets-coats",
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=85",
+    badge: "Editor's Pick",
+  },
+  {
+    name: "Skirts & Pants",
+    subtitle: "Fluid Trousers & Pleated Skirts",
+    href: "/category/pants-skirts",
+    image: "https://images.unsplash.com/photo-1509551388413-e18d0ac5d495?auto=format&fit=crop&w=800&q=85",
+    badge: "Popular",
+  },
+  {
+    name: "Shoes & Heels",
+    subtitle: "Strappy Heels & Leather Flats",
     href: "/category/shoes",
-    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=85",
-    badge: "Hot Drops",
+    image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=800&q=85",
+    badge: "Footwear",
   },
   {
-    name: "Watches & Jewelry",
-    subtitle: "Chronographs & 18K Gold Vermeil",
-    href: "/category/jewelry-watches",
-    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=85",
-    badge: "Luxury",
-  },
-  {
-    name: "Audio & Smart Tech",
-    subtitle: "ANC Headphones, Keyboards & Audio",
-    href: "/category/electronics-tech",
-    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=85",
-    badge: "Best Sound",
-  },
-  {
-    name: "Bags & Leather Goods",
-    subtitle: "Weekender Duffels & Tech Packs",
-    href: "/category/bags-accessories",
-    image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=85",
+    name: "Handbags & Totes",
+    subtitle: "Italian Leather Shoulder Bags",
+    href: "/category/bags",
+    image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=85",
     badge: "Full-Grain",
   },
   {
-    name: "Modern Home & Decor",
-    subtitle: "Sculptural Lighting & Stoneware",
-    href: "/category/home-living",
-    image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=85",
-    badge: "Scandi Edit",
-  },
-  {
-    name: "Beauty & Fragrance",
-    subtitle: "Botanical Serums & Niche Perfumes",
-    href: "/category/beauty-self-care",
-    image: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=800&q=85",
-    badge: "Clean Beauty",
+    name: "Jewelry & Fragrance",
+    subtitle: "18K Gold Vermeil & Perfumes",
+    href: "/category/jewelry-accessories",
+    image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=85",
+    badge: "Luxury",
   },
 ];
 
@@ -83,17 +82,17 @@ const customerReviews = [
     name: "Sophia Martinez",
     location: "New York, NY",
     rating: 5,
-    product: "Sony WH-1000XM5 Headphones",
+    product: "Silk Charmeuse Bias Cut Midi Dress",
     avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80",
-    comment: "The sound clarity and active noise cancellation are completely next-level. Packed beautifully and arrived in just 2 days. 10/10 experience!",
+    comment: "The silk drape is so flattering and effortlessly chic. Packed beautifully and arrived in just 2 days. 10/10 experience!",
   },
   {
-    name: "Marcus Vance",
-    location: "London, UK",
+    name: "Chloe Bennett",
+    location: "Melbourne, Australia",
     rating: 5,
-    product: "Heritage Leather Duffel",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80",
-    comment: "Outstanding leather quality. The brass zippers and dedicated shoe pocket make weekend trips effortless. It looks even better in person.",
+    product: "Italian Leather Crossbody Bag",
+    avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80",
+    comment: "Outstanding leather craftsmanship. The soft structure and gold accents make it my go-to everyday handbag. Absolutely love it.",
   },
   {
     name: "Elena Rostova",
@@ -106,14 +105,13 @@ const customerReviews = [
 ];
 
 const brandLogos = [
-  "SONY",
-  "BOSE",
-  "APPLE",
-  "NIKE",
-  "KEYCHRON",
   "ATELIER MAISON",
+  "AURA STUDIO",
+  "FIELD HOUSE",
+  "RIDGE & CO.",
   "HEARTH & FORM",
-  "CHRONOS",
+  "FLORENCE LEATHER",
+  "BOTANICA LABS",
 ];
 
 const dealProducts = products.filter((p) => p.isSale);
@@ -135,7 +133,7 @@ export default function Home() {
           </h1>
 
           <p className="hero-subtext">
-            Discover precision tech audio, tailored apparel, artisan Italian leathers, and modern home essentials crafted with purpose.
+            Discover effortlessly elegant dresses, fine knitwear, timeless jewelry, and beautiful essentials designed for every day.
           </p>
 
           <div className="hero-buttons">
@@ -199,8 +197,8 @@ export default function Home() {
         <div className="feature-item">
           <div className="feature-icon-wrap"><ShieldCheck size={20} /></div>
           <div>
-            <strong>100% Authentic Guarantee</strong>
-            <span>Directly sourced genuine products</span>
+            <strong>Premium Quality Fabrics</strong>
+            <span>Thoughtfully designed & crafted</span>
           </div>
         </div>
 
@@ -268,17 +266,17 @@ export default function Home() {
       <ScrollReveal as="section" className="promo-banners-strip page-shell">
         <div className="promo-card promo-card-dark">
           <div className="promo-card-content">
-            <span className="promo-eyebrow">PRECISION ACOUSTICS</span>
-            <h3>Hi-Fi Audio & Workspace Tech</h3>
-            <p>Noise-canceling headphones, custom mechanical keyboards, and 360° wireless speakers designed for focus and flow.</p>
-            <Link href="/category/electronics-tech" className="promo-btn-light">
-              Shop Tech & Audio <ArrowRight size={15} />
+            <span className="promo-eyebrow">SUMMER LINEN EDIT</span>
+            <h3>Effortless Silhouettes & Neutrals</h3>
+            <p>Lightweight dresses, breathable linen blouses, and relaxed trousers tailored for sunny days and warm evenings.</p>
+            <Link href="/category/dresses" className="promo-btn-light">
+              Shop Summer Edit <ArrowRight size={15} />
             </Link>
           </div>
           <div className="promo-card-visual">
             <Image
-              src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=700&q=85"
-              alt="Studio Headphones and Audio"
+              src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=700&q=85"
+              alt="Summer Linen Dresses"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
             />
@@ -287,17 +285,17 @@ export default function Home() {
 
         <div className="promo-card promo-card-warm">
           <div className="promo-card-content">
-            <span className="promo-eyebrow">HERITAGE CRAFT</span>
-            <h3>Full-Grain Leather & Timepieces</h3>
-            <p>Vegetable-tanned weekender duffels, sapphire crystal chronographs, and heirloom accessories made to travel everywhere.</p>
-            <Link href="/category/bags-accessories" className="promo-btn-dark">
-              Explore Leather Goods <ArrowRight size={15} />
+            <span className="promo-eyebrow">HANDCRAFTED ACCENTS</span>
+            <h3>Sculptural Bags & Gold Jewelry</h3>
+            <p>Full-grain leather shoulder bags, versatile totes, and 18K gold vermeil pieces made to quietly elevate every look.</p>
+            <Link href="/category/bags" className="promo-btn-dark">
+              Explore Handbags <ArrowRight size={15} />
             </Link>
           </div>
           <div className="promo-card-visual">
             <Image
-              src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=700&q=85"
-              alt="Leather Weekender Duffel"
+              src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=700&q=85"
+              alt="Italian Leather Handbag"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
             />
@@ -379,12 +377,6 @@ export default function Home() {
         </div>
       </ScrollReveal>
 
-      {/* NEWSLETTER */}
-      <ScrollReveal as="section" className="section-block section-tint">
-        <div className="page-shell">
-          <NewsletterSignup />
-        </div>
-      </ScrollReveal>
     </>
   );
 }

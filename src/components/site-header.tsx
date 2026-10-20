@@ -11,25 +11,27 @@ import { SiteSearch } from "@/components/site-search";
 import { gsap, animateBadgeBounce, isReducedMotion } from "@/lib/gsap";
 
 const topLinks = [
-  { href: "/category/women", label: "Women" },
-  { href: "/category/men", label: "Men" },
+  { href: "/category/dresses", label: "Dresses" },
+  { href: "/category/tops-blouses", label: "Tops & Blouses" },
+  { href: "/category/knitwear", label: "Knitwear" },
+  { href: "/category/jackets-coats", label: "Jackets" },
+  { href: "/category/pants-skirts", label: "Pants & Skirts" },
   { href: "/category/shoes", label: "Shoes" },
-  { href: "/category/jewelry-watches", label: "Watches" },
-  { href: "/category/electronics-tech", label: "Tech" },
-  { href: "/category/home-living", label: "Home" },
-  { href: "/category/beauty-self-care", label: "Beauty" },
+  { href: "/category/bags", label: "Bags" },
+  { href: "/category/jewelry-accessories", label: "Jewelry" },
+  { href: "/category/beauty-fragrance", label: "Beauty" },
   { href: "/category/sale", label: "Sale" },
 ];
 
 const megaGroups = [
-  { heading: "Women", items: ["Clothing", "Shoes", "Bags", "Accessories", "Jewelry"] },
-  { heading: "Men", items: ["Clothing", "Shoes", "Bags", "Accessories", "Watches"] },
-  { heading: "Home & Living", items: ["Decor", "Lighting", "Kitchen", "Furniture", "Bedding"] },
-  { heading: "Beauty & Self-care", items: ["Skincare", "Haircare", "Fragrance", "Wellness", "Bath & Body"] },
-  { heading: "Tech & Audio", items: ["Electronics", "Headphones", "Speakers", "Accessories", "Desk Setup"] },
-  { heading: "Travel & Outdoors", items: ["Travel", "Fitness", "Outdoor", "Luggage", "Accessories"] },
-  { heading: "Kids", items: ["Clothing", "Toys", "Baby", "School", "Accessories"] },
-  { heading: "Gifts", items: ["For Her", "For Him", "Home Gifts", "Tech Gifts", "Self-care Gifts"] },
+  { heading: "Dresses", items: ["Casual Dresses", "Midi Dresses", "Maxi Dresses", "Evening Dresses", "Summer Dresses"] },
+  { heading: "Tops & Blouses", items: ["Blouses", "Shirts", "Knit Tops", "T-Shirts", "Camisoles"] },
+  { heading: "Knitwear", items: ["Cardigans", "Cashmere Knits", "Sweaters", "Knit Vests"] },
+  { heading: "Jackets & Outerwear", items: ["Tailored Blazers", "Trench Coats", "Wool Coats", "Jackets"] },
+  { heading: "Pants & Skirts", items: ["Tailored Trousers", "Pleated Skirts", "Linen Pants", "Wide-Leg Pants"] },
+  { heading: "Shoes & Heels", items: ["Strappy Heels", "Leather Loafers", "Ballet Flats", "Boots", "Sneakers"] },
+  { heading: "Bags & Totes", items: ["Handbags", "Shoulder Bags", "Tote Bags", "Crossbody"] },
+  { heading: "Jewelry & Beauty", items: ["Gold Earrings", "Pendant Necklaces", "Rings", "Perfume", "Skincare"] },
 ];
 
 export function SiteHeader() {

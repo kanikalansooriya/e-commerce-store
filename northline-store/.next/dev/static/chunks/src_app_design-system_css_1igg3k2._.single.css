@@ -1481,4 +1481,110 @@ html[data-font-size="large"] .filter-control, html[data-font-size="large"] .form
   }
 }
 
+.pagination-row {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-control);
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 48px;
+  margin-bottom: 28px;
+  padding: 16px 20px;
+  display: flex;
+}
+
+.pagination-pages {
+  align-items: center;
+  gap: 6px;
+  display: flex;
+}
+
+.pagination-num-btn {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-control);
+  background: var(--paper);
+  min-width: 42px;
+  height: 42px;
+  color: var(--ink);
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 650;
+  transition: all .18s;
+  display: inline-flex;
+}
+
+.pagination-num-btn:hover {
+  border-color: var(--ink);
+  background: color-mix(in srgb, var(--sage) 40%, var(--surface));
+}
+
+.pagination-num-btn.is-active {
+  background: var(--ink);
+  color: #fff;
+  border-color: var(--ink);
+  font-weight: 700;
+  box-shadow: 0 4px 12px #0000002e;
+}
+
+.pagination-btn-prev, .pagination-btn-next {
+  border-radius: var(--radius-control);
+  cursor: pointer;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 20px;
+  font-size: 13px;
+  font-weight: 650;
+  transition: all .18s;
+  display: inline-flex;
+}
+
+.pagination-btn-prev {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  color: var(--ink);
+}
+
+.pagination-btn-prev:hover:not(:disabled) {
+  border-color: var(--ink);
+  background: var(--surface);
+}
+
+.pagination-btn-next {
+  background: var(--ink);
+  border: 1px solid var(--ink);
+  color: #fff;
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--ink) 18%, transparent);
+}
+
+.pagination-btn-next:hover:not(:disabled) {
+  opacity: .92;
+  box-shadow: 0 6px 18px color-mix(in srgb, var(--ink) 25%, transparent);
+  transform: translateY(-1px);
+}
+
+.pagination-btn-prev:disabled, .pagination-btn-next:disabled {
+  opacity: .35;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+@media (max-width: 520px) {
+  .pagination-row {
+    justify-content: space-between;
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .pagination-btn-prev, .pagination-btn-next {
+    padding: 0 14px;
+    font-size: 12px;
+  }
+}
+
 /*# sourceMappingURL=src_app_design-system_css_1igg3k2._.single.css.map*/

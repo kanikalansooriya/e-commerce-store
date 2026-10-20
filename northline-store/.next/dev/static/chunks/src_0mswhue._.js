@@ -798,31 +798,39 @@ var _s = __turbopack_context__.k.signature();
 ;
 const topLinks = [
     {
-        href: "/category/women",
-        label: "Women"
+        href: "/category/dresses",
+        label: "Dresses"
     },
     {
-        href: "/category/men",
-        label: "Men"
+        href: "/category/tops-blouses",
+        label: "Tops & Blouses"
+    },
+    {
+        href: "/category/knitwear",
+        label: "Knitwear"
+    },
+    {
+        href: "/category/jackets-coats",
+        label: "Jackets"
+    },
+    {
+        href: "/category/pants-skirts",
+        label: "Pants & Skirts"
     },
     {
         href: "/category/shoes",
         label: "Shoes"
     },
     {
-        href: "/category/jewelry-watches",
-        label: "Watches"
+        href: "/category/bags",
+        label: "Bags"
     },
     {
-        href: "/category/electronics-tech",
-        label: "Tech"
+        href: "/category/jewelry-accessories",
+        label: "Jewelry"
     },
     {
-        href: "/category/home-living",
-        label: "Home"
-    },
-    {
-        href: "/category/beauty-self-care",
+        href: "/category/beauty-fragrance",
         label: "Beauty"
     },
     {
@@ -832,83 +840,79 @@ const topLinks = [
 ];
 const megaGroups = [
     {
-        heading: "Women",
+        heading: "Dresses",
         items: [
-            "Clothing",
-            "Shoes",
-            "Bags",
-            "Accessories",
-            "Jewelry"
+            "Casual Dresses",
+            "Midi Dresses",
+            "Maxi Dresses",
+            "Evening Dresses",
+            "Summer Dresses"
         ]
     },
     {
-        heading: "Men",
+        heading: "Tops & Blouses",
         items: [
-            "Clothing",
-            "Shoes",
-            "Bags",
-            "Accessories",
-            "Watches"
+            "Blouses",
+            "Shirts",
+            "Knit Tops",
+            "T-Shirts",
+            "Camisoles"
         ]
     },
     {
-        heading: "Home & Living",
+        heading: "Knitwear",
         items: [
-            "Decor",
-            "Lighting",
-            "Kitchen",
-            "Furniture",
-            "Bedding"
+            "Cardigans",
+            "Cashmere Knits",
+            "Sweaters",
+            "Knit Vests"
         ]
     },
     {
-        heading: "Beauty & Self-care",
+        heading: "Jackets & Outerwear",
         items: [
-            "Skincare",
-            "Haircare",
-            "Fragrance",
-            "Wellness",
-            "Bath & Body"
+            "Tailored Blazers",
+            "Trench Coats",
+            "Wool Coats",
+            "Jackets"
         ]
     },
     {
-        heading: "Tech & Audio",
+        heading: "Pants & Skirts",
         items: [
-            "Electronics",
-            "Headphones",
-            "Speakers",
-            "Accessories",
-            "Desk Setup"
+            "Tailored Trousers",
+            "Pleated Skirts",
+            "Linen Pants",
+            "Wide-Leg Pants"
         ]
     },
     {
-        heading: "Travel & Outdoors",
+        heading: "Shoes & Heels",
         items: [
-            "Travel",
-            "Fitness",
-            "Outdoor",
-            "Luggage",
-            "Accessories"
+            "Strappy Heels",
+            "Leather Loafers",
+            "Ballet Flats",
+            "Boots",
+            "Sneakers"
         ]
     },
     {
-        heading: "Kids",
+        heading: "Bags & Totes",
         items: [
-            "Clothing",
-            "Toys",
-            "Baby",
-            "School",
-            "Accessories"
+            "Handbags",
+            "Shoulder Bags",
+            "Tote Bags",
+            "Crossbody"
         ]
     },
     {
-        heading: "Gifts",
+        heading: "Jewelry & Beauty",
         items: [
-            "For Her",
-            "For Him",
-            "Home Gifts",
-            "Tech Gifts",
-            "Self-care Gifts"
+            "Gold Earrings",
+            "Pendant Necklaces",
+            "Rings",
+            "Perfume",
+            "Skincare"
         ]
     }
 ];
@@ -1026,7 +1030,7 @@ function SiteHeader() {
                         children: "FLASH SALE:"
                     }, void 0, false, {
                         fileName: "[project]/src/components/site-header.tsx",
-                        lineNumber: 111,
+                        lineNumber: 113,
                         columnNumber: 11
                     }, this),
                     " Use code ",
@@ -1034,14 +1038,14 @@ function SiteHeader() {
                         children: "LUXE20"
                     }, void 0, false, {
                         fileName: "[project]/src/components/site-header.tsx",
-                        lineNumber: 111,
+                        lineNumber: 113,
                         columnNumber: 45
                     }, this),
                     " for 20% off • 🚚 Free Shipping on orders over $75 • ⭐ 4.9/5 Rated"
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/site-header.tsx",
-                lineNumber: 110,
+                lineNumber: 112,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
@@ -1059,18 +1063,18 @@ function SiteHeader() {
                                     size: 21
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/site-header.tsx",
-                                    lineNumber: 121,
+                                    lineNumber: 123,
                                     columnNumber: 25
                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$menu$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Menu$3e$__["Menu"], {
                                     size: 21
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/site-header.tsx",
-                                    lineNumber: 121,
+                                    lineNumber: 123,
                                     columnNumber: 43
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/site-header.tsx",
-                                lineNumber: 115,
+                                lineNumber: 117,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1084,7 +1088,7 @@ function SiteHeader() {
                                         children: "A"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/site-header.tsx",
-                                        lineNumber: 124,
+                                        lineNumber: 126,
                                         columnNumber: 13
                                     }, this),
                                     "AURA",
@@ -1093,18 +1097,18 @@ function SiteHeader() {
                                         children: "."
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/site-header.tsx",
-                                        lineNumber: 124,
+                                        lineNumber: 126,
                                         columnNumber: 76
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/site-header.tsx",
-                                lineNumber: 123,
+                                lineNumber: 125,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$site$2d$search$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SiteSearch"], {}, void 0, false, {
                                 fileName: "[project]/src/components/site-header.tsx",
-                                lineNumber: 126,
+                                lineNumber: 128,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1122,12 +1126,12 @@ function SiteHeader() {
                                             size: 19
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/site-header.tsx",
-                                            lineNumber: 137,
+                                            lineNumber: 139,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/site-header.tsx",
-                                        lineNumber: 128,
+                                        lineNumber: 130,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1138,12 +1142,12 @@ function SiteHeader() {
                                             size: 20
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/site-header.tsx",
-                                            lineNumber: 140,
+                                            lineNumber: 142,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/site-header.tsx",
-                                        lineNumber: 139,
+                                        lineNumber: 141,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1155,7 +1159,7 @@ function SiteHeader() {
                                                 size: 19
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/site-header.tsx",
-                                                lineNumber: 143,
+                                                lineNumber: 145,
                                                 columnNumber: 15
                                             }, this),
                                             wishlistCount > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1164,13 +1168,13 @@ function SiteHeader() {
                                                 children: wishlistCount
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/site-header.tsx",
-                                                lineNumber: 145,
+                                                lineNumber: 147,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/site-header.tsx",
-                                        lineNumber: 142,
+                                        lineNumber: 144,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1182,7 +1186,7 @@ function SiteHeader() {
                                                 size: 20
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/site-header.tsx",
-                                                lineNumber: 151,
+                                                lineNumber: 153,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1191,25 +1195,25 @@ function SiteHeader() {
                                                 children: itemCount
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/site-header.tsx",
-                                                lineNumber: 152,
+                                                lineNumber: 154,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/site-header.tsx",
-                                        lineNumber: 150,
+                                        lineNumber: 152,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/site-header.tsx",
-                                lineNumber: 127,
+                                lineNumber: 129,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/site-header.tsx",
-                        lineNumber: 114,
+                        lineNumber: 116,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
@@ -1230,7 +1234,7 @@ function SiteHeader() {
                                         children: "Shop"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/site-header.tsx",
-                                        lineNumber: 164,
+                                        lineNumber: 166,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1249,7 +1253,7 @@ function SiteHeader() {
                                                                 children: group.heading
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/site-header.tsx",
-                                                                lineNumber: 177,
+                                                                lineNumber: 179,
                                                                 columnNumber: 21
                                                             }, this),
                                                             group.items.map((item)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1258,18 +1262,18 @@ function SiteHeader() {
                                                                     children: item
                                                                 }, item, false, {
                                                                     fileName: "[project]/src/components/site-header.tsx",
-                                                                    lineNumber: 179,
+                                                                    lineNumber: 181,
                                                                     columnNumber: 23
                                                                 }, this))
                                                         ]
                                                     }, group.heading, true, {
                                                         fileName: "[project]/src/components/site-header.tsx",
-                                                        lineNumber: 176,
+                                                        lineNumber: 178,
                                                         columnNumber: 19
                                                     }, this))
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/site-header.tsx",
-                                                lineNumber: 174,
+                                                lineNumber: 176,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1281,7 +1285,7 @@ function SiteHeader() {
                                                         children: "View all categories"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/site-header.tsx",
-                                                        lineNumber: 187,
+                                                        lineNumber: 189,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1290,7 +1294,7 @@ function SiteHeader() {
                                                         children: "New arrivals"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/site-header.tsx",
-                                                        lineNumber: 188,
+                                                        lineNumber: 190,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1299,25 +1303,25 @@ function SiteHeader() {
                                                         children: "Sale"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/site-header.tsx",
-                                                        lineNumber: 189,
+                                                        lineNumber: 191,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/site-header.tsx",
-                                                lineNumber: 186,
+                                                lineNumber: 188,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/site-header.tsx",
-                                        lineNumber: 173,
+                                        lineNumber: 175,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/site-header.tsx",
-                                lineNumber: 159,
+                                lineNumber: 161,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1326,7 +1330,7 @@ function SiteHeader() {
                                 children: "New Arrivals"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/site-header.tsx",
-                                lineNumber: 193,
+                                lineNumber: 195,
                                 columnNumber: 11
                             }, this),
                             topLinks.map((link)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1335,7 +1339,7 @@ function SiteHeader() {
                                     children: link.label
                                 }, link.href, false, {
                                     fileName: "[project]/src/components/site-header.tsx",
-                                    lineNumber: 197,
+                                    lineNumber: 199,
                                     columnNumber: 13
                                 }, this)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1344,13 +1348,13 @@ function SiteHeader() {
                                 children: "View all categories"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/site-header.tsx",
-                                lineNumber: 201,
+                                lineNumber: 203,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/site-header.tsx",
-                        lineNumber: 158,
+                        lineNumber: 160,
                         columnNumber: 9
                     }, this),
                     menuOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
@@ -1364,7 +1368,7 @@ function SiteHeader() {
                                 children: "Shop"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/site-header.tsx",
-                                lineNumber: 205,
+                                lineNumber: 207,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1373,7 +1377,7 @@ function SiteHeader() {
                                 children: "New Arrivals"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/site-header.tsx",
-                                lineNumber: 206,
+                                lineNumber: 208,
                                 columnNumber: 13
                             }, this),
                             topLinks.map((link)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1382,7 +1386,7 @@ function SiteHeader() {
                                     children: link.label
                                 }, link.href, false, {
                                     fileName: "[project]/src/components/site-header.tsx",
-                                    lineNumber: 208,
+                                    lineNumber: 210,
                                     columnNumber: 15
                                 }, this)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1391,7 +1395,7 @@ function SiteHeader() {
                                 children: "View all categories"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/site-header.tsx",
-                                lineNumber: 210,
+                                lineNumber: 212,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1400,7 +1404,7 @@ function SiteHeader() {
                                 children: "Wishlist"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/site-header.tsx",
-                                lineNumber: 211,
+                                lineNumber: 213,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1409,19 +1413,19 @@ function SiteHeader() {
                                 children: "Sign in"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/site-header.tsx",
-                                lineNumber: 212,
+                                lineNumber: 214,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/site-header.tsx",
-                        lineNumber: 204,
+                        lineNumber: 206,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/site-header.tsx",
-                lineNumber: 113,
+                lineNumber: 115,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$settings$2d$panel$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SettingsPanel"], {
@@ -1429,13 +1433,13 @@ function SiteHeader() {
                 onClose: closeSettings
             }, void 0, false, {
                 fileName: "[project]/src/components/site-header.tsx",
-                lineNumber: 216,
+                lineNumber: 218,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/site-header.tsx",
-        lineNumber: 109,
+        lineNumber: 111,
         columnNumber: 5
     }, this);
 }
@@ -2732,105 +2736,68 @@ __turbopack_context__.s([
     ()=>subcategoriesByCategory
 ]);
 const categoryDefinitions = {
-    "Women": [
-        "Clothing",
-        "Dresses",
-        "Jackets",
-        "Shoes",
-        "Bags",
-        "Jewelry"
+    "Dresses": [
+        "Casual Dresses",
+        "Midi Dresses",
+        "Maxi Dresses",
+        "Evening Dresses",
+        "Summer Dresses"
     ],
-    "Men": [
+    "Tops & Blouses": [
+        "Blouses",
         "Shirts",
-        "Jackets",
-        "Trousers",
-        "Shoes",
-        "Watches",
-        "Accessories"
-    ],
-    "Clothing": [
         "T-Shirts",
-        "Shirts",
-        "Dresses",
-        "Jackets",
-        "Knitwear",
-        "Activewear"
+        "Knit Tops",
+        "Camisoles"
     ],
-    "Shoes": [
-        "Sneakers",
+    "Knitwear": [
+        "Cardigans",
+        "Sweaters",
+        "Cashmere Knits",
+        "Vests"
+    ],
+    "Jackets & Coats": [
+        "Blazers",
+        "Trench Coats",
+        "Wool Coats",
+        "Jackets"
+    ],
+    "Pants & Skirts": [
+        "Trousers",
+        "Skirts",
+        "Linen Pants",
+        "Wide-Leg Pants"
+    ],
+    "Shoes & Heels": [
+        "Heels",
+        "Flats",
+        "Sandals",
         "Boots",
-        "Loafers",
-        "Running",
-        "Formal"
+        "Sneakers"
     ],
-    "Bags & Accessories": [
-        "Backpacks",
+    "Bags & Totes": [
+        "Handbags",
+        "Shoulder Bags",
         "Tote Bags",
-        "Duffels",
-        "Crossbody",
-        "Wallets"
+        "Crossbody"
     ],
-    "Jewelry & Watches": [
-        "Chronograph",
-        "Smart Watches",
+    "Jewelry & Accessories": [
+        "Earrings",
         "Necklaces",
         "Rings",
-        "Earrings"
+        "Bracelets",
+        "Sunglasses"
     ],
-    "Electronics & Tech": [
-        "Headphones",
-        "Earbuds",
-        "Speakers",
-        "Keyboards",
-        "Chargers"
-    ],
-    "Audio": [
-        "Headphones",
-        "Earbuds",
-        "Speakers",
-        "Soundbars"
-    ],
-    "Home & Living": [
-        "Lighting",
-        "Ceramics",
-        "Bedding & Throws",
-        "Coffee & Dining",
-        "Decor"
-    ],
-    "Beauty & Self-care": [
+    "Beauty & Fragrance": [
+        "Perfume",
         "Skincare",
-        "Fragrance",
-        "Candles",
         "Bath & Body",
-        "Wellness"
-    ],
-    "Sports & Outdoors": [
-        "Running Shoes",
-        "Activewear",
-        "Water Bottles",
-        "Gym Bags"
-    ],
-    "Travel": [
-        "Luggage",
-        "Travel Bags",
-        "Travel Accessories",
-        "Organizers"
-    ],
-    "Gifts": [
-        "Gifts for Her",
-        "Gifts for Him",
-        "Tech Gifts",
-        "Home Gifts"
-    ],
-    "New Arrivals": [
-        "Fresh Drops",
-        "Limited Run",
-        "Editor Picks"
+        "Candles"
     ],
     "Sale": [
         "Flash Deals",
         "Best Value",
-        "Clearance"
+        "Under $75"
     ]
 };
 const rawProducts = [
@@ -3477,8 +3444,8 @@ const rawProducts = [
     {
         slug: "pure-cashmere-ribbed-cardigan",
         name: "Pure Mongolian Cashmere Relaxed Cardigan",
-        category: "Women",
-        subcategory: "Clothing",
+        category: "Knitwear",
+        subcategory: "Cardigans",
         brand: "Atelier Maison",
         price: 180,
         compareAt: 220,
@@ -3530,8 +3497,8 @@ const rawProducts = [
     {
         slug: "silk-charmeuse-midi-slip-dress",
         name: "Silk Charmeuse Bias Cut Midi Dress",
-        category: "Women",
-        subcategory: "Dresses",
+        category: "Dresses",
+        subcategory: "Midi Dresses",
         brand: "Aura Studio",
         price: 145,
         compareAt: 175,
@@ -3566,8 +3533,8 @@ const rawProducts = [
     {
         slug: "oversized-wool-blend-trench-blazer",
         name: "Oversized Double-Breasted Wool Blazer",
-        category: "Women",
-        subcategory: "Jackets",
+        category: "Jackets & Coats",
+        subcategory: "Blazers",
         brand: "Atelier Maison",
         price: 195,
         compareAt: 240,
@@ -3601,8 +3568,8 @@ const rawProducts = [
     {
         slug: "organic-cotton-weekend-blouse",
         name: "Crisp Organic Cotton Poplin Button-Down",
-        category: "Women",
-        subcategory: "Clothing",
+        category: "Tops & Blouses",
+        subcategory: "Shirts",
         brand: "Field House",
         price: 78,
         description: "Lightweight organic cotton poplin with a slightly relaxed boyfriend fit. Features a curved hem, mother-of-pearl buttons, and point collar.",
@@ -3631,52 +3598,52 @@ const rawProducts = [
         isSale: false,
         createdAt: "2026-06-25"
     },
-    // --- MEN'S FASHION ---
+    // --- WOMEN'S COATS & ESSENTIALS ---
     {
         slug: "wool-cashmere-overcoat",
-        name: "Tailored Wool & Cashmere Chesterfield Overcoat",
-        category: "Men",
-        subcategory: "Jackets",
+        name: "Women's Tailored Wool & Cashmere Overcoat",
+        category: "Jackets & Coats",
+        subcategory: "Wool Coats",
         brand: "Ridge & Co.",
         price: 285,
         compareAt: 350,
-        description: "A tailored winter essential crafted with 90% Italian Melton wool and 10% cashmere. Features a velvet undercollar, horn buttons, and satin lining.",
-        image: "https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=1000&q=85",
+        description: "An effortlessly elegant winter staple crafted with 90% Italian Melton wool and 10% cashmere. Features a tailored feminine drape, peak lapels, and silky satin lining.",
+        image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=1000&q=85",
         gallery: [
-            "https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=1200&q=85",
-            "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=1200&q=85"
+            "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=1200&q=85",
+            "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=85"
         ],
         rating: 4.9,
         reviewCount: 122,
         stock: 9,
         availability: "Low stock",
-        sku: "MEN-COAT-022",
+        sku: "WMN-COAT-022",
         tags: [
             "coat",
             "winter",
             "tailored",
             "wool",
-            "classic"
+            "women"
         ],
         attributes: {
             Material: "Melton Wool & Cashmere",
-            Cut: "Slim Tailored Fit",
+            Cut: "Feminine Tailored Fit",
             Length: "Knee-length"
         },
         variants: [
             {
-                size: "38R",
-                sku: "MEN-COAT-022-38",
+                size: "XS",
+                sku: "WMN-COAT-022-XS",
                 stock: 3
             },
             {
-                size: "40R",
-                sku: "MEN-COAT-022-40",
+                size: "S",
+                sku: "WMN-COAT-022-S",
                 stock: 4
             },
             {
-                size: "42R",
-                sku: "MEN-COAT-022-42",
+                size: "M",
+                sku: "WMN-COAT-022-M",
                 stock: 2
             }
         ],
@@ -3687,33 +3654,34 @@ const rawProducts = [
     },
     {
         slug: "classic-oxford-cotton-shirt",
-        name: "Classic Heavy Oxford Cotton Shirt",
-        category: "Men",
+        name: "Relaxed Cotton Poplin Boyfriend Shirt",
+        category: "Tops & Blouses",
         subcategory: "Shirts",
         brand: "Field House",
         price: 68,
         compareAt: 85,
-        description: "Woven from durable two-ply combed cotton yarn with a button-down collar, chest pocket, and signature box pleat for everyday ease.",
-        image: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=1000&q=85",
+        description: "An effortless essential crafted from crisp organic cotton poplin. Designed with dropped shoulders, shell buttons, and a flattering relaxed drape.",
+        image: "https://images.unsplash.com/photo-1598554747436-c9293d6a588f?auto=format&fit=crop&w=1000&q=85",
         gallery: [
-            "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=1200&q=85",
-            "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=1200&q=85"
+            "https://images.unsplash.com/photo-1598554747436-c9293d6a588f?auto=format&fit=crop&w=1200&q=85",
+            "https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=1200&q=85"
         ],
         rating: 4.8,
         reviewCount: 230,
         stock: 40,
         availability: "In stock",
-        sku: "MEN-SHT-023",
+        sku: "WMN-SHT-023",
         tags: [
             "shirt",
-            "oxford",
-            "workwear",
-            "smart-casual"
+            "cotton",
+            "casual",
+            "relaxed",
+            "women"
         ],
         attributes: {
-            Fabric: "100% Oxford Cotton",
-            Weave: "Basketweave",
-            Collar: "Button-Down"
+            Fabric: "100% Organic Cotton Poplin",
+            Collar: "Classic Point Collar",
+            Fit: "Relaxed Drape"
         },
         isNew: false,
         isFeatured: true,
@@ -3722,32 +3690,33 @@ const rawProducts = [
     },
     {
         slug: "heavyweight-boxy-cotton-tee",
-        name: "Heavyweight 280GSM Vintage Boxy Tee",
-        category: "Men",
-        subcategory: "Shirts",
+        name: "Organic Pima Cotton Relaxed Crew Tee",
+        category: "Tops & Blouses",
+        subcategory: "T-Shirts",
         brand: "Aura Essentials",
         price: 36,
-        description: "Cut from ultra-thick 280 GSM combed cotton. Features a snug mock-rib collar, drop shoulders, and pre-shrunk wash for enduring shape.",
-        image: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1000&q=85",
+        description: "Buttery soft organic Pima cotton with a relaxed silhouette and clean bound collar. The ultimate everyday wardrobe base layer.",
+        image: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1000&q=85",
         gallery: [
-            "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1200&q=85",
-            "https://images.unsplash.com/photo-1583743814966-8936f37f4678?auto=format&fit=crop&w=1200&q=85"
+            "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1200&q=85",
+            "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=85"
         ],
         rating: 4.8,
         reviewCount: 310,
         stock: 65,
         availability: "In stock",
-        sku: "MEN-TEE-024",
+        sku: "WMN-TEE-024",
         tags: [
             "tshirt",
-            "heavyweight",
-            "streetwear",
-            "minimal"
+            "pima-cotton",
+            "minimal",
+            "women",
+            "everyday"
         ],
         attributes: {
-            Weight: "280 GSM",
-            Collar: "1.25-inch thick rib",
-            Fit: "Relaxed Boxy"
+            Material: "100% Peruvian Pima Cotton",
+            Collar: "Fine Ribbed Crewneck",
+            Fit: "Relaxed"
         },
         isNew: false,
         isFeatured: false,
@@ -3756,32 +3725,33 @@ const rawProducts = [
     },
     {
         slug: "relaxed-linen-blazer",
-        name: "Unstructured Washed Linen Summer Blazer",
-        category: "Men",
-        subcategory: "Jackets",
+        name: "Oversized Washed Linen Summer Blazer",
+        category: "Jackets & Coats",
+        subcategory: "Blazers",
         brand: "Ridge & Co.",
         price: 175,
         compareAt: 215,
-        description: "Lightweight European flax linen woven with a touch of cotton for breathability. Unlined back and patch pockets keep warm evenings cool and refined.",
-        image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=85",
+        description: "Breathable European flax linen tailored with relaxed shoulders, patch pockets, and a featherweight drape for warm days and layered evenings.",
+        image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=85",
         gallery: [
-            "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=85",
-            "https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?auto=format&fit=crop&w=1200&q=85"
+            "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=85",
+            "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=85"
         ],
         rating: 4.7,
         reviewCount: 78,
         stock: 12,
         availability: "In stock",
-        sku: "MEN-BLZ-025",
+        sku: "WMN-BLZ-025",
         tags: [
             "linen",
             "blazer",
             "summer",
-            "smart-casual"
+            "women",
+            "chic"
         ],
         attributes: {
-            Composition: "65% Linen, 35% Cotton",
-            Lining: "Butterfly Half Lining"
+            Composition: "100% Washed European Linen",
+            Lining: "Unlined Breathable Finish"
         },
         isNew: true,
         isFeatured: false,

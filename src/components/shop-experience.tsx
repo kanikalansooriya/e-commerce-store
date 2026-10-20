@@ -6,8 +6,9 @@ import { ChevronLeft, ChevronRight, SearchX } from "lucide-react";
 import { ProductCard } from "@/components/product-card";
 import { ScrollReveal } from "@/components/motion";
 import { categories, getSubcategories, products } from "@/lib/products";
+import { animateButtonPress } from "@/lib/gsap";
 
-const pageSize = 24;
+const pageSize = 12;
 
 export function ShopExperience({ initialQuery, initialCategory, initialSort }: { initialQuery: string; initialCategory: string; initialSort: string }) {
   const [query, setQuery] = useState(initialQuery);
@@ -54,13 +55,24 @@ export function ShopExperience({ initialQuery, initialCategory, initialSort }: {
         ...product.tags,
       ].join(" ").toLowerCase().includes(normalizedQuery);
 
+      const catLower = category.toLowerCase();
+      const pCatLower = product.category.toLowerCase();
+      const pSubLower = product.subcategory.toLowerCase();
+
       const matchesCategory =
         category === "All" ||
-        product.category.toLowerCase() === category.toLowerCase() ||
-        product.category.toLowerCase().includes(category.toLowerCase()) ||
-        (category === "Audio" && (product.category === "Audio" || product.category === "Electronics & Tech")) ||
-        (category === "Clothing" && (product.category === "Women" || product.category === "Men" || product.category === "Clothing")) ||
-        (category === "Shoes" && (product.category === "Shoes" || product.subcategory.toLowerCase().includes("shoe") || product.subcategory.toLowerCase().includes("sneaker") || product.subcategory.toLowerCase().includes("boot")));
+        pCatLower === catLower ||
+        pCatLower.includes(catLower) ||
+        catLower.includes(pCatLower) ||
+        (catLower.includes("dress") && (pCatLower.includes("dress") || pSubLower.includes("dress"))) ||
+        (catLower.includes("top") && (pCatLower.includes("top") || pSubLower.includes("shirt") || pSubLower.includes("blouse") || pSubLower.includes("tee"))) ||
+        (catLower.includes("knit") && (pCatLower.includes("knit") || pSubLower.includes("cardigan") || pSubLower.includes("sweater"))) ||
+        (catLower.includes("jacket") && (pCatLower.includes("jacket") || pSubLower.includes("blazer") || pSubLower.includes("coat"))) ||
+        (catLower.includes("shoe") && (pCatLower.includes("shoe") || pSubLower.includes("shoe") || pSubLower.includes("sneaker") || pSubLower.includes("boot") || pSubLower.includes("loafer") || pSubLower.includes("heel") || pSubLower.includes("sandal"))) ||
+        (catLower.includes("bag") && (pCatLower.includes("bag") || pSubLower.includes("bag") || pSubLower.includes("tote") || pSubLower.includes("duffel") || pSubLower.includes("crossbody"))) ||
+        (catLower.includes("jewel") && (pCatLower.includes("jewel") || pSubLower.includes("necklace") || pSubLower.includes("ring") || pSubLower.includes("earring") || pSubLower.includes("watch"))) ||
+        (catLower.includes("beauty") && (pCatLower.includes("beauty") || pSubLower.includes("skincare") || pSubLower.includes("fragrance") || pSubLower.includes("candle") || pSubLower.includes("bath"))) ||
+        (catLower.includes("sale") && Boolean(product.isSale));
       const matchesSubcategory = subcategory === "All" || product.subcategory === subcategory;
       const matchesBrand = brand === "All" || product.brand === brand;
       const matchesPrice = product.price <= maxPrice;
@@ -161,12 +173,58 @@ export function ShopExperience({ initialQuery, initialCategory, initialSort }: {
         </div>
       ) : filtered.length ? (
         <>
-          <ScrollReveal key={`${page}-${category}-${sort}`} className="product-grid reveal-stagger">{visibleProducts.map((product, index) => <ProductCard key={product.id} product={product} priority={index === 0} />)}</ScrollReveal>
-          <div className="pagination-row" aria-label="Catalog pagination">
-            <button type="button" className="button-secondary" disabled={page === 1} onClick={() => setPage((current) => Math.max(1, current - 1))}><ChevronLeft size={15} /> Prev</button>
-            <span>Page {page} of {pageCount}</span>
-            <button type="button" className="button-secondary" disabled={page >= pageCount} onClick={() => setPage((current) => Math.min(pageCount, current + 1))}>Next <ChevronRight size={15} /></button>
+          <div id="catalog-results">
+            <ScrollReveal key={`${page}-${category}-${sort}`} className="product-grid reveal-stagger">
+              {visibleProducts.map((product, index) => (
+                <ProductCard key={product.id} product={product} priority={index === 0} />
+              ))}
+            </ScrollReveal>
           </div>
+          <nav className="pagination-row" aria-label="Catalog pagination">
+            <button
+              type="button"
+              className="pagination-btn-prev"
+              disabled={page === 1}
+              onClick={(e) => {
+                animateButtonPress(e.currentTarget);
+                setPage((current) => Math.max(1, current - 1));
+                document.getElementById("catalog-results")?.scrollIntoView({ behavior: "smooth", block: "start" });
+              }}
+            >
+              <ChevronLeft size={16} /> Previous
+            </button>
+
+            <div className="pagination-pages" aria-label="Page navigation">
+              {Array.from({ length: pageCount }, (_, i) => i + 1).map((p) => (
+                <button
+                  key={p}
+                  type="button"
+                  className={`pagination-num-btn ${page === p ? "is-active" : ""}`}
+                  aria-current={page === p ? "page" : undefined}
+                  onClick={(e) => {
+                    animateButtonPress(e.currentTarget);
+                    setPage(p);
+                    document.getElementById("catalog-results")?.scrollIntoView({ behavior: "smooth", block: "start" });
+                  }}
+                >
+                  {p}
+                </button>
+              ))}
+            </div>
+
+            <button
+              type="button"
+              className="pagination-btn-next"
+              disabled={page >= pageCount}
+              onClick={(e) => {
+                animateButtonPress(e.currentTarget);
+                setPage((current) => Math.min(pageCount, current + 1));
+                document.getElementById("catalog-results")?.scrollIntoView({ behavior: "smooth", block: "start" });
+              }}
+            >
+              Next Page <ChevronRight size={16} />
+            </button>
+          </nav>
         </>
       ) : (
         <div className="empty-state">
