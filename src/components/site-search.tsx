@@ -5,11 +5,12 @@ import type { FormEvent, KeyboardEvent as ReactKeyboardEvent } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { ArrowUpRight, Clock3, Search, X } from "lucide-react";
-import { categories, formatPrice, products } from "@/lib/products";
+import { useCurrency } from "@/context/currency-context";
+import { categories, products } from "@/lib/products";
 import { gsap, isReducedMotion } from "@/lib/gsap";
 
 const recentStorageKey = "goodform-recent-searches";
-const popularCategories = ["Home", "Carry", "Audio", "Self-care"];
+const popularCategories = categories;
 
 function highlightMatch(text: string, query: string) {
   const cleanQuery = query.trim();
@@ -20,6 +21,7 @@ function highlightMatch(text: string, query: string) {
 }
 
 export function SiteSearch() {
+  const { formatPrice } = useCurrency();
   const router = useRouter();
   const wrapperRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -89,7 +91,15 @@ export function SiteSearch() {
   const matches = useMemo(() => {
     const value = debouncedQuery.toLowerCase();
     if (!value) return [];
-    return products.filter((product) => `${product.name} ${product.category} ${product.description}`.toLowerCase().includes(value)).slice(0, 5);
+    return products.filter((product) => [
+      product.name,
+      product.category,
+      product.subcategory,
+      product.brand,
+      product.description,
+      product.sku,
+      ...product.tags,
+    ].join(" ").toLowerCase().includes(value)).slice(0, 5);
   }, [debouncedQuery]);
 
   function saveAndSearch(value: string) {
@@ -154,7 +164,7 @@ export function SiteSearch() {
             onChange={(event) => { setQuery(event.target.value); setActiveIndex(-1); setIsOpen(true); }}
             onFocus={() => setIsOpen(true)}
             onKeyDown={onKeyDown}
-            placeholder="Search good things"
+            placeholder="Search the collection"
             aria-label="Search products"
             role="combobox"
             aria-autocomplete="list"
@@ -178,7 +188,7 @@ export function SiteSearch() {
                 </button>
               ))}
               <button className="suggestion-all" type="button" onClick={() => saveAndSearch(query)}>See all results for “{query}” <ArrowUpRight size={15} /></button>
-            </> : <div className="search-no-results"><strong>No exact matches yet.</strong><span>Try “lamp”, “bag”, or browse a popular category.</span><div>{popularCategories.map((category) => <button type="button" key={category} onClick={() => browseCategory(category)}>{category}</button>)}</div></div> : <>
+            </> : <div className="search-no-results"><strong>No exact matches yet.</strong><span>Try “dress”, “bag”, or browse a category.</span><div>{popularCategories.map((category) => <button type="button" key={category} onClick={() => browseCategory(category)}>{category}</button>)}</div></div> : <>
               {recentSearches.length > 0 && <><div className="suggestion-heading">Recent searches</div>{recentSearches.slice(0, 4).map((search) => <button type="button" className="suggestion-recent" key={search} onClick={() => { setQuery(search); saveAndSearch(search); }}><Clock3 size={14} />{search}<ArrowUpRight size={13} /></button>)}</>}
               <div className="suggestion-heading">Popular categories</div>
               <div className="suggestion-categories">{popularCategories.filter((category) => categories.includes(category)).map((category) => <button key={category} type="button" onClick={() => browseCategory(category)}>{category}<ArrowUpRight size={13} /></button>)}</div>

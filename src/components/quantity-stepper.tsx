@@ -8,10 +8,12 @@ export function QuantityStepper({
   value,
   onChange,
   label = "Quantity",
+  max,
 }: {
   value: number;
   onChange: (value: number) => void;
   label?: string;
+  max?: number;
 }) {
   const valueRef = useRef<HTMLSpanElement>(null);
   const prevValue = useRef(value);
@@ -38,6 +40,7 @@ export function QuantityStepper({
       </span>
       <button
         type="button"
+        disabled={max !== undefined && value >= max}
         onClick={() => onChange(value + 1)}
         aria-label="Increase quantity"
       >

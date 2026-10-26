@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { Check, RotateCcw, X } from "lucide-react";
 import { defaultThemeSettings, useThemeSettings } from "@/context/theme-context";
 import { gsap, animateButtonPress, isReducedMotion } from "@/lib/gsap";
@@ -53,7 +53,7 @@ export function SettingsPanel({ open, onClose }: { open: boolean; onClose: () =>
   const backdropRef = useRef<HTMLDivElement>(null);
   const drawerRef = useRef<HTMLElement>(null);
 
-  const handleClose = () => {
+  const handleClose = useCallback(() => {
     const backdrop = backdropRef.current;
     const drawer = drawerRef.current;
     if (!backdrop || !drawer || isReducedMotion()) {
@@ -71,7 +71,7 @@ export function SettingsPanel({ open, onClose }: { open: boolean; onClose: () =>
       ease: "power2.in",
       onComplete: onClose,
     });
-  };
+  }, [onClose]);
 
   useEffect(() => {
     if (!open) return;
@@ -115,7 +115,7 @@ export function SettingsPanel({ open, onClose }: { open: boolean; onClose: () =>
       document.removeEventListener("keydown", handleKeyDown);
       document.querySelector<HTMLButtonElement>("[data-settings-trigger]")?.focus();
     };
-  }, [open]);
+  }, [handleClose, open]);
 
   function resetSettings() {
     updateSetting("colorMode", defaultThemeSettings.colorMode);

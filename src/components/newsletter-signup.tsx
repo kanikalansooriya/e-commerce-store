@@ -23,8 +23,9 @@ export function NewsletterSignup() {
         disabled={submitted}
         onClick={(e) => animateButtonPress(e.currentTarget)}
       >
-        {submitted ? "You're on the list" : <>Join the list <ArrowRight size={17} /></>}
+        {submitted ? "Preview complete" : <>Join the list <ArrowRight size={17} /></>}
       </button>
+      {submitted && <span className="form-success" role="status">Newsletter signup is a preview only; no email was submitted.</span>}
     </form>
   );
 }

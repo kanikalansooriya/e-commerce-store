@@ -22,9 +22,9 @@ export function ContactForm() {
         disabled={sent}
         onClick={(e) => animateButtonPress(e.currentTarget)}
       >
-        {sent ? "Note sent" : "Send a note"} <span aria-hidden="true">→</span>
+        {sent ? "Preview complete" : "Send a note"} <span aria-hidden="true">→</span>
       </button>
-      {sent && <p className="form-success" role="status">Thanks for writing. This demo form has recorded your message locally for this screen.</p>}
+      {sent && <p className="form-success" role="status">This form is a preview only; your message was not sent.</p>}
     </form>
   );
 }

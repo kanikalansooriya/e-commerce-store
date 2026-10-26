@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowRight } from "lucide-react";
 import { ProductCard } from "@/components/product-card";
 import { ScrollReveal } from "@/components/motion";
-import { products } from "@/lib/products";
+import { categories, getSubcategories, products } from "@/lib/products";
 
 const categoryMap: Record<string, { label: string; description: string; image: string; subcategories: string[] }> = {
   women: {
@@ -71,7 +71,7 @@ const categoryMap: Record<string, { label: string; description: string; image: s
     label: "Sale & Offers",
     description: "A curated edit of quality fashion and everyday pieces at special pricing.",
     image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1400&q=85",
-    subcategories: ["Under $75", "Seasonal Markdowns", "Last Chance"],
+    subcategories: ["Sale Highlights", "Seasonal Markdowns", "Last Chance"],
   },
   // Aliases for compatibility:
   men: {
@@ -154,6 +154,43 @@ const categoryMap: Record<string, { label: string; description: string; image: s
   },
 };
 
+const categoryFilters: Record<string, {
+  all?: boolean;
+  category?: string;
+  categories?: string[];
+  subcategories?: string[];
+  sale?: boolean;
+  newest?: boolean;
+}> = {
+  women: { all: true },
+  dresses: { category: "Clothing", subcategories: ["Dresses"] },
+  "tops-blouses": { category: "Clothing", subcategories: ["Tops & T-Shirts", "Shirts & Blouses"] },
+  knitwear: { category: "Clothing", subcategories: ["Jackets & Cardigans"] },
+  "jackets-coats": { category: "Clothing", subcategories: ["Jackets & Cardigans"] },
+  "pants-skirts": { category: "Clothing", subcategories: ["Jeans & Pants", "Skirts & Shorts"] },
+  shoes: { category: "Shoes" },
+  bags: { category: "Bags" },
+  "jewelry-accessories": { category: "Accessories" },
+  "beauty-fragrance": { category: "Beauty & Perfumes" },
+  sale: { all: true, sale: true },
+  men: {},
+  clothing: { category: "Clothing" },
+  "bags-accessories": { category: "Bags" },
+  "beauty-self-care": { category: "Beauty & Perfumes" },
+  "home-living": { category: "Beauty & Perfumes", subcategories: ["Home Fragrance"] },
+  "electronics-tech": { category: "Accessories", subcategories: [] },
+  audio: { category: "Accessories", subcategories: [] },
+  "jewelry-watches": { category: "Accessories" },
+  "sports-outdoors": { category: "Shoes", subcategories: [] },
+  travel: { category: "Bags" },
+  kids: {
+    categories: ["Clothing", "Shoes", "Bags", "Accessories"],
+    subcategories: ["Baby & Kids Clothing", "Baby & Kids Shoes", "Baby & Kids Bags", "Baby & Kids Accessories"],
+  },
+  gifts: {},
+  "new-arrivals": { all: true, newest: true },
+};
+
 export function generateStaticParams() {
   return Object.keys(categoryMap).map((slug) => ({ slug }));
 }
@@ -166,27 +203,32 @@ async function CategoryPageInner({ params }: { params: Promise<{ slug: string }>
   const { slug } = await params;
   const data = categoryMap[slug];
   if (!data) notFound();
+  const filter = categoryFilters[slug] ?? {};
 
-  const categoryProducts = (() => {
-    if (slug === "sale") return products.filter((p) => p.isSale);
-    if (slug === "new-arrivals") return products.filter((p) => p.isNew);
-    const labelLower = data.label.toLowerCase();
-    const direct = products.filter(
-      (product) =>
-        product.category === data.label ||
-        product.category.toLowerCase().includes(labelLower) ||
-        labelLower.includes(product.category.toLowerCase()) ||
-        data.subcategories.some(
-          (sub) =>
-            product.subcategory.toLowerCase().includes(sub.toLowerCase()) ||
-            product.category.toLowerCase().includes(sub.toLowerCase()) ||
-            sub.toLowerCase().includes(product.subcategory.toLowerCase())
-        )
-    );
-    if (direct.length > 0) return direct;
-    return products.slice(0, 8);
-  })();
+  const categoryProducts = products.filter((product) => {
+    const matchesCategory = filter.all ||
+      (filter.categories?.includes(product.category) ?? false) ||
+      product.category === filter.category;
+    const matchesSubcategory = filter.subcategories === undefined || filter.subcategories.includes(product.subcategory);
+    const matchesSale = !filter.sale || product.isSale;
+    const matchesNew = !filter.newest || product.isNew;
+    return matchesCategory && matchesSubcategory && matchesSale && matchesNew;
+  });
   const featured = categoryProducts.slice(0, 4);
+  const subcategoryOptions = filter.subcategories ?? (filter.category ? getSubcategories(filter.category) : []);
+
+  function shopHref(subcategory?: string) {
+    const params = new URLSearchParams();
+    const category = subcategory
+      ? categories.find((item) => getSubcategories(item).includes(subcategory))
+      : filter.category;
+    if (category) params.set("category", category);
+    if (subcategory) params.set("subcategory", subcategory);
+    if (filter.sale) params.set("sale", "true");
+    if (filter.newest) params.set("new", "true");
+    const search = params.toString();
+    return search ? `/shop?${search}` : "/shop";
+  }
 
   return (
     <div className="page-shell category-shell">
@@ -206,13 +248,13 @@ async function CategoryPageInner({ params }: { params: Promise<{ slug: string }>
           <h1>{data.label}</h1>
           <p>{data.description}</p>
           <div className="category-subnav" aria-label={`${data.label} subcategories`}>
-            {data.subcategories.map((item) => (
-              <Link key={item} href={`/shop?category=${encodeURIComponent(data.label)}`}>
+            {subcategoryOptions.map((item) => (
+              <Link key={item} href={shopHref(item)}>
                 {item}
               </Link>
             ))}
           </div>
-          <Link className="button-primary" href={`/shop?category=${encodeURIComponent(data.label)}`}>
+          <Link className="button-primary" href={shopHref()}>
             Shop {data.label} <ArrowRight size={15} />
           </Link>
         </div>
@@ -221,34 +263,46 @@ async function CategoryPageInner({ params }: { params: Promise<{ slug: string }>
         </div>
       </ScrollReveal>
 
-      <ScrollReveal as="section" className="section-block category-featured">
-        <div className="section-heading">
-          <div>
-            <span className="eyebrow">Featured</span>
-            <h2>Picked for this edit.</h2>
+      {featured.length > 0 && (
+        <ScrollReveal as="section" className="section-block category-featured">
+          <div className="section-heading">
+            <div>
+              <span className="eyebrow">Featured</span>
+              <h2>Picked for this edit.</h2>
+            </div>
           </div>
-        </div>
-        <div className="product-grid reveal-stagger">
-          {featured.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
-      </ScrollReveal>
+          <div className="product-grid reveal-stagger">
+            {featured.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+        </ScrollReveal>
+      )}
 
-      <ScrollReveal as="section" className="category-full-grid">
-        <div className="section-heading">
-          <div>
-            <span className="eyebrow">More to discover</span>
-            <h2>Everything in this category.</h2>
+      {categoryProducts.length > 4 && (
+        <ScrollReveal as="section" className="category-full-grid">
+          <div className="section-heading">
+            <div>
+              <span className="eyebrow">More to discover</span>
+              <h2>Everything in this category.</h2>
+            </div>
+            <Link className="text-link" href={shopHref()}>See all products <ArrowRight size={15} /></Link>
           </div>
-          <Link className="text-link" href="/shop">See all products <ArrowRight size={15} /></Link>
+          <div className="product-grid reveal-stagger">
+            {categoryProducts.slice(4).map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+        </ScrollReveal>
+      )}
+
+      {!categoryProducts.length && (
+        <div className="empty-state">
+          <h2>No products in this edit yet.</h2>
+          <p>Browse the available catalog or check back when this category is populated.</p>
+          <Link className="button-primary" href="/shop">Browse all products <ArrowRight size={15} /></Link>
         </div>
-        <div className="product-grid reveal-stagger">
-          {categoryProducts.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
-      </ScrollReveal>
+      )}
     </div>
   );
 }

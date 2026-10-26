@@ -5,12 +5,14 @@ import Link from "next/link";
 import { useState } from "react";
 import { Check, Heart, Plus, ShoppingBag, Star } from "lucide-react";
 import { useCart } from "@/context/cart-context";
+import { useCurrency } from "@/context/currency-context";
 import { useWishlist } from "@/context/wishlist-context";
-import { formatPrice, type Product } from "@/lib/products";
+import type { Product } from "@/lib/products";
 import { animateButtonPress, animateHeartPop } from "@/lib/gsap";
 
 export function ProductCard({ product, priority = false }: { product: Product; priority?: boolean }) {
   const { addItem } = useCart();
+  const { formatPrice } = useCurrency();
   const { toggleItem, isSaved } = useWishlist();
   const [added, setAdded] = useState(false);
   const saved = isSaved(product.id);
@@ -27,32 +29,18 @@ export function ProductCard({ product, priority = false }: { product: Product; p
     setTimeout(() => setAdded(false), 1400);
   };
 
-  const secondaryImage = product.gallery && product.gallery.length > 1 ? product.gallery[1] : null;
-
   return (
     <article className="product-card group">
       <Link className="product-image-link" href={`/product/${product.slug}`} aria-label={`View ${product.name}`}>
         <div className="product-image-wrap">
-          {/* Primary image */}
           <Image
             src={product.image}
             alt={product.name}
             fill
             priority={priority}
             sizes="(max-width: 640px) 48vw, (max-width: 1024px) 32vw, 24vw"
-            className={`product-primary-img ${secondaryImage ? "group-hover:opacity-0 transition-opacity duration-300" : ""}`}
+            className="product-primary-img"
           />
-
-          {/* Secondary image on hover if available */}
-          {secondaryImage && (
-            <Image
-              src={secondaryImage}
-              alt={`${product.name} alternate view`}
-              fill
-              sizes="(max-width: 640px) 48vw, (max-width: 1024px) 32vw, 24vw"
-              className="product-secondary-img opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            />
-          )}
 
           {/* Badges */}
           <div className="product-badges-container">
@@ -81,10 +69,13 @@ export function ProductCard({ product, priority = false }: { product: Product; p
           <button
             type="button"
             className={`quick-add-btn ${added ? "is-added" : ""}`}
+            disabled={product.stock < 1}
             onClick={handleAdd}
             aria-label={`Add ${product.name} to bag`}
           >
-            {added ? (
+            {product.stock < 1 ? (
+              "Out of stock"
+            ) : added ? (
               <>
                 <Check size={14} className="text-emerald-500" /> Added to Bag
               </>
@@ -120,6 +111,7 @@ export function ProductCard({ product, priority = false }: { product: Product; p
 
           <button
             className={`add-icon ${added ? "is-added" : ""}`}
+            disabled={product.stock < 1}
             onClick={handleAdd}
             aria-label={`Add ${product.name} to bag`}
           >

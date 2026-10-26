@@ -3,7 +3,7 @@
 import { createContext, useContext, useEffect, useMemo, useRef, useState } from "react";
 import type { ReactNode } from "react";
 import { Heart } from "lucide-react";
-import type { Product } from "@/lib/products";
+import { products, type Product } from "@/lib/products";
 import { animateToastEnter } from "@/lib/gsap";
 
 const STORAGE_KEY = "northline-wishlist";
@@ -20,25 +20,39 @@ type WishlistContextValue = {
 
 const WishlistContext = createContext<WishlistContextValue | null>(null);
 
+function restoreWishlist(value: unknown): Product[] {
+  if (!Array.isArray(value)) return [];
+
+  const savedIds = new Set(
+    value.flatMap((item) =>
+      typeof item === "object" && item !== null && "id" in item && typeof item.id === "string" ? [item.id] : [],
+    ),
+  );
+  return products.filter((product) => savedIds.has(product.id));
+}
+
 export function WishlistProvider({ children }: { children: ReactNode }) {
-  const [items, setItems] = useState<Product[]>(() => {
-    if (typeof window === "undefined") return [];
-
-    try {
-      const stored = window.localStorage.getItem(STORAGE_KEY);
-      if (stored) {
-        const parsed: unknown = JSON.parse(stored);
-        if (Array.isArray(parsed)) return parsed as Product[];
-      }
-    } catch {
-      window.localStorage.removeItem(STORAGE_KEY);
-    }
-
-    return [];
-  });
-  const isReady = typeof window !== "undefined";
+  const [items, setItems] = useState<Product[]>([]);
+  const [isReady, setIsReady] = useState(false);
   const [toast, setToast] = useState("");
   const toastRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      try {
+        const stored = window.localStorage.getItem(STORAGE_KEY);
+        if (stored) {
+          const parsed: unknown = JSON.parse(stored);
+          setItems(restoreWishlist(parsed));
+        }
+      } catch {
+        window.localStorage.removeItem(STORAGE_KEY);
+      }
+      setIsReady(true);
+    }, 0);
+
+    return () => window.clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     if (!isReady) return;

@@ -7,11 +7,12 @@ import { useRouter } from "next/navigation";
 import { ArrowLeft, ArrowRight, CreditCard, LockKeyhole } from "lucide-react";
 import { ScrollReveal } from "@/components/motion";
 import { useCart } from "@/context/cart-context";
-import { formatPrice } from "@/lib/products";
+import { useCurrency } from "@/context/currency-context";
 import { animateButtonPress } from "@/lib/gsap";
 
 export default function CheckoutPage() {
   const { items, subtotal, clearCart, isReady } = useCart();
+  const { formatPrice } = useCurrency();
   const [delivery, setDelivery] = useState("standard");
   const [payment, setPayment] = useState("cod");
   const [error, setError] = useState("");
@@ -83,8 +84,8 @@ export default function CheckoutPage() {
             <section className="form-section">
               <div className="form-section-heading"><span>02</span><div><h2>Delivery</h2><p>Choose how quickly you’d like it to arrive.</p></div></div>
               <div className="option-list">
-                <label className={`choice-row ${delivery === "standard" ? "is-selected" : ""}`}><input type="radio" name="delivery" value="standard" checked={delivery === "standard"} onChange={() => setDelivery("standard")} /><span className="choice-copy"><strong>Standard delivery</strong><small>Arrives in 3–5 business days</small></span><span>{subtotal >= 100 ? "Free" : "$8"}</span></label>
-                <label className={`choice-row ${delivery === "express" ? "is-selected" : ""}`}><input type="radio" name="delivery" value="express" checked={delivery === "express"} onChange={() => setDelivery("express")} /><span className="choice-copy"><strong>Express delivery</strong><small>Arrives in 1–2 business days</small></span><span>$15</span></label>
+                <label className={`choice-row ${delivery === "standard" ? "is-selected" : ""}`}><input type="radio" name="delivery" value="standard" checked={delivery === "standard"} onChange={() => setDelivery("standard")} /><span className="choice-copy"><strong>Standard delivery</strong><small>Arrives in 3–5 business days</small></span><span>{subtotal >= 100 ? "Free" : formatPrice(8)}</span></label>
+                <label className={`choice-row ${delivery === "express" ? "is-selected" : ""}`}><input type="radio" name="delivery" value="express" checked={delivery === "express"} onChange={() => setDelivery("express")} /><span className="choice-copy"><strong>Express delivery</strong><small>Arrives in 1–2 business days</small></span><span>{formatPrice(15)}</span></label>
               </div>
             </section>
 

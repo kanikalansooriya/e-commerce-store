@@ -2,7 +2,7 @@ export type Product = {
   id: string;
   slug: string;
   name: string;
-  category: "Clothing" | "Shoes" | "Bags" | "Accessories";
+  category: "Clothing" | "Shoes" | "Bags" | "Accessories" | "Beauty & Perfumes";
   subcategory: string;
   brand: string;
   price: number;
@@ -31,6 +31,8 @@ export const categoryDefinitions: Record<string, string[]> = {
     "Shirts & Blouses",
     "Jeans & Pants",
     "Skirts & Shorts",
+    "Jackets & Cardigans",
+    "Matching Sets",
     "Sleepwear & Loungewear",
     "Baby & Kids Clothing",
   ],
@@ -39,6 +41,7 @@ export const categoryDefinitions: Record<string, string[]> = {
     "Sandals",
     "Flats",
     "Heels",
+    "Boots",
     "Baby & Kids Shoes",
   ],
   "Bags": [
@@ -52,14 +55,20 @@ export const categoryDefinitions: Record<string, string[]> = {
   ],
   "Accessories": [
     "Jewelry",
+    "Earrings & Necklaces",
     "Watches",
     "Sunglasses",
     "Hair Accessories",
     "Belts & Wallets",
     "Hats & Scarves",
-    "Earrings & Necklaces",
-    "Perfumes & Beauty",
     "Baby & Kids Accessories",
+  ],
+  "Beauty & Perfumes": [
+    "Perfumes",
+    "Body Mists",
+    "Makeup",
+    "Skincare & Body Care",
+    "Home Fragrance",
   ],
 };
 
@@ -2023,8 +2032,8 @@ export const rawProducts: Omit<Product, "id">[] = [
   {
     slug: "artisan-eau-de-parfum-santal",
     name: "Atelier No. 04 Santal & Black Pepper Perfume",
-    category: "Accessories",
-    subcategory: "Perfumes & Beauty",
+    category: "Beauty & Perfumes",
+    subcategory: "Perfumes",
     brand: "Atelier Maison",
     price: 95,
     compareAt: 120,
@@ -2049,8 +2058,8 @@ export const rawProducts: Omit<Product, "id">[] = [
   {
     slug: "botanica-hydra-plump-multi-hyaluronic-serum",
     name: "Botanica Hydra-Plump Multi-Hyaluronic Serum",
-    category: "Accessories",
-    subcategory: "Perfumes & Beauty",
+    category: "Beauty & Perfumes",
+    subcategory: "Skincare & Body Care",
     brand: "Botanica Labs",
     price: 52,
     compareAt: 68,
@@ -2074,8 +2083,8 @@ export const rawProducts: Omit<Product, "id">[] = [
   {
     slug: "cedar-fig-soy-wax-candle-set",
     name: "Wild Fig & Hinoki Wood Clean Soy Candle",
-    category: "Accessories",
-    subcategory: "Perfumes & Beauty",
+    category: "Beauty & Perfumes",
+    subcategory: "Home Fragrance",
     brand: "Hearth & Form",
     price: 46,
     description: "Poured by hand in reusable amber glass tumblers. Clean-burning 100% natural soy wax scented with wild fig, earthy Hinoki wood, and black amber.",
@@ -2098,14 +2107,14 @@ export const rawProducts: Omit<Product, "id">[] = [
   {
     slug: "luminous-botanical-glow-oil",
     name: "Luminous Botanical Face & Body Glow Oil",
-    category: "Accessories",
-    subcategory: "Perfumes & Beauty",
+    category: "Beauty & Perfumes",
+    subcategory: "Skincare & Body Care",
     brand: "Botanica Labs",
     price: 64,
     description: "Fast-absorbing dry body oil packed with cold-pressed rosehip, squalane, and golden jojoba. Leaves skin glistening and scented with sweet neroli blossom.",
-    image: "https://images.unsplash.com/photo-1608248597359-0744655b3310?auto=format&fit=crop&w=1000&q=85",
+    image: "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=1000&q=85",
     gallery: [
-      "https://images.unsplash.com/photo-1608248597359-0744655b3310?auto=format&fit=crop&w=1200&q=85"
+      "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=1200&q=85"
     ],
     rating: 4.8,
     reviewCount: 78,
@@ -2218,12 +2227,4 @@ export function getRelatedProducts(product: Product, limit = 4): Product[] {
 
 export function getSubcategories(category: string): string[] {
   return subcategoriesByCategory[category] ?? [];
-}
-
-export function formatPrice(amount: number): string {
-  return new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-    maximumFractionDigits: 0,
-  }).format(amount);
 }

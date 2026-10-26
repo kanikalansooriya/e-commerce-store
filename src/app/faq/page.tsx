@@ -5,27 +5,27 @@ import { ScrollReveal } from "@/components/motion";
 const faqs = [
   {
     question: "How long does shipping take?",
-    answer: "Most orders leave our studio within one to two business days, and delivery typically takes three to seven days depending on your location.",
+    answer: "This preview does not accept or ship orders. Delivery estimates need to be confirmed and connected to your fulfillment provider before launch.",
   },
   {
     question: "Do you offer free shipping?",
-    answer: "Yes. Orders over $100 ship free within the contiguous United States. We also include carbon-conscious packaging for every order.",
+    answer: "The cart preview estimates free standard shipping above its sample threshold. This is display-only and is not applied to a real order.",
   },
   {
     question: "Can I return or exchange an item?",
-    answer: "Absolutely. We accept returns on unworn or unused items within 30 days of delivery. Exchanges are processed quickly and we’ll help you find the right fit.",
+    answer: "The 30-day return statement is sample policy copy only. Publish a verified returns policy before accepting orders.",
   },
   {
     question: "Are materials and care details included?",
-    answer: "Every product page includes materials, dimensions, and care guidance. We also provide in-depth product notes on the item details section.",
+    answer: "Product specifications in this preview are sample data and should be verified against the real products before publishing.",
   },
   {
     question: "Do you sell gift cards or gift packaging?",
-    answer: "Yes. Gift cards are available in-store and online, and many items can be wrapped in recyclable packaging when selected at checkout.",
+    answer: "Gift cards and gift packaging are not configured in this preview.",
   },
   {
     question: "What if I need help choosing a product?",
-    answer: "We’re happy to help. Send us a note at hello@goodform.example and we’ll answer with thoughtful recommendations tailored to your home or routine.",
+    answer: "The contact form is a visual preview only and does not send messages. Configure a real support address and form service before launch.",
   },
 ];
 
@@ -58,21 +58,21 @@ export default function FaqPage() {
             <Truck size={18} />
             <div>
               <strong>Shipping</strong>
-              <span>Free over $100 • 3–7 day delivery</span>
+              <span>Sample threshold shown in your selected currency</span>
             </div>
           </div>
           <div className="info-tile">
             <ShieldCheck size={18} />
             <div>
               <strong>Returns</strong>
-              <span>30-day easy returns</span>
+              <span>Sample policy only</span>
             </div>
           </div>
           <div className="info-tile">
             <Headphones size={18} />
             <div>
               <strong>Need a hand?</strong>
-              <span>hello@goodform.example</span>
+              <span>Contact form is not connected</span>
             </div>
           </div>
           <Link className="button-primary faq-button" href="/about#contact">
@@ -87,9 +87,9 @@ export default function FaqPage() {
           <h2>We choose useful things with care.</h2>
         </div>
         <ul>
-          <li><CheckCircle2 size={16} /> Helpful product guidance</li>
-          <li><CheckCircle2 size={16} /> Thoughtful returns & exchanges</li>
-          <li><CheckCircle2 size={16} /> Real people behind every reply</li>
+          <li><CheckCircle2 size={16} /> Sample catalog for preview</li>
+          <li><CheckCircle2 size={16} /> No payment processing</li>
+          <li><CheckCircle2 size={16} /> Connect customer support before launch</li>
         </ul>
       </ScrollReveal>
     </div>

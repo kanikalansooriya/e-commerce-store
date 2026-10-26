@@ -1,51 +1,61 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Heart, Menu, Settings2, ShoppingBag, UserRound, X } from "lucide-react";
 import { useCart } from "@/context/cart-context";
 import { useWishlist } from "@/context/wishlist-context";
+import { useCurrency } from "@/context/currency-context";
 import { SettingsPanel } from "@/components/settings-panel";
 import { SiteSearch } from "@/components/site-search";
+import { categories } from "@/lib/products";
 import { gsap, animateBadgeBounce, isReducedMotion } from "@/lib/gsap";
 
 const topLinks = [
-  { href: "/category/dresses", label: "Dresses" },
-  { href: "/category/tops-blouses", label: "Tops & Blouses" },
-  { href: "/category/knitwear", label: "Knitwear" },
-  { href: "/category/jackets-coats", label: "Jackets" },
-  { href: "/category/pants-skirts", label: "Pants & Skirts" },
-  { href: "/category/shoes", label: "Shoes" },
-  { href: "/category/bags", label: "Bags" },
-  { href: "/category/jewelry-accessories", label: "Jewelry" },
-  { href: "/category/beauty-fragrance", label: "Beauty" },
-  { href: "/category/sale", label: "Sale" },
+  ...categories.map((category) => ({
+    href: `/shop?category=${encodeURIComponent(category)}`,
+    label: category,
+  })),
 ];
 
-const megaGroups = [
-  { heading: "Dresses", items: ["Casual Dresses", "Midi Dresses", "Maxi Dresses", "Evening Dresses", "Summer Dresses"] },
-  { heading: "Tops & Blouses", items: ["Blouses", "Shirts", "Knit Tops", "T-Shirts", "Camisoles"] },
-  { heading: "Knitwear", items: ["Cardigans", "Cashmere Knits", "Sweaters", "Knit Vests"] },
-  { heading: "Jackets & Outerwear", items: ["Tailored Blazers", "Trench Coats", "Wool Coats", "Jackets"] },
-  { heading: "Pants & Skirts", items: ["Tailored Trousers", "Pleated Skirts", "Linen Pants", "Wide-Leg Pants"] },
-  { heading: "Shoes & Heels", items: ["Strappy Heels", "Leather Loafers", "Ballet Flats", "Boots", "Sneakers"] },
-  { heading: "Bags & Totes", items: ["Handbags", "Shoulder Bags", "Tote Bags", "Crossbody"] },
-  { heading: "Jewelry & Beauty", items: ["Gold Earrings", "Pendant Necklaces", "Rings", "Perfume", "Skincare"] },
-];
+type CurrencySwitchProps = {
+  currency: "LKR" | "USD";
+  setCurrency: (currency: "LKR" | "USD") => void;
+  rateStatus: "updating" | "live" | "cached" | "fallback";
+  usdToLkr: number;
+  className: string;
+};
+
+function CurrencySwitch({ currency, setCurrency, rateStatus, usdToLkr, className }: CurrencySwitchProps) {
+  return (
+    <div className={className}>
+      <div className="currency-switch" role="group" aria-label="Display currency">
+        <button type="button" aria-pressed={currency === "LKR"} onClick={() => setCurrency("LKR")}>LKR</button>
+        <button type="button" aria-pressed={currency === "USD"} onClick={() => setCurrency("USD")}>USD</button>
+      </div>
+      {rateStatus !== "live" && (
+        <span className="currency-rate-status" role="status" aria-live="polite">
+          {rateStatus === "updating"
+            ? "Updating exchange rate…"
+            : rateStatus === "cached"
+              ? "Live rate unavailable · saved rate in use"
+              : `Live rate unavailable · using Rs. ${Math.round(usdToLkr)} per USD`}
+        </span>
+      )}
+    </div>
+  );
+}
 
 export function SiteHeader() {
-  const pathname = usePathname();
   const { itemCount } = useCart();
   const { wishlistCount } = useWishlist();
+  const { currency, setCurrency, rateStatus, usdToLkr } = useCurrency();
   const [menuOpen, setMenuOpen] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
-  const [shopMenuOpen, setShopMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   const bagBadgeRef = useRef<HTMLSpanElement>(null);
   const wishlistBadgeRef = useRef<HTMLSpanElement>(null);
-  const megaMenuRef = useRef<HTMLDivElement>(null);
   const mobileNavRef = useRef<HTMLElement>(null);
 
   const previousCartCount = useRef(itemCount);
@@ -75,22 +85,6 @@ export function SiteHeader() {
     }
   }, [wishlistCount]);
 
-  // GSAP Mega Menu entrance
-  useEffect(() => {
-    const el = megaMenuRef.current;
-    if (!el || !shopMenuOpen || isReducedMotion()) return;
-
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        el,
-        { opacity: 0, y: -6 },
-        { opacity: 1, y: 0, duration: 0.22, ease: "power2.out" }
-      );
-    }, el);
-
-    return () => ctx.revert();
-  }, [shopMenuOpen]);
-
   // GSAP Mobile Nav entrance
   useEffect(() => {
     const el = mobileNavRef.current;
@@ -110,7 +104,7 @@ export function SiteHeader() {
   return (
     <>
       <div className="announcement">
-        ⚡ <span>FLASH SALE:</span> Use code <strong>LUXE20</strong> for 20% off • 🚚 Free Shipping on orders over $75 • ⭐ 4.9/5 Rated
+        Storefront preview • Sample catalog and availability • No live orders or payments
       </div>
       <header className={`site-header${scrolled ? " is-scrolled" : ""}`}>
         <div className="header-main page-shell">
@@ -127,6 +121,7 @@ export function SiteHeader() {
           </Link>
           <SiteSearch />
           <div className="header-actions">
+            <CurrencySwitch currency={currency} setCurrency={setCurrency} rateStatus={rateStatus} usdToLkr={usdToLkr} className="currency-control" />
             <button
               className="icon-button settings-trigger"
               type="button"
@@ -157,55 +152,16 @@ export function SiteHeader() {
             </Link>
           </div>
         </div>
-        <nav className="desktop-nav page-shell" aria-label="Main navigation">
-          <div
-            className={`shop-menu-wrap${shopMenuOpen ? " is-open" : ""}`}
-            onMouseEnter={() => setShopMenuOpen(true)}
-            onMouseLeave={() => setShopMenuOpen(false)}
-          >
-            <button
-              type="button"
-              className="nav-shop-trigger"
-              aria-expanded={shopMenuOpen}
-              aria-label="Open shop categories"
-              onClick={() => setShopMenuOpen((open) => !open)}
-            >
-              Shop
-            </button>
-            <div ref={megaMenuRef} className="mega-menu" role="menu" aria-label="Shop categories">
-              <div className="mega-menu-columns">
-                {megaGroups.map((group) => (
-                  <div key={group.heading} className="mega-menu-column">
-                    <span className="mega-menu-heading">{group.heading}</span>
-                    {group.items.map((item) => (
-                      <Link key={item} href={`/shop?category=${encodeURIComponent(group.heading)}`} onClick={() => setShopMenuOpen(false)}>
-                        {item}
-                      </Link>
-                    ))}
-                  </div>
-                ))}
-              </div>
-              <div className="mega-menu-footer">
-                <Link href="/shop" onClick={() => setShopMenuOpen(false)}>View all categories</Link>
-                <Link href="/shop?sort=newest" onClick={() => setShopMenuOpen(false)}>New arrivals</Link>
-                <Link href="/category/sale" onClick={() => setShopMenuOpen(false)}>Sale</Link>
-              </div>
-            </div>
-          </div>
-          <Link href="/shop?sort=newest" aria-current={pathname === "/shop?sort=newest" ? "page" : undefined}>
-            New Arrivals
-          </Link>
-          {topLinks.map((link) => (
-            <Link key={link.href} href={link.href} aria-current={pathname === link.href ? "page" : undefined}>
-              {link.label}
+        <nav className="category-nav page-shell" aria-label="Shop by category">
+          {categories.map((category) => (
+            <Link key={category} href={`/shop?category=${encodeURIComponent(category)}`}>
+              {category}
             </Link>
           ))}
-          <Link className="nav-right" href="/shop">View all categories</Link>
         </nav>
         {menuOpen && (
           <nav ref={mobileNavRef} className="mobile-nav" aria-label="Mobile navigation">
-            <Link href="/shop" onClick={() => setMenuOpen(false)}>Shop</Link>
-            <Link href="/shop?sort=newest" onClick={() => setMenuOpen(false)}>New Arrivals</Link>
+            <CurrencySwitch currency={currency} setCurrency={setCurrency} rateStatus={rateStatus} usdToLkr={usdToLkr} className="mobile-currency-control" />
             {topLinks.map((link) => (
               <Link key={link.href} href={link.href} onClick={() => setMenuOpen(false)}>{link.label}</Link>
             ))}

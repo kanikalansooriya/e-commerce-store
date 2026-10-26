@@ -152,6 +152,57 @@ button, input, select, textarea {
   transform: scale(1.055);
 }
 
+.currency-control {
+  position: relative;
+}
+
+.mobile-currency-control {
+  display: none;
+}
+
+.currency-switch {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  align-items: center;
+  padding: 3px;
+  display: inline-flex;
+}
+
+.currency-switch button {
+  border-radius: var(--radius-pill);
+  min-width: 38px;
+  min-height: 28px;
+  color: var(--muted);
+  cursor: pointer;
+  background: none;
+  border: 0;
+  padding: 0 8px;
+  font-size: 9px;
+  font-weight: 650;
+}
+
+.currency-switch button[aria-pressed="true"] {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.currency-rate-status {
+  z-index: 45;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-control);
+  background: var(--surface);
+  width: max-content;
+  max-width: min(280px, 90vw);
+  color: var(--muted);
+  box-shadow: var(--shadow-soft);
+  padding: 7px 9px;
+  font-size: 9px;
+  position: absolute;
+  top: calc(100% + 7px);
+  right: 0;
+}
+
 .product-badge {
   z-index: 1;
   border-radius: var(--radius-pill);
@@ -948,6 +999,23 @@ html[data-color-mode="dark"] .summary-panel, html[data-color-mode="dark"] .accou
     width: 36px;
     height: 36px;
   }
+
+  .header-actions .currency-control {
+    display: none;
+  }
+
+  .mobile-currency-control {
+    border-bottom: 1px solid var(--line);
+    align-items: center;
+    padding: 12px 3px;
+    display: flex;
+  }
+
+  .mobile-currency-control .currency-rate-status {
+    max-width: min(280px, 100vw - 32px);
+    left: 0;
+    right: auto;
+  }
 }
 
 @media (max-width: 390px) {
@@ -1054,10 +1122,6 @@ html[data-motion="reduced"] .scroll-reveal, html[data-motion="reduced"] .route-t
 
 .choice-row input {
   accent-color: var(--accent);
-}
-
-.availability-dot {
-  background: var(--accent);
 }
 
 .purchase-availability {
@@ -1576,13 +1640,28 @@ html[data-font-size="large"] .filter-control, html[data-font-size="large"] .form
 
 @media (max-width: 520px) {
   .pagination-row {
-    justify-content: space-between;
+    justify-content: center;
     gap: 8px;
     padding: 12px;
   }
 
+  .pagination-pages {
+    flex-wrap: wrap;
+    flex: 100%;
+    order: -1;
+    justify-content: center;
+  }
+
+  .pagination-num-btn {
+    min-width: 34px;
+    height: 36px;
+  }
+
   .pagination-btn-prev, .pagination-btn-next {
-    padding: 0 14px;
+    flex: auto;
+    justify-content: center;
+    min-width: 0;
+    padding: 0 8px;
     font-size: 12px;
   }
 }

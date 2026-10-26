@@ -782,6 +782,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$cart$2d$co
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$wishlist$2d$context$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/context/wishlist-context.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$settings$2d$panel$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/settings-panel.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$site$2d$search$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/site-search.tsx [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$products$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/products.ts [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$gsap$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/src/lib/gsap.ts [app-client] (ecmascript) <locals>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__ = __turbopack_context__.i("[project]/node_modules/gsap/index.js [app-client] (ecmascript) <locals> <export default as gsap>");
 ;
@@ -796,126 +797,26 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
+;
 const topLinks = [
+    ...__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$products$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["categories"].map((category)=>({
+            href: `/shop?category=${encodeURIComponent(category)}`,
+            label: category
+        })),
     {
-        href: "/category/dresses",
-        label: "Dresses"
-    },
-    {
-        href: "/category/tops-blouses",
-        label: "Tops & Blouses"
-    },
-    {
-        href: "/category/knitwear",
-        label: "Knitwear"
-    },
-    {
-        href: "/category/jackets-coats",
-        label: "Jackets"
-    },
-    {
-        href: "/category/pants-skirts",
-        label: "Pants & Skirts"
-    },
-    {
-        href: "/category/shoes",
-        label: "Shoes"
-    },
-    {
-        href: "/category/bags",
-        label: "Bags"
-    },
-    {
-        href: "/category/jewelry-accessories",
-        label: "Jewelry"
-    },
-    {
-        href: "/category/beauty-fragrance",
-        label: "Beauty"
+        href: "/shop?sort=newest",
+        label: "New arrivals"
     },
     {
         href: "/category/sale",
         label: "Sale"
     }
 ];
-const megaGroups = [
-    {
-        heading: "Dresses",
-        items: [
-            "Casual Dresses",
-            "Midi Dresses",
-            "Maxi Dresses",
-            "Evening Dresses",
-            "Summer Dresses"
-        ]
-    },
-    {
-        heading: "Tops & Blouses",
-        items: [
-            "Blouses",
-            "Shirts",
-            "Knit Tops",
-            "T-Shirts",
-            "Camisoles"
-        ]
-    },
-    {
-        heading: "Knitwear",
-        items: [
-            "Cardigans",
-            "Cashmere Knits",
-            "Sweaters",
-            "Knit Vests"
-        ]
-    },
-    {
-        heading: "Jackets & Outerwear",
-        items: [
-            "Tailored Blazers",
-            "Trench Coats",
-            "Wool Coats",
-            "Jackets"
-        ]
-    },
-    {
-        heading: "Pants & Skirts",
-        items: [
-            "Tailored Trousers",
-            "Pleated Skirts",
-            "Linen Pants",
-            "Wide-Leg Pants"
-        ]
-    },
-    {
-        heading: "Shoes & Heels",
-        items: [
-            "Strappy Heels",
-            "Leather Loafers",
-            "Ballet Flats",
-            "Boots",
-            "Sneakers"
-        ]
-    },
-    {
-        heading: "Bags & Totes",
-        items: [
-            "Handbags",
-            "Shoulder Bags",
-            "Tote Bags",
-            "Crossbody"
-        ]
-    },
-    {
-        heading: "Jewelry & Beauty",
-        items: [
-            "Gold Earrings",
-            "Pendant Necklaces",
-            "Rings",
-            "Perfume",
-            "Skincare"
-        ]
-    }
-];
+const megaGroups = Object.entries(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$products$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["categoryDefinitions"]).map(([heading, items])=>({
+        heading,
+        category: heading,
+        items
+    }));
 function SiteHeader() {
     _s();
     const pathname = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["usePathname"])();
@@ -1024,28 +925,10 @@ function SiteHeader() {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "announcement",
-                children: [
-                    "⚡ ",
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                        children: "FLASH SALE:"
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/site-header.tsx",
-                        lineNumber: 113,
-                        columnNumber: 11
-                    }, this),
-                    " Use code ",
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
-                        children: "LUXE20"
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/site-header.tsx",
-                        lineNumber: 113,
-                        columnNumber: 45
-                    }, this),
-                    " for 20% off • 🚚 Free Shipping on orders over $75 • ⭐ 4.9/5 Rated"
-                ]
-            }, void 0, true, {
+                children: "Storefront preview • Sample catalog and availability • No live orders or payments"
+            }, void 0, false, {
                 fileName: "[project]/src/components/site-header.tsx",
-                lineNumber: 112,
+                lineNumber: 104,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
@@ -1063,18 +946,18 @@ function SiteHeader() {
                                     size: 21
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/site-header.tsx",
-                                    lineNumber: 123,
+                                    lineNumber: 115,
                                     columnNumber: 25
                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$menu$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Menu$3e$__["Menu"], {
                                     size: 21
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/site-header.tsx",
-                                    lineNumber: 123,
+                                    lineNumber: 115,
                                     columnNumber: 43
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/site-header.tsx",
-                                lineNumber: 117,
+                                lineNumber: 109,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1088,7 +971,7 @@ function SiteHeader() {
                                         children: "A"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/site-header.tsx",
-                                        lineNumber: 126,
+                                        lineNumber: 118,
                                         columnNumber: 13
                                     }, this),
                                     "AURA",
@@ -1097,18 +980,18 @@ function SiteHeader() {
                                         children: "."
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/site-header.tsx",
-                                        lineNumber: 126,
+                                        lineNumber: 118,
                                         columnNumber: 76
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/site-header.tsx",
-                                lineNumber: 125,
+                                lineNumber: 117,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$site$2d$search$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SiteSearch"], {}, void 0, false, {
                                 fileName: "[project]/src/components/site-header.tsx",
-                                lineNumber: 128,
+                                lineNumber: 120,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1126,12 +1009,12 @@ function SiteHeader() {
                                             size: 19
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/site-header.tsx",
-                                            lineNumber: 139,
+                                            lineNumber: 131,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/site-header.tsx",
-                                        lineNumber: 130,
+                                        lineNumber: 122,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1142,12 +1025,12 @@ function SiteHeader() {
                                             size: 20
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/site-header.tsx",
-                                            lineNumber: 142,
+                                            lineNumber: 134,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/site-header.tsx",
-                                        lineNumber: 141,
+                                        lineNumber: 133,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1159,7 +1042,7 @@ function SiteHeader() {
                                                 size: 19
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/site-header.tsx",
-                                                lineNumber: 145,
+                                                lineNumber: 137,
                                                 columnNumber: 15
                                             }, this),
                                             wishlistCount > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1168,13 +1051,13 @@ function SiteHeader() {
                                                 children: wishlistCount
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/site-header.tsx",
-                                                lineNumber: 147,
+                                                lineNumber: 139,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/site-header.tsx",
-                                        lineNumber: 144,
+                                        lineNumber: 136,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1186,7 +1069,7 @@ function SiteHeader() {
                                                 size: 20
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/site-header.tsx",
-                                                lineNumber: 153,
+                                                lineNumber: 145,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1195,25 +1078,25 @@ function SiteHeader() {
                                                 children: itemCount
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/site-header.tsx",
-                                                lineNumber: 154,
+                                                lineNumber: 146,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/site-header.tsx",
-                                        lineNumber: 152,
+                                        lineNumber: 144,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/site-header.tsx",
-                                lineNumber: 129,
+                                lineNumber: 121,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/site-header.tsx",
-                        lineNumber: 116,
+                        lineNumber: 108,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
@@ -1234,7 +1117,7 @@ function SiteHeader() {
                                         children: "Shop"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/site-header.tsx",
-                                        lineNumber: 166,
+                                        lineNumber: 158,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1253,27 +1136,27 @@ function SiteHeader() {
                                                                 children: group.heading
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/site-header.tsx",
-                                                                lineNumber: 179,
+                                                                lineNumber: 171,
                                                                 columnNumber: 21
                                                             }, this),
                                                             group.items.map((item)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                                                    href: `/shop?category=${encodeURIComponent(group.heading)}`,
+                                                                    href: `/shop?category=${encodeURIComponent(group.category)}&subcategory=${encodeURIComponent(item)}`,
                                                                     onClick: ()=>setShopMenuOpen(false),
                                                                     children: item
                                                                 }, item, false, {
                                                                     fileName: "[project]/src/components/site-header.tsx",
-                                                                    lineNumber: 181,
+                                                                    lineNumber: 173,
                                                                     columnNumber: 23
                                                                 }, this))
                                                         ]
                                                     }, group.heading, true, {
                                                         fileName: "[project]/src/components/site-header.tsx",
-                                                        lineNumber: 178,
+                                                        lineNumber: 170,
                                                         columnNumber: 19
                                                     }, this))
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/site-header.tsx",
-                                                lineNumber: 176,
+                                                lineNumber: 168,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1285,7 +1168,7 @@ function SiteHeader() {
                                                         children: "View all categories"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/site-header.tsx",
-                                                        lineNumber: 189,
+                                                        lineNumber: 181,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1294,7 +1177,7 @@ function SiteHeader() {
                                                         children: "New arrivals"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/site-header.tsx",
-                                                        lineNumber: 190,
+                                                        lineNumber: 182,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1303,25 +1186,25 @@ function SiteHeader() {
                                                         children: "Sale"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/site-header.tsx",
-                                                        lineNumber: 191,
+                                                        lineNumber: 183,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/site-header.tsx",
-                                                lineNumber: 188,
+                                                lineNumber: 180,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/site-header.tsx",
-                                        lineNumber: 175,
+                                        lineNumber: 167,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/site-header.tsx",
-                                lineNumber: 161,
+                                lineNumber: 153,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1330,7 +1213,7 @@ function SiteHeader() {
                                 children: "New Arrivals"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/site-header.tsx",
-                                lineNumber: 195,
+                                lineNumber: 187,
                                 columnNumber: 11
                             }, this),
                             topLinks.map((link)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1339,7 +1222,7 @@ function SiteHeader() {
                                     children: link.label
                                 }, link.href, false, {
                                     fileName: "[project]/src/components/site-header.tsx",
-                                    lineNumber: 199,
+                                    lineNumber: 191,
                                     columnNumber: 13
                                 }, this)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1348,13 +1231,13 @@ function SiteHeader() {
                                 children: "View all categories"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/site-header.tsx",
-                                lineNumber: 203,
+                                lineNumber: 195,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/site-header.tsx",
-                        lineNumber: 160,
+                        lineNumber: 152,
                         columnNumber: 9
                     }, this),
                     menuOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
@@ -1368,7 +1251,7 @@ function SiteHeader() {
                                 children: "Shop"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/site-header.tsx",
-                                lineNumber: 207,
+                                lineNumber: 199,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1377,7 +1260,7 @@ function SiteHeader() {
                                 children: "New Arrivals"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/site-header.tsx",
-                                lineNumber: 208,
+                                lineNumber: 200,
                                 columnNumber: 13
                             }, this),
                             topLinks.map((link)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1386,7 +1269,7 @@ function SiteHeader() {
                                     children: link.label
                                 }, link.href, false, {
                                     fileName: "[project]/src/components/site-header.tsx",
-                                    lineNumber: 210,
+                                    lineNumber: 202,
                                     columnNumber: 15
                                 }, this)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1395,7 +1278,7 @@ function SiteHeader() {
                                 children: "View all categories"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/site-header.tsx",
-                                lineNumber: 212,
+                                lineNumber: 204,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1404,7 +1287,7 @@ function SiteHeader() {
                                 children: "Wishlist"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/site-header.tsx",
-                                lineNumber: 213,
+                                lineNumber: 205,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1413,19 +1296,19 @@ function SiteHeader() {
                                 children: "Sign in"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/site-header.tsx",
-                                lineNumber: 214,
+                                lineNumber: 206,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/site-header.tsx",
-                        lineNumber: 206,
+                        lineNumber: 198,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/site-header.tsx",
-                lineNumber: 115,
+                lineNumber: 107,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$settings$2d$panel$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SettingsPanel"], {
@@ -1433,13 +1316,13 @@ function SiteHeader() {
                 onClose: closeSettings
             }, void 0, false, {
                 fileName: "[project]/src/components/site-header.tsx",
-                lineNumber: 218,
+                lineNumber: 210,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/site-header.tsx",
-        lineNumber: 111,
+        lineNumber: 103,
         columnNumber: 5
     }, this);
 }
@@ -1485,12 +1368,7 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 const recentStorageKey = "goodform-recent-searches";
-const popularCategories = [
-    "Home",
-    "Carry",
-    "Audio",
-    "Self-care"
-];
+const popularCategories = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$products$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["categories"];
 function highlightMatch(text, query) {
     const cleanQuery = query.trim();
     if (!cleanQuery) return text;
@@ -2742,6 +2620,8 @@ const categoryDefinitions = {
         "Shirts & Blouses",
         "Jeans & Pants",
         "Skirts & Shorts",
+        "Jackets & Cardigans",
+        "Matching Sets",
         "Sleepwear & Loungewear",
         "Baby & Kids Clothing"
     ],
@@ -2763,14 +2643,20 @@ const categoryDefinitions = {
     ],
     "Accessories": [
         "Jewelry",
+        "Earrings & Necklaces",
         "Watches",
         "Sunglasses",
         "Hair Accessories",
         "Belts & Wallets",
         "Hats & Scarves",
-        "Earrings & Necklaces",
-        "Perfumes & Beauty",
         "Baby & Kids Accessories"
+    ],
+    "Beauty & Perfumes": [
+        "Perfumes",
+        "Body Mists",
+        "Makeup",
+        "Skincare & Body Care",
+        "Home Fragrance"
     ]
 };
 const rawProducts = [
@@ -5428,8 +5314,8 @@ const rawProducts = [
     {
         slug: "artisan-eau-de-parfum-santal",
         name: "Atelier No. 04 Santal & Black Pepper Perfume",
-        category: "Accessories",
-        subcategory: "Perfumes & Beauty",
+        category: "Beauty & Perfumes",
+        subcategory: "Perfumes",
         brand: "Atelier Maison",
         price: 95,
         compareAt: 120,
@@ -5463,8 +5349,8 @@ const rawProducts = [
     {
         slug: "botanica-hydra-plump-multi-hyaluronic-serum",
         name: "Botanica Hydra-Plump Multi-Hyaluronic Serum",
-        category: "Accessories",
-        subcategory: "Perfumes & Beauty",
+        category: "Beauty & Perfumes",
+        subcategory: "Skincare & Body Care",
         brand: "Botanica Labs",
         price: 52,
         compareAt: 68,
@@ -5497,8 +5383,8 @@ const rawProducts = [
     {
         slug: "cedar-fig-soy-wax-candle-set",
         name: "Wild Fig & Hinoki Wood Clean Soy Candle",
-        category: "Accessories",
-        subcategory: "Perfumes & Beauty",
+        category: "Beauty & Perfumes",
+        subcategory: "Home Fragrance",
         brand: "Hearth & Form",
         price: 46,
         description: "Poured by hand in reusable amber glass tumblers. Clean-burning 100% natural soy wax scented with wild fig, earthy Hinoki wood, and black amber.",
@@ -5531,8 +5417,8 @@ const rawProducts = [
     {
         slug: "luminous-botanical-glow-oil",
         name: "Luminous Botanical Face & Body Glow Oil",
-        category: "Accessories",
-        subcategory: "Perfumes & Beauty",
+        category: "Beauty & Perfumes",
+        subcategory: "Skincare & Body Care",
         brand: "Botanica Labs",
         price: 64,
         description: "Fast-absorbing dry body oil packed with cold-pressed rosehip, squalane, and golden jojoba. Leaves skin glistening and scented with sweet neroli blossom.",

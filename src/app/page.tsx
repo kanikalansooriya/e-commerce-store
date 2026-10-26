@@ -2,9 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
-  Award,
   CheckCircle2,
-  Clock,
   Headphones,
   PackageCheck,
   RotateCcw,
@@ -24,7 +22,7 @@ const categoryTiles = [
     subtitle: "Slip, Midi & Summer Silhouettes",
     href: "/category/dresses",
     image: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=800&q=85",
-    badge: "Trending",
+    badge: "Clothing",
   },
   {
     name: "Tops & Blouses",
@@ -34,25 +32,25 @@ const categoryTiles = [
     badge: "Essentials",
   },
   {
-    name: "Knitwear & Sweaters",
-    subtitle: "Cashmere Cardigans & Knits",
-    href: "/category/knitwear",
-    image: "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=800&q=85",
-    badge: "New Season",
+    name: "Beauty & Perfumes",
+    subtitle: "Perfume, skincare, and body care",
+    href: "/category/beauty-fragrance",
+    image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=800&q=85",
+    badge: "Beauty",
   },
   {
-    name: "Jackets & Blazers",
-    subtitle: "Tailored Wool & Linen Coats",
-    href: "/category/jackets-coats",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=85",
-    badge: "Editor's Pick",
+    name: "Baby & Kids Clothing",
+    subtitle: "Small pieces for little wardrobes",
+    href: "/shop?category=Clothing&subcategory=Baby%20%26%20Kids%20Clothing",
+    image: "https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=800&q=85",
+    badge: "Kids",
   },
   {
     name: "Skirts & Pants",
     subtitle: "Fluid Trousers & Pleated Skirts",
     href: "/category/pants-skirts",
     image: "https://images.unsplash.com/photo-1509551388413-e18d0ac5d495?auto=format&fit=crop&w=800&q=85",
-    badge: "Popular",
+    badge: "Apparel",
   },
   {
     name: "Shoes & Heels",
@@ -66,14 +64,14 @@ const categoryTiles = [
     subtitle: "Italian Leather Shoulder Bags",
     href: "/category/bags",
     image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=85",
-    badge: "Full-Grain",
+    badge: "Bags",
   },
   {
-    name: "Jewelry & Fragrance",
-    subtitle: "18K Gold Vermeil & Perfumes",
+    name: "Jewelry & Accessories",
+    subtitle: "Finishing details for everyday looks",
     href: "/category/jewelry-accessories",
     image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=85",
-    badge: "Luxury",
+    badge: "Accessories",
   },
 ];
 
@@ -124,7 +122,7 @@ export default function Home() {
         <div className="hero-left-content">
           <div className="hero-badge">
             <Sparkles size={14} className="text-amber-400" />
-            <span>SPRING / SUMMER 2026 DROP</span>
+            <span>WOMEN&apos;S FASHION &amp; BEAUTY</span>
           </div>
 
           <h1 className="hero-heading">
@@ -133,7 +131,7 @@ export default function Home() {
           </h1>
 
           <p className="hero-subtext">
-            Discover effortlessly elegant dresses, fine knitwear, timeless jewelry, and beautiful essentials designed for every day.
+            Explore a sample edit of clothing, shoes, bags, accessories, and beauty for everyday style.
           </p>
 
           <div className="hero-buttons">
@@ -146,18 +144,9 @@ export default function Home() {
           </div>
 
           <div className="hero-trust-bar">
-            <div className="trust-stat">
-              <div className="stars-row">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={14} fill="#eab308" stroke="#eab308" />
-                ))}
-              </div>
-              <span><strong>4.9 / 5.0</strong> (14,800+ Verified Reviews)</span>
-            </div>
+            <div className="trust-stat"><strong>{products.length}</strong><span>sample products in this preview</span></div>
             <div className="trust-divider" />
-            <div className="trust-badge-pill">
-              <Truck size={15} /> Free Express Shipping Over $75
-            </div>
+            <div className="trust-badge-pill">No live orders or payments</div>
           </div>
         </div>
 
@@ -176,8 +165,8 @@ export default function Home() {
                 <PackageCheck size={20} />
               </div>
               <div>
-                <strong>Over 25,000+ Orders</strong>
-                <span>Shipped Islandwide & Globally</span>
+                <strong>Storefront preview</strong>
+                <span>Sample catalog and product details</span>
               </div>
             </div>
           </div>
@@ -185,36 +174,36 @@ export default function Home() {
       </ScrollReveal>
 
       {/* VALUE PROPOSITIONS / BENEFITS BAR */}
-      <ScrollReveal as="section" className="features-strip page-shell reveal-stagger" aria-label="Customer Benefits">
+      <ScrollReveal as="section" className="features-strip page-shell reveal-stagger" aria-label="Storefront preview details">
         <div className="feature-item">
           <div className="feature-icon-wrap"><Truck size={20} /></div>
           <div>
-            <strong>Free Express Shipping</strong>
-            <span>On all domestic orders over $75</span>
+            <strong>Five main categories</strong>
+            <span>Clothing, shoes, bags, accessories, and beauty</span>
           </div>
         </div>
 
         <div className="feature-item">
           <div className="feature-icon-wrap"><ShieldCheck size={20} /></div>
           <div>
-            <strong>Premium Quality Fabrics</strong>
-            <span>Thoughtfully designed & crafted</span>
+            <strong>Sample product data</strong>
+            <span>Product prices, ratings, and availability are illustrative</span>
           </div>
         </div>
 
         <div className="feature-item">
           <div className="feature-icon-wrap"><RotateCcw size={20} /></div>
           <div>
-            <strong>30-Day Easy Returns</strong>
-            <span>Hassle-free exchange policy</span>
+            <strong>Saved items</strong>
+            <span>Cart and wishlist persist in this browser</span>
           </div>
         </div>
 
         <div className="feature-item">
           <div className="feature-icon-wrap"><Headphones size={20} /></div>
           <div>
-            <strong>24/7 Priority Support</strong>
-            <span>Dedicated concierge assistance</span>
+            <strong>Demo checkout</strong>
+            <span>No order is submitted and no payment is processed</span>
           </div>
         </div>
       </ScrollReveal>
@@ -225,7 +214,7 @@ export default function Home() {
           <div>
             <span className="eyebrow">EXPLORE BY CATEGORY</span>
             <h2>Curated Departments</h2>
-            <p>Select a category to view high-resolution collections and authentic items.</p>
+            <p>Explore the sample collection by category.</p>
           </div>
           <Link className="view-all-link" href="/shop">
             All Categories <ArrowRight size={15} />
@@ -287,7 +276,7 @@ export default function Home() {
           <div className="promo-card-content">
             <span className="promo-eyebrow">HANDCRAFTED ACCENTS</span>
             <h3>Sculptural Bags & Gold Jewelry</h3>
-            <p>Full-grain leather shoulder bags, versatile totes, and 18K gold vermeil pieces made to quietly elevate every look.</p>
+            <p>Sample bags and accessories demonstrate the collection layout. Product specifications should be verified before launch.</p>
             <Link href="/category/bags" className="promo-btn-dark">
               Explore Handbags <ArrowRight size={15} />
             </Link>
@@ -309,7 +298,7 @@ export default function Home() {
       {/* BRAND PARTNERS TICKER */}
       <ScrollReveal as="section" className="brand-ticker-section">
         <div className="page-shell">
-          <p className="ticker-intro">TRUSTED PARTNER BRANDS & PRESS FEATURES</p>
+          <p className="ticker-intro">SAMPLE BRAND NAMES FOR THIS PREVIEW</p>
           <div className="brand-logos-row">
             {brandLogos.map((brand) => (
               <span key={brand} className="brand-logo-text">
@@ -320,12 +309,12 @@ export default function Home() {
         </div>
       </ScrollReveal>
 
-      {/* CUSTOMER REVIEWS & TESTIMONIALS */}
+      {/* SAMPLE REVIEW CONTENT */}
       <ScrollReveal as="section" className="section-block page-shell">
         <div className="section-heading-center">
-          <span className="eyebrow">COMMUNITY PRAISE</span>
-          <h2>Loved by Modern Shoppers</h2>
-          <p>Read genuine reviews from over 25,000+ happy customers worldwide.</p>
+          <span className="eyebrow">SAMPLE CONTENT</span>
+          <h2>Review card preview</h2>
+          <p>These example reviews are for layout demonstration only and are not customer feedback.</p>
         </div>
 
         <div className="reviews-grid">
@@ -335,9 +324,7 @@ export default function Home() {
                 {[...Array(rev.rating)].map((_, i) => (
                   <Star key={i} size={15} fill="#eab308" stroke="#eab308" />
                 ))}
-                <span className="verified-badge">
-                  <CheckCircle2 size={13} className="text-emerald-500" /> Verified Buyer
-                </span>
+                <span className="verified-badge"><CheckCircle2 size={13} aria-hidden="true" /> Sample review</span>
               </div>
               <p className="review-quote">&ldquo;{rev.comment}&rdquo;</p>
               <div className="reviewer-info">
@@ -358,8 +345,8 @@ export default function Home() {
       <ScrollReveal as="section" className="instagram-strip">
         <div className="page-shell">
           <div className="insta-header">
-            <h3>#AuraLifestyle</h3>
-            <p>Tag @aura.store on Instagram to be featured on our community feed.</p>
+            <h3>Editorial moodboard</h3>
+            <p>Sample imagery shown for the storefront preview only.</p>
           </div>
           <div className="insta-grid">
             {[

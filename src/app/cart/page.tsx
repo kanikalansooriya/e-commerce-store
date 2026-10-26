@@ -6,13 +6,15 @@ import { ArrowLeft, ArrowRight, LockKeyhole, Tag, Trash2 } from "lucide-react";
 import { QuantityStepper } from "@/components/quantity-stepper";
 import { ScrollReveal } from "@/components/motion";
 import { useCart } from "@/context/cart-context";
-import { formatPrice, products } from "@/lib/products";
+import { useCurrency } from "@/context/currency-context";
+import { products } from "@/lib/products";
 import { animateButtonPress } from "@/lib/gsap";
 
 const shippingFor = (subtotal: number) => subtotal === 0 || subtotal >= 100 ? 0 : 8;
 
 export default function CartPage() {
-  const { items, subtotal, updateQuantity, removeItem, isReady } = useCart();
+  const { items, itemCount, subtotal, updateQuantity, removeItem, isReady } = useCart();
+  const { formatPrice } = useCurrency();
 
   if (!isReady) return <div className="page-shell cart-loading"><div className="skeleton-line" /><div className="skeleton-card" /></div>;
 
@@ -20,7 +22,7 @@ export default function CartPage() {
     <div className="page-shell checkout-shell">
       <div className="page-intro cart-intro">
         <nav className="breadcrumbs" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><span aria-current="page">Your bag</span></nav>
-        <h1>Your bag<span className="cart-title-count">{items.length ? ` (${items.length})` : ""}</span></h1>
+        <h1>Your bag<span className="cart-title-count">{itemCount ? ` (${itemCount})` : ""}</span></h1>
       </div>
       {!items.length ? (
         <ScrollReveal className="empty-state cart-empty">
@@ -36,11 +38,11 @@ export default function CartPage() {
               <article className="cart-item" key={item.id}>
                 <Link className="cart-item-image" href={`/product/${item.slug}`}><Image src={item.image} alt={item.name} fill sizes="120px" /></Link>
                 <div className="cart-item-detail">
-                  <span className="product-category">Goodform edit</span>
+                  <span className="product-category">AURA edit</span>
                   <Link className="cart-item-name" href={`/product/${item.slug}`}>{item.name}</Link>
                   <span className="cart-item-price">{formatPrice(item.price)}</span>
                   <div className="cart-item-controls">
-                    <QuantityStepper value={item.quantity} label={`Quantity for ${item.name}`} onChange={(quantity) => updateQuantity(item.id, quantity)} />
+                    <QuantityStepper value={item.quantity} max={item.stock} label={`Quantity for ${item.name}`} onChange={(quantity) => updateQuantity(item.id, quantity)} />
                     <button
                       className="remove-item"
                       onClick={(e) => {
@@ -59,14 +61,14 @@ export default function CartPage() {
             <div className="promo-row">
               <label className="promo-field">
                 <Tag size={14} />
-                <input type="text" placeholder="Promo code" aria-label="Promo code" />
+                <input type="text" placeholder="Promo codes are disabled in preview" aria-label="Promo code" disabled />
               </label>
               <button
                 type="button"
                 className="button-secondary promo-button"
-                onClick={(e) => animateButtonPress(e.currentTarget)}
+                disabled
               >
-                Apply
+                Preview only
               </button>
             </div>
             <Link className="text-link continue-shopping" href="/shop"><ArrowLeft size={15} /> Keep looking</Link>

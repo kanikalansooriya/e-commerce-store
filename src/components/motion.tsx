@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import type { CSSProperties, ReactNode } from "react";
 import { usePathname } from "next/navigation";
 import { ArrowUp } from "lucide-react";
-import { gsap, ScrollTrigger, isReducedMotion } from "@/lib/gsap";
+import { gsap, isReducedMotion } from "@/lib/gsap";
 
 type RevealProps = {
   children: ReactNode;
