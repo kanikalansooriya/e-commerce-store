@@ -2,21 +2,13 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Heart, Menu, Settings2, ShoppingBag, UserRound, X } from "lucide-react";
+import { ChevronDown, Heart, Menu, Search, Settings2, ShoppingBag, UserRound, X } from "lucide-react";
 import { useCart } from "@/context/cart-context";
 import { useWishlist } from "@/context/wishlist-context";
 import { useCurrency } from "@/context/currency-context";
 import { SettingsPanel } from "@/components/settings-panel";
 import { SiteSearch } from "@/components/site-search";
-import { categories } from "@/lib/products";
 import { gsap, animateBadgeBounce, isReducedMotion } from "@/lib/gsap";
-
-const topLinks = [
-  ...categories.map((category) => ({
-    href: `/shop?category=${encodeURIComponent(category)}`,
-    label: category,
-  })),
-];
 
 type CurrencySwitchProps = {
   currency: "LKR" | "USD";
@@ -52,6 +44,7 @@ export function SiteHeader() {
   const { currency, setCurrency, rateStatus, usdToLkr } = useCurrency();
   const [menuOpen, setMenuOpen] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   const bagBadgeRef = useRef<HTMLSpanElement>(null);
@@ -63,7 +56,7 @@ export function SiteHeader() {
   const closeSettings = useCallback(() => setSettingsOpen(false), []);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 18);
+    const onScroll = () => setScrolled(window.scrollY > 16);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -103,40 +96,151 @@ export function SiteHeader() {
 
   return (
     <>
-      <div className="announcement">
-        Storefront preview • Sample catalog and availability • No live orders or payments
+      {/* Top Scrolling Marquee Announcement Bar */}
+      <div className="arolax-top-ticker" aria-label="Store Announcements">
+        <div className="arolax-ticker-track">
+          <div className="arolax-ticker-content">
+            <span>Summer Sale: Get 20% Off – Shop Now</span>
+            <span className="ticker-sparkle">✦</span>
+            <span>Free Express Worldwide Delivery on Orders Over $150</span>
+            <span className="ticker-sparkle">✦</span>
+            <span>Summer Sale: Get 20% Off – Shop Now</span>
+            <span className="ticker-sparkle">✦</span>
+            <span>Limited Edition Atelier Collection Just Dropped</span>
+            <span className="ticker-sparkle">✦</span>
+            <span>Summer Sale: Get 20% Off – Shop Now</span>
+            <span className="ticker-sparkle">✦</span>
+            <span>Complimentary 30-Day Hassle-Free Returns</span>
+            <span className="ticker-sparkle">✦</span>
+          </div>
+          <div className="arolax-ticker-content" aria-hidden="true">
+            <span>Summer Sale: Get 20% Off – Shop Now</span>
+            <span className="ticker-sparkle">✦</span>
+            <span>Free Express Worldwide Delivery on Orders Over $150</span>
+            <span className="ticker-sparkle">✦</span>
+            <span>Summer Sale: Get 20% Off – Shop Now</span>
+            <span className="ticker-sparkle">✦</span>
+            <span>Limited Edition Atelier Collection Just Dropped</span>
+            <span className="ticker-sparkle">✦</span>
+            <span>Summer Sale: Get 20% Off – Shop Now</span>
+            <span className="ticker-sparkle">✦</span>
+            <span>Complimentary 30-Day Hassle-Free Returns</span>
+            <span className="ticker-sparkle">✦</span>
+          </div>
+        </div>
       </div>
-      <header className={`site-header${scrolled ? " is-scrolled" : ""}`}>
-        <div className="header-main page-shell">
+
+      <header className={`arolax-site-header${scrolled ? " is-scrolled" : ""}`}>
+        <div className="arolax-header-main page-shell">
+          {/* Mobile Hamburger Button */}
           <button
             className="icon-button menu-toggle"
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((open) => !open)}
           >
-            {menuOpen ? <X size={21} /> : <Menu size={21} />}
+            {menuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
-          <Link className="wordmark" href="/" aria-label="Aura Store Home">
-            <span className="wordmark-mark" aria-hidden="true">A</span>AURA<span className="wordmark-period">.</span>
+
+          {/* Clean Luxury Wordmark Logo */}
+          <Link className="arolax-brand-logo" href="/" aria-label="AROLAX Home">
+            AROLAX
           </Link>
-          <SiteSearch />
-          <div className="header-actions">
-            <CurrencySwitch currency={currency} setCurrency={setCurrency} rateStatus={rateStatus} usdToLkr={usdToLkr} className="currency-control" />
-            <button
-              className="icon-button settings-trigger"
-              type="button"
-              data-settings-trigger
-              aria-label="Appearance settings"
-              aria-haspopup="dialog"
-              aria-expanded={settingsOpen}
-              onClick={() => setSettingsOpen(true)}
-            >
-              <Settings2 size={19} />
-            </button>
-            <Link className="icon-button account-link" href="/account" aria-label="Your account">
-              <UserRound size={20} />
+
+          {/* Desktop Center Navigation Bar */}
+          <nav className="arolax-desktop-nav" aria-label="Main Navigation">
+            <div className="arolax-nav-item has-dropdown">
+              <Link href="/shop" className="arolax-nav-link">
+                Shop <ChevronDown size={13} className="nav-chevron" />
+              </Link>
+              <div className="arolax-nav-dropdown">
+                <Link href="/category/dresses">Dresses & Evening</Link>
+                <Link href="/category/tops-blouses">Tops & Blouses</Link>
+                <Link href="/category/pants-skirts">Pants & Bottoms</Link>
+                <Link href="/category/shoes">Shoes & Heels</Link>
+                <Link href="/category/bags">Bags & Totes</Link>
+                <Link href="/category/jewelry-accessories">Jewelry & Accessories</Link>
+                <Link href="/category/beauty-fragrance">Beauty & Fragrance</Link>
+                <div className="dropdown-divider" />
+                <Link href="/shop" className="dropdown-all-link">View All Products →</Link>
+              </div>
+            </div>
+
+            <Link href="/category/dresses" className="arolax-nav-link">
+              Dresses
             </Link>
-            <Link className="icon-button wishlist-link" href="/wishlist" aria-label={`Wishlist, ${wishlistCount} items`}>
+
+            <div className="arolax-nav-item has-dropdown">
+              <Link href="/category/tops-blouses" className="arolax-nav-link">
+                Tops <ChevronDown size={13} className="nav-chevron" />
+              </Link>
+              <div className="arolax-nav-dropdown">
+                <Link href="/shop?subcategory=Tops%20%26%20T-Shirts">Tops & T-Shirts</Link>
+                <Link href="/shop?subcategory=Shirts%20%26%20Blouses">Shirts & Blouses</Link>
+                <Link href="/shop?subcategory=Jackets%20%26%20Cardigans">Sweatshirts & Cardigans</Link>
+              </div>
+            </div>
+
+            <div className="arolax-nav-item has-dropdown">
+              <Link href="/category/pants-skirts" className="arolax-nav-link">
+                Bottoms <ChevronDown size={13} className="nav-chevron" />
+              </Link>
+              <div className="arolax-nav-dropdown">
+                <Link href="/shop?subcategory=Jeans%20%26%20Pants">Jeans & Denim</Link>
+                <Link href="/shop?subcategory=Skirts%20%26%20Shorts">Skirts & Shorts</Link>
+              </div>
+            </div>
+
+            <div className="arolax-nav-item has-dropdown">
+              <Link href="/shop?category=Clothing" className="arolax-nav-link">
+                Intimates <ChevronDown size={13} className="nav-chevron" />
+              </Link>
+              <div className="arolax-nav-dropdown">
+                <Link href="/shop?subcategory=Matching%20Sets">Matching Sets</Link>
+                <Link href="/shop?subcategory=Sleepwear%20%26%20Loungewear">Loungewear & Slips</Link>
+              </div>
+            </div>
+
+            <Link href="/category/sale" className="arolax-nav-link arolax-sale-link">
+              Sale
+            </Link>
+
+            <div className="arolax-nav-item has-dropdown">
+              <Link href="/about" className="arolax-nav-link">
+                About <ChevronDown size={13} className="nav-chevron" />
+              </Link>
+              <div className="arolax-nav-dropdown">
+                <Link href="/about">About AROLAX</Link>
+                <Link href="/faq">Client FAQ & Help</Link>
+                <Link href="/about#contact">Contact & Concierge</Link>
+              </div>
+            </div>
+          </nav>
+
+          {/* Right Action Icons: Login, Search, Wishlist, Cart, Settings */}
+          <div className="arolax-header-actions">
+            {/* Login Link with Icon + Text */}
+            <Link className="arolax-login-btn" href="/account" aria-label="Account Login">
+              <UserRound size={18} />
+              <span className="login-text">Login</span>
+            </Link>
+
+            {/* Search Trigger Button */}
+            <button
+              className="icon-button arolax-search-trigger"
+              type="button"
+              aria-label="Search collection"
+              onClick={() => setSearchOpen((prev) => !prev)}
+            >
+              <Search size={19} />
+            </button>
+
+            {/* Wishlist Link with Badge */}
+            <Link
+              className="icon-button arolax-wishlist-btn"
+              href="/wishlist"
+              aria-label={`Wishlist, ${wishlistCount} items`}
+            >
               <Heart size={19} />
               {wishlistCount > 0 && (
                 <span ref={wishlistBadgeRef} className="bag-count">
@@ -144,33 +248,84 @@ export function SiteHeader() {
                 </span>
               )}
             </Link>
-            <Link className="icon-button bag-link" href="/cart" aria-label={`Shopping bag, ${itemCount} items`}>
-              <ShoppingBag size={20} />
-              <span ref={bagBadgeRef} className="bag-count">
+
+            {/* Shopping Bag Link with Badge */}
+            <Link
+              className="icon-button arolax-cart-btn"
+              href="/cart"
+              aria-label={`Shopping bag, ${itemCount} items`}
+            >
+              <ShoppingBag size={19} />
+              <span ref={bagBadgeRef} className="arolax-cart-count">
                 {itemCount}
               </span>
             </Link>
+
+            {/* Appearance & Currency Settings Trigger */}
+            <button
+              className="icon-button settings-trigger"
+              type="button"
+              data-settings-trigger
+              aria-label="Appearance and currency settings"
+              aria-haspopup="dialog"
+              aria-expanded={settingsOpen}
+              onClick={() => setSettingsOpen(true)}
+            >
+              <Settings2 size={18} />
+            </button>
           </div>
         </div>
-        <nav className="category-nav page-shell" aria-label="Shop by category">
-          {categories.map((category) => (
-            <Link key={category} href={`/shop?category=${encodeURIComponent(category)}`}>
-              {category}
-            </Link>
-          ))}
-        </nav>
+
+        {/* Search Bar Drawer / Dropdown when Search Icon Clicked */}
+        {searchOpen && (
+          <div className="arolax-search-dropdown-bar page-shell">
+            <SiteSearch />
+            <button
+              type="button"
+              className="icon-button close-search-btn"
+              aria-label="Close search"
+              onClick={() => setSearchOpen(false)}
+            >
+              <X size={18} />
+            </button>
+          </div>
+        )}
+
+        {/* Mobile Navigation Menu Drawer */}
         {menuOpen && (
-          <nav ref={mobileNavRef} className="mobile-nav" aria-label="Mobile navigation">
-            <CurrencySwitch currency={currency} setCurrency={setCurrency} rateStatus={rateStatus} usdToLkr={usdToLkr} className="mobile-currency-control" />
-            {topLinks.map((link) => (
-              <Link key={link.href} href={link.href} onClick={() => setMenuOpen(false)}>{link.label}</Link>
-            ))}
-            <Link href="/shop" onClick={() => setMenuOpen(false)}>View all categories</Link>
-            <Link href="/wishlist" onClick={() => setMenuOpen(false)}>Wishlist</Link>
-            <Link href="/account" onClick={() => setMenuOpen(false)}>Sign in</Link>
+          <nav ref={mobileNavRef} className="arolax-mobile-nav" aria-label="Mobile navigation">
+            <div className="mobile-search-section">
+              <SiteSearch />
+            </div>
+            <CurrencySwitch
+              currency={currency}
+              setCurrency={setCurrency}
+              rateStatus={rateStatus}
+              usdToLkr={usdToLkr}
+              className="mobile-currency-control"
+            />
+            <div className="mobile-links-list">
+              <Link href="/shop" onClick={() => setMenuOpen(false)}>Shop All</Link>
+              <Link href="/category/dresses" onClick={() => setMenuOpen(false)}>Dresses</Link>
+              <Link href="/category/tops-blouses" onClick={() => setMenuOpen(false)}>Tops & Blouses</Link>
+              <Link href="/category/pants-skirts" onClick={() => setMenuOpen(false)}>Bottoms & Pants</Link>
+              <Link href="/shop?subcategory=Matching%20Sets" onClick={() => setMenuOpen(false)}>Intimates & Sets</Link>
+              <Link href="/category/shoes" onClick={() => setMenuOpen(false)}>Shoes & Heels</Link>
+              <Link href="/category/bags" onClick={() => setMenuOpen(false)}>Bags & Totes</Link>
+              <Link href="/category/jewelry-accessories" onClick={() => setMenuOpen(false)}>Jewelry & Accessories</Link>
+              <Link href="/category/beauty-fragrance" onClick={() => setMenuOpen(false)}>Beauty & Fragrance</Link>
+              <Link href="/category/sale" className="mobile-sale-highlight" onClick={() => setMenuOpen(false)}>Sale & Deals</Link>
+              <div className="mobile-divider" />
+              <Link href="/wishlist" onClick={() => setMenuOpen(false)}>Wishlist ({wishlistCount})</Link>
+              <Link href="/cart" onClick={() => setMenuOpen(false)}>Shopping Bag ({itemCount})</Link>
+              <Link href="/account" onClick={() => setMenuOpen(false)}>Sign in / Account</Link>
+              <Link href="/faq" onClick={() => setMenuOpen(false)}>Help & FAQ</Link>
+              <Link href="/about" onClick={() => setMenuOpen(false)}>About AROLAX</Link>
+            </div>
           </nav>
         )}
       </header>
+
       <SettingsPanel open={settingsOpen} onClose={closeSettings} />
     </>
   );

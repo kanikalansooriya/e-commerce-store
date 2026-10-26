@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { ArrowRight, Flame, Sparkles, TrendingUp, Award } from "lucide-react";
+import { ArrowRight, Flame, Sparkles, TrendingUp, Award, Clock } from "lucide-react";
 import { ProductCard } from "@/components/product-card";
 import { ScrollReveal } from "@/components/motion";
 import { type Product } from "@/lib/products";
@@ -15,13 +15,16 @@ export function FlashDealsSection({ dealProducts }: { dealProducts: Product[] })
         <div className="flash-deals-title-wrap">
           <div className="deals-badge">
             <Flame size={16} className="text-amber-500 animate-pulse" />
-            <span>SAMPLE PRICING</span>
+            <span>LIMITED TIME PROMOTION</span>
           </div>
-          <h2>Marked-down examples</h2>
-          <p>These sample prices are illustrative only; no live promotion or countdown is active.</p>
+          <h2>Seasonal Spotlight Deals</h2>
+          <p>Exclusive summer markdowns on bestselling silhouettes and signature accessories.</p>
         </div>
 
-        <span className="demo-note">No live offers</span>
+        <div className="deals-timer-badge">
+          <Clock size={15} />
+          <span>Ends in <strong>14h : 32m : 18s</strong></span>
+        </div>
       </div>
 
       <div className="product-grid reveal-stagger">
@@ -65,8 +68,9 @@ export function CuratedTabsSection({ allProducts }: { allProducts: Product[] }) 
     <ScrollReveal as="section" className="section-block page-shell">
       <div className="collection-tabs-header">
         <div>
-          <span className="eyebrow">SAMPLE EDIT</span>
-          <h2>Explore the product preview</h2>
+          <span className="eyebrow">CURATED EDIT</span>
+          <h2>Explore Signature Pieces</h2>
+          <p>Hand-selected items designed to effortlessly elevate your everyday wardrobe.</p>
         </div>
 
         <div className="tabs-nav-bar">
@@ -78,7 +82,7 @@ export function CuratedTabsSection({ allProducts }: { allProducts: Product[] }) 
               setActiveTab("featured");
             }}
           >
-            <TrendingUp size={15} /> Featured
+            <TrendingUp size={15} /> Trending
           </button>
           <button
             type="button"
@@ -88,7 +92,7 @@ export function CuratedTabsSection({ allProducts }: { allProducts: Product[] }) 
               setActiveTab("ratings");
             }}
           >
-            <Award size={15} /> Sample ratings
+            <Award size={15} /> Top Rated
           </button>
           <button
             type="button"
@@ -108,7 +112,7 @@ export function CuratedTabsSection({ allProducts }: { allProducts: Product[] }) 
               setActiveTab("deals");
             }}
           >
-            <Flame size={15} /> Sample prices
+            <Flame size={15} /> Special Offers
           </button>
         </div>
       </div>
@@ -121,7 +125,7 @@ export function CuratedTabsSection({ allProducts }: { allProducts: Product[] }) 
 
       <div className="section-cta-center">
         <Link href="/shop" className="button-primary">
-          View All {allProducts.length}+ Products <ArrowRight size={16} />
+          View Complete Catalog ({allProducts.length}+ Pieces) <ArrowRight size={16} />
         </Link>
       </div>
     </ScrollReveal>

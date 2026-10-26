@@ -32,8 +32,8 @@ const displayFont = DM_Serif_Display({
 const appearanceBootstrap = `(()=>{try{const saved=JSON.parse(localStorage.getItem("goodform-appearance")||"null")||{};const root=document.documentElement;const options={colorMode:["light","dark","system"],accent:["blue","green","purple","orange","rose"],fontSize:["small","medium","large"],corners:["sharp","rounded"],motion:["on","reduced"],density:["comfortable","compact"]};const defaults={colorMode:"light",accent:"rose",fontSize:"medium",corners:"rounded",motion:"on",density:"comfortable"};for(const key in defaults){root.dataset[key=== "colorMode"?"colorMode":key]=options[key].includes(saved[key])?saved[key]:defaults[key]}}catch{}})();`;
 
 export const metadata: Metadata = {
-  title: "AURA | Women's Fashion & Beauty",
-  description: "Explore a considered edit of women's clothing, shoes, bags, accessories, and beauty.",
+  title: "AROLAX | Women's Fashion & Modern Collections",
+  description: "Discover stunning maxi dresses, tops, sweatshirts, blazers, and signature collections crafted for timeless elegance.",
 };
 
 export default async function RootLayout({ children }: LayoutProps<"/">) {

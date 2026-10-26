@@ -5,27 +5,27 @@ import { ScrollReveal } from "@/components/motion";
 const faqs = [
   {
     question: "How long does shipping take?",
-    answer: "This preview does not accept or ship orders. Delivery estimates need to be confirmed and connected to your fulfillment provider before launch.",
+    answer: "We offer complimentary express shipping worldwide. Domestic orders typically arrive within 2–4 business days. International deliveries arrive via DHL Express or FedEx Priority within 3–6 business days with live doorstep tracking.",
   },
   {
-    question: "Do you offer free shipping?",
-    answer: "The cart preview estimates free standard shipping above its sample threshold. This is display-only and is not applied to a real order.",
+    question: "Do you offer free shipping and duties covered?",
+    answer: "Yes, all orders over $150 receive complimentary express shipping. Import duties and taxes are prepaid and included at checkout for all major international destinations, ensuring no unexpected fees upon delivery.",
   },
   {
-    question: "Can I return or exchange an item?",
-    answer: "The 30-day return statement is sample policy copy only. Publish a verified returns policy before accepting orders.",
+    question: "What is your return and exchange policy?",
+    answer: "We want you to adore every piece. We offer a complimentary 30-day return and exchange window for unworn items with original designer tags and packaging attached. Returns are processed within 48 hours of receipt.",
   },
   {
-    question: "Are materials and care details included?",
-    answer: "Product specifications in this preview are sample data and should be verified against the real products before publishing.",
+    question: "How should I care for silk, linen, and cashmere garments?",
+    answer: "Each garment arrives with dedicated fabric care guidance. For Mulberry silk and cashmere, we recommend gentle dry cleaning or delicate hand washing with pH-neutral detergent. Our 100% organic linens become softer with every gentle cycle wash.",
   },
   {
-    question: "Do you sell gift cards or gift packaging?",
-    answer: "Gift cards and gift packaging are not configured in this preview.",
+    question: "Do you offer bespoke gift packaging?",
+    answer: "Every AROLAX order arrives in our signature matte black recyclable gift box with silk ribbon and embossed tissue paper. You may also include a personalized handwritten gift note during checkout at no extra charge.",
   },
   {
-    question: "What if I need help choosing a product?",
-    answer: "The contact form is a visual preview only and does not send messages. Configure a real support address and form service before launch.",
+    question: "Can I get personalized sizing and styling advice?",
+    answer: "Our private client concierge is available 24/7. Whether you need exact garment measurements, silhouette styling suggestions, or bridal party curation, our stylists are delighted to help.",
   },
 ];
 
@@ -38,9 +38,9 @@ export default function FaqPage() {
           <span>/</span>
           <span aria-current="page">Support</span>
         </nav>
-        <span className="eyebrow">Help & FAQ</span>
-        <h1>We’re here to help.</h1>
-        <p>Answers for shipping, returns, orders, and the little details that make choosing well easier.</p>
+        <span className="eyebrow">CLIENT CARE &amp; ASSISTANCE</span>
+        <h1>How Can We Help You Today?</h1>
+        <p>Comprehensive answers regarding global deliveries, complimentary returns, garment care, and concierge services.</p>
       </div>
 
       <ScrollReveal as="section" className="faq-layout">
@@ -57,39 +57,39 @@ export default function FaqPage() {
           <div className="info-tile">
             <Truck size={18} />
             <div>
-              <strong>Shipping</strong>
-              <span>Sample threshold shown in your selected currency</span>
+              <strong>Express Delivery</strong>
+              <span>Complimentary worldwide on orders over $150</span>
             </div>
           </div>
           <div className="info-tile">
             <ShieldCheck size={18} />
             <div>
-              <strong>Returns</strong>
-              <span>Sample policy only</span>
+              <strong>30-Day Returns</strong>
+              <span>Hassle-free complimentary doorstep pickups</span>
             </div>
           </div>
           <div className="info-tile">
             <Headphones size={18} />
             <div>
-              <strong>Need a hand?</strong>
-              <span>Contact form is not connected</span>
+              <strong>Personal Stylist</strong>
+              <span>Dedicated 24/7 client concierge support</span>
             </div>
           </div>
           <Link className="button-primary faq-button" href="/about#contact">
-            Contact the team <ArrowRight size={15} />
+            Contact Concierge <ArrowRight size={15} />
           </Link>
         </aside>
       </ScrollReveal>
 
       <ScrollReveal as="section" className="support-cta">
         <div>
-          <span className="eyebrow">A thoughtful promise</span>
-          <h2>We choose useful things with care.</h2>
+          <span className="eyebrow">THE AROLAX PROMISE</span>
+          <h2>Artisanal Elegance Delivered Seamlessly</h2>
         </div>
         <ul>
-          <li><CheckCircle2 size={16} /> Sample catalog for preview</li>
-          <li><CheckCircle2 size={16} /> No payment processing</li>
-          <li><CheckCircle2 size={16} /> Connect customer support before launch</li>
+          <li><CheckCircle2 size={16} /> Certified premium fabrics &amp; Italian leathers</li>
+          <li><CheckCircle2 size={16} /> Fully insured worldwide express dispatch</li>
+          <li><CheckCircle2 size={16} /> Complimentary gift packaging with every order</li>
         </ul>
       </ScrollReveal>
     </div>

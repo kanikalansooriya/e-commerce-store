@@ -4,74 +4,66 @@ import {
   ArrowRight,
   CheckCircle2,
   Headphones,
-  PackageCheck,
   RotateCcw,
   ShieldCheck,
-  Sparkles,
   Star,
   Truck,
-  Zap,
 } from "lucide-react";
 import { ScrollReveal } from "@/components/motion";
+import { HeroSlider } from "@/components/hero-slider";
 import { FlashDealsSection, CuratedTabsSection } from "@/components/home-showcase";
+import { NewsletterSignup } from "@/components/newsletter-signup";
 import { products } from "@/lib/products";
 
-const categoryTiles = [
+// Top Collections cards matching the user reference screenshot
+const topCollections = [
+  {
+    name: "Top T-Shirt",
+    href: "/shop?subcategory=Tops%20%26%20T-Shirts",
+    image: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=85",
+    alt: "Model wearing stylish top t-shirt",
+  },
+  {
+    name: "Sweatshirt",
+    href: "/shop?subcategory=Jackets%20%26%20Cardigans",
+    image: "https://images.unsplash.com/photo-1618244972963-dbee1a7edc95?auto=format&fit=crop&w=800&q=85",
+    alt: "Model wearing cozy striped sweatshirt knitwear",
+  },
   {
     name: "Dresses",
-    subtitle: "Slip, Midi & Summer Silhouettes",
     href: "/category/dresses",
     image: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=800&q=85",
-    badge: "Clothing",
+    alt: "Model wearing white summer maxi halter dress",
   },
   {
-    name: "Tops & Blouses",
-    subtitle: "Linen Shirts & Silk Tops",
+    name: "Shirts",
+    href: "/shop?subcategory=Shirts%20%26%20Blouses",
+    image: "https://images.unsplash.com/photo-1551803091-e20673f15770?auto=format&fit=crop&w=800&q=85",
+    alt: "Model wearing textured knit polo shirt and skirt",
+  },
+  {
+    name: "Blazers",
+    href: "/shop?category=Clothing",
+    image: "https://images.unsplash.com/photo-1584273143981-41c073dfe8f8?auto=format&fit=crop&w=800&q=85",
+    alt: "Model in pristine tailored white blazer",
+  },
+  {
+    name: "Jeans",
+    href: "/shop?subcategory=Jeans%20%26%20Pants",
+    image: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=800&q=85",
+    alt: "Model wearing classic fit denim jeans",
+  },
+  {
+    name: "Tops",
     href: "/category/tops-blouses",
-    image: "https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=800&q=85",
-    badge: "Essentials",
+    image: "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=85",
+    alt: "Model wearing elegant white v-neck summer top",
   },
   {
-    name: "Beauty & Perfumes",
-    subtitle: "Perfume, skincare, and body care",
-    href: "/category/beauty-fragrance",
-    image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=800&q=85",
-    badge: "Beauty",
-  },
-  {
-    name: "Baby & Kids Clothing",
-    subtitle: "Small pieces for little wardrobes",
-    href: "/shop?category=Clothing&subcategory=Baby%20%26%20Kids%20Clothing",
-    image: "https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=800&q=85",
-    badge: "Kids",
-  },
-  {
-    name: "Skirts & Pants",
-    subtitle: "Fluid Trousers & Pleated Skirts",
-    href: "/category/pants-skirts",
-    image: "https://images.unsplash.com/photo-1509551388413-e18d0ac5d495?auto=format&fit=crop&w=800&q=85",
-    badge: "Apparel",
-  },
-  {
-    name: "Shoes & Heels",
-    subtitle: "Strappy Heels & Leather Flats",
-    href: "/category/shoes",
-    image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=800&q=85",
-    badge: "Footwear",
-  },
-  {
-    name: "Handbags & Totes",
-    subtitle: "Italian Leather Shoulder Bags",
-    href: "/category/bags",
-    image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=85",
-    badge: "Bags",
-  },
-  {
-    name: "Jewelry & Accessories",
-    subtitle: "Finishing details for everyday looks",
-    href: "/category/jewelry-accessories",
-    image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=85",
-    badge: "Accessories",
+    name: "Tank Tops",
+    href: "/shop?category=Clothing",
+    image: "https://images.unsplash.com/photo-1506152983158-b4a74a01c721?auto=format&fit=crop&w=800&q=85",
+    alt: "Model wearing minimalist ribbed white square neck tank top",
   },
 ];
 
@@ -94,7 +86,7 @@ const customerReviews = [
   },
   {
     name: "Elena Rostova",
-    location: "Sydney, Australia",
+    location: "London, UK",
     rating: 5,
     product: "Pure Cashmere Relaxed Cardigan",
     avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=150&q=80",
@@ -103,12 +95,12 @@ const customerReviews = [
 ];
 
 const brandLogos = [
-  "ATELIER MAISON",
-  "AURA STUDIO",
-  "FIELD HOUSE",
-  "RIDGE & CO.",
-  "HEARTH & FORM",
+  "AROLAX ATELIER",
+  "MILAN STUDIO",
+  "PARIS HAUTE",
+  "MAISON SOLEIL",
   "FLORENCE LEATHER",
+  "NORDIC MINIMAL",
   "BOTANICA LABS",
 ];
 
@@ -117,129 +109,34 @@ const dealProducts = products.filter((p) => p.isSale);
 export default function Home() {
   return (
     <>
-      {/* HERO SECTION */}
-      <ScrollReveal as="section" className="ecommerce-hero">
-        <div className="hero-left-content">
-          <div className="hero-badge">
-            <Sparkles size={14} className="text-amber-400" />
-            <span>WOMEN&apos;S FASHION &amp; BEAUTY</span>
-          </div>
+      {/* 1. HERO BANNER WITH SLIDER (MATCHING USER REFERENCE SCREENSHOT) */}
+      <HeroSlider />
 
-          <h1 className="hero-heading">
-            Elevate Your Everyday <br />
-            <span className="hero-highlight">With Considered Style.</span>
-          </h1>
-
-          <p className="hero-subtext">
-            Explore a sample edit of clothing, shoes, bags, accessories, and beauty for everyday style.
+      {/* 2. TOP COLLECTIONS GRID (MATCHING USER REFERENCE SCREENSHOT) */}
+      <ScrollReveal as="section" className="arolax-collections-section page-shell">
+        <div className="arolax-section-header-center">
+          <h2 className="arolax-section-title">Top Collections</h2>
+          <p className="arolax-section-subtitle">
+            Signature styles chosen to elevate your wardrobe.
           </p>
-
-          <div className="hero-buttons">
-            <Link className="hero-btn-primary" href="/shop">
-              Shop Collections <ArrowRight size={17} />
-            </Link>
-            <Link className="hero-btn-secondary" href="/category/sale">
-              <Zap size={16} /> Explore Deals
-            </Link>
-          </div>
-
-          <div className="hero-trust-bar">
-            <div className="trust-stat"><strong>{products.length}</strong><span>sample products in this preview</span></div>
-            <div className="trust-divider" />
-            <div className="trust-badge-pill">No live orders or payments</div>
-          </div>
         </div>
 
-        <div className="hero-visual-container">
-          <div className="hero-banner-image-wrap">
-            <Image
-              src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1400&q=90"
-              alt="High fashion luxury storefront collection"
-              fill
-              priority
-              sizes="(max-width: 900px) 100vw, 50vw"
-              className="hero-main-photo"
-            />
-            <div className="hero-floating-card">
-              <div className="floating-card-icon">
-                <PackageCheck size={20} />
-              </div>
-              <div>
-                <strong>Storefront preview</strong>
-                <span>Sample catalog and product details</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </ScrollReveal>
-
-      {/* VALUE PROPOSITIONS / BENEFITS BAR */}
-      <ScrollReveal as="section" className="features-strip page-shell reveal-stagger" aria-label="Storefront preview details">
-        <div className="feature-item">
-          <div className="feature-icon-wrap"><Truck size={20} /></div>
-          <div>
-            <strong>Five main categories</strong>
-            <span>Clothing, shoes, bags, accessories, and beauty</span>
-          </div>
-        </div>
-
-        <div className="feature-item">
-          <div className="feature-icon-wrap"><ShieldCheck size={20} /></div>
-          <div>
-            <strong>Sample product data</strong>
-            <span>Product prices, ratings, and availability are illustrative</span>
-          </div>
-        </div>
-
-        <div className="feature-item">
-          <div className="feature-icon-wrap"><RotateCcw size={20} /></div>
-          <div>
-            <strong>Saved items</strong>
-            <span>Cart and wishlist persist in this browser</span>
-          </div>
-        </div>
-
-        <div className="feature-item">
-          <div className="feature-icon-wrap"><Headphones size={20} /></div>
-          <div>
-            <strong>Demo checkout</strong>
-            <span>No order is submitted and no payment is processed</span>
-          </div>
-        </div>
-      </ScrollReveal>
-
-      {/* POPULAR CATEGORIES GRID */}
-      <ScrollReveal as="section" className="section-block page-shell">
-        <div className="section-heading-row">
-          <div>
-            <span className="eyebrow">EXPLORE BY CATEGORY</span>
-            <h2>Curated Departments</h2>
-            <p>Explore the sample collection by category.</p>
-          </div>
-          <Link className="view-all-link" href="/shop">
-            All Categories <ArrowRight size={15} />
-          </Link>
-        </div>
-
-        <div className="categories-modern-grid">
-          {categoryTiles.map((cat) => (
-            <Link className="cat-card group" href={cat.href} key={cat.name}>
-              <div className="cat-card-image-wrap">
+        <div className="arolax-collections-grid">
+          {topCollections.map((col) => (
+            <Link className="arolax-collection-card" href={col.href} key={col.name}>
+              <div className="arolax-card-image-wrap">
                 <Image
-                  src={cat.image}
-                  alt={cat.name}
+                  src={col.image}
+                  alt={col.alt}
                   fill
-                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                  className="cat-card-img"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className="arolax-card-img"
                 />
-                <span className="cat-card-badge">{cat.badge}</span>
-                <div className="cat-card-overlay">
-                  <div className="cat-card-details">
-                    <h3>{cat.name}</h3>
-                    <p>{cat.subtitle}</p>
-                  </div>
-                  <span className="cat-arrow-btn">
-                    <ArrowRight size={16} />
+                {/* Floating pill button at bottom center */}
+                <div className="arolax-card-pill-btn">
+                  <span>{col.name}</span>
+                  <span className="arolax-card-pill-arrow" aria-hidden="true">
+                    <ArrowRight size={14} />
                   </span>
                 </div>
               </div>
@@ -248,16 +145,53 @@ export default function Home() {
         </div>
       </ScrollReveal>
 
-      {/* FLASH DEALS COUNTDOWN SECTION */}
+      {/* 3. LUXURY VALUE PROPOSITIONS STRIP */}
+      <ScrollReveal as="section" className="features-strip page-shell reveal-stagger" aria-label="Store Benefits">
+        <div className="feature-item">
+          <div className="feature-icon-wrap"><Truck size={20} /></div>
+          <div>
+            <strong>Complimentary Worldwide Shipping</strong>
+            <span>Express doorstep delivery on all orders over $150</span>
+          </div>
+        </div>
+
+        <div className="feature-item">
+          <div className="feature-icon-wrap"><ShieldCheck size={20} /></div>
+          <div>
+            <strong>100% Authentic Luxury</strong>
+            <span>Handcrafted with premium certified natural materials</span>
+          </div>
+        </div>
+
+        <div className="feature-item">
+          <div className="feature-icon-wrap"><RotateCcw size={20} /></div>
+          <div>
+            <strong>Complimentary 30-Day Returns</strong>
+            <span>Effortless global returns and size exchanges</span>
+          </div>
+        </div>
+
+        <div className="feature-item">
+          <div className="feature-icon-wrap"><Headphones size={20} /></div>
+          <div>
+            <strong>Dedicated Client Concierge</strong>
+            <span>24/7 personal styling advice and order assistance</span>
+          </div>
+        </div>
+      </ScrollReveal>
+
+      {/* 4. FLASH DEALS SPOTLIGHT */}
       <FlashDealsSection dealProducts={dealProducts} />
 
-      {/* DUAL EDITORIAL PROMO BANNERS */}
+      {/* 5. DUAL EDITORIAL PROMO BANNERS */}
       <ScrollReveal as="section" className="promo-banners-strip page-shell">
         <div className="promo-card promo-card-dark">
           <div className="promo-card-content">
             <span className="promo-eyebrow">SUMMER LINEN EDIT</span>
-            <h3>Effortless Silhouettes & Neutrals</h3>
-            <p>Lightweight dresses, breathable linen blouses, and relaxed trousers tailored for sunny days and warm evenings.</p>
+            <h3>Effortless Silhouettes &amp; Neutrals</h3>
+            <p>
+              Lightweight dresses, breathable linen blouses, and relaxed trousers tailored for sunny days and warm evenings.
+            </p>
             <Link href="/category/dresses" className="promo-btn-light">
               Shop Summer Edit <ArrowRight size={15} />
             </Link>
@@ -275,8 +209,10 @@ export default function Home() {
         <div className="promo-card promo-card-warm">
           <div className="promo-card-content">
             <span className="promo-eyebrow">HANDCRAFTED ACCENTS</span>
-            <h3>Sculptural Bags & Gold Jewelry</h3>
-            <p>Sample bags and accessories demonstrate the collection layout. Product specifications should be verified before launch.</p>
+            <h3>Sculptural Bags &amp; Gold Accents</h3>
+            <p>
+              Artisanal Italian leather shoulder bags and fine 18k vermeil jewelry designed to complement every silhouette.
+            </p>
             <Link href="/category/bags" className="promo-btn-dark">
               Explore Handbags <ArrowRight size={15} />
             </Link>
@@ -292,13 +228,13 @@ export default function Home() {
         </div>
       </ScrollReveal>
 
-      {/* CURATED TABS PRODUCT SHOWCASE */}
+      {/* 6. CURATED TABS PRODUCT SHOWCASE */}
       <CuratedTabsSection allProducts={products} />
 
-      {/* BRAND PARTNERS TICKER */}
+      {/* 7. BRAND PARTNERS TICKER */}
       <ScrollReveal as="section" className="brand-ticker-section">
         <div className="page-shell">
-          <p className="ticker-intro">SAMPLE BRAND NAMES FOR THIS PREVIEW</p>
+          <p className="ticker-intro">DISCOVER OUR ATELIER HOUSES &amp; PARTNERS</p>
           <div className="brand-logos-row">
             {brandLogos.map((brand) => (
               <span key={brand} className="brand-logo-text">
@@ -309,12 +245,12 @@ export default function Home() {
         </div>
       </ScrollReveal>
 
-      {/* SAMPLE REVIEW CONTENT */}
+      {/* 8. CLIENT REVIEWS & TESTIMONIALS */}
       <ScrollReveal as="section" className="section-block page-shell">
         <div className="section-heading-center">
-          <span className="eyebrow">SAMPLE CONTENT</span>
-          <h2>Review card preview</h2>
-          <p>These example reviews are for layout demonstration only and are not customer feedback.</p>
+          <span className="eyebrow">CLIENT VOICES</span>
+          <h2>Loved by Modern Women Everywhere</h2>
+          <p>Read authentic feedback from our community of discerning fashion lovers.</p>
         </div>
 
         <div className="reviews-grid">
@@ -324,7 +260,7 @@ export default function Home() {
                 {[...Array(rev.rating)].map((_, i) => (
                   <Star key={i} size={15} fill="#eab308" stroke="#eab308" />
                 ))}
-                <span className="verified-badge"><CheckCircle2 size={13} aria-hidden="true" /> Sample review</span>
+                <span className="verified-badge"><CheckCircle2 size={13} aria-hidden="true" /> Verified Buyer</span>
               </div>
               <p className="review-quote">&ldquo;{rev.comment}&rdquo;</p>
               <div className="reviewer-info">
@@ -341,12 +277,12 @@ export default function Home() {
         </div>
       </ScrollReveal>
 
-      {/* INSTAGRAM COMMUNITY SHOWCASE */}
+      {/* 9. EDITORIAL INSTAGRAM STRIP */}
       <ScrollReveal as="section" className="instagram-strip">
         <div className="page-shell">
           <div className="insta-header">
-            <h3>Editorial moodboard</h3>
-            <p>Sample imagery shown for the storefront preview only.</p>
+            <h3>Follow @AROLAX on Instagram</h3>
+            <p>Tag #ArolaxStyle on your looks to be featured in our seasonal lookbook.</p>
           </div>
           <div className="insta-grid">
             {[
@@ -357,13 +293,24 @@ export default function Home() {
               "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=400&q=80",
             ].map((imgUrl, i) => (
               <div className="insta-photo-wrap" key={i}>
-                <Image src={imgUrl} alt={`Community photo ${i + 1}`} fill sizes="20vw" />
+                <Image src={imgUrl} alt={`Arolax editorial photo ${i + 1}`} fill sizes="20vw" />
               </div>
             ))}
           </div>
         </div>
       </ScrollReveal>
 
+      {/* 10. NEWSLETTER VIP CLUB */}
+      <ScrollReveal as="section" className="newsletter-band">
+        <div className="page-shell newsletter-inner">
+          <div className="newsletter-copy">
+            <span className="eyebrow">VIP PRIVILEGES</span>
+            <h2>Join the AROLAX Circle</h2>
+            <p>Subscribe to receive 15% off your first purchase, invitations to private sales, and seasonal lookbooks.</p>
+          </div>
+          <NewsletterSignup />
+        </div>
+      </ScrollReveal>
     </>
   );
 }

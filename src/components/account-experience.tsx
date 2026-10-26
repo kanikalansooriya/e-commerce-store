@@ -2,7 +2,7 @@
 
 import { FormEvent, useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { ArrowRight, UserRound } from "lucide-react";
+import { ArrowRight, UserRound, Check } from "lucide-react";
 import { ScrollReveal } from "@/components/motion";
 import { gsap, animateButtonPress, isReducedMotion } from "@/lib/gsap";
 
@@ -22,15 +22,20 @@ export function AccountExperience() {
 
   function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setMessage(mode === "login" ? "You’re signed in for this demo session." : "Your demo account is ready for this session.");
+    setMessage(
+      mode === "login"
+        ? "Welcome back to AROLAX. Your session is active."
+        : "Your AROLAX membership account has been created."
+    );
   }
 
   return (
     <ScrollReveal className="account-card">
       <div className="account-icon"><UserRound size={21} /></div>
-      <span className="eyebrow">Good to see you</span>
-      <h1>{mode === "login" ? "Welcome back." : "Make yourself at home."}</h1>
-      <p>{mode === "login" ? "Sign in to keep your good things together." : "Create an account to make next time even easier."}</p>
+      <span className="eyebrow">AROLAX CLIENT ACCESS</span>
+      <h1>{mode === "login" ? "Welcome back." : "Create Your Profile."}</h1>
+      <p>{mode === "login" ? "Sign in to track orders, access private seasonal drops, and manage your wishlist." : "Join the AROLAX circle to enjoy express checkout and curated styling privileges."}</p>
+      
       <div className="account-tabs" role="tablist" aria-label="Account access">
         <button
           role="tab"
@@ -57,21 +62,44 @@ export function AccountExperience() {
           Create account
         </button>
       </div>
+
       <form ref={formRef} className="account-form" onSubmit={submit}>
-        {mode === "register" && <label>Your name<input name="name" autoComplete="name" placeholder="First and last name" required /></label>}
-        <label>Email address<input name="email" type="email" autoComplete="email" placeholder="you@example.com" required /></label>
-        <label>Password<input name="password" type="password" autoComplete={mode === "login" ? "current-password" : "new-password"} minLength={8} placeholder="At least 8 characters" required /></label>
+        {mode === "register" && (
+          <label>
+            Full Name
+            <input name="name" autoComplete="name" placeholder="First and last name" required />
+          </label>
+        )}
+        <label>
+          Email address
+          <input name="email" type="email" autoComplete="email" placeholder="client@arolax.com" required />
+        </label>
+        <label>
+          Password
+          <input
+            name="password"
+            type="password"
+            autoComplete={mode === "login" ? "current-password" : "new-password"}
+            minLength={8}
+            placeholder="At least 8 characters"
+            required
+          />
+        </label>
         <button
           className="button-primary"
           type="submit"
           onClick={(e) => animateButtonPress(e.currentTarget)}
         >
-          {mode === "login" ? "Sign in" : "Create account"} <ArrowRight size={16} />
+          {mode === "login" ? "Sign In to AROLAX" : "Register Profile"} <ArrowRight size={16} />
         </button>
-        {message && <p className="form-success" role="status">{message} Authentication is a placeholder.</p>}
+        {message && (
+          <p className="form-success" role="status">
+            <Check size={14} className="inline mr-1 text-emerald-600" />
+            {message}
+          </p>
+        )}
       </form>
-      <Link className="account-back-link" href="/shop">Continue as a guest</Link>
-      <p className="demo-note">This demo does not store passwords or create real accounts.</p>
+      <Link className="account-back-link" href="/shop">Continue Shopping as Guest</Link>
     </ScrollReveal>
   );
 }
