@@ -149,7 +149,7 @@ button, input, select, textarea {
 }
 
 .product-card:hover .product-image-wrap img {
-  transform: scale(1.055);
+  transform: scale(1.025);
 }
 
 .currency-control {
@@ -297,20 +297,6 @@ button, input, select, textarea {
 
   100% {
     transform: scale(1);
-  }
-}
-
-.route-transition {
-  animation: .28s both route-enter;
-}
-
-@keyframes route-enter {
-  from {
-    opacity: .72;
-  }
-
-  to {
-    opacity: 1;
   }
 }
 

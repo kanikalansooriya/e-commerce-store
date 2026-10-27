@@ -4,9 +4,20 @@ A responsive women's fashion storefront built with Next.js App Router, React, Ty
 
 ## Important: preview only
 
-This is a frontend storefront preview, not a production commerce system. The product catalog, prices, ratings, review counts, stock, and sale markers are sample data. Product and shipping amounts are seeded in USD, shown in LKR by default using a live USD/LKR exchange rate, and can be switched to USD from the header. The latest rate is cached in the visitor's browser; if the rate service is unavailable, the storefront indicates when it is using a saved or estimated rate. Cart and wishlist data stay in the visitor's browser. Checkout only stores a temporary confirmation in session storage; it does not submit an order, reserve inventory, email the customer, or process a payment. Account, contact, and newsletter forms are previews and do not send or persist submissions.
+This is a storefront preview, not a production commerce system. The product catalog, prices, ratings, review counts, stock, and sale markers are sample data. Product and shipping amounts are seeded in USD, shown in LKR by default in the storefront, and can be switched to USD from the header. The checkout charges in USD.
 
-Do not accept real orders until a trusted catalog/inventory backend, server-side order validation, authentication, payment provider, fulfillment/shipping, support forms, and real commercial policies are connected and tested. The visible sample shipping and return copy is not a live policy.
+Checkout uses Stripe Elements in **test mode** to securely collect card details only. Wallet methods such as Google Pay, Apple Pay, and Link are disabled. Card data is handled by Stripe and is never collected by this app. Checkout sends customer and delivery details to Stripe and validates product prices and quantities against the server catalog. A successful return is verified against Stripe, but this preview does not reserve inventory, persist orders, or send fulfillment notifications. Do not use a live Stripe key or accept real orders until persistent order/inventory storage, webhook-based payment verification, fulfillment/shipping, support forms, and real commercial policies are connected and tested. Account, contact, and newsletter forms remain previews and do not send or persist submissions.
+
+### Configure Stripe test payments
+
+Set these server-side environment variables (for example in a local `.env.local`; never expose or commit the secret key):
+
+```env
+STRIPE_SECRET_KEY=sk_test_your_stripe_test_secret
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_your_stripe_test_publishable_key
+```
+
+Use matching Stripe test keys only. Restart the dev server after setting them. The checkout route rejects live secret keys. Stripe Elements handles card entry only.
 
 ## Run locally
 
@@ -36,7 +47,8 @@ The app can be deployed as a Next.js Node.js application or on a compatible Next
 - `/shop` — searchable catalog with category, subcategory, brand, price, rating, availability, sale, new-arrival, and sorting filters; paginated at 12 products per page
 - `/category/[slug]` — category landing pages
 - `/product/[slug]` — product details
-- `/cart`, `/wishlist`, `/checkout` — browser-only shopping previews
+- `/cart`, `/wishlist` — browser-persisted shopping previews
+- `/checkout` — Stripe test payment form when configured
 - `/account`, `/about`, `/faq` — account and support previews
 
 ## Catalog and images

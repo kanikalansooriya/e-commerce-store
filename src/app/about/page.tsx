@@ -5,15 +5,15 @@ import { ScrollReveal } from "@/components/motion";
 export default function AboutPage() {
   return (
     <>
-      <ScrollReveal as="section" className="about-hero page-shell">
-        <div className="about-copy">
+      <section className="about-hero page-shell">
+        <ScrollReveal className="about-copy reveal-stagger">
           <span className="eyebrow">THE AROLAX ATELIER</span>
           <h1>Elegance Defined by Craft &amp; Intention.</h1>
           <p>
             AROLAX represents a curated edit of contemporary women&apos;s fashion, sculpted maxi silhouettes, luxurious Italian leather accessories, and refined essentials tailored for life&apos;s memorable moments.
           </p>
-        </div>
-        <div className="about-image">
+        </ScrollReveal>
+        <ScrollReveal className="about-image">
           <Image
             src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1400&q=85"
             alt="Fashion collection styled in warm natural light"
@@ -21,8 +21,8 @@ export default function AboutPage() {
             priority
             sizes="(max-width: 760px) 100vw, 50vw"
           />
-        </div>
-      </ScrollReveal>
+        </ScrollReveal>
+      </section>
 
       <ScrollReveal as="section" className="about-principles page-shell">
         <span className="eyebrow">OUR PHILOSOPHY</span>

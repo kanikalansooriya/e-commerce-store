@@ -53,6 +53,7 @@ export function SiteHeader() {
   const isDressesActive = pathname === "/category/dresses";
   const isTopsActive = pathname === "/category/tops-blouses";
   const isBottomsActive = pathname === "/category/pants-skirts";
+  const isBagsActive = pathname === "/category/bags";
   const isSaleActive = pathname === "/category/sale";
   const isAboutActive = pathname === "/about" || pathname === "/faq";
 
@@ -187,44 +188,29 @@ export function SiteHeader() {
               Dresses
             </Link>
 
-            <div className="arolax-nav-item has-dropdown">
-              <Link
-                href="/category/tops-blouses"
-                className={`arolax-nav-link ${isTopsActive ? "is-active" : ""}`}
-                aria-current={isTopsActive ? "page" : undefined}
-              >
-                Tops <ChevronDown size={13} className="nav-chevron" />
-              </Link>
-              <div className="arolax-nav-dropdown">
-                <Link href="/shop?subcategory=Tops%20%26%20T-Shirts">Tops & T-Shirts</Link>
-                <Link href="/shop?subcategory=Shirts%20%26%20Blouses">Shirts & Blouses</Link>
-                <Link href="/shop?subcategory=Jackets%20%26%20Cardigans">Sweatshirts & Cardigans</Link>
-              </div>
-            </div>
+            <Link
+              href="/category/tops-blouses"
+              className={`arolax-nav-link ${isTopsActive ? "is-active" : ""}`}
+              aria-current={isTopsActive ? "page" : undefined}
+            >
+              Tops
+            </Link>
 
-            <div className="arolax-nav-item has-dropdown">
-              <Link
-                href="/category/pants-skirts"
-                className={`arolax-nav-link ${isBottomsActive ? "is-active" : ""}`}
-                aria-current={isBottomsActive ? "page" : undefined}
-              >
-                Bottoms <ChevronDown size={13} className="nav-chevron" />
-              </Link>
-              <div className="arolax-nav-dropdown">
-                <Link href="/shop?subcategory=Jeans%20%26%20Pants">Jeans & Denim</Link>
-                <Link href="/shop?subcategory=Skirts%20%26%20Shorts">Skirts & Shorts</Link>
-              </div>
-            </div>
+            <Link
+              href="/category/pants-skirts"
+              className={`arolax-nav-link ${isBottomsActive ? "is-active" : ""}`}
+              aria-current={isBottomsActive ? "page" : undefined}
+            >
+              Bottoms
+            </Link>
 
-            <div className="arolax-nav-item has-dropdown">
-              <Link href="/shop?category=Clothing" className="arolax-nav-link">
-                Intimates <ChevronDown size={13} className="nav-chevron" />
-              </Link>
-              <div className="arolax-nav-dropdown">
-                <Link href="/shop?subcategory=Matching%20Sets">Matching Sets</Link>
-                <Link href="/shop?subcategory=Sleepwear%20%26%20Loungewear">Loungewear & Slips</Link>
-              </div>
-            </div>
+            <Link
+              href="/category/bags"
+              className={`arolax-nav-link ${isBagsActive ? "is-active" : ""}`}
+              aria-current={isBagsActive ? "page" : undefined}
+            >
+              Bags & Totes
+            </Link>
 
             <Link
               href="/category/sale"
@@ -351,9 +337,8 @@ export function SiteHeader() {
               <Link href="/category/dresses" className={isDressesActive ? "is-active" : ""} onClick={() => setMenuOpen(false)}>Dresses</Link>
               <Link href="/category/tops-blouses" className={isTopsActive ? "is-active" : ""} onClick={() => setMenuOpen(false)}>Tops & Blouses</Link>
               <Link href="/category/pants-skirts" className={isBottomsActive ? "is-active" : ""} onClick={() => setMenuOpen(false)}>Bottoms & Pants</Link>
-              <Link href="/shop?subcategory=Matching%20Sets" onClick={() => setMenuOpen(false)}>Intimates & Sets</Link>
               <Link href="/category/shoes" onClick={() => setMenuOpen(false)}>Shoes & Heels</Link>
-              <Link href="/category/bags" onClick={() => setMenuOpen(false)}>Bags & Totes</Link>
+              <Link href="/category/bags" className={isBagsActive ? "is-active" : ""} onClick={() => setMenuOpen(false)}>Bags & Totes</Link>
               <Link href="/category/jewelry-accessories" onClick={() => setMenuOpen(false)}>Jewelry & Accessories</Link>
               <Link href="/category/beauty-fragrance" onClick={() => setMenuOpen(false)}>Beauty & Fragrance</Link>
               <Link href="/category/sale" className={`mobile-sale-highlight ${isSaleActive ? "is-active" : ""}`} onClick={() => setMenuOpen(false)}>Sale & Deals</Link>

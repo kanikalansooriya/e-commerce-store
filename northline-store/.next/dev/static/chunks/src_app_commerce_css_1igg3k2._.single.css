@@ -631,6 +631,18 @@
   display: flex;
 }
 
+.payment-method-choice {
+  width: 100%;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+}
+
+.payment-method-choice:disabled {
+  cursor: not-allowed;
+  opacity: .65;
+}
+
 .choice-row.is-selected {
   border-color: var(--sage-deep);
   box-shadow: inset 0 0 0 1px var(--sage-deep);

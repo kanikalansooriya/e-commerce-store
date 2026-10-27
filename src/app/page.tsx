@@ -113,7 +113,7 @@ export default function Home() {
       <HeroSlider />
 
       {/* 2. TOP COLLECTIONS GRID (MATCHING USER REFERENCE SCREENSHOT) */}
-      <ScrollReveal as="section" className="arolax-collections-section page-shell">
+      <ScrollReveal as="section" className="arolax-collections-section page-shell reveal-stagger">
         <div className="arolax-section-header-center">
           <h2 className="arolax-section-title">Top Collections</h2>
           <p className="arolax-section-subtitle">

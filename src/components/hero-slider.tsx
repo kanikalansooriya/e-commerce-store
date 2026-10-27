@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { useCurrency } from "@/context/currency-context";
-import { animateButtonPress } from "@/lib/gsap";
+import { animateButtonPress, gsap, isReducedMotion } from "@/lib/gsap";
 
 interface HeroSlide {
   tagline: string;
@@ -51,6 +51,7 @@ export function HeroSlider() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const { formatPrice } = useCurrency();
   const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   const nextSlide = useCallback(() => {
     setCurrentIndex((prev) => (prev + 1) % slides.length);
@@ -71,13 +72,28 @@ export function HeroSlider() {
     };
   }, [nextSlide, currentIndex]);
 
+  useEffect(() => {
+    const content = contentRef.current;
+    if (!content || isReducedMotion()) return;
+
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        content,
+        { opacity: 0, y: 12 },
+        { opacity: 1, y: 0, duration: 0.55, ease: "power2.out" }
+      );
+    }, content);
+
+    return () => ctx.revert();
+  }, [currentIndex]);
+
   const current = slides[currentIndex];
 
   return (
     <section className="arolax-hero-section" aria-label="Hero Showcase">
       <div className="arolax-hero-container">
         {/* Left Slider Content */}
-        <div className="arolax-hero-left">
+        <div className="arolax-hero-left" ref={contentRef}>
           <div className="arolax-hero-eyebrow" key={`tag-${currentIndex}`}>
             <span>{current.tagline}</span>
           </div>

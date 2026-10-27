@@ -261,10 +261,9 @@ export const rawProducts: Omit<Product, "id">[] = [
     brand: "Field House",
     price: 38,
     description: "Buttery soft Peruvian Pima cotton with a relaxed drop-shoulder cut, bound collar, and pre-washed finish that holds its shape wash after wash.",
-    image: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1000&q=85",
+    image: "/images/organic-pima-crew-tee.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1200&q=85",
-      "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1200&q=85"
+      "/images/organic-pima-crew-tee.jpg"
     ],
     rating: 4.8,
     reviewCount: 165,
@@ -362,9 +361,9 @@ export const rawProducts: Omit<Product, "id">[] = [
     price: 130,
     compareAt: 160,
     description: "Liquid-smooth 19mm Mulberry silk with a matte sheen. Classic tailored cuffs, pointed collar, and a luminous, flattering drape.",
-    image: "https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=1000&q=85",
+    image: "/images/mulberry-silk-button-blouse.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=1200&q=85"
+      "/images/mulberry-silk-button-blouse.jpg"
     ],
     rating: 4.9,
     reviewCount: 89,
@@ -386,9 +385,9 @@ export const rawProducts: Omit<Product, "id">[] = [
     brand: "Field House",
     price: 68,
     description: "Breathable pure washed linen with an airy silhouette, deep V-front with self-tie closure, and soft gathered blouson sleeves.",
-    image: "https://images.unsplash.com/photo-1551803091-e20673f15770?auto=format&fit=crop&w=1000&q=85",
+    image: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1000&q=85",
     gallery: [
-      "https://images.unsplash.com/photo-1551803091-e20673f15770?auto=format&fit=crop&w=1200&q=85"
+      "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1200&q=85"
     ],
     rating: 4.7,
     reviewCount: 46,

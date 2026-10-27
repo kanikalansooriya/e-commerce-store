@@ -1,9 +1,11 @@
 import Link from "next/link";
 import { ShieldCheck, Truck, RefreshCw, CreditCard } from "lucide-react";
+import { ScrollReveal } from "@/components/motion";
 
 export function SiteFooter() {
   return (
     <footer className="site-footer">
+      <ScrollReveal className="footer-reveal">
       {/* Top trust badges row */}
       <div className="footer-trust-strip">
         <div className="page-shell footer-trust-inner">
@@ -32,7 +34,7 @@ export function SiteFooter() {
             <CreditCard size={18} />
             <div>
               <strong>Flexible Payment Options</strong>
-              <span>Visa, Mastercard, Amex, Apple Pay</span>
+              <span>Visa, Mastercard, Amex</span>
             </div>
           </div>
         </div>
@@ -61,7 +63,7 @@ export function SiteFooter() {
             <Link href="/category/tops-blouses">Tops & Sweatshirts</Link>
             <Link href="/category/pants-skirts">Pants & Denim</Link>
             <Link href="/category/shoes">Shoes & Leather Flats</Link>
-            <Link href="/category/bags">Handbags & Totes</Link>
+            <Link href="/category/bags">Bags & Totes</Link>
             <Link href="/category/jewelry-accessories">Jewelry & Accents</Link>
             <Link href="/category/sale">Seasonal Sale</Link>
           </div>
@@ -94,11 +96,10 @@ export function SiteFooter() {
           <span>Visa</span>
           <span>Mastercard</span>
           <span>American Express</span>
-          <span>Apple Pay</span>
-          <span>Google Pay</span>
         </div>
         <Link href="/" className="back-to-top-link">Back to top ↑</Link>
       </div>
+      </ScrollReveal>
     </footer>
   );
 }

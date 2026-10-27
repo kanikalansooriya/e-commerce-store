@@ -390,6 +390,10 @@
     overflow: hidden;
   }
 
+  .absolute {
+    position: absolute;
+  }
+
   .fixed {
     position: fixed;
   }
@@ -4541,6 +4545,18 @@ html[data-motion="reduced"] *, html[data-motion="reduced"] :before, html[data-mo
   display: flex;
 }
 
+.payment-method-choice {
+  width: 100%;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+}
+
+.payment-method-choice:disabled {
+  cursor: not-allowed;
+  opacity: .65;
+}
+
 .choice-row.is-selected {
   border-color: var(--sage-deep);
   box-shadow: inset 0 0 0 1px var(--sage-deep);
@@ -5196,7 +5212,7 @@ button, input, select, textarea {
 }
 
 .product-card:hover .product-image-wrap img {
-  transform: scale(1.055);
+  transform: scale(1.025);
 }
 
 .currency-control {
@@ -5344,20 +5360,6 @@ button, input, select, textarea {
 
   100% {
     transform: scale(1);
-  }
-}
-
-.route-transition {
-  animation: .28s both route-enter;
-}
-
-@keyframes route-enter {
-  from {
-    opacity: .72;
-  }
-
-  to {
-    opacity: 1;
   }
 }
 

@@ -108,6 +108,8 @@
 .form-grid input:focus, .account-form input:focus, .contact-form input:focus, .contact-form textarea:focus { border-color: var(--sage-deep); box-shadow: 0 0 0 2px rgba(96, 125, 105, .12); }
 .option-list { display: grid; gap: 9px; }
 .choice-row { min-height: 61px; display: flex; align-items: center; gap: 12px; padding: 10px 13px; border: 1px solid var(--line); background: white; cursor: pointer; }
+.payment-method-choice { width: 100%; color: inherit; font: inherit; text-align: left; }
+.payment-method-choice:disabled { cursor: not-allowed; opacity: .65; }
 .choice-row.is-selected { border-color: var(--sage-deep); box-shadow: inset 0 0 0 1px var(--sage-deep); }
 .choice-row input { width: 15px; height: 15px; margin: 0; accent-color: var(--sage-deep); }
 .choice-copy { flex: 1; display: flex; flex-direction: column; gap: 4px; }

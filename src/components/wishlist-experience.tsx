@@ -12,13 +12,13 @@ export function WishlistExperience() {
   if (!isReady) {
     return (
       <div className="page-shell wishlist-shell">
-        <div className="page-intro">
+        <ScrollReveal className="page-intro">
           <nav className="breadcrumbs" aria-label="Breadcrumb">
             <Link href="/">Home</Link>
             <span>/</span>
             <span aria-current="page">Wishlist</span>
           </nav>
-        </div>
+        </ScrollReveal>
         <div className="skeleton-card" style={{ maxWidth: 220, minHeight: 24 }} />
       </div>
     );
@@ -53,12 +53,12 @@ export function WishlistExperience() {
           ))}
         </ScrollReveal>
       ) : (
-        <div className="empty-state wishlist-empty">
+        <ScrollReveal className="empty-state wishlist-empty">
           <div className="empty-bag-mark"><Heart size={28} fill="currentColor" /></div>
           <h2>Your wishlist is empty.</h2>
           <p>Save the pieces you love most and come back to them whenever you’re ready.</p>
           <Link className="button-primary" href="/shop">Browse the edit</Link>
-        </div>
+        </ScrollReveal>
       )}
     </div>
   );

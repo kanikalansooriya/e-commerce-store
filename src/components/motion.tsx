@@ -38,13 +38,15 @@ export function ScrollReveal({
       const isStaggered =
         element.classList.contains("reveal-stagger") ||
         element.querySelector(".product-card") ||
+        element.querySelector(".arolax-collection-card") ||
         element.querySelector(".cat-card") ||
         element.querySelector(".review-card");
+      const hasProducts = element.querySelector(".product-card") !== null;
 
       if (isStaggered) {
         let items = Array.from(
           element.querySelectorAll<HTMLElement>(
-            ".product-card, .cat-card, .review-card, .feature-item, .promo-card, .reveal-item"
+            ".product-card, .arolax-collection-card, .cat-card, .review-card, .feature-item, .promo-card, .reveal-item"
           )
         );
 
@@ -70,13 +72,39 @@ export function ScrollReveal({
             stagger: 0.07,
             ease: "power2.out",
             delay: delay / 1000,
-            scrollTrigger: {
-              trigger: element,
-              start: "top 88%",
-              once: true,
-            },
+            scrollTrigger: hasProducts
+              ? {
+                  trigger: element,
+                  start: "top 88%",
+                  end: "bottom 12%",
+                  toggleActions: "restart none restart none",
+                }
+              : {
+                  trigger: element,
+                  start: "top 88%",
+                  once: true,
+                },
           }
         );
+
+        if (element.classList.contains("promo-banners-strip")) {
+          const visuals = element.querySelectorAll<HTMLElement>(".promo-card-visual");
+          gsap.fromTo(
+            visuals,
+            { clipPath: "inset(0 100% 0 0)" },
+            {
+              clipPath: "inset(0 0% 0 0)",
+              duration: 0.9,
+              stagger: 0.16,
+              ease: "power2.inOut",
+              scrollTrigger: {
+                trigger: element,
+                start: "top 88%",
+                once: true,
+              },
+            }
+          );
+        }
       } else {
         gsap.fromTo(
           element,
@@ -150,12 +178,13 @@ export function RouteTransition({ children }: { children: ReactNode }) {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         el,
-        { opacity: 0.75, y: 10 },
+        { opacity: 0, y: 16, scale: 0.995 },
         {
           opacity: 1,
           y: 0,
-          duration: 0.35,
-          ease: "power2.out",
+          scale: 1,
+          duration: 0.48,
+          ease: "power3.out",
         }
       );
     }, el);

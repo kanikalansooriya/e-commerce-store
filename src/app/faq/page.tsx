@@ -32,7 +32,7 @@ const faqs = [
 export default function FaqPage() {
   return (
     <div className="page-shell faq-shell">
-      <div className="page-intro">
+      <ScrollReveal className="page-intro">
         <nav className="breadcrumbs" aria-label="Breadcrumb">
           <Link href="/">Home</Link>
           <span>/</span>
@@ -41,7 +41,7 @@ export default function FaqPage() {
         <span className="eyebrow">CLIENT CARE &amp; ASSISTANCE</span>
         <h1>How Can We Help You Today?</h1>
         <p>Comprehensive answers regarding global deliveries, complimentary returns, garment care, and concierge services.</p>
-      </div>
+      </ScrollReveal>
 
       <ScrollReveal as="section" className="faq-layout">
         <div className="faq-stack">

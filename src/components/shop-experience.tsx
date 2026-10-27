@@ -90,13 +90,13 @@ export function ShopExperience({ initialQuery, initialCategory, initialSubcatego
 
   return (
     <div className="page-shell">
-      <div className="page-intro">
+      <ScrollReveal className="page-intro">
         <nav className="breadcrumbs" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><span aria-current="page">Shop</span></nav>
         <span className="eyebrow" style={{ marginTop: 22 }}>The good stuff</span>
         <h1>Shop the edit.</h1>
         <p>Thoughtful everyday things, chosen to be useful, well made, and easy to love.</p>
-      </div>
-      <div className="shop-toolbar">
+      </ScrollReveal>
+      <ScrollReveal className="shop-toolbar">
         <div className="shop-filters">
           <label className="filter-control">Category
             <select value={category} onChange={(event) => { setCategory(event.target.value); setSubcategory("All"); setBrand("All"); setPage(1); }}>
@@ -151,7 +151,7 @@ export function ShopExperience({ initialQuery, initialCategory, initialSubcatego
           </label>
         </div>
         <span className="shop-count" aria-live="polite">{filtered.length.toLocaleString()} {filtered.length === 1 ? "piece" : "pieces"}</span>
-      </div>
+      </ScrollReveal>
 
       {loading ? (
         <div className="product-grid" aria-label="Loading products">
