@@ -15,6 +15,7 @@
 
 # next.js
 /.next/
+/.next-pages/
 /out/
 
 # production
@@ -42,4 +43,3 @@ next-env.d.ts
 
 # generated files
 src/data/generated-catalog.json
-

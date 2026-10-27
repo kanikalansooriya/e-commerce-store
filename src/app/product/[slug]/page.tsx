@@ -5,7 +5,13 @@ import { ProductCard } from "@/components/product-card";
 import { ProductGallery } from "@/components/product-gallery";
 import { ProductPurchase } from "@/components/product-purchase";
 import { ScrollReveal } from "@/components/motion";
-import { getProduct, getRelatedProducts } from "@/lib/products";
+import { getProduct, getRelatedProducts, products } from "@/lib/products";
+
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return products.map(({ slug }) => ({ slug }));
+}
 
 export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;

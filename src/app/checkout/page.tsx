@@ -14,6 +14,7 @@ import { animateButtonPress } from "@/lib/gsap";
 
 const publishableKey = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY;
 const stripePromise = publishableKey?.startsWith("pk_test_") ? loadStripe(publishableKey) : null;
+const isGitHubPagesPreview = process.env.NEXT_PUBLIC_GITHUB_PAGES === "true";
 const formatUsd = (amount: number) =>
   new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(amount);
 
@@ -31,6 +32,10 @@ export default function CheckoutPage() {
     event.preventDefault();
     if (!items.length || isPreparingPayment) return;
     setError("");
+    if (isGitHubPagesPreview) {
+      setError("Card payment is disabled in this static GitHub Pages preview.");
+      return;
+    }
     if (!stripePromise) {
       setError("Card payment is unavailable until Stripe test keys are configured.");
       return;
@@ -127,8 +132,10 @@ export default function CheckoutPage() {
             </form>
 
             <section className="form-section">
-              <div className="form-section-heading"><span>03</span><div><h2>Payment method</h2><p>Select how you&apos;d like to pay.</p></div></div>
-              {clientSecret && stripePromise ? (
+              <div className="form-section-heading"><span>03</span><div><h2>Payment method</h2><p>{isGitHubPagesPreview ? "This published static preview does not accept payments." : "Select how you&apos;d like to pay."}</p></div></div>
+              {isGitHubPagesPreview ? (
+                <p className="form-error" role="status">Checkout is a preview only on GitHub Pages. Payment processing requires the server-side Stripe route.</p>
+              ) : clientSecret && stripePromise ? (
                 <Elements stripe={stripePromise} options={{ clientSecret, appearance: { theme: "stripe" } }}>
                   <StripePaymentForm orderReference={orderReference} />
                 </Elements>
@@ -165,7 +172,7 @@ export default function CheckoutPage() {
                 </>
               )}
             </section>
-            <div className="secure-note checkout-secure"><LockKeyhole size={14} /> Card details are handled by Stripe. Test mode only; no real charge.</div>
+            {!isGitHubPagesPreview && <div className="secure-note checkout-secure"><LockKeyhole size={14} /> Card details are handled by Stripe. Test mode only; no real charge.</div>}
           </div>
 
         <aside className="summary-panel checkout-summary">

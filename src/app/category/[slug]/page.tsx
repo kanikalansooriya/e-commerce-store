@@ -195,6 +195,8 @@ export function generateStaticParams() {
   return Object.keys(categoryMap).map((slug) => ({ slug }));
 }
 
+export const dynamicParams = false;
+
 export default function CategoryPage({ params }: { params: Promise<{ slug: string }> }) {
   return CategoryPageInner({ params });
 }

@@ -13,7 +13,7 @@ const pageSize = 12;
 
 export function ShopExperience({ initialQuery, initialCategory, initialSubcategory, initialSort, initialSaleOnly, initialNewOnly }: { initialQuery: string; initialCategory: string; initialSubcategory: string; initialSort: string; initialSaleOnly: boolean; initialNewOnly: boolean }) {
   const { formatPrice } = useCurrency();
-  const [query] = useState(initialQuery);
+  const [query, setQuery] = useState(initialQuery);
   const [category, setCategory] = useState(initialCategory);
   const [subcategory, setSubcategory] = useState(initialSubcategory);
   const [brand, setBrand] = useState("All");
@@ -27,7 +27,25 @@ export function ShopExperience({ initialQuery, initialCategory, initialSubcatego
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = window.setTimeout(() => setLoading(false), 260);
+    const timer = window.setTimeout(() => {
+      if (process.env.NEXT_PUBLIC_GITHUB_PAGES === "true") {
+        const params = new URLSearchParams(window.location.search);
+        const requestedCategory = params.get("category") ?? "";
+        const nextCategory = categories.includes(requestedCategory) ? requestedCategory : "All";
+        const requestedSubcategory = params.get("subcategory") ?? "";
+        const requestedSort = params.get("sort") ?? "";
+        const allowedSorts = ["featured", "popular", "newest", "price-low", "price-high", "rating"];
+
+        setQuery(params.get("q") ?? "");
+        setCategory(nextCategory);
+        setSubcategory(getSubcategories(nextCategory).includes(requestedSubcategory) ? requestedSubcategory : "All");
+        setSort(allowedSorts.includes(requestedSort) ? requestedSort : "featured");
+        setSaleOnly(params.get("sale") === "true");
+        setNewOnly(params.get("new") === "true");
+      }
+
+      setLoading(false);
+    }, 260);
     return () => window.clearTimeout(timer);
   }, []);
 

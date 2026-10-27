@@ -3,6 +3,12 @@ import { Check, PackageCheck } from "lucide-react";
 import { ScrollReveal } from "@/components/motion";
 import { ClearCartOnPayment } from "@/components/clear-cart-on-payment";
 
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return [{ orderId: "stripe" }];
+}
+
 type SuccessPageProps = {
   params: Promise<{ orderId: string }>;
   searchParams: Promise<{ payment_intent?: string; order_reference?: string }>;
@@ -10,6 +16,20 @@ type SuccessPageProps = {
 
 export default async function SuccessPage({ params, searchParams }: SuccessPageProps) {
   const { orderId } = await params;
+  if (process.env.GITHUB_PAGES === "true") {
+    return (
+      <ScrollReveal className="page-shell success-shell">
+        <span className="eyebrow">STATIC STORE PREVIEW</span>
+        <h1>Checkout is unavailable here.</h1>
+        <p className="success-copy">GitHub Pages can host this storefront preview, but it cannot run the server required to verify payments.</p>
+        <div className="success-actions">
+          <Link className="button-primary" href="/shop">Continue Shopping</Link>
+          <Link className="text-link" href="/">Back to Home <span aria-hidden="true">↗</span></Link>
+        </div>
+      </ScrollReveal>
+    );
+  }
+
   if (orderId === "stripe") {
     const { payment_intent: paymentIntentId, order_reference: orderReference } = await searchParams;
     return <StripePaymentResult paymentIntentId={paymentIntentId} orderReference={orderReference} />;

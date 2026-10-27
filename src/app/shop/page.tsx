@@ -2,7 +2,7 @@ import { ShopExperience } from "@/components/shop-experience";
 import { categories, getSubcategories } from "@/lib/products";
 
 export default async function ShopPage({ searchParams }: { searchParams: Promise<{ q?: string; category?: string; subcategory?: string; sort?: string; sale?: string; new?: string }> }) {
-  const params = await searchParams;
+  const params = process.env.GITHUB_PAGES === "true" ? {} : await searchParams;
   const category = params.category && categories.includes(params.category) ? params.category : "All";
   const subcategory = params.subcategory && getSubcategories(category).includes(params.subcategory) ? params.subcategory : "All";
   const allowedSorts = ["featured", "popular", "newest", "price-low", "price-high", "rating"];

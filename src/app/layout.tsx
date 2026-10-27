@@ -37,8 +37,9 @@ export const metadata: Metadata = {
 };
 
 export default async function RootLayout({ children }: LayoutProps<"/">) {
-  const cookieStore = await cookies();
-  const savedCurrency = cookieStore.get(currencyCookieName)?.value;
+  const savedCurrency = process.env.GITHUB_PAGES === "true"
+    ? undefined
+    : (await cookies()).get(currencyCookieName)?.value;
   const initialCurrency = savedCurrency === "USD" ? "USD" : "LKR";
 
   return (

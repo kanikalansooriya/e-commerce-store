@@ -41,6 +41,14 @@ npm start
 
 The app can be deployed as a Next.js Node.js application or on a compatible Next.js hosting platform. Set the build command to `npm run build` and the start command to `npm run start` when using a Node.js host. A successful deployment only publishes the preview storefront; it does not enable live commerce.
 
+### Publish a static preview on GitHub Pages
+
+The `Deploy static preview to GitHub Pages` workflow publishes the storefront from the `main` branch. In the repository settings, open **Pages** and select **GitHub Actions** as the build and deployment source. Push this repository to GitHub to start the workflow; later pushes to `main` publish updates automatically.
+
+The Pages build uses the repository path `/e-commerce-store`. If the GitHub repository is renamed, update `GITHUB_PAGES_BASE_PATH` in `.github/workflows/deploy-pages.yml` to match its new URL path.
+
+GitHub Pages only hosts static files. Catalog, product, and category pages are prebuilt. Stripe payment creation and server-side payment verification are unavailable in this preview, so checkout is informational only. The live server-backed checkout requires a Next.js hosting platform and the Stripe test keys described above.
+
 ## Main routes
 
 - `/` — home page
