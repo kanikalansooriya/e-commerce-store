@@ -1783,24 +1783,6 @@
   z-index: 3;
 }
 
-@keyframes heroFadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.arolax-hero-eyebrow,
-.arolax-hero-title,
-.arolax-hero-subtitle,
-.arolax-hero-cta-row {
-  animation: heroFadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
 /* ============================================================
    TOP COLLECTIONS GRID WITH PILL BUTTONS (MATCHING SCREENSHOT)
    ============================================================ */

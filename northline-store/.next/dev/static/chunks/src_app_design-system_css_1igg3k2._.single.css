@@ -149,7 +149,7 @@ button, input, select, textarea {
 }
 
 .product-card:hover .product-image-wrap img {
-  transform: scale(1.025);
+  transform: scale(1.04);
 }
 
 .currency-control {
@@ -1030,16 +1030,28 @@ html[data-color-mode="dark"] .summary-panel, html[data-color-mode="dark"] .accou
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .scroll-reveal, .route-transition, .hero-visual img, .product-card, .category-tile, .cat-card, .promo-card, .cat-card-img, .promo-card-visual img, .button-primary, .button-secondary, .wishlist-toggle, .wishlist-detail-toggle {
+  .scroll-reveal, .route-transition, .hero-visual img, .arolax-hero-image, .arolax-dot-progress, .product-card, .category-tile, .cat-card, .promo-card, .cat-card-img, .promo-card-visual img, .button-primary, .button-secondary, .wishlist-toggle, .wishlist-detail-toggle {
     opacity: 1 !important;
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .arolax-hero-slide-layer {
     transition: none !important;
     animation: none !important;
     transform: none !important;
   }
 }
 
-html[data-motion="reduced"] .scroll-reveal, html[data-motion="reduced"] .route-transition, html[data-motion="reduced"] .hero-visual img, html[data-motion="reduced"] .product-card, html[data-motion="reduced"] .category-tile, html[data-motion="reduced"] .cat-card, html[data-motion="reduced"] .promo-card, html[data-motion="reduced"] .cat-card-img, html[data-motion="reduced"] .promo-card-visual img, html[data-motion="reduced"] .button-primary, html[data-motion="reduced"] .button-secondary, html[data-motion="reduced"] .wishlist-toggle, html[data-motion="reduced"] .wishlist-detail-toggle {
+html[data-motion="reduced"] .scroll-reveal, html[data-motion="reduced"] .route-transition, html[data-motion="reduced"] .hero-visual img, html[data-motion="reduced"] .arolax-hero-image, html[data-motion="reduced"] .arolax-dot-progress, html[data-motion="reduced"] .product-card, html[data-motion="reduced"] .category-tile, html[data-motion="reduced"] .cat-card, html[data-motion="reduced"] .promo-card, html[data-motion="reduced"] .cat-card-img, html[data-motion="reduced"] .promo-card-visual img, html[data-motion="reduced"] .button-primary, html[data-motion="reduced"] .button-secondary, html[data-motion="reduced"] .wishlist-toggle, html[data-motion="reduced"] .wishlist-detail-toggle {
   opacity: 1 !important;
+  transition: none !important;
+  animation: none !important;
+  transform: none !important;
+}
+
+html[data-motion="reduced"] .arolax-hero-slide-layer {
   transition: none !important;
   animation: none !important;
   transform: none !important;
@@ -1059,10 +1071,6 @@ html[data-motion="reduced"] .scroll-reveal, html[data-motion="reduced"] .route-t
 
 .product-badge.is-sale {
   top: 40px;
-}
-
-.reveal-stagger.is-visible > .product-card, .reveal-stagger.is-visible > .category-tile {
-  animation: .46s cubic-bezier(.2, .7, .2, 1) both card-enter;
 }
 
 .search-mobile-backdrop {

@@ -498,12 +498,14 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/arrow-right.mjs [app-client] (ecmascript) <export default as ArrowRight>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$left$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronLeft$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/chevron-left.mjs [app-client] (ecmascript) <export default as ChevronLeft>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/chevron-right.mjs [app-client] (ecmascript) <export default as ChevronRight>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$gsap$2f$react$2f$src$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/@gsap/react/src/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$currency$2d$context$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/context/currency-context.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$gsap$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/src/lib/gsap.ts [app-client] (ecmascript) <locals>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__ = __turbopack_context__.i("[project]/node_modules/gsap/index.js [app-client] (ecmascript) <locals> <export default as gsap>");
 ;
 var _s = __turbopack_context__.k.signature();
 "use client";
+;
 ;
 ;
 ;
@@ -562,6 +564,7 @@ function HeroSlider() {
     // Continuous auto-slide every 4.5 seconds
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "HeroSlider.useEffect": ()=>{
+            if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$gsap$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isReducedMotion"])()) return;
             timerRef.current = setInterval({
                 "HeroSlider.useEffect": ()=>{
                     nextSlide();
@@ -577,30 +580,39 @@ function HeroSlider() {
         nextSlide,
         currentIndex
     ]);
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
-        "HeroSlider.useEffect": ()=>{
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$gsap$2f$react$2f$src$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useGSAP"])({
+        "HeroSlider.useGSAP": ()=>{
             const content = contentRef.current;
             if (!content || (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$gsap$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isReducedMotion"])()) return;
-            const ctx = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].context({
-                "HeroSlider.useEffect.ctx": ()=>{
-                    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].fromTo(content, {
-                        opacity: 0,
-                        y: 12
-                    }, {
-                        opacity: 1,
-                        y: 0,
-                        duration: 0.55,
-                        ease: "power2.out"
-                    });
-                }
-            }["HeroSlider.useEffect.ctx"], content);
-            return ({
-                "HeroSlider.useEffect": ()=>ctx.revert()
-            })["HeroSlider.useEffect"];
+            const slideContent = content.querySelectorAll(".arolax-hero-eyebrow, .arolax-hero-title, .arolax-hero-subtitle, .arolax-hero-cta-row");
+            const activeImage = content.parentElement?.querySelector(".arolax-hero-slide-layer.is-active .arolax-hero-image");
+            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].fromTo(slideContent, {
+                opacity: 0,
+                y: 16
+            }, {
+                opacity: 1,
+                y: 0,
+                duration: 0.48,
+                stagger: 0.08,
+                ease: "power2.out"
+            });
+            if (activeImage) {
+                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].fromTo(activeImage, {
+                    scale: 1.04
+                }, {
+                    scale: 1.015,
+                    duration: 4.5,
+                    ease: "none"
+                });
+            }
         }
-    }["HeroSlider.useEffect"], [
-        currentIndex
-    ]);
+    }["HeroSlider.useGSAP"], {
+        scope: contentRef,
+        dependencies: [
+            currentIndex
+        ],
+        revertOnUpdate: true
+    });
     const current = slides[currentIndex];
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         className: "arolax-hero-section",
@@ -618,12 +630,12 @@ function HeroSlider() {
                                 children: current.tagline
                             }, void 0, false, {
                                 fileName: "[project]/src/components/hero-slider.tsx",
-                                lineNumber: 98,
+                                lineNumber: 109,
                                 columnNumber: 13
                             }, this)
                         }, `tag-${currentIndex}`, false, {
                             fileName: "[project]/src/components/hero-slider.tsx",
-                            lineNumber: 97,
+                            lineNumber: 108,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -631,7 +643,7 @@ function HeroSlider() {
                             children: current.title
                         }, `title-${currentIndex}`, false, {
                             fileName: "[project]/src/components/hero-slider.tsx",
-                            lineNumber: 101,
+                            lineNumber: 112,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -639,7 +651,7 @@ function HeroSlider() {
                             children: current.subtitle
                         }, `sub-${currentIndex}`, false, {
                             fileName: "[project]/src/components/hero-slider.tsx",
-                            lineNumber: 105,
+                            lineNumber: 116,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -653,7 +665,7 @@ function HeroSlider() {
                                         children: `From ${formatPrice(current.basePrice)}`
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/hero-slider.tsx",
-                                        lineNumber: 115,
+                                        lineNumber: 126,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -663,23 +675,23 @@ function HeroSlider() {
                                             size: 15
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/hero-slider.tsx",
-                                            lineNumber: 117,
+                                            lineNumber: 128,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/hero-slider.tsx",
-                                        lineNumber: 116,
+                                        lineNumber: 127,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/hero-slider.tsx",
-                                lineNumber: 110,
+                                lineNumber: 121,
                                 columnNumber: 13
                             }, this)
                         }, `cta-${currentIndex}`, false, {
                             fileName: "[project]/src/components/hero-slider.tsx",
-                            lineNumber: 109,
+                            lineNumber: 120,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -697,23 +709,23 @@ function HeroSlider() {
                                         className: "arolax-dot-progress"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/hero-slider.tsx",
-                                        lineNumber: 136,
+                                        lineNumber: 147,
                                         columnNumber: 42
                                     }, this)
                                 }, idx, false, {
                                     fileName: "[project]/src/components/hero-slider.tsx",
-                                    lineNumber: 125,
+                                    lineNumber: 136,
                                     columnNumber: 15
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/src/components/hero-slider.tsx",
-                            lineNumber: 123,
+                            lineNumber: 134,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/hero-slider.tsx",
-                    lineNumber: 96,
+                    lineNumber: 107,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -733,30 +745,30 @@ function HeroSlider() {
                                         className: "arolax-hero-image"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/hero-slider.tsx",
-                                        lineNumber: 151,
+                                        lineNumber: 162,
                                         columnNumber: 17
                                     }, this)
                                 }, idx, false, {
                                     fileName: "[project]/src/components/hero-slider.tsx",
-                                    lineNumber: 146,
+                                    lineNumber: 157,
                                     columnNumber: 15
                                 }, this)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "arolax-hero-overlay"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/hero-slider.tsx",
-                                lineNumber: 161,
+                                lineNumber: 172,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/hero-slider.tsx",
-                        lineNumber: 144,
+                        lineNumber: 155,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/hero-slider.tsx",
-                    lineNumber: 143,
+                    lineNumber: 154,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -771,12 +783,12 @@ function HeroSlider() {
                         size: 22
                     }, void 0, false, {
                         fileName: "[project]/src/components/hero-slider.tsx",
-                        lineNumber: 175,
+                        lineNumber: 186,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/hero-slider.tsx",
-                    lineNumber: 166,
+                    lineNumber: 177,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -791,29 +803,30 @@ function HeroSlider() {
                         size: 22
                     }, void 0, false, {
                         fileName: "[project]/src/components/hero-slider.tsx",
-                        lineNumber: 187,
+                        lineNumber: 198,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/hero-slider.tsx",
-                    lineNumber: 178,
+                    lineNumber: 189,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/hero-slider.tsx",
-            lineNumber: 94,
+            lineNumber: 105,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/hero-slider.tsx",
-        lineNumber: 93,
+        lineNumber: 104,
         columnNumber: 5
     }, this);
 }
-_s(HeroSlider, "1QuD2OHQ9v7hvK1JH+K02K7GpgQ=", false, function() {
+_s(HeroSlider, "X8NDSbcfX2KqkCtXngTUWqkjVXM=", false, function() {
     return [
-        __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$currency$2d$context$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCurrency"]
+        __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$currency$2d$context$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCurrency"],
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$gsap$2f$react$2f$src$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useGSAP"]
     ];
 });
 _c = HeroSlider;
@@ -841,6 +854,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$trending$2d$up$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TrendingUp$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/trending-up.mjs [app-client] (ecmascript) <export default as TrendingUp>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$award$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Award$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/award.mjs [app-client] (ecmascript) <export default as Award>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clock$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Clock$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/clock.mjs [app-client] (ecmascript) <export default as Clock>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$gsap$2f$react$2f$src$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/@gsap/react/src/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$product$2d$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/product-card.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$motion$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/motion.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$gsap$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/src/lib/gsap.ts [app-client] (ecmascript) <locals>");
@@ -848,6 +862,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$inde
 ;
 var _s = __turbopack_context__.k.signature();
 "use client";
+;
 ;
 ;
 ;
@@ -873,40 +888,40 @@ function FlashDealsSection({ dealProducts }) {
                                         className: "text-amber-500 animate-pulse"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/home-showcase.tsx",
-                                        lineNumber: 17,
+                                        lineNumber: 18,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         children: "LIMITED TIME PROMOTION"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/home-showcase.tsx",
-                                        lineNumber: 18,
+                                        lineNumber: 19,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/home-showcase.tsx",
-                                lineNumber: 16,
+                                lineNumber: 17,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                 children: "Seasonal Spotlight Deals"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/home-showcase.tsx",
-                                lineNumber: 20,
+                                lineNumber: 21,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 children: "Exclusive summer markdowns on bestselling silhouettes and signature accessories."
                             }, void 0, false, {
                                 fileName: "[project]/src/components/home-showcase.tsx",
-                                lineNumber: 21,
+                                lineNumber: 22,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/home-showcase.tsx",
-                        lineNumber: 15,
+                        lineNumber: 16,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -916,7 +931,7 @@ function FlashDealsSection({ dealProducts }) {
                                 size: 15
                             }, void 0, false, {
                                 fileName: "[project]/src/components/home-showcase.tsx",
-                                lineNumber: 25,
+                                lineNumber: 26,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -926,25 +941,25 @@ function FlashDealsSection({ dealProducts }) {
                                         children: "14h : 32m : 18s"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/home-showcase.tsx",
-                                        lineNumber: 26,
+                                        lineNumber: 27,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/home-showcase.tsx",
-                                lineNumber: 26,
+                                lineNumber: 27,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/home-showcase.tsx",
-                        lineNumber: 24,
+                        lineNumber: 25,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/home-showcase.tsx",
-                lineNumber: 14,
+                lineNumber: 15,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -953,18 +968,18 @@ function FlashDealsSection({ dealProducts }) {
                         product: product
                     }, product.id, false, {
                         fileName: "[project]/src/components/home-showcase.tsx",
-                        lineNumber: 32,
+                        lineNumber: 33,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/src/components/home-showcase.tsx",
-                lineNumber: 30,
+                lineNumber: 31,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/home-showcase.tsx",
-        lineNumber: 13,
+        lineNumber: 14,
         columnNumber: 5
     }, this);
 }
@@ -973,6 +988,7 @@ function CuratedTabsSection({ allProducts }) {
     _s();
     const [activeTab, setActiveTab] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("featured");
     const gridRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const isInitialTab = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(true);
     const tabProducts = allProducts.filter((p)=>{
         if (activeTab === "featured") return p.isFeatured;
         if (activeTab === "ratings") return p.rating >= 4.8;
@@ -980,32 +996,38 @@ function CuratedTabsSection({ allProducts }) {
         if (activeTab === "deals") return p.isSale;
         return true;
     });
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
-        "CuratedTabsSection.useEffect": ()=>{
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$gsap$2f$react$2f$src$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useGSAP"])({
+        "CuratedTabsSection.useGSAP": ()=>{
             const el = gridRef.current;
             if (!el || (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$gsap$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isReducedMotion"])()) return;
+            if (isInitialTab.current) {
+                isInitialTab.current = false;
+                return;
+            }
             const cards = el.querySelectorAll(".product-card");
-            const ctx = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].context({
-                "CuratedTabsSection.useEffect.ctx": ()=>{
-                    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].fromTo(cards, {
-                        opacity: 0,
-                        y: 14
-                    }, {
-                        opacity: 1,
-                        y: 0,
-                        duration: 0.38,
-                        stagger: 0.05,
-                        ease: "power2.out"
-                    });
+            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].fromTo(cards, {
+                opacity: 0,
+                y: 14
+            }, {
+                opacity: 1,
+                y: 0,
+                duration: 0.38,
+                stagger: 0.05,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: el,
+                    start: "top 88%",
+                    once: true
                 }
-            }["CuratedTabsSection.useEffect.ctx"], el);
-            return ({
-                "CuratedTabsSection.useEffect": ()=>ctx.revert()
-            })["CuratedTabsSection.useEffect"];
+            });
         }
-    }["CuratedTabsSection.useEffect"], [
-        activeTab
-    ]);
+    }["CuratedTabsSection.useGSAP"], {
+        scope: gridRef,
+        dependencies: [
+            activeTab
+        ],
+        revertOnUpdate: true
+    });
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$motion$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ScrollReveal"], {
         as: "section",
         className: "section-block page-shell",
@@ -1020,27 +1042,27 @@ function CuratedTabsSection({ allProducts }) {
                                 children: "CURATED EDIT"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/home-showcase.tsx",
-                                lineNumber: 71,
+                                lineNumber: 84,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                 children: "Explore Signature Pieces"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/home-showcase.tsx",
-                                lineNumber: 72,
+                                lineNumber: 85,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 children: "Hand-selected items designed to effortlessly elevate your everyday wardrobe."
                             }, void 0, false, {
                                 fileName: "[project]/src/components/home-showcase.tsx",
-                                lineNumber: 73,
+                                lineNumber: 86,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/home-showcase.tsx",
-                        lineNumber: 70,
+                        lineNumber: 83,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1058,14 +1080,14 @@ function CuratedTabsSection({ allProducts }) {
                                         size: 15
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/home-showcase.tsx",
-                                        lineNumber: 85,
+                                        lineNumber: 98,
                                         columnNumber: 13
                                     }, this),
                                     " Trending"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/home-showcase.tsx",
-                                lineNumber: 77,
+                                lineNumber: 90,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1080,14 +1102,14 @@ function CuratedTabsSection({ allProducts }) {
                                         size: 15
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/home-showcase.tsx",
-                                        lineNumber: 95,
+                                        lineNumber: 108,
                                         columnNumber: 13
                                     }, this),
                                     " Top Rated"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/home-showcase.tsx",
-                                lineNumber: 87,
+                                lineNumber: 100,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1102,14 +1124,14 @@ function CuratedTabsSection({ allProducts }) {
                                         size: 15
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/home-showcase.tsx",
-                                        lineNumber: 105,
+                                        lineNumber: 118,
                                         columnNumber: 13
                                     }, this),
                                     " New Arrivals"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/home-showcase.tsx",
-                                lineNumber: 97,
+                                lineNumber: 110,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1124,26 +1146,26 @@ function CuratedTabsSection({ allProducts }) {
                                         size: 15
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/home-showcase.tsx",
-                                        lineNumber: 115,
+                                        lineNumber: 128,
                                         columnNumber: 13
                                     }, this),
                                     " Special Offers"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/home-showcase.tsx",
-                                lineNumber: 107,
+                                lineNumber: 120,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/home-showcase.tsx",
-                        lineNumber: 76,
+                        lineNumber: 89,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/home-showcase.tsx",
-                lineNumber: 69,
+                lineNumber: 82,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1153,12 +1175,12 @@ function CuratedTabsSection({ allProducts }) {
                         product: product
                     }, product.id, false, {
                         fileName: "[project]/src/components/home-showcase.tsx",
-                        lineNumber: 122,
+                        lineNumber: 135,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/src/components/home-showcase.tsx",
-                lineNumber: 120,
+                lineNumber: 133,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1174,28 +1196,32 @@ function CuratedTabsSection({ allProducts }) {
                             size: 16
                         }, void 0, false, {
                             fileName: "[project]/src/components/home-showcase.tsx",
-                            lineNumber: 128,
+                            lineNumber: 141,
                             columnNumber: 64
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/home-showcase.tsx",
-                    lineNumber: 127,
+                    lineNumber: 140,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/home-showcase.tsx",
-                lineNumber: 126,
+                lineNumber: 139,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/home-showcase.tsx",
-        lineNumber: 68,
+        lineNumber: 81,
         columnNumber: 5
     }, this);
 }
-_s(CuratedTabsSection, "y9gyB7Fl5UfHo7Thfs8a0maIC7E=");
+_s(CuratedTabsSection, "JH9YwqcpXLkN2e9MWTDA0Pd+4mc=", false, function() {
+    return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$gsap$2f$react$2f$src$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useGSAP"]
+    ];
+});
 _c1 = CuratedTabsSection;
 var _c, _c1;
 __turbopack_context__.k.register(_c, "FlashDealsSection");

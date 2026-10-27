@@ -301,7 +301,7 @@ export default function Home() {
       </ScrollReveal>
 
       {/* 10. NEWSLETTER VIP CLUB */}
-      <ScrollReveal as="section" className="newsletter-band">
+      <ScrollReveal as="section" className="newsletter-band reveal-stagger">
         <div className="page-shell newsletter-inner">
           <div className="newsletter-copy">
             <span className="eyebrow">VIP PRIVILEGES</span>

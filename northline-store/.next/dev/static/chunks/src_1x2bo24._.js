@@ -14,6 +14,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/navigation.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$up$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowUp$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/arrow-up.mjs [app-client] (ecmascript) <export default as ArrowUp>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$gsap$2f$react$2f$src$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/@gsap/react/src/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$gsap$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/src/lib/gsap.ts [app-client] (ecmascript) <locals>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__ = __turbopack_context__.i("[project]/node_modules/gsap/index.js [app-client] (ecmascript) <locals> <export default as gsap>");
 ;
@@ -23,65 +24,69 @@ var _s = __turbopack_context__.k.signature(), _s1 = __turbopack_context__.k.sign
 ;
 ;
 ;
+;
 function ScrollReveal({ children, className = "", as = "div", delay = 0, id, "aria-label": ariaLabel }) {
     _s();
     const elementRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
-        "ScrollReveal.useEffect": ()=>{
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$gsap$2f$react$2f$src$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useGSAP"])({
+        "ScrollReveal.useGSAP": ()=>{
             const element = elementRef.current;
-            if (!element) return;
+            if (!element) return undefined;
             if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$gsap$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isReducedMotion"])()) {
                 element.classList.add("is-visible");
-                return;
+                return undefined;
             }
-            const ctx = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].context({
-                "ScrollReveal.useEffect.ctx": ()=>{
-                    const isStaggered = element.classList.contains("reveal-stagger") || element.querySelector(".product-card") || element.querySelector(".arolax-collection-card") || element.querySelector(".cat-card") || element.querySelector(".review-card");
-                    const hasProducts = element.querySelector(".product-card") !== null;
-                    if (isStaggered) {
-                        let items = Array.from(element.querySelectorAll(".product-card, .arolax-collection-card, .cat-card, .review-card, .feature-item, .promo-card, .reveal-item"));
-                        if (items.length === 0) {
-                            items = Array.from(element.children);
-                        }
-                        if (items.length === 0) {
-                            items = [
-                                element
-                            ];
-                        }
-                        // Hide initially in GSAP context (preserves SSR visibility if JS fails)
-                        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].set(element, {
-                            opacity: 1
-                        });
-                        element.classList.add("is-visible");
-                        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].fromTo(items, {
-                            opacity: 0,
-                            y: 18
-                        }, {
-                            opacity: 1,
-                            y: 0,
-                            duration: 0.55,
-                            stagger: 0.07,
-                            ease: "power2.out",
-                            delay: delay / 1000,
-                            scrollTrigger: hasProducts ? {
-                                trigger: element,
-                                start: "top 88%",
-                                end: "bottom 12%",
-                                toggleActions: "restart none restart none"
-                            } : {
-                                trigger: element,
-                                start: "top 88%",
-                                once: true
-                            }
-                        });
-                        if (element.classList.contains("promo-banners-strip")) {
-                            const visuals = element.querySelectorAll(".promo-card-visual");
-                            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].fromTo(visuals, {
-                                clipPath: "inset(0 100% 0 0)"
+            let promoMedia;
+            const isStaggered = element.classList.contains("reveal-stagger") || element.classList.contains("promo-banners-strip") || element.querySelector(".product-card") || element.querySelector(".arolax-collection-card") || element.querySelector(".cat-card") || element.querySelector(".category-tile, .category-hero-image, .review-card");
+            const hasProducts = element.querySelector(".product-card") !== null;
+            const hasCategories = element.querySelector(".arolax-collection-card, .cat-card, .category-tile, .category-hero-image") !== null;
+            const isMobile = window.matchMedia("(max-width: 640px)").matches;
+            if (isStaggered) {
+                let items = Array.from(element.querySelectorAll(".product-card, .arolax-collection-card, .cat-card, .category-tile, .review-card, .feature-item, .promo-card, .reveal-item, .newsletter-copy, .newsletter-form"));
+                if (items.length === 0) {
+                    items = Array.from(element.children);
+                }
+                if (items.length === 0) {
+                    items = [
+                        element
+                    ];
+                }
+                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].set(element, {
+                    opacity: 1
+                });
+                element.classList.add("is-visible");
+                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].fromTo(items, {
+                    opacity: 0,
+                    y: isMobile ? 12 : 18
+                }, {
+                    opacity: 1,
+                    y: 0,
+                    duration: isMobile ? 0.42 : 0.55,
+                    stagger: hasProducts && isMobile ? 0.035 : 0.07,
+                    ease: "power2.out",
+                    delay: delay / 1000,
+                    scrollTrigger: hasProducts ? {
+                        trigger: element,
+                        start: "top 88%",
+                        end: "bottom 12%",
+                        toggleActions: "restart none restart none"
+                    } : {
+                        trigger: element,
+                        start: "top 88%",
+                        once: true
+                    }
+                });
+                if (hasCategories) {
+                    const imageMasks = element.querySelectorAll(".arolax-card-image-wrap, .cat-card-image-wrap, .category-tile, .category-hero-image");
+                    imageMasks.forEach({
+                        "ScrollReveal.useGSAP": (image, index)=>{
+                            const fromClip = index % 2 === 0 ? "inset(0 100% 0 0)" : "inset(0 0 0 100%)";
+                            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].fromTo(image, {
+                                clipPath: fromClip
                             }, {
-                                clipPath: "inset(0 0% 0 0)",
-                                duration: 0.9,
-                                stagger: 0.16,
+                                clipPath: "inset(0 0 0 0)",
+                                duration: isMobile ? 0.55 : 0.75,
+                                delay: isMobile ? index * 0.035 : index * 0.07,
                                 ease: "power2.inOut",
                                 scrollTrigger: {
                                     trigger: element,
@@ -90,39 +95,91 @@ function ScrollReveal({ children, className = "", as = "div", delay = 0, id, "ar
                                 }
                             });
                         }
-                    } else {
-                        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].fromTo(element, {
-                            opacity: 0,
-                            y: 22
-                        }, {
-                            opacity: 1,
-                            y: 0,
-                            duration: 0.6,
-                            ease: "power2.out",
-                            delay: delay / 1000,
-                            scrollTrigger: {
-                                trigger: element,
-                                start: "top 88%",
-                                once: true
-                            },
-                            onComplete: {
-                                "ScrollReveal.useEffect.ctx": ()=>{
-                                    element.classList.add("is-visible");
+                    }["ScrollReveal.useGSAP"]);
+                    const categoryTitles = element.querySelectorAll(".arolax-card-pill-btn > span:first-child, .cat-card-details h3, .category-label strong");
+                    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].fromTo(categoryTitles, {
+                        opacity: 0,
+                        y: 12
+                    }, {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.42,
+                        stagger: isMobile ? 0.04 : 0.07,
+                        delay: 0.12,
+                        ease: "power2.out",
+                        scrollTrigger: {
+                            trigger: element,
+                            start: "top 88%",
+                            once: true
+                        }
+                    });
+                }
+                if (element.classList.contains("promo-banners-strip")) {
+                    const visuals = element.querySelectorAll(".promo-card-visual");
+                    const images = element.querySelectorAll(".promo-card-visual img");
+                    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].fromTo(visuals, {
+                        clipPath: "inset(0 100% 0 0)"
+                    }, {
+                        clipPath: "inset(0 0% 0 0)",
+                        duration: 0.9,
+                        stagger: 0.16,
+                        ease: "power2.inOut",
+                        scrollTrigger: {
+                            trigger: element,
+                            start: "top 88%",
+                            once: true
+                        }
+                    });
+                    promoMedia = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].matchMedia();
+                    promoMedia.add("(min-width: 768px)", {
+                        "ScrollReveal.useGSAP": ()=>{
+                            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].to(images, {
+                                yPercent: -5,
+                                ease: "none",
+                                scrollTrigger: {
+                                    trigger: element,
+                                    start: "top bottom",
+                                    end: "bottom top",
+                                    scrub: 0.6,
+                                    invalidateOnRefresh: true
                                 }
-                            }["ScrollReveal.useEffect.ctx"]
-                        });
-                    }
+                            });
+                        }
+                    }["ScrollReveal.useGSAP"]);
                 }
-            }["ScrollReveal.useEffect.ctx"], element);
+            } else {
+                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].fromTo(element, {
+                    opacity: 0,
+                    y: 22
+                }, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.6,
+                    ease: "power2.out",
+                    delay: delay / 1000,
+                    scrollTrigger: {
+                        trigger: element,
+                        start: "top 88%",
+                        once: true
+                    },
+                    onComplete: {
+                        "ScrollReveal.useGSAP": ()=>{
+                            element.classList.add("is-visible");
+                        }
+                    }["ScrollReveal.useGSAP"]
+                });
+            }
             return ({
-                "ScrollReveal.useEffect": ()=>{
-                    ctx.revert();
-                }
-            })["ScrollReveal.useEffect"];
+                "ScrollReveal.useGSAP": ()=>promoMedia?.revert()
+            })["ScrollReveal.useGSAP"];
         }
-    }["ScrollReveal.useEffect"], [
-        delay
-    ]);
+    }["ScrollReveal.useGSAP"], {
+        scope: elementRef,
+        dependencies: [
+            delay
+        ],
+        revertOnUpdate: true
+    });
     const classNames = `scroll-reveal${className ? ` ${className}` : ""}`;
     const style = {
         "--reveal-delay": `${delay}ms`
@@ -139,7 +196,7 @@ function ScrollReveal({ children, className = "", as = "div", delay = 0, id, "ar
             children: children
         }, void 0, false, {
             fileName: "[project]/src/components/motion.tsx",
-            lineNumber: 141,
+            lineNumber: 204,
             columnNumber: 7
         }, this);
     }
@@ -154,57 +211,57 @@ function ScrollReveal({ children, className = "", as = "div", delay = 0, id, "ar
         children: children
     }, void 0, false, {
         fileName: "[project]/src/components/motion.tsx",
-        lineNumber: 156,
+        lineNumber: 219,
         columnNumber: 5
     }, this);
 }
-_s(ScrollReveal, "CKe/C9l/PZDcdMrjDfTWxieUegY=");
+_s(ScrollReveal, "AAL48gGA8YKg7IpHojjGrGu12/s=", false, function() {
+    return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$gsap$2f$react$2f$src$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useGSAP"]
+    ];
+});
 _c = ScrollReveal;
 function RouteTransition({ children }) {
     _s1();
     const pathname = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["usePathname"])();
     const containerRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
-        "RouteTransition.useEffect": ()=>{
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$gsap$2f$react$2f$src$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useGSAP"])({
+        "RouteTransition.useGSAP": ()=>{
             const el = containerRef.current;
             if (!el || (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$gsap$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isReducedMotion"])()) return;
-            const ctx = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].context({
-                "RouteTransition.useEffect.ctx": ()=>{
-                    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].fromTo(el, {
-                        opacity: 0,
-                        y: 16,
-                        scale: 0.995
-                    }, {
-                        opacity: 1,
-                        y: 0,
-                        scale: 1,
-                        duration: 0.48,
-                        ease: "power3.out"
-                    });
-                }
-            }["RouteTransition.useEffect.ctx"], el);
-            return ({
-                "RouteTransition.useEffect": ()=>{
-                    ctx.revert();
-                }
-            })["RouteTransition.useEffect"];
+            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].fromTo(el, {
+                opacity: 0,
+                y: 16,
+                scale: 0.995
+            }, {
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                duration: 0.48,
+                ease: "power3.out"
+            });
         }
-    }["RouteTransition.useEffect"], [
-        pathname
-    ]);
+    }["RouteTransition.useGSAP"], {
+        scope: containerRef,
+        dependencies: [
+            pathname
+        ],
+        revertOnUpdate: true
+    });
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         ref: containerRef,
         className: "route-transition",
         children: children
     }, pathname, false, {
         fileName: "[project]/src/components/motion.tsx",
-        lineNumber: 198,
+        lineNumber: 255,
         columnNumber: 5
     }, this);
 }
-_s1(RouteTransition, "hU92UUchb8zuqBnV3VAEaZk6dEU=", false, function() {
+_s1(RouteTransition, "hVqwAgwt11bQnpUN6T0nec9lZho=", false, function() {
     return [
-        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["usePathname"]
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["usePathname"],
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$gsap$2f$react$2f$src$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useGSAP"]
     ];
 });
 _c1 = RouteTransition;
@@ -226,32 +283,27 @@ function BackToTop() {
             })["BackToTop.useEffect"];
         }
     }["BackToTop.useEffect"], []);
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
-        "BackToTop.useEffect": ()=>{
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$gsap$2f$react$2f$src$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useGSAP"])({
+        "BackToTop.useGSAP": ()=>{
             const btn = buttonRef.current;
             if (!btn || !visible || (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$gsap$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isReducedMotion"])()) return;
-            const ctx = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].context({
-                "BackToTop.useEffect.ctx": ()=>{
-                    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].fromTo(btn, {
-                        opacity: 0,
-                        scale: 0.8
-                    }, {
-                        opacity: 1,
-                        scale: 1,
-                        duration: 0.25,
-                        ease: "back.out(1.8)"
-                    });
-                }
-            }["BackToTop.useEffect.ctx"], btn);
-            return ({
-                "BackToTop.useEffect": ()=>{
-                    ctx.revert();
-                }
-            })["BackToTop.useEffect"];
+            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].fromTo(btn, {
+                opacity: 0,
+                scale: 0.8
+            }, {
+                opacity: 1,
+                scale: 1,
+                duration: 0.25,
+                ease: "back.out(1.8)"
+            });
         }
-    }["BackToTop.useEffect"], [
-        visible
-    ]);
+    }["BackToTop.useGSAP"], {
+        scope: buttonRef,
+        dependencies: [
+            visible
+        ],
+        revertOnUpdate: true
+    });
     if (!visible) return null;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
         ref: buttonRef,
@@ -269,16 +321,20 @@ function BackToTop() {
             size: 17
         }, void 0, false, {
             fileName: "[project]/src/components/motion.tsx",
-            lineNumber: 250,
+            lineNumber: 301,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/motion.tsx",
-        lineNumber: 240,
+        lineNumber: 291,
         columnNumber: 5
     }, this);
 }
-_s2(BackToTop, "ClHJuN6H1HXqeRbKJmlns2Dh6Jk=");
+_s2(BackToTop, "PeFkrPIW1xG5MveLy1o3NEjMAwQ=", false, function() {
+    return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$gsap$2f$react$2f$src$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useGSAP"]
+    ];
+});
 _c2 = BackToTop;
 var _c, _c1, _c2;
 __turbopack_context__.k.register(_c, "ScrollReveal");
@@ -3273,11 +3329,13 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/node_modules/gsap/index.js [app-client] (ecmascript) <locals>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$ScrollTrigger$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/gsap/ScrollTrigger.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$gsap$2f$react$2f$src$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/@gsap/react/src/index.js [app-client] (ecmascript)");
+;
 ;
 ;
 // Register ScrollTrigger safely in browser environments
 if ("TURBOPACK compile-time truthy", 1) {
-    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].registerPlugin(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$ScrollTrigger$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ScrollTrigger"]);
+    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].registerPlugin(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$ScrollTrigger$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ScrollTrigger"], __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$gsap$2f$react$2f$src$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useGSAP"]);
 }
 function isReducedMotion() {
     if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable

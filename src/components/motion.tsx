@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import type { CSSProperties, ReactNode } from "react";
 import { usePathname } from "next/navigation";
 import { ArrowUp } from "lucide-react";
+import { useGSAP } from "@gsap/react";
 import { gsap, isReducedMotion } from "@/lib/gsap";
 
 type RevealProps = {
@@ -25,77 +26,85 @@ export function ScrollReveal({
 }: RevealProps) {
   const elementRef = useRef<HTMLElement>(null);
 
-  useEffect(() => {
+  useGSAP(() => {
     const element = elementRef.current;
-    if (!element) return;
+    if (!element) return undefined;
 
     if (isReducedMotion()) {
       element.classList.add("is-visible");
-      return;
+      return undefined;
     }
 
-    const ctx = gsap.context(() => {
-      const isStaggered =
-        element.classList.contains("reveal-stagger") ||
-        element.querySelector(".product-card") ||
-        element.querySelector(".arolax-collection-card") ||
-        element.querySelector(".cat-card") ||
-        element.querySelector(".review-card");
-      const hasProducts = element.querySelector(".product-card") !== null;
+    let promoMedia: ReturnType<typeof gsap.matchMedia> | undefined;
+    const isStaggered =
+      element.classList.contains("reveal-stagger") ||
+      element.classList.contains("promo-banners-strip") ||
+      element.querySelector(".product-card") ||
+      element.querySelector(".arolax-collection-card") ||
+      element.querySelector(".cat-card") ||
+      element.querySelector(".category-tile, .category-hero-image, .review-card");
+    const hasProducts = element.querySelector(".product-card") !== null;
+    const hasCategories = element.querySelector(
+      ".arolax-collection-card, .cat-card, .category-tile, .category-hero-image"
+    ) !== null;
+    const isMobile = window.matchMedia("(max-width: 640px)").matches;
 
-      if (isStaggered) {
-        let items = Array.from(
-          element.querySelectorAll<HTMLElement>(
-            ".product-card, .arolax-collection-card, .cat-card, .review-card, .feature-item, .promo-card, .reveal-item"
-          )
-        );
+    if (isStaggered) {
+      let items = Array.from(
+        element.querySelectorAll<HTMLElement>(
+          ".product-card, .arolax-collection-card, .cat-card, .category-tile, .review-card, .feature-item, .promo-card, .reveal-item, .newsletter-copy, .newsletter-form"
+        )
+      );
 
-        if (items.length === 0) {
-          items = Array.from(element.children) as HTMLElement[];
+      if (items.length === 0) {
+        items = Array.from(element.children) as HTMLElement[];
+      }
+
+      if (items.length === 0) {
+        items = [element];
+      }
+
+      gsap.set(element, { opacity: 1 });
+      element.classList.add("is-visible");
+
+      gsap.fromTo(
+        items,
+        { opacity: 0, y: isMobile ? 12 : 18 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: isMobile ? 0.42 : 0.55,
+          stagger: hasProducts && isMobile ? 0.035 : 0.07,
+          ease: "power2.out",
+          delay: delay / 1000,
+          scrollTrigger: hasProducts
+            ? {
+                trigger: element,
+                start: "top 88%",
+                end: "bottom 12%",
+                toggleActions: "restart none restart none",
+              }
+            : {
+                trigger: element,
+                start: "top 88%",
+                once: true,
+              },
         }
+      );
 
-        if (items.length === 0) {
-          items = [element];
-        }
-
-        // Hide initially in GSAP context (preserves SSR visibility if JS fails)
-        gsap.set(element, { opacity: 1 });
-        element.classList.add("is-visible");
-
-        gsap.fromTo(
-          items,
-          { opacity: 0, y: 18 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.55,
-            stagger: 0.07,
-            ease: "power2.out",
-            delay: delay / 1000,
-            scrollTrigger: hasProducts
-              ? {
-                  trigger: element,
-                  start: "top 88%",
-                  end: "bottom 12%",
-                  toggleActions: "restart none restart none",
-                }
-              : {
-                  trigger: element,
-                  start: "top 88%",
-                  once: true,
-                },
-          }
+      if (hasCategories) {
+        const imageMasks = element.querySelectorAll<HTMLElement>(
+          ".arolax-card-image-wrap, .cat-card-image-wrap, .category-tile, .category-hero-image"
         );
-
-        if (element.classList.contains("promo-banners-strip")) {
-          const visuals = element.querySelectorAll<HTMLElement>(".promo-card-visual");
+        imageMasks.forEach((image, index) => {
+          const fromClip = index % 2 === 0 ? "inset(0 100% 0 0)" : "inset(0 0 0 100%)";
           gsap.fromTo(
-            visuals,
-            { clipPath: "inset(0 100% 0 0)" },
+            image,
+            { clipPath: fromClip },
             {
-              clipPath: "inset(0 0% 0 0)",
-              duration: 0.9,
-              stagger: 0.16,
+              clipPath: "inset(0 0 0 0)",
+              duration: isMobile ? 0.55 : 0.75,
+              delay: isMobile ? index * 0.035 : index * 0.07,
               ease: "power2.inOut",
               scrollTrigger: {
                 trigger: element,
@@ -104,34 +113,88 @@ export function ScrollReveal({
               },
             }
           );
-        }
-      } else {
+        });
+
+        const categoryTitles = element.querySelectorAll<HTMLElement>(
+          ".arolax-card-pill-btn > span:first-child, .cat-card-details h3, .category-label strong"
+        );
         gsap.fromTo(
-          element,
-          { opacity: 0, y: 22 },
+          categoryTitles,
+          { opacity: 0, y: 12 },
           {
             opacity: 1,
             y: 0,
-            duration: 0.6,
+            duration: 0.42,
+            stagger: isMobile ? 0.04 : 0.07,
+            delay: 0.12,
             ease: "power2.out",
-            delay: delay / 1000,
             scrollTrigger: {
               trigger: element,
               start: "top 88%",
               once: true,
             },
-            onComplete: () => {
-              element.classList.add("is-visible");
-            },
           }
         );
       }
-    }, element);
 
-    return () => {
-      ctx.revert();
-    };
-  }, [delay]);
+      if (element.classList.contains("promo-banners-strip")) {
+        const visuals = element.querySelectorAll<HTMLElement>(".promo-card-visual");
+        const images = element.querySelectorAll<HTMLElement>(".promo-card-visual img");
+        gsap.fromTo(
+          visuals,
+          { clipPath: "inset(0 100% 0 0)" },
+          {
+            clipPath: "inset(0 0% 0 0)",
+            duration: 0.9,
+            stagger: 0.16,
+            ease: "power2.inOut",
+            scrollTrigger: {
+              trigger: element,
+              start: "top 88%",
+              once: true,
+            },
+          }
+        );
+
+        promoMedia = gsap.matchMedia();
+        promoMedia.add("(min-width: 768px)", () => {
+          gsap.to(images, {
+            yPercent: -5,
+            ease: "none",
+            scrollTrigger: {
+              trigger: element,
+              start: "top bottom",
+              end: "bottom top",
+              scrub: 0.6,
+              invalidateOnRefresh: true,
+            },
+          });
+        });
+      }
+    } else {
+      gsap.fromTo(
+        element,
+        { opacity: 0, y: 22 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: "power2.out",
+          delay: delay / 1000,
+          scrollTrigger: {
+            trigger: element,
+            start: "top 88%",
+            once: true,
+          },
+          onComplete: () => {
+            element.classList.add("is-visible");
+          },
+        }
+      );
+    }
+
+    return () => promoMedia?.revert();
+  }, { scope: elementRef, dependencies: [delay], revertOnUpdate: true });
 
   const classNames = `scroll-reveal${className ? ` ${className}` : ""}`;
   const style = { "--reveal-delay": `${delay}ms` } as CSSProperties;
@@ -171,28 +234,22 @@ export function RouteTransition({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const containerRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  useGSAP(() => {
     const el = containerRef.current;
     if (!el || isReducedMotion()) return;
 
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        el,
-        { opacity: 0, y: 16, scale: 0.995 },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.48,
-          ease: "power3.out",
-        }
-      );
-    }, el);
-
-    return () => {
-      ctx.revert();
-    };
-  }, [pathname]);
+    gsap.fromTo(
+      el,
+      { opacity: 0, y: 16, scale: 0.995 },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.48,
+        ease: "power3.out",
+      }
+    );
+  }, { scope: containerRef, dependencies: [pathname], revertOnUpdate: true });
 
   return (
     <div ref={containerRef} className="route-transition" key={pathname}>
@@ -212,27 +269,21 @@ export function BackToTop() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => {
+  useGSAP(() => {
     const btn = buttonRef.current;
     if (!btn || !visible || isReducedMotion()) return;
 
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        btn,
-        { opacity: 0, scale: 0.8 },
-        {
-          opacity: 1,
-          scale: 1,
-          duration: 0.25,
-          ease: "back.out(1.8)",
-        }
-      );
-    }, btn);
-
-    return () => {
-      ctx.revert();
-    };
-  }, [visible]);
+    gsap.fromTo(
+      btn,
+      { opacity: 0, scale: 0.8 },
+      {
+        opacity: 1,
+        scale: 1,
+        duration: 0.25,
+        ease: "back.out(1.8)",
+      }
+    );
+  }, { scope: buttonRef, dependencies: [visible], revertOnUpdate: true });
 
   if (!visible) return null;
 

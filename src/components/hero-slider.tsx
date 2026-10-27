@@ -4,6 +4,7 @@ import { useEffect, useState, useCallback, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { useGSAP } from "@gsap/react";
 import { useCurrency } from "@/context/currency-context";
 import { animateButtonPress, gsap, isReducedMotion } from "@/lib/gsap";
 
@@ -63,6 +64,8 @@ export function HeroSlider() {
 
   // Continuous auto-slide every 4.5 seconds
   useEffect(() => {
+    if (isReducedMotion()) return;
+
     timerRef.current = setInterval(() => {
       nextSlide();
     }, 4500);
@@ -72,20 +75,28 @@ export function HeroSlider() {
     };
   }, [nextSlide, currentIndex]);
 
-  useEffect(() => {
+  useGSAP(() => {
     const content = contentRef.current;
     if (!content || isReducedMotion()) return;
 
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        content,
-        { opacity: 0, y: 12 },
-        { opacity: 1, y: 0, duration: 0.55, ease: "power2.out" }
-      );
-    }, content);
+    const slideContent = content.querySelectorAll<HTMLElement>(
+      ".arolax-hero-eyebrow, .arolax-hero-title, .arolax-hero-subtitle, .arolax-hero-cta-row"
+    );
+    const activeImage = content.parentElement?.querySelector<HTMLElement>(
+      ".arolax-hero-slide-layer.is-active .arolax-hero-image"
+    );
 
-    return () => ctx.revert();
-  }, [currentIndex]);
+    gsap.fromTo(
+      slideContent,
+      { opacity: 0, y: 16 },
+      { opacity: 1, y: 0, duration: 0.48, stagger: 0.08, ease: "power2.out" }
+    );
+
+    if (activeImage) {
+      gsap.fromTo(activeImage, { scale: 1.04 }, { scale: 1.015, duration: 4.5, ease: "none" });
+    }
+
+  }, { scope: contentRef, dependencies: [currentIndex], revertOnUpdate: true });
 
   const current = slides[currentIndex];
 
