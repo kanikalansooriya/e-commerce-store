@@ -22,7 +22,6 @@
 
 @layer theme {
   :root, :host {
-    --color-amber-400: #fcbb00;
     --color-amber-500: #f99c00;
     --color-emerald-500: #00bb7f;
     --color-emerald-600: #009767;
@@ -39,7 +38,6 @@
 
   @supports (color: lab(0% 0 0)) {
     :root, :host {
-      --color-amber-400: lab(80.1641% 16.6016 99.2089);
       --color-amber-500: lab(72.7183% 31.8672 97.9407);
       --color-emerald-500: lab(66.9756% -58.27 19.5419);
       --color-emerald-600: lab(55.0481% -49.9246 15.93);
@@ -378,10 +376,6 @@
   .font-semibold {
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
-  }
-
-  .text-amber-400 {
-    color: var(--color-amber-400);
   }
 
   .text-amber-500 {

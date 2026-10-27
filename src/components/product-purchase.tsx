@@ -20,7 +20,7 @@ export function ProductPurchase({ product }: { product: Product }) {
 
   return (
     <div className="purchase-panel">
-      <div className="detail-category">{product.category} <span aria-hidden="true">/</span> AURA edit</div>
+      <div className="detail-category">{product.category} <span aria-hidden="true">/</span> AROLAX Edit</div>
       <h1>{product.name}</h1>
       <div className="detail-rating"><span className="stars">★★★★★</span> {product.rating} <span>({product.reviewCount} considered reviews)</span></div>
       <div className="detail-price-row">

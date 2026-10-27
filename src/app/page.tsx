@@ -15,17 +15,17 @@ import { FlashDealsSection, CuratedTabsSection } from "@/components/home-showcas
 import { NewsletterSignup } from "@/components/newsletter-signup";
 import { products } from "@/lib/products";
 
-// Top Collections cards matching the user reference screenshot
+// Top Collections cards linked to their dedicated category pages
 const topCollections = [
   {
     name: "Top T-Shirt",
-    href: "/shop?subcategory=Tops%20%26%20T-Shirts",
+    href: "/category/tops-blouses",
     image: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=85",
     alt: "Model wearing stylish top t-shirt",
   },
   {
     name: "Sweatshirt",
-    href: "/shop?subcategory=Jackets%20%26%20Cardigans",
+    href: "/category/knitwear",
     image: "https://images.unsplash.com/photo-1618244972963-dbee1a7edc95?auto=format&fit=crop&w=800&q=85",
     alt: "Model wearing cozy striped sweatshirt knitwear",
   },
@@ -37,31 +37,31 @@ const topCollections = [
   },
   {
     name: "Shirts",
-    href: "/shop?subcategory=Shirts%20%26%20Blouses",
+    href: "/category/tops-blouses",
     image: "https://images.unsplash.com/photo-1551803091-e20673f15770?auto=format&fit=crop&w=800&q=85",
     alt: "Model wearing textured knit polo shirt and skirt",
   },
   {
     name: "Blazers",
-    href: "/shop?category=Clothing",
-    image: "https://images.unsplash.com/photo-1584273143981-41c073dfe8f8?auto=format&fit=crop&w=800&q=85",
-    alt: "Model in pristine tailored white blazer",
+    href: "/category/jackets-coats",
+    image: "/images/black-blazer-suit.jpg",
+    alt: "Model wearing architectural black tailored blazer suit",
   },
   {
     name: "Jeans",
-    href: "/shop?subcategory=Jeans%20%26%20Pants",
-    image: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=800&q=85",
-    alt: "Model wearing classic fit denim jeans",
+    href: "/category/pants-skirts",
+    image: "/images/jeans-tank.jpg",
+    alt: "Model wearing classic straight denim jeans with white tank top",
   },
   {
-    name: "Tops",
-    href: "/category/tops-blouses",
-    image: "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=85",
-    alt: "Model wearing elegant white v-neck summer top",
+    name: "Trousers",
+    href: "/category/pants-skirts",
+    image: "/images/grey-pleated-trousers.jpg",
+    alt: "Tailored Italian grey pleated wide-leg trousers",
   },
   {
     name: "Tank Tops",
-    href: "/shop?category=Clothing",
+    href: "/category/tops-blouses",
     image: "https://images.unsplash.com/photo-1506152983158-b4a74a01c721?auto=format&fit=crop&w=800&q=85",
     alt: "Model wearing minimalist ribbed white square neck tank top",
   },

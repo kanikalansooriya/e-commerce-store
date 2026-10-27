@@ -77,6 +77,81 @@ export const rawProducts: Omit<Product, "id">[] = [
   // 1. CLOTHING (Dresses, Tops, Blouses, Pants, Skirts, Loungewear, Kids)
   // =========================================================================
   {
+    slug: "atelier-sculptural-tailored-black-blazer-suit",
+    name: "Atelier Sculptural Tailored Black Blazer Suit",
+    category: "Clothing",
+    subcategory: "Jackets & Cardigans",
+    brand: "AROLAX Atelier",
+    price: 185,
+    compareAt: 220,
+    description: "Architectural off-the-shoulder tailoring with sharp shoulders and fluid wide-leg cut. Handcrafted from luxury double-faced wool crepe.",
+    image: "/images/black-blazer-suit.jpg",
+    gallery: [
+      "/images/black-blazer-suit.jpg"
+    ],
+    rating: 5.0,
+    reviewCount: 42,
+    stock: 12,
+    availability: "In stock",
+    sku: "ARX-BLZ-001",
+    tags: ["blazer", "suit", "atelier", "tailoring", "bestseller", "luxury"],
+    attributes: { Material: "Virgin Wool & Silk Crepe", Fit: "Sculptural Tailored", Color: "Midnight Black" },
+    isNew: true,
+    isFeatured: true,
+    isSale: false,
+    createdAt: "2026-10-25"
+  },
+  {
+    slug: "high-waist-classic-denim-straight-jeans",
+    name: "High-Waist Classic Denim Straight Jeans",
+    category: "Clothing",
+    subcategory: "Jeans & Pants",
+    brand: "AROLAX Essentials",
+    price: 98,
+    compareAt: 120,
+    description: "Authentic premium denim with high-rise waist and clean straight leg silhouette. Comfortable stretch retention for effortlessly elevated everyday styling.",
+    image: "/images/jeans-tank.jpg",
+    gallery: [
+      "/images/jeans-tank.jpg"
+    ],
+    rating: 4.9,
+    reviewCount: 38,
+    stock: 18,
+    availability: "In stock",
+    sku: "ARX-JNS-001",
+    tags: ["jeans", "denim", "high-waist", "pants", "casual", "essentials"],
+    attributes: { Material: "99% Cotton, 1% Elastane", Rise: "High Rise", Fit: "Straight Leg" },
+    isNew: true,
+    isFeatured: true,
+    isSale: true,
+    createdAt: "2026-10-25"
+  },
+  {
+    slug: "italian-pleated-wide-leg-wool-trousers",
+    name: "Italian Pleated Wide-Leg Wool Trousers",
+    category: "Clothing",
+    subcategory: "Jeans & Pants",
+    brand: "AROLAX Atelier",
+    price: 135,
+    compareAt: 160,
+    description: "Impeccably tailored double-pleated grey trousers woven from ultra-fine Italian wool. Features sharp pressed creases and fluid drape.",
+    image: "/images/grey-pleated-trousers.jpg",
+    gallery: [
+      "/images/grey-pleated-trousers.jpg"
+    ],
+    rating: 4.9,
+    reviewCount: 29,
+    stock: 15,
+    availability: "In stock",
+    sku: "ARX-TRS-001",
+    tags: ["trousers", "pants", "wool", "pleated", "tailored", "office"],
+    attributes: { Material: "100% Italian Worsted Wool", Pleat: "Double Pleated", Fit: "Relaxed Wide Leg" },
+    isNew: true,
+    isFeatured: true,
+    isSale: false,
+    createdAt: "2026-10-25"
+  },
+  {
     slug: "silk-charmeuse-midi-slip-dress",
     name: "Silk Charmeuse Bias Cut Midi Dress",
     category: "Clothing",

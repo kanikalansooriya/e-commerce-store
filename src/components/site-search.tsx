@@ -9,7 +9,7 @@ import { useCurrency } from "@/context/currency-context";
 import { categories, products } from "@/lib/products";
 import { gsap, isReducedMotion } from "@/lib/gsap";
 
-const recentStorageKey = "goodform-recent-searches";
+const recentStorageKey = "arolax-recent-searches";
 const popularCategories = categories;
 
 function highlightMatch(text: string, query: string) {

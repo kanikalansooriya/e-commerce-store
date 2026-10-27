@@ -22,7 +22,7 @@ export default function CheckoutPage() {
   function placeOrder(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (!items.length) return;
-    const orderId = `GF-${Date.now().toString(36).toUpperCase()}`;
+    const orderId = `ARX-${Date.now().toString(36).toUpperCase()}`;
     const form = new FormData(event.currentTarget);
     const order = {
       orderId,
@@ -36,7 +36,7 @@ export default function CheckoutPage() {
     };
 
     try {
-      window.sessionStorage.setItem("goodform-last-order", JSON.stringify(order));
+      window.sessionStorage.setItem("arolax-last-order", JSON.stringify(order));
     } catch {
       setError("We couldn't save your order details. Please try again.");
       return;
@@ -64,7 +64,7 @@ export default function CheckoutPage() {
     <div className="page-shell checkout-shell">
       <ScrollReveal className="page-intro checkout-intro">
         <nav className="breadcrumbs" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/cart">Your bag</Link><span>/</span><span aria-current="page">Checkout</span></nav>
-        <h1>Almost yours.</h1><p>A few details and we’ll get your good things on their way.</p>
+        <h1>Finalize Order.</h1><p>A few details and we will prepare your curated pieces for dispatch.</p>
       </ScrollReveal>
       <ScrollReveal as="div" className="checkout-reveal-wrap">
         <form className="checkout-layout" onSubmit={placeOrder}>
@@ -102,13 +102,13 @@ export default function CheckoutPage() {
               type="submit"
               onClick={(e) => animateButtonPress(e.currentTarget)}
             >
-              Place demo order <ArrowRight size={16} />
+              Confirm &amp; Place Order <ArrowRight size={16} />
             </button>
             <div className="secure-note checkout-secure"><LockKeyhole size={14} /> Your details stay private in this demo</div>
           </div>
 
         <aside className="summary-panel checkout-summary">
-          <h2>Your good things <span>{items.reduce((count, item) => count + item.quantity, 0)}</span></h2>
+          <h2>Order Summary <span>{items.reduce((count, item) => count + item.quantity, 0)}</span></h2>
           <div className="checkout-item-list">{items.map((item) => <div className="checkout-item" key={item.id}>
             <div className="checkout-item-image"><Image src={item.image} alt={item.name} fill sizes="56px" /><span>{item.quantity}</span></div>
             <div><strong>{item.name}</strong><small>Qty {item.quantity}</small></div><span>{formatPrice(item.price * item.quantity)}</span>

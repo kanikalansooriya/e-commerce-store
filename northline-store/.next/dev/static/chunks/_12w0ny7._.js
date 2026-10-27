@@ -804,7 +804,7 @@ function ProductPurchase({ product }) {
                         lineNumber: 23,
                         columnNumber: 59
                     }, this),
-                    " AURA edit"
+                    " AROLAX Edit"
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/product-purchase.tsx",

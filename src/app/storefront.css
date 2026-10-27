@@ -1289,6 +1289,46 @@
   font-weight: 700 !important;
 }
 
+/* Active Navigation Highlight */
+.arolax-nav-link.is-active {
+  color: #000000 !important;
+  font-weight: 750 !important;
+  position: relative;
+}
+
+[data-color-mode="dark"] .arolax-nav-link.is-active {
+  color: #ffffff !important;
+}
+
+.arolax-nav-link.is-active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 4px;
+  right: 4px;
+  height: 2.5px;
+  background: #000000;
+  border-radius: 999px;
+}
+
+[data-color-mode="dark"] .arolax-nav-link.is-active::after {
+  background: #ffffff;
+}
+
+.mobile-links-list a.is-active {
+  font-weight: 750 !important;
+  color: #000000 !important;
+  background: rgba(0, 0, 0, 0.05);
+  padding-left: 14px;
+  border-left: 3px solid #000000;
+}
+
+[data-color-mode="dark"] .mobile-links-list a.is-active {
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.08);
+  border-left-color: #ffffff;
+}
+
 /* Dropdown Menu */
 .arolax-nav-dropdown {
   position: absolute;
@@ -1365,6 +1405,65 @@
   display: flex;
   align-items: center;
   gap: 12px;
+}
+
+/* Header Currency Converter Switch */
+.arolax-header-currency-switch {
+  display: inline-flex;
+  align-items: center;
+}
+
+.arolax-header-currency-switch .currency-switch {
+  display: inline-flex;
+  align-items: center;
+  padding: 2.5px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+[data-color-mode="dark"] .arolax-header-currency-switch .currency-switch {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.arolax-header-currency-switch .currency-switch button {
+  min-width: 36px;
+  min-height: 24px;
+  padding: 0 8px;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 999px;
+  border: 0;
+  cursor: pointer;
+  color: #71717a;
+  background: transparent;
+  transition: all 0.2s ease;
+}
+
+.arolax-header-currency-switch .currency-switch button:hover {
+  color: #000000;
+}
+
+[data-color-mode="dark"] .arolax-header-currency-switch .currency-switch button:hover {
+  color: #ffffff;
+}
+
+.arolax-header-currency-switch .currency-switch button[aria-pressed="true"] {
+  background: #000000;
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+}
+
+[data-color-mode="dark"] .arolax-header-currency-switch .currency-switch button[aria-pressed="true"] {
+  background: #ffffff;
+  color: #000000;
+}
+
+.mobile-currency-control {
+  margin: 12px 18px;
+  display: flex;
+  justify-content: center;
 }
 
 .arolax-login-btn {
@@ -1480,7 +1579,7 @@
 }
 
 .arolax-hero-container {
-  width: min(1340px, calc(100% - 32px));
+  width: min(1280px, calc(100% - 48px));
   min-height: 560px;
   margin-inline: auto;
   border-radius: 20px;
@@ -1617,12 +1716,32 @@
 }
 
 .arolax-hero-dot.is-active {
-  width: 24px;
+  width: 28px;
   border-radius: 10px;
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.35);
+  position: relative;
+  overflow: hidden;
 }
 
-/* Right Hero Visual */
+.arolax-dot-progress {
+  position: absolute;
+  inset: 0;
+  background: #ffffff;
+  border-radius: 999px;
+  transform-origin: left;
+  animation: dotFill 4.5s linear infinite;
+}
+
+@keyframes dotFill {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+/* Right Hero Visual with Cinematic Crossfade */
 .arolax-hero-right {
   position: relative;
   width: 100%;
@@ -1636,21 +1755,50 @@
   height: 100%;
 }
 
-.arolax-hero-image {
-  object-fit: cover;
-  object-position: center 25%;
-  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+.arolax-hero-slide-layer {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scale(1.04);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
 }
 
-.arolax-hero-section:hover .arolax-hero-image {
-  transform: scale(1.03);
+.arolax-hero-slide-layer.is-active {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+.arolax-hero-slide-layer .arolax-hero-image {
+  object-fit: cover;
+  object-position: center 25%;
 }
 
 .arolax-hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, #0e1015 0%, rgba(14, 16, 21, 0.4) 30%, transparent 60%);
+  background: linear-gradient(90deg, #0e1015 0%, rgba(14, 16, 21, 0.35) 35%, transparent 65%);
   pointer-events: none;
+  z-index: 3;
+}
+
+@keyframes heroFadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.arolax-hero-eyebrow,
+.arolax-hero-title,
+.arolax-hero-subtitle,
+.arolax-hero-cta-row {
+  animation: heroFadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 /* ============================================================

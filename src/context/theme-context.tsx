@@ -3,7 +3,7 @@
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import type { ReactNode } from "react";
 
-export const themeStorageKey = "goodform-appearance";
+export const themeStorageKey = "arolax-appearance";
 
 export type ThemeSettings = {
   colorMode: "light" | "dark" | "system";
@@ -37,7 +37,7 @@ function validChoice<T extends string>(value: unknown, choices: readonly T[], fa
 function readStoredSettings(): ThemeSettings {
   if (typeof window === "undefined") return defaultThemeSettings;
   try {
-    const stored = window.localStorage.getItem(themeStorageKey);
+    const stored = window.localStorage.getItem(themeStorageKey) || window.localStorage.getItem("goodform-appearance");
     if (!stored) return defaultThemeSettings;
     const value: Partial<ThemeSettings> = JSON.parse(stored);
     return {

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { ChevronDown, Heart, Menu, Search, Settings2, ShoppingBag, UserRound, X } from "lucide-react";
 import { useCart } from "@/context/cart-context";
@@ -39,6 +40,7 @@ function CurrencySwitch({ currency, setCurrency, rateStatus, usdToLkr, className
 }
 
 export function SiteHeader() {
+  const pathname = usePathname();
   const { itemCount } = useCart();
   const { wishlistCount } = useWishlist();
   const { currency, setCurrency, rateStatus, usdToLkr } = useCurrency();
@@ -46,6 +48,13 @@ export function SiteHeader() {
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const isShopActive = pathname === "/shop";
+  const isDressesActive = pathname === "/category/dresses";
+  const isTopsActive = pathname === "/category/tops-blouses";
+  const isBottomsActive = pathname === "/category/pants-skirts";
+  const isSaleActive = pathname === "/category/sale";
+  const isAboutActive = pathname === "/about" || pathname === "/faq";
 
   const bagBadgeRef = useRef<HTMLSpanElement>(null);
   const wishlistBadgeRef = useRef<HTMLSpanElement>(null);
@@ -147,10 +156,14 @@ export function SiteHeader() {
             AROLAX
           </Link>
 
-          {/* Desktop Center Navigation Bar */}
+          {/* Desktop Center Navigation Bar with Active Highlights */}
           <nav className="arolax-desktop-nav" aria-label="Main Navigation">
             <div className="arolax-nav-item has-dropdown">
-              <Link href="/shop" className="arolax-nav-link">
+              <Link
+                href="/shop"
+                className={`arolax-nav-link ${isShopActive ? "is-active" : ""}`}
+                aria-current={isShopActive ? "page" : undefined}
+              >
                 Shop <ChevronDown size={13} className="nav-chevron" />
               </Link>
               <div className="arolax-nav-dropdown">
@@ -166,12 +179,20 @@ export function SiteHeader() {
               </div>
             </div>
 
-            <Link href="/category/dresses" className="arolax-nav-link">
+            <Link
+              href="/category/dresses"
+              className={`arolax-nav-link ${isDressesActive ? "is-active" : ""}`}
+              aria-current={isDressesActive ? "page" : undefined}
+            >
               Dresses
             </Link>
 
             <div className="arolax-nav-item has-dropdown">
-              <Link href="/category/tops-blouses" className="arolax-nav-link">
+              <Link
+                href="/category/tops-blouses"
+                className={`arolax-nav-link ${isTopsActive ? "is-active" : ""}`}
+                aria-current={isTopsActive ? "page" : undefined}
+              >
                 Tops <ChevronDown size={13} className="nav-chevron" />
               </Link>
               <div className="arolax-nav-dropdown">
@@ -182,7 +203,11 @@ export function SiteHeader() {
             </div>
 
             <div className="arolax-nav-item has-dropdown">
-              <Link href="/category/pants-skirts" className="arolax-nav-link">
+              <Link
+                href="/category/pants-skirts"
+                className={`arolax-nav-link ${isBottomsActive ? "is-active" : ""}`}
+                aria-current={isBottomsActive ? "page" : undefined}
+              >
                 Bottoms <ChevronDown size={13} className="nav-chevron" />
               </Link>
               <div className="arolax-nav-dropdown">
@@ -201,12 +226,20 @@ export function SiteHeader() {
               </div>
             </div>
 
-            <Link href="/category/sale" className="arolax-nav-link arolax-sale-link">
+            <Link
+              href="/category/sale"
+              className={`arolax-nav-link arolax-sale-link ${isSaleActive ? "is-active" : ""}`}
+              aria-current={isSaleActive ? "page" : undefined}
+            >
               Sale
             </Link>
 
             <div className="arolax-nav-item has-dropdown">
-              <Link href="/about" className="arolax-nav-link">
+              <Link
+                href="/about"
+                className={`arolax-nav-link ${isAboutActive ? "is-active" : ""}`}
+                aria-current={isAboutActive ? "page" : undefined}
+              >
                 About <ChevronDown size={13} className="nav-chevron" />
               </Link>
               <div className="arolax-nav-dropdown">
@@ -217,8 +250,17 @@ export function SiteHeader() {
             </div>
           </nav>
 
-          {/* Right Action Icons: Login, Search, Wishlist, Cart, Settings */}
+          {/* Right Action Icons: Currency Switcher, Login, Search, Wishlist, Cart, Settings */}
           <div className="arolax-header-actions">
+            {/* LKR / USD Instant Converter Switch in Header */}
+            <CurrencySwitch
+              currency={currency}
+              setCurrency={setCurrency}
+              rateStatus={rateStatus}
+              usdToLkr={usdToLkr}
+              className="arolax-header-currency-switch"
+            />
+
             {/* Login Link with Icon + Text */}
             <Link className="arolax-login-btn" href="/account" aria-label="Account Login">
               <UserRound size={18} />
@@ -261,12 +303,12 @@ export function SiteHeader() {
               </span>
             </Link>
 
-            {/* Appearance & Currency Settings Trigger */}
+            {/* Appearance Settings Trigger */}
             <button
               className="icon-button settings-trigger"
               type="button"
               data-settings-trigger
-              aria-label="Appearance and currency settings"
+              aria-label="Appearance settings"
               aria-haspopup="dialog"
               aria-expanded={settingsOpen}
               onClick={() => setSettingsOpen(true)}
@@ -305,22 +347,22 @@ export function SiteHeader() {
               className="mobile-currency-control"
             />
             <div className="mobile-links-list">
-              <Link href="/shop" onClick={() => setMenuOpen(false)}>Shop All</Link>
-              <Link href="/category/dresses" onClick={() => setMenuOpen(false)}>Dresses</Link>
-              <Link href="/category/tops-blouses" onClick={() => setMenuOpen(false)}>Tops & Blouses</Link>
-              <Link href="/category/pants-skirts" onClick={() => setMenuOpen(false)}>Bottoms & Pants</Link>
+              <Link href="/shop" className={isShopActive ? "is-active" : ""} onClick={() => setMenuOpen(false)}>Shop All</Link>
+              <Link href="/category/dresses" className={isDressesActive ? "is-active" : ""} onClick={() => setMenuOpen(false)}>Dresses</Link>
+              <Link href="/category/tops-blouses" className={isTopsActive ? "is-active" : ""} onClick={() => setMenuOpen(false)}>Tops & Blouses</Link>
+              <Link href="/category/pants-skirts" className={isBottomsActive ? "is-active" : ""} onClick={() => setMenuOpen(false)}>Bottoms & Pants</Link>
               <Link href="/shop?subcategory=Matching%20Sets" onClick={() => setMenuOpen(false)}>Intimates & Sets</Link>
               <Link href="/category/shoes" onClick={() => setMenuOpen(false)}>Shoes & Heels</Link>
               <Link href="/category/bags" onClick={() => setMenuOpen(false)}>Bags & Totes</Link>
               <Link href="/category/jewelry-accessories" onClick={() => setMenuOpen(false)}>Jewelry & Accessories</Link>
               <Link href="/category/beauty-fragrance" onClick={() => setMenuOpen(false)}>Beauty & Fragrance</Link>
-              <Link href="/category/sale" className="mobile-sale-highlight" onClick={() => setMenuOpen(false)}>Sale & Deals</Link>
+              <Link href="/category/sale" className={`mobile-sale-highlight ${isSaleActive ? "is-active" : ""}`} onClick={() => setMenuOpen(false)}>Sale & Deals</Link>
               <div className="mobile-divider" />
               <Link href="/wishlist" onClick={() => setMenuOpen(false)}>Wishlist ({wishlistCount})</Link>
               <Link href="/cart" onClick={() => setMenuOpen(false)}>Shopping Bag ({itemCount})</Link>
               <Link href="/account" onClick={() => setMenuOpen(false)}>Sign in / Account</Link>
               <Link href="/faq" onClick={() => setMenuOpen(false)}>Help & FAQ</Link>
-              <Link href="/about" onClick={() => setMenuOpen(false)}>About AROLAX</Link>
+              <Link href="/about" className={isAboutActive ? "is-active" : ""} onClick={() => setMenuOpen(false)}>About AROLAX</Link>
             </div>
           </nav>
         )}

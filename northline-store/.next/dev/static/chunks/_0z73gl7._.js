@@ -498,9 +498,13 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/arrow-right.mjs [app-client] (ecmascript) <export default as ArrowRight>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$left$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronLeft$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/chevron-left.mjs [app-client] (ecmascript) <export default as ChevronLeft>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/chevron-right.mjs [app-client] (ecmascript) <export default as ChevronRight>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$currency$2d$context$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/context/currency-context.tsx [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$gsap$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/src/lib/gsap.ts [app-client] (ecmascript) <locals>");
 ;
 var _s = __turbopack_context__.k.signature();
 "use client";
+;
+;
 ;
 ;
 ;
@@ -510,7 +514,7 @@ const slides = [
         tagline: "STYLE THAT SHINES FOREVER",
         title: "Stunning Maxi Dress Collection",
         subtitle: "Comfortable, Elegant, Perfect For Every Occasion.",
-        priceText: "From $46.00",
+        basePrice: 46,
         href: "/category/dresses",
         image: "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1400&q=90",
         alt: "Model wearing stunning black maxi dress collection"
@@ -519,7 +523,7 @@ const slides = [
         tagline: "NEW SEASON ATELIER",
         title: "Pure Mulberry Silk Edit",
         subtitle: "Fluid silhouettes and effortless grace for day-to-night glamour.",
-        priceText: "From $58.00",
+        basePrice: 58,
         href: "/category/dresses",
         image: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1400&q=90",
         alt: "Atelier summer linen and silk dresses"
@@ -528,16 +532,17 @@ const slides = [
         tagline: "MODERN ARCHITECTURAL TAILORING",
         title: "Structured Blazer & Suiting",
         subtitle: "Sharp shoulders, sculptural cuts, and pristine Italian craftsmanship.",
-        priceText: "From $79.00",
-        href: "/shop?category=Clothing",
-        image: "https://images.unsplash.com/photo-1584273143981-41c073dfe8f8?auto=format&fit=crop&w=1400&q=90",
-        alt: "High fashion tailored white blazer collection"
+        basePrice: 79,
+        href: "/category/jackets-coats",
+        image: "/images/black-blazer-suit.jpg",
+        alt: "High fashion tailored black blazer suit collection"
     }
 ];
 function HeroSlider() {
     _s();
     const [currentIndex, setCurrentIndex] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
-    const [isPaused, setIsPaused] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const { formatPrice } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$currency$2d$context$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCurrency"])();
+    const timerRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
     const nextSlide = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
         "HeroSlider.useCallback[nextSlide]": ()=>{
             setCurrentIndex({
@@ -552,27 +557,27 @@ function HeroSlider() {
             }["HeroSlider.useCallback[prevSlide]"]);
         }
     }["HeroSlider.useCallback[prevSlide]"], []);
+    // Continuous auto-slide every 4.5 seconds
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "HeroSlider.useEffect": ()=>{
-            if (isPaused) return;
-            const interval = setInterval({
-                "HeroSlider.useEffect.interval": ()=>{
+            timerRef.current = setInterval({
+                "HeroSlider.useEffect": ()=>{
                     nextSlide();
                 }
-            }["HeroSlider.useEffect.interval"], 6000);
+            }["HeroSlider.useEffect"], 4500);
             return ({
-                "HeroSlider.useEffect": ()=>clearInterval(interval)
+                "HeroSlider.useEffect": ()=>{
+                    if (timerRef.current) clearInterval(timerRef.current);
+                }
             })["HeroSlider.useEffect"];
         }
     }["HeroSlider.useEffect"], [
-        isPaused,
-        nextSlide
+        nextSlide,
+        currentIndex
     ]);
     const current = slides[currentIndex];
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         className: "arolax-hero-section",
-        onMouseEnter: ()=>setIsPaused(true),
-        onMouseLeave: ()=>setIsPaused(false),
         "aria-label": "Hero Showcase",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "arolax-hero-container",
@@ -586,12 +591,12 @@ function HeroSlider() {
                                 children: current.tagline
                             }, void 0, false, {
                                 fileName: "[project]/src/components/hero-slider.tsx",
-                                lineNumber: 81,
+                                lineNumber: 82,
                                 columnNumber: 13
                             }, this)
                         }, `tag-${currentIndex}`, false, {
                             fileName: "[project]/src/components/hero-slider.tsx",
-                            lineNumber: 80,
+                            lineNumber: 81,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -599,7 +604,7 @@ function HeroSlider() {
                             children: current.title
                         }, `title-${currentIndex}`, false, {
                             fileName: "[project]/src/components/hero-slider.tsx",
-                            lineNumber: 84,
+                            lineNumber: 85,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -607,7 +612,7 @@ function HeroSlider() {
                             children: current.subtitle
                         }, `sub-${currentIndex}`, false, {
                             fileName: "[project]/src/components/hero-slider.tsx",
-                            lineNumber: 88,
+                            lineNumber: 89,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -615,12 +620,13 @@ function HeroSlider() {
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                 href: current.href,
                                 className: "arolax-hero-pill-btn",
+                                onClick: (e)=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$gsap$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["animateButtonPress"])(e.currentTarget),
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        children: current.priceText
+                                        children: `From ${formatPrice(current.basePrice)}`
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/hero-slider.tsx",
-                                        lineNumber: 94,
+                                        lineNumber: 99,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -630,23 +636,23 @@ function HeroSlider() {
                                             size: 15
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/hero-slider.tsx",
-                                            lineNumber: 96,
+                                            lineNumber: 101,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/hero-slider.tsx",
-                                        lineNumber: 95,
+                                        lineNumber: 100,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/hero-slider.tsx",
-                                lineNumber: 93,
+                                lineNumber: 94,
                                 columnNumber: 13
                             }, this)
                         }, `cta-${currentIndex}`, false, {
                             fileName: "[project]/src/components/hero-slider.tsx",
-                            lineNumber: 92,
+                            lineNumber: 93,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -654,23 +660,33 @@ function HeroSlider() {
                             children: slides.map((_, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                     type: "button",
                                     className: `arolax-hero-dot ${idx === currentIndex ? "is-active" : ""}`,
-                                    onClick: ()=>setCurrentIndex(idx),
+                                    onClick: ()=>{
+                                        if (timerRef.current) clearInterval(timerRef.current);
+                                        setCurrentIndex(idx);
+                                    },
                                     "aria-label": `Go to slide ${idx + 1}`,
-                                    "aria-current": idx === currentIndex
+                                    "aria-current": idx === currentIndex,
+                                    children: idx === currentIndex && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "arolax-dot-progress"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/hero-slider.tsx",
+                                        lineNumber: 120,
+                                        columnNumber: 42
+                                    }, this)
                                 }, idx, false, {
                                     fileName: "[project]/src/components/hero-slider.tsx",
-                                    lineNumber: 104,
+                                    lineNumber: 109,
                                     columnNumber: 15
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/src/components/hero-slider.tsx",
-                            lineNumber: 102,
+                            lineNumber: 107,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/hero-slider.tsx",
-                    lineNumber: 79,
+                    lineNumber: 80,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -678,83 +694,101 @@ function HeroSlider() {
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "arolax-hero-image-wrap",
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                src: current.image,
-                                alt: current.alt,
-                                fill: true,
-                                priority: true,
-                                sizes: "(max-width: 900px) 100vw, 55vw",
-                                className: "arolax-hero-image"
-                            }, void 0, false, {
-                                fileName: "[project]/src/components/hero-slider.tsx",
-                                lineNumber: 119,
-                                columnNumber: 13
-                            }, this),
+                            slides.map((slide, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: `arolax-hero-slide-layer ${idx === currentIndex ? "is-active" : ""}`,
+                                    "aria-hidden": idx !== currentIndex,
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                        src: slide.image,
+                                        alt: slide.alt,
+                                        fill: true,
+                                        priority: idx === 0,
+                                        sizes: "(max-width: 900px) 100vw, 55vw",
+                                        className: "arolax-hero-image"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/hero-slider.tsx",
+                                        lineNumber: 135,
+                                        columnNumber: 17
+                                    }, this)
+                                }, idx, false, {
+                                    fileName: "[project]/src/components/hero-slider.tsx",
+                                    lineNumber: 130,
+                                    columnNumber: 15
+                                }, this)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "arolax-hero-overlay"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/hero-slider.tsx",
-                                lineNumber: 127,
+                                lineNumber: 145,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/hero-slider.tsx",
-                        lineNumber: 118,
+                        lineNumber: 128,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/hero-slider.tsx",
-                    lineNumber: 117,
+                    lineNumber: 127,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                     type: "button",
-                    onClick: prevSlide,
+                    onClick: ()=>{
+                        if (timerRef.current) clearInterval(timerRef.current);
+                        prevSlide();
+                    },
                     className: "arolax-nav-arrow arolax-nav-prev",
                     "aria-label": "Previous slide",
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$left$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronLeft$3e$__["ChevronLeft"], {
                         size: 22
                     }, void 0, false, {
                         fileName: "[project]/src/components/hero-slider.tsx",
-                        lineNumber: 138,
+                        lineNumber: 159,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/hero-slider.tsx",
-                    lineNumber: 132,
+                    lineNumber: 150,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                     type: "button",
-                    onClick: nextSlide,
+                    onClick: ()=>{
+                        if (timerRef.current) clearInterval(timerRef.current);
+                        nextSlide();
+                    },
                     className: "arolax-nav-arrow arolax-nav-next",
                     "aria-label": "Next slide",
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
                         size: 22
                     }, void 0, false, {
                         fileName: "[project]/src/components/hero-slider.tsx",
-                        lineNumber: 147,
+                        lineNumber: 171,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/hero-slider.tsx",
-                    lineNumber: 141,
+                    lineNumber: 162,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/hero-slider.tsx",
-            lineNumber: 77,
+            lineNumber: 78,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/hero-slider.tsx",
-        lineNumber: 71,
+        lineNumber: 77,
         columnNumber: 5
     }, this);
 }
-_s(HeroSlider, "mkYGTAuv3k0SLYncF0Nh04qXefY=");
+_s(HeroSlider, "C2+vFJ08RcwsCGYpDSN7Q8yR2/s=", false, function() {
+    return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$currency$2d$context$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCurrency"]
+    ];
+});
 _c = HeroSlider;
 var _c;
 __turbopack_context__.k.register(_c, "HeroSlider");
