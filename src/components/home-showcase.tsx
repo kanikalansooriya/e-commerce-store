@@ -1,13 +1,12 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { ArrowRight, Flame, Sparkles, TrendingUp, Award, Clock } from "lucide-react";
-import { useGSAP } from "@gsap/react";
 import { ProductCard } from "@/components/product-card";
 import { ScrollReveal } from "@/components/motion";
 import { type Product } from "@/lib/products";
-import { gsap, animateButtonPress, isReducedMotion } from "@/lib/gsap";
+import { animateButtonPress } from "@/lib/gsap";
 
 export function FlashDealsSection({ dealProducts }: { dealProducts: Product[] }) {
   return (
@@ -39,8 +38,6 @@ export function FlashDealsSection({ dealProducts }: { dealProducts: Product[] })
 
 export function CuratedTabsSection({ allProducts }: { allProducts: Product[] }) {
   const [activeTab, setActiveTab] = useState<"featured" | "ratings" | "new" | "deals">("featured");
-  const gridRef = useRef<HTMLDivElement>(null);
-  const isInitialTab = useRef(true);
 
   const tabProducts = allProducts.filter((p) => {
     if (activeTab === "featured") return p.isFeatured;
@@ -50,35 +47,8 @@ export function CuratedTabsSection({ allProducts }: { allProducts: Product[] }) 
     return true;
   });
 
-  useGSAP(() => {
-    const el = gridRef.current;
-    if (!el || isReducedMotion()) return;
-    if (isInitialTab.current) {
-      isInitialTab.current = false;
-      return;
-    }
-
-    const cards = el.querySelectorAll(".product-card");
-    gsap.fromTo(
-      cards,
-      { opacity: 0, y: 14 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.38,
-        stagger: 0.05,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: el,
-          start: "top 88%",
-          once: true,
-        },
-      }
-    );
-  }, { scope: gridRef, dependencies: [activeTab], revertOnUpdate: true });
-
   return (
-    <ScrollReveal as="section" className="section-block page-shell">
+    <ScrollReveal as="section" className="section-block page-shell" animationKey={activeTab}>
       <div className="collection-tabs-header">
         <div>
           <span className="eyebrow">CURATED EDIT</span>
@@ -130,7 +100,7 @@ export function CuratedTabsSection({ allProducts }: { allProducts: Product[] }) 
         </div>
       </div>
 
-      <div ref={gridRef} className="product-grid">
+      <div className="product-grid">
         {tabProducts.slice(0, 8).map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}

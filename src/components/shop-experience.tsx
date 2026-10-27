@@ -160,7 +160,10 @@ export function ShopExperience({ initialQuery, initialCategory, initialSubcatego
       ) : filtered.length ? (
         <>
           <div id="catalog-results">
-            <ScrollReveal key={`${page}-${category}-${sort}`} className="product-grid catalog-grid reveal-stagger">
+            <ScrollReveal
+              animationKey={visibleProducts.map((product) => product.id).join("|")}
+              className="product-grid catalog-grid reveal-stagger"
+            >
               {visibleProducts.map((product, index) => (
                 <ProductCard key={product.id} product={product} priority={index === 0} />
               ))}

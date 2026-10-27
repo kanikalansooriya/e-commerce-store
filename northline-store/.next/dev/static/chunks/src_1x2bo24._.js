@@ -17,6 +17,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$gsap$2f$react$2f$src$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/@gsap/react/src/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$gsap$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/src/lib/gsap.ts [app-client] (ecmascript) <locals>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__ = __turbopack_context__.i("[project]/node_modules/gsap/index.js [app-client] (ecmascript) <locals> <export default as gsap>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$ScrollTrigger$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/gsap/ScrollTrigger.js [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature(), _s1 = __turbopack_context__.k.signature(), _s2 = __turbopack_context__.k.signature();
 "use client";
@@ -25,7 +26,7 @@ var _s = __turbopack_context__.k.signature(), _s1 = __turbopack_context__.k.sign
 ;
 ;
 ;
-function ScrollReveal({ children, className = "", as = "div", delay = 0, id, "aria-label": ariaLabel }) {
+function ScrollReveal({ children, className = "", as = "div", delay = 0, animationKey, id, "aria-label": ariaLabel }) {
     _s();
     const elementRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$gsap$2f$react$2f$src$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useGSAP"])({
@@ -37,11 +38,152 @@ function ScrollReveal({ children, className = "", as = "div", delay = 0, id, "ar
                 return undefined;
             }
             let promoMedia;
-            const isStaggered = element.classList.contains("reveal-stagger") || element.classList.contains("promo-banners-strip") || element.querySelector(".product-card") || element.querySelector(".arolax-collection-card") || element.querySelector(".cat-card") || element.querySelector(".category-tile, .category-hero-image, .review-card");
+            const isStaggered = element.classList.contains("reveal-stagger") || element.classList.contains("promo-banners-strip") || element.querySelector(".arolax-collection-card") || element.querySelector(".cat-card") || element.querySelector(".category-tile, .category-hero-image, .review-card");
             const hasProducts = element.querySelector(".product-card") !== null;
+            const productCards = Array.from(element.querySelectorAll(".product-card"));
             const hasCategories = element.querySelector(".arolax-collection-card, .cat-card, .category-tile, .category-hero-image") !== null;
             const isMobile = window.matchMedia("(max-width: 640px)").matches;
-            if (isStaggered) {
+            const zoomTargets = element.querySelectorAll(".arolax-card-img, .cat-card-img, .category-hero-image img, .promo-card-visual img, .about-image img");
+            if (zoomTargets.length > 0) {
+                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].fromTo(zoomTargets, {
+                    scale: isMobile ? 1.045 : 1.075
+                }, {
+                    scale: 1,
+                    duration: isMobile ? 0.65 : 0.85,
+                    stagger: hasProducts && isMobile ? 0.025 : 0.045,
+                    ease: "power2.out",
+                    onComplete: {
+                        "ScrollReveal.useGSAP": ()=>__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].set(zoomTargets, {
+                                clearProps: "transform"
+                            })
+                    }["ScrollReveal.useGSAP"],
+                    scrollTrigger: {
+                        trigger: element,
+                        start: "top 88%",
+                        end: hasProducts ? "bottom 12%" : undefined,
+                        toggleActions: hasProducts ? "restart none restart none" : "play none none none",
+                        once: !hasProducts,
+                        onLeaveBack: {
+                            "ScrollReveal.useGSAP": ()=>__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].set(zoomTargets, {
+                                    clearProps: "transform"
+                                })
+                        }["ScrollReveal.useGSAP"]
+                    }
+                });
+            }
+            if (hasProducts) {
+                const movement = isMobile ? 12 : 20;
+                const stagger = isMobile ? 0.035 : 0.065;
+                const revealProducts = {
+                    "ScrollReveal.useGSAP.revealProducts": (targets, enteringFrom)=>{
+                        const cards = targets;
+                        const images = cards.map({
+                            "ScrollReveal.useGSAP.revealProducts.images": (card)=>card.querySelector(".product-image-wrap img")
+                        }["ScrollReveal.useGSAP.revealProducts.images"]).filter({
+                            "ScrollReveal.useGSAP.revealProducts.images": (image)=>image !== null
+                        }["ScrollReveal.useGSAP.revealProducts.images"]);
+                        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].killTweensOf(cards);
+                        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].killTweensOf(images);
+                        const horizontalOffset = {
+                            "ScrollReveal.useGSAP.revealProducts.horizontalOffset": (index, target)=>{
+                                const position = productCards.indexOf(target);
+                                const alternatingOffset = position % 2 === 0 ? -7 : 7;
+                                return position < 0 ? 0 : enteringFrom === "bottom" ? alternatingOffset : -alternatingOffset;
+                            }
+                        }["ScrollReveal.useGSAP.revealProducts.horizontalOffset"];
+                        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].fromTo(cards, {
+                            autoAlpha: 0,
+                            x: horizontalOffset,
+                            y: enteringFrom === "bottom" ? movement : -movement,
+                            scale: 0.975
+                        }, {
+                            autoAlpha: 1,
+                            x: 0,
+                            y: 0,
+                            scale: 1,
+                            duration: 0.52,
+                            stagger,
+                            ease: "power2.out",
+                            overwrite: "auto",
+                            onComplete: {
+                                "ScrollReveal.useGSAP.revealProducts": ()=>__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].set(cards, {
+                                        clearProps: "opacity,visibility,transform"
+                                    })
+                            }["ScrollReveal.useGSAP.revealProducts"]
+                        });
+                        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].fromTo(images, {
+                            clipPath: enteringFrom === "bottom" ? "inset(0 0 14% 0)" : "inset(14% 0 0 0)",
+                            scale: 1.045
+                        }, {
+                            clipPath: "inset(0 0 0 0)",
+                            scale: 1,
+                            duration: 0.58,
+                            stagger: stagger * 0.7,
+                            ease: "power2.out",
+                            overwrite: "auto",
+                            onComplete: {
+                                "ScrollReveal.useGSAP.revealProducts": ()=>__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].set(images, {
+                                        clearProps: "clipPath,transform"
+                                    })
+                            }["ScrollReveal.useGSAP.revealProducts"]
+                        });
+                    }
+                }["ScrollReveal.useGSAP.revealProducts"];
+                const concealProducts = {
+                    "ScrollReveal.useGSAP.concealProducts": (targets, leavingTowards)=>{
+                        const cards = targets;
+                        const images = cards.map({
+                            "ScrollReveal.useGSAP.concealProducts.images": (card)=>card.querySelector(".product-image-wrap img")
+                        }["ScrollReveal.useGSAP.concealProducts.images"]).filter({
+                            "ScrollReveal.useGSAP.concealProducts.images": (image)=>image !== null
+                        }["ScrollReveal.useGSAP.concealProducts.images"]);
+                        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].killTweensOf(cards);
+                        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].killTweensOf(images);
+                        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].to(cards, {
+                            autoAlpha: 0,
+                            x: {
+                                "ScrollReveal.useGSAP.concealProducts": (index, target)=>{
+                                    const position = productCards.indexOf(target);
+                                    const alternatingOffset = position % 2 === 0 ? -5 : 5;
+                                    return position < 0 ? 0 : leavingTowards === "top" ? alternatingOffset : -alternatingOffset;
+                                }
+                            }["ScrollReveal.useGSAP.concealProducts"],
+                            y: leavingTowards === "top" ? -movement * 0.6 : movement * 0.6,
+                            scale: 0.985,
+                            duration: 0.28,
+                            stagger: stagger * 0.45,
+                            ease: "power1.in",
+                            overwrite: "auto"
+                        });
+                        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].to(images, {
+                            clipPath: leavingTowards === "top" ? "inset(0 0 10% 0)" : "inset(10% 0 0 0)",
+                            scale: 1.02,
+                            duration: 0.28,
+                            stagger: stagger * 0.45,
+                            ease: "power1.in",
+                            overwrite: "auto"
+                        });
+                    }
+                }["ScrollReveal.useGSAP.concealProducts"];
+                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$ScrollTrigger$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ScrollTrigger"].batch(productCards, {
+                    start: "top 92%",
+                    end: "bottom 8%",
+                    interval: 0.08,
+                    batchMax: isMobile ? 4 : 8,
+                    onEnter: {
+                        "ScrollReveal.useGSAP": (cards)=>revealProducts(cards, "bottom")
+                    }["ScrollReveal.useGSAP"],
+                    onEnterBack: {
+                        "ScrollReveal.useGSAP": (cards)=>revealProducts(cards, "top")
+                    }["ScrollReveal.useGSAP"],
+                    onLeave: {
+                        "ScrollReveal.useGSAP": (cards)=>concealProducts(cards, "top")
+                    }["ScrollReveal.useGSAP"],
+                    onLeaveBack: {
+                        "ScrollReveal.useGSAP": (cards)=>concealProducts(cards, "bottom")
+                    }["ScrollReveal.useGSAP"]
+                });
+            } else if (isStaggered) {
                 let items = Array.from(element.querySelectorAll(".product-card, .arolax-collection-card, .cat-card, .category-tile, .review-card, .feature-item, .promo-card, .reveal-item, .newsletter-copy, .newsletter-form"));
                 if (items.length === 0) {
                     items = Array.from(element.children);
@@ -62,15 +204,10 @@ function ScrollReveal({ children, className = "", as = "div", delay = 0, id, "ar
                     opacity: 1,
                     y: 0,
                     duration: isMobile ? 0.42 : 0.55,
-                    stagger: hasProducts && isMobile ? 0.035 : 0.07,
+                    stagger: isMobile ? 0.035 : 0.07,
                     ease: "power2.out",
                     delay: delay / 1000,
-                    scrollTrigger: hasProducts ? {
-                        trigger: element,
-                        start: "top 88%",
-                        end: "bottom 12%",
-                        toggleActions: "restart none restart none"
-                    } : {
+                    scrollTrigger: {
                         trigger: element,
                         start: "top 88%",
                         once: true
@@ -116,7 +253,7 @@ function ScrollReveal({ children, className = "", as = "div", delay = 0, id, "ar
                 }
                 if (element.classList.contains("promo-banners-strip")) {
                     const visuals = element.querySelectorAll(".promo-card-visual");
-                    const images = element.querySelectorAll(".promo-card-visual img");
+                    const images = element.querySelectorAll(".promo-card-visual");
                     __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].fromTo(visuals, {
                         clipPath: "inset(0 100% 0 0)"
                     }, {
@@ -170,13 +307,23 @@ function ScrollReveal({ children, className = "", as = "div", delay = 0, id, "ar
                 });
             }
             return ({
-                "ScrollReveal.useGSAP": ()=>promoMedia?.revert()
+                "ScrollReveal.useGSAP": ()=>{
+                    promoMedia?.revert();
+                    const productImages = productCards.map({
+                        "ScrollReveal.useGSAP.productImages": (card)=>card.querySelector(".product-image-wrap img")
+                    }["ScrollReveal.useGSAP.productImages"]).filter({
+                        "ScrollReveal.useGSAP.productImages": (image)=>image !== null
+                    }["ScrollReveal.useGSAP.productImages"]);
+                    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].killTweensOf(productCards);
+                    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].killTweensOf(productImages);
+                }
             })["ScrollReveal.useGSAP"];
         }
     }["ScrollReveal.useGSAP"], {
         scope: elementRef,
         dependencies: [
-            delay
+            delay,
+            animationKey
         ],
         revertOnUpdate: true
     });
@@ -196,7 +343,7 @@ function ScrollReveal({ children, className = "", as = "div", delay = 0, id, "ar
             children: children
         }, void 0, false, {
             fileName: "[project]/src/components/motion.tsx",
-            lineNumber: 204,
+            lineNumber: 330,
             columnNumber: 7
         }, this);
     }
@@ -211,7 +358,7 @@ function ScrollReveal({ children, className = "", as = "div", delay = 0, id, "ar
         children: children
     }, void 0, false, {
         fileName: "[project]/src/components/motion.tsx",
-        lineNumber: 219,
+        lineNumber: 345,
         columnNumber: 5
     }, this);
 }
@@ -254,7 +401,7 @@ function RouteTransition({ children }) {
         children: children
     }, pathname, false, {
         fileName: "[project]/src/components/motion.tsx",
-        lineNumber: 255,
+        lineNumber: 381,
         columnNumber: 5
     }, this);
 }
@@ -321,12 +468,12 @@ function BackToTop() {
             size: 17
         }, void 0, false, {
             fileName: "[project]/src/components/motion.tsx",
-            lineNumber: 301,
+            lineNumber: 427,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/motion.tsx",
-        lineNumber: 291,
+        lineNumber: 417,
         columnNumber: 5
     }, this);
 }

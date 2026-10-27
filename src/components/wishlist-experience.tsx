@@ -42,7 +42,10 @@ export function WishlistExperience() {
       </div>
 
       {items.length ? (
-        <ScrollReveal className="product-grid wishlist-grid reveal-stagger">
+        <ScrollReveal
+          animationKey={items.map((product) => product.id).join("|")}
+          className="product-grid wishlist-grid reveal-stagger"
+        >
           {items.map((product) => (
             <div key={product.id} className="wishlist-item-card">
               <ProductCard product={product} />

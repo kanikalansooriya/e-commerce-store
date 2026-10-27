@@ -854,15 +854,12 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$trending$2d$up$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TrendingUp$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/trending-up.mjs [app-client] (ecmascript) <export default as TrendingUp>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$award$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Award$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/award.mjs [app-client] (ecmascript) <export default as Award>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clock$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Clock$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/clock.mjs [app-client] (ecmascript) <export default as Clock>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$gsap$2f$react$2f$src$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/@gsap/react/src/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$product$2d$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/product-card.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$motion$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/motion.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$gsap$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/src/lib/gsap.ts [app-client] (ecmascript) <locals>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__ = __turbopack_context__.i("[project]/node_modules/gsap/index.js [app-client] (ecmascript) <locals> <export default as gsap>");
 ;
 var _s = __turbopack_context__.k.signature();
 "use client";
-;
 ;
 ;
 ;
@@ -888,40 +885,40 @@ function FlashDealsSection({ dealProducts }) {
                                         className: "text-amber-500 animate-pulse"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/home-showcase.tsx",
-                                        lineNumber: 18,
+                                        lineNumber: 17,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         children: "LIMITED TIME PROMOTION"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/home-showcase.tsx",
-                                        lineNumber: 19,
+                                        lineNumber: 18,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/home-showcase.tsx",
-                                lineNumber: 17,
+                                lineNumber: 16,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                 children: "Seasonal Spotlight Deals"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/home-showcase.tsx",
-                                lineNumber: 21,
+                                lineNumber: 20,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 children: "Exclusive summer markdowns on bestselling silhouettes and signature accessories."
                             }, void 0, false, {
                                 fileName: "[project]/src/components/home-showcase.tsx",
-                                lineNumber: 22,
+                                lineNumber: 21,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/home-showcase.tsx",
-                        lineNumber: 16,
+                        lineNumber: 15,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -931,7 +928,7 @@ function FlashDealsSection({ dealProducts }) {
                                 size: 15
                             }, void 0, false, {
                                 fileName: "[project]/src/components/home-showcase.tsx",
-                                lineNumber: 26,
+                                lineNumber: 25,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -941,25 +938,25 @@ function FlashDealsSection({ dealProducts }) {
                                         children: "14h : 32m : 18s"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/home-showcase.tsx",
-                                        lineNumber: 27,
+                                        lineNumber: 26,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/home-showcase.tsx",
-                                lineNumber: 27,
+                                lineNumber: 26,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/home-showcase.tsx",
-                        lineNumber: 25,
+                        lineNumber: 24,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/home-showcase.tsx",
-                lineNumber: 15,
+                lineNumber: 14,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -968,18 +965,18 @@ function FlashDealsSection({ dealProducts }) {
                         product: product
                     }, product.id, false, {
                         fileName: "[project]/src/components/home-showcase.tsx",
-                        lineNumber: 33,
+                        lineNumber: 32,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/src/components/home-showcase.tsx",
-                lineNumber: 31,
+                lineNumber: 30,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/home-showcase.tsx",
-        lineNumber: 14,
+        lineNumber: 13,
         columnNumber: 5
     }, this);
 }
@@ -987,8 +984,6 @@ _c = FlashDealsSection;
 function CuratedTabsSection({ allProducts }) {
     _s();
     const [activeTab, setActiveTab] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("featured");
-    const gridRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
-    const isInitialTab = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(true);
     const tabProducts = allProducts.filter((p)=>{
         if (activeTab === "featured") return p.isFeatured;
         if (activeTab === "ratings") return p.rating >= 4.8;
@@ -996,41 +991,10 @@ function CuratedTabsSection({ allProducts }) {
         if (activeTab === "deals") return p.isSale;
         return true;
     });
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$gsap$2f$react$2f$src$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useGSAP"])({
-        "CuratedTabsSection.useGSAP": ()=>{
-            const el = gridRef.current;
-            if (!el || (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$gsap$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isReducedMotion"])()) return;
-            if (isInitialTab.current) {
-                isInitialTab.current = false;
-                return;
-            }
-            const cards = el.querySelectorAll(".product-card");
-            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__default__as__gsap$3e$__["gsap"].fromTo(cards, {
-                opacity: 0,
-                y: 14
-            }, {
-                opacity: 1,
-                y: 0,
-                duration: 0.38,
-                stagger: 0.05,
-                ease: "power2.out",
-                scrollTrigger: {
-                    trigger: el,
-                    start: "top 88%",
-                    once: true
-                }
-            });
-        }
-    }["CuratedTabsSection.useGSAP"], {
-        scope: gridRef,
-        dependencies: [
-            activeTab
-        ],
-        revertOnUpdate: true
-    });
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$motion$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ScrollReveal"], {
         as: "section",
         className: "section-block page-shell",
+        animationKey: activeTab,
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "collection-tabs-header",
@@ -1042,27 +1006,27 @@ function CuratedTabsSection({ allProducts }) {
                                 children: "CURATED EDIT"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/home-showcase.tsx",
-                                lineNumber: 84,
+                                lineNumber: 54,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                 children: "Explore Signature Pieces"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/home-showcase.tsx",
-                                lineNumber: 85,
+                                lineNumber: 55,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 children: "Hand-selected items designed to effortlessly elevate your everyday wardrobe."
                             }, void 0, false, {
                                 fileName: "[project]/src/components/home-showcase.tsx",
-                                lineNumber: 86,
+                                lineNumber: 56,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/home-showcase.tsx",
-                        lineNumber: 83,
+                        lineNumber: 53,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1080,14 +1044,14 @@ function CuratedTabsSection({ allProducts }) {
                                         size: 15
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/home-showcase.tsx",
-                                        lineNumber: 98,
+                                        lineNumber: 68,
                                         columnNumber: 13
                                     }, this),
                                     " Trending"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/home-showcase.tsx",
-                                lineNumber: 90,
+                                lineNumber: 60,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1102,14 +1066,14 @@ function CuratedTabsSection({ allProducts }) {
                                         size: 15
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/home-showcase.tsx",
-                                        lineNumber: 108,
+                                        lineNumber: 78,
                                         columnNumber: 13
                                     }, this),
                                     " Top Rated"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/home-showcase.tsx",
-                                lineNumber: 100,
+                                lineNumber: 70,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1124,14 +1088,14 @@ function CuratedTabsSection({ allProducts }) {
                                         size: 15
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/home-showcase.tsx",
-                                        lineNumber: 118,
+                                        lineNumber: 88,
                                         columnNumber: 13
                                     }, this),
                                     " New Arrivals"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/home-showcase.tsx",
-                                lineNumber: 110,
+                                lineNumber: 80,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1146,41 +1110,40 @@ function CuratedTabsSection({ allProducts }) {
                                         size: 15
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/home-showcase.tsx",
-                                        lineNumber: 128,
+                                        lineNumber: 98,
                                         columnNumber: 13
                                     }, this),
                                     " Special Offers"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/home-showcase.tsx",
-                                lineNumber: 120,
+                                lineNumber: 90,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/home-showcase.tsx",
-                        lineNumber: 89,
+                        lineNumber: 59,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/home-showcase.tsx",
-                lineNumber: 82,
+                lineNumber: 52,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                ref: gridRef,
                 className: "product-grid",
                 children: tabProducts.slice(0, 8).map((product)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$product$2d$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ProductCard"], {
                         product: product
                     }, product.id, false, {
                         fileName: "[project]/src/components/home-showcase.tsx",
-                        lineNumber: 135,
+                        lineNumber: 105,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/src/components/home-showcase.tsx",
-                lineNumber: 133,
+                lineNumber: 103,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1196,32 +1159,28 @@ function CuratedTabsSection({ allProducts }) {
                             size: 16
                         }, void 0, false, {
                             fileName: "[project]/src/components/home-showcase.tsx",
-                            lineNumber: 141,
+                            lineNumber: 111,
                             columnNumber: 64
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/home-showcase.tsx",
-                    lineNumber: 140,
+                    lineNumber: 110,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/home-showcase.tsx",
-                lineNumber: 139,
+                lineNumber: 109,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/home-showcase.tsx",
-        lineNumber: 81,
+        lineNumber: 51,
         columnNumber: 5
     }, this);
 }
-_s(CuratedTabsSection, "JH9YwqcpXLkN2e9MWTDA0Pd+4mc=", false, function() {
-    return [
-        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$gsap$2f$react$2f$src$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useGSAP"]
-    ];
-});
+_s(CuratedTabsSection, "Y/F3kDjUV1T4os0XfM9P6eAeB88=");
 _c1 = CuratedTabsSection;
 var _c, _c1;
 __turbopack_context__.k.register(_c, "FlashDealsSection");

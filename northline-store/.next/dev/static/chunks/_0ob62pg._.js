@@ -1198,16 +1198,17 @@ function ShopExperience({ initialQuery, initialCategory, initialSubcategory, ini
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         id: "catalog-results",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$motion$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ScrollReveal"], {
+                            animationKey: visibleProducts.map((product)=>product.id).join("|"),
                             className: "product-grid catalog-grid reveal-stagger",
                             children: visibleProducts.map((product, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$product$2d$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ProductCard"], {
                                     product: product,
                                     priority: index === 0
                                 }, product.id, false, {
                                     fileName: "[project]/src/components/shop-experience.tsx",
-                                    lineNumber: 165,
+                                    lineNumber: 168,
                                     columnNumber: 17
                                 }, this))
-                        }, `${page}-${category}-${sort}`, false, {
+                        }, void 0, false, {
                             fileName: "[project]/src/components/shop-experience.tsx",
                             lineNumber: 163,
                             columnNumber: 13
@@ -1238,14 +1239,14 @@ function ShopExperience({ initialQuery, initialCategory, initialSubcategory, ini
                                         size: 16
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/shop-experience.tsx",
-                                        lineNumber: 180,
+                                        lineNumber: 183,
                                         columnNumber: 15
                                     }, this),
                                     " Previous"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/shop-experience.tsx",
-                                lineNumber: 170,
+                                lineNumber: 173,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1268,12 +1269,12 @@ function ShopExperience({ initialQuery, initialCategory, initialSubcategory, ini
                                         children: p
                                     }, p, false, {
                                         fileName: "[project]/src/components/shop-experience.tsx",
-                                        lineNumber: 185,
+                                        lineNumber: 188,
                                         columnNumber: 17
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/shop-experience.tsx",
-                                lineNumber: 183,
+                                lineNumber: 186,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1294,19 +1295,19 @@ function ShopExperience({ initialQuery, initialCategory, initialSubcategory, ini
                                         size: 16
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/shop-experience.tsx",
-                                        lineNumber: 211,
+                                        lineNumber: 214,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/shop-experience.tsx",
-                                lineNumber: 201,
+                                lineNumber: 204,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/shop-experience.tsx",
-                        lineNumber: 169,
+                        lineNumber: 172,
                         columnNumber: 11
                     }, this)
                 ]
@@ -1322,21 +1323,21 @@ function ShopExperience({ initialQuery, initialCategory, initialSubcategory, ini
                         strokeWidth: 1.4
                     }, void 0, false, {
                         fileName: "[project]/src/components/shop-experience.tsx",
-                        lineNumber: 217,
+                        lineNumber: 220,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                         children: subcategory !== "All" ? `No ${subcategory} items yet.` : category !== "All" ? `No ${category} items yet.` : "Nothing quite like that."
                     }, void 0, false, {
                         fileName: "[project]/src/components/shop-experience.tsx",
-                        lineNumber: 218,
+                        lineNumber: 221,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                         children: subcategory !== "All" || category !== "All" ? "This sample catalog does not have products in this category yet. Browse the full collection or check back when it is populated." : "Try another search or ease up on your filters. Your next favorite is around here somewhere."
                     }, void 0, false, {
                         fileName: "[project]/src/components/shop-experience.tsx",
-                        lineNumber: 219,
+                        lineNumber: 222,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1345,13 +1346,13 @@ function ShopExperience({ initialQuery, initialCategory, initialSubcategory, ini
                         children: "Browse all products"
                     }, void 0, false, {
                         fileName: "[project]/src/components/shop-experience.tsx",
-                        lineNumber: 224,
+                        lineNumber: 227,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/shop-experience.tsx",
-                lineNumber: 216,
+                lineNumber: 219,
                 columnNumber: 9
             }, this)
         ]

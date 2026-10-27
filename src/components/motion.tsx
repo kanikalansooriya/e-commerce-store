@@ -5,13 +5,14 @@ import type { CSSProperties, ReactNode } from "react";
 import { usePathname } from "next/navigation";
 import { ArrowUp } from "lucide-react";
 import { useGSAP } from "@gsap/react";
-import { gsap, isReducedMotion } from "@/lib/gsap";
+import { gsap, isReducedMotion, ScrollTrigger } from "@/lib/gsap";
 
 type RevealProps = {
   children: ReactNode;
   className?: string;
   as?: "div" | "section";
   delay?: number;
+  animationKey?: string | number;
   id?: string;
   "aria-label"?: string;
 };
@@ -21,6 +22,7 @@ export function ScrollReveal({
   className = "",
   as = "div",
   delay = 0,
+  animationKey,
   id,
   "aria-label": ariaLabel,
 }: RevealProps) {
@@ -39,17 +41,141 @@ export function ScrollReveal({
     const isStaggered =
       element.classList.contains("reveal-stagger") ||
       element.classList.contains("promo-banners-strip") ||
-      element.querySelector(".product-card") ||
       element.querySelector(".arolax-collection-card") ||
       element.querySelector(".cat-card") ||
       element.querySelector(".category-tile, .category-hero-image, .review-card");
     const hasProducts = element.querySelector(".product-card") !== null;
+    const productCards = Array.from(element.querySelectorAll<HTMLElement>(".product-card"));
     const hasCategories = element.querySelector(
       ".arolax-collection-card, .cat-card, .category-tile, .category-hero-image"
     ) !== null;
     const isMobile = window.matchMedia("(max-width: 640px)").matches;
 
-    if (isStaggered) {
+    const zoomTargets = element.querySelectorAll<HTMLElement>(
+      ".arolax-card-img, .cat-card-img, .category-hero-image img, .promo-card-visual img, .about-image img"
+    );
+    if (zoomTargets.length > 0) {
+      gsap.fromTo(
+        zoomTargets,
+        { scale: isMobile ? 1.045 : 1.075 },
+        {
+          scale: 1,
+          duration: isMobile ? 0.65 : 0.85,
+          stagger: hasProducts && isMobile ? 0.025 : 0.045,
+          ease: "power2.out",
+          onComplete: () => gsap.set(zoomTargets, { clearProps: "transform" }),
+          scrollTrigger: {
+            trigger: element,
+            start: "top 88%",
+            end: hasProducts ? "bottom 12%" : undefined,
+            toggleActions: hasProducts ? "restart none restart none" : "play none none none",
+            once: !hasProducts,
+            onLeaveBack: () => gsap.set(zoomTargets, { clearProps: "transform" }),
+          },
+        }
+      );
+    }
+
+    if (hasProducts) {
+      const movement = isMobile ? 12 : 20;
+      const stagger = isMobile ? 0.035 : 0.065;
+
+      const revealProducts = (targets: Element[], enteringFrom: "top" | "bottom") => {
+        const cards = targets as HTMLElement[];
+        const images = cards
+          .map((card) => card.querySelector<HTMLElement>(".product-image-wrap img"))
+          .filter((image): image is HTMLElement => image !== null);
+        gsap.killTweensOf(cards);
+        gsap.killTweensOf(images);
+
+        const horizontalOffset = (index: number, target: Element) => {
+          const position = productCards.indexOf(target as HTMLElement);
+          const alternatingOffset = position % 2 === 0 ? -7 : 7;
+          return position < 0 ? 0 : enteringFrom === "bottom" ? alternatingOffset : -alternatingOffset;
+        };
+
+        gsap.fromTo(
+          cards,
+          {
+            autoAlpha: 0,
+            x: horizontalOffset,
+            y: enteringFrom === "bottom" ? movement : -movement,
+            scale: 0.975,
+          },
+          {
+            autoAlpha: 1,
+            x: 0,
+            y: 0,
+            scale: 1,
+            duration: 0.52,
+            stagger,
+            ease: "power2.out",
+            overwrite: "auto",
+            onComplete: () => gsap.set(cards, { clearProps: "opacity,visibility,transform" }),
+          }
+        );
+
+        gsap.fromTo(
+          images,
+          {
+            clipPath: enteringFrom === "bottom" ? "inset(0 0 14% 0)" : "inset(14% 0 0 0)",
+            scale: 1.045,
+          },
+          {
+            clipPath: "inset(0 0 0 0)",
+            scale: 1,
+            duration: 0.58,
+            stagger: stagger * 0.7,
+            ease: "power2.out",
+            overwrite: "auto",
+            onComplete: () => gsap.set(images, { clearProps: "clipPath,transform" }),
+          }
+        );
+      };
+
+      const concealProducts = (targets: Element[], leavingTowards: "top" | "bottom") => {
+        const cards = targets as HTMLElement[];
+        const images = cards
+          .map((card) => card.querySelector<HTMLElement>(".product-image-wrap img"))
+          .filter((image): image is HTMLElement => image !== null);
+        gsap.killTweensOf(cards);
+        gsap.killTweensOf(images);
+
+        gsap.to(cards, {
+          autoAlpha: 0,
+          x: (index, target) => {
+            const position = productCards.indexOf(target as HTMLElement);
+            const alternatingOffset = position % 2 === 0 ? -5 : 5;
+            return position < 0 ? 0 : leavingTowards === "top" ? alternatingOffset : -alternatingOffset;
+          },
+          y: leavingTowards === "top" ? -movement * 0.6 : movement * 0.6,
+          scale: 0.985,
+          duration: 0.28,
+          stagger: stagger * 0.45,
+          ease: "power1.in",
+          overwrite: "auto",
+        });
+        gsap.to(images, {
+          clipPath: leavingTowards === "top" ? "inset(0 0 10% 0)" : "inset(10% 0 0 0)",
+          scale: 1.02,
+          duration: 0.28,
+          stagger: stagger * 0.45,
+          ease: "power1.in",
+          overwrite: "auto",
+        });
+      };
+
+      ScrollTrigger.batch(productCards, {
+        start: "top 92%",
+        end: "bottom 8%",
+        interval: 0.08,
+        batchMax: isMobile ? 4 : 8,
+        onEnter: (cards) => revealProducts(cards, "bottom"),
+        onEnterBack: (cards) => revealProducts(cards, "top"),
+        onLeave: (cards) => concealProducts(cards, "top"),
+        onLeaveBack: (cards) => concealProducts(cards, "bottom"),
+      });
+    } else if (isStaggered) {
       let items = Array.from(
         element.querySelectorAll<HTMLElement>(
           ".product-card, .arolax-collection-card, .cat-card, .category-tile, .review-card, .feature-item, .promo-card, .reveal-item, .newsletter-copy, .newsletter-form"
@@ -74,21 +200,14 @@ export function ScrollReveal({
           opacity: 1,
           y: 0,
           duration: isMobile ? 0.42 : 0.55,
-          stagger: hasProducts && isMobile ? 0.035 : 0.07,
+          stagger: isMobile ? 0.035 : 0.07,
           ease: "power2.out",
           delay: delay / 1000,
-          scrollTrigger: hasProducts
-            ? {
-                trigger: element,
-                start: "top 88%",
-                end: "bottom 12%",
-                toggleActions: "restart none restart none",
-              }
-            : {
-                trigger: element,
-                start: "top 88%",
-                once: true,
-              },
+          scrollTrigger: {
+            trigger: element,
+            start: "top 88%",
+            once: true,
+          },
         }
       );
 
@@ -139,7 +258,7 @@ export function ScrollReveal({
 
       if (element.classList.contains("promo-banners-strip")) {
         const visuals = element.querySelectorAll<HTMLElement>(".promo-card-visual");
-        const images = element.querySelectorAll<HTMLElement>(".promo-card-visual img");
+        const images = element.querySelectorAll<HTMLElement>(".promo-card-visual");
         gsap.fromTo(
           visuals,
           { clipPath: "inset(0 100% 0 0)" },
@@ -193,8 +312,15 @@ export function ScrollReveal({
       );
     }
 
-    return () => promoMedia?.revert();
-  }, { scope: elementRef, dependencies: [delay], revertOnUpdate: true });
+    return () => {
+      promoMedia?.revert();
+      const productImages = productCards
+        .map((card) => card.querySelector<HTMLElement>(".product-image-wrap img"))
+        .filter((image): image is HTMLElement => image !== null);
+      gsap.killTweensOf(productCards);
+      gsap.killTweensOf(productImages);
+    };
+  }, { scope: elementRef, dependencies: [delay, animationKey], revertOnUpdate: true });
 
   const classNames = `scroll-reveal${className ? ` ${className}` : ""}`;
   const style = { "--reveal-delay": `${delay}ms` } as CSSProperties;
